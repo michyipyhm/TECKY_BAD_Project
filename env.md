@@ -1,3 +1,3 @@
-DB_NAME=BAD012_project
+DB_NAME=bad_project
 DB_USERNAME=
 DB_PASSWORD=

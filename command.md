@@ -5,3 +5,5 @@
 `yarn add pg @types/pg knex`
 
 `yarn knex init -x ts`
+
+`yarn add dotenv`

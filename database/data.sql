@@ -1,1 +1,1 @@
-\c wsp012_project
+\c bad_project

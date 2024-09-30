@@ -6,12 +6,13 @@
   "scripts": {
     "start": "ts-node main.ts",
     "dev": "ts-node-dev main.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "data": "psql -f database/init.sql && ts-node database/insert_user.ts && psql -f database/data.sql"
   },
-  "author": "",
+  "author": "VictorYsc <victorysc0617@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^22.7.3",
+    "@types/node": "^22.7.4",
     "dotenv": "^16.4.5",
     "knex": "^3.1.0",
     "ts-node": "^10.9.2",
@@ -21,13 +22,17 @@
     "@types/express": "^5.0.0",
     "@types/express-session": "^1.18.0",
     "@types/formidable": "^2.0.6",
+    "@types/jest": "^29.5.13",
     "@types/jsonfile": "^6.1.4",
     "@types/pg": "^8.11.10",
     "express": "^4.21.0",
     "express-session": "^1.18.0",
     "formidable": "^2.1.2",
+    "jest": "^29.7.0",
     "jsonfile": "^6.1.0",
     "pg": "^8.13.0",
+    "ts-jest": "^29.2.5",
     "ts-node-dev": "^2.0.0"
-  }
+  },
+  "repository": "git@github.com:michyipyhm/TECKY_BAD_Project.git"
 }

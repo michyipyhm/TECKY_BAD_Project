@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS BAD012_project;
-CREATE DATABASE BAD012_project;
+DROP DATABASE IF EXISTS bad_project;
+CREATE DATABASE bad_project;
 
-\c BAD012_project
+\c bad_project
 
 
 CREATE TABLE member(
@@ -12,9 +12,11 @@ CREATE TABLE member(
     "address" VARCHAR(255) ,
     "email" VARCHAR(255) UNIQUE NOT NULL,
     "admin" BOOLEAN
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 );
 
-CREATE TABLE order(
+CREATE TABLE orders(
     "id" SERIAL PRIMARY KEY,
     "member_id" INTEGER NOT NULL,
     "total" INTEGER NOT NULL,
@@ -28,7 +30,7 @@ CREATE TABLE order(
 CREATE TABLE transaction(
     "id" SERIAL PRIMARY KEY,
     "order_id" INTEGER NOT NULL,
-    "state" VARCHAR(255),
+    "success" VARCHAR(255),
     "log" VARCHAR(255),
     "payment_type" VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -82,7 +84,7 @@ CREATE TABLE shopping_cart(
     FOREIGN KEY (member_id) REFERENCES member(id)
 );
 
-CREATE TABLE chatbox(
+CREATE TABLE chat_box(
     "id" SERIAL PRIMARY KEY,
     "role" VARCHAR(255) NOT NULL,
     "member_id" INTEGER NOT NULL,

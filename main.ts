@@ -12,5 +12,5 @@ main.get("/", function (req: Request, res: Response) {
 const PORT = 8080;
 
 main.listen(PORT, () => {
-  console.log(`Listening at http://localhost:${PORT}/`);
+  console.log(`Listening at http://project.michaelyip.info`);
 });

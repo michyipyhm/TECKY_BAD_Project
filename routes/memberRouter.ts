@@ -1,10 +1,11 @@
 import express, { Request, Response } from "express";
 import formidable from 'formidable';
-import { knex } from 'knex';
+import { knex } from '../main';
 
 export const memberRouter = express.Router();
 
 memberRouter.post("/register", registerNewMember);
+// memberRouter.post("/login", login);
 
 async function registerNewMember(req: Request, res: Response){
 
@@ -13,7 +14,7 @@ async function registerNewMember(req: Request, res: Response){
     const password = data.password;
     const phone = data.phone;
     const address = data.address;
-    const email = data.email
+    const email = data.email你
 
     const nameResult = await knex.select('username').from('members').where('username', username)
     if (nameResult.length > 0) {
@@ -39,19 +40,3 @@ async function registerNewMember(req: Request, res: Response){
     req.session.userId = insertResult[0].id
     res.json({ message: "Register successful" });
 }
-
-
-    // const sql_1 = `Select * from member where username = '${username}'`;
-    // const userResult = await pgClient.query(sql_1);
-    // const row = userResult.rows;
-    // const rowCount = userResult.rowCount;
-    // if (rowCount == null || rowCount > 0) {
-    //   res.status(400).json({ message: "username exists in database" });
-    //   return;
-    // }
-    // const sql = `INSERT INTO member (username, password, nickname, gender, birthday, phone, address, email) 
-    //   VALUES ('${username}', '${await hashPassword(password)}', '${nickname}', '${gender}', '${birthday}', '${phone}', '${address}', '${email}')RETURNING id;`;
-  
-    // const insertResult = await pgClient.query(sql);
-    // req.session.userId = insertResult.rows[0].id
-    // res.json({ message: "Register successful" });

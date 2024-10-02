@@ -1,0 +1,325 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" version="24.7.8" pages="2">
+  <diagram name="Main" id="tFw5E1t61ICdBNeUqZ7e">
+    <mxGraphModel dx="934" dy="1319" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-1" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" vertex="1" parent="1">
+          <mxGeometry width="820" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-16" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="10" y="15" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-13" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="PI3ejiKASkyPd-d5WvOY-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint as="sourcePoint" />
+            <mxPoint x="30" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-14" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="PI3ejiKASkyPd-d5WvOY-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="10" as="sourcePoint" />
+            <mxPoint x="30" y="10" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-15" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="PI3ejiKASkyPd-d5WvOY-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="20" as="sourcePoint" />
+            <mxPoint x="30" y="20" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-17" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="730" y="10" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-18" value="" style="shape=manualInput;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="10" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-21" value="" style="shape=actor;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="10" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-22" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="7" y="560" width="820" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-23" value="Product filter" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="57" y="575" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-26" value="生作PHONE" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="5" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-32" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="537" y="570" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-25" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-32">
+          <mxGeometry width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-27" value="Filter" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-32">
+          <mxGeometry x="50" y="20" width="40" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-28" value="" style="group" vertex="1" connectable="0" parent="PI3ejiKASkyPd-d5WvOY-32">
+          <mxGeometry x="10" y="17.5" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-29" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="PI3ejiKASkyPd-d5WvOY-28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint as="sourcePoint" />
+            <mxPoint x="20" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-30" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="PI3ejiKASkyPd-d5WvOY-28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="7.5" as="sourcePoint" />
+            <mxPoint x="20" y="7.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-31" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="PI3ejiKASkyPd-d5WvOY-28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="15" as="sourcePoint" />
+            <mxPoint x="20" y="15" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-33" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="687" y="575" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-34" value="View by" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="702" y="580" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-36" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="787" y="650" width="20" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-37" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="PI3ejiKASkyPd-d5WvOY-36">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint as="sourcePoint" />
+            <mxPoint x="20" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-38" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="PI3ejiKASkyPd-d5WvOY-36">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="5" as="sourcePoint" />
+            <mxPoint x="20" y="5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-39" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="PI3ejiKASkyPd-d5WvOY-36">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="10" as="sourcePoint" />
+            <mxPoint x="20" y="10" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-40" value="Sort by New launch / Popular?" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="676" y="640" width="106" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-41" value="" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="72" y="730" width="690" height="530" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-42" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-41">
+          <mxGeometry width="690" height="177" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-43" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-42">
+          <mxGeometry width="230" height="177" as="geometry">
+            <mxRectangle width="230" height="177" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-44" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-42">
+          <mxGeometry x="230" width="230" height="177" as="geometry">
+            <mxRectangle width="230" height="177" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-45" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-42">
+          <mxGeometry x="460" width="230" height="177" as="geometry">
+            <mxRectangle width="230" height="177" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-46" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-41">
+          <mxGeometry y="177" width="690" height="176" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-47" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-46">
+          <mxGeometry width="230" height="176" as="geometry">
+            <mxRectangle width="230" height="176" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-48" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-46">
+          <mxGeometry x="230" width="230" height="176" as="geometry">
+            <mxRectangle width="230" height="176" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-49" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-46">
+          <mxGeometry x="460" width="230" height="176" as="geometry">
+            <mxRectangle width="230" height="176" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-50" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-41">
+          <mxGeometry y="353" width="690" height="177" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-51" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-50">
+          <mxGeometry width="230" height="177" as="geometry">
+            <mxRectangle width="230" height="177" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-52" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-50">
+          <mxGeometry x="230" width="230" height="177" as="geometry">
+            <mxRectangle width="230" height="177" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-53" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=16;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-50">
+          <mxGeometry x="460" width="230" height="177" as="geometry">
+            <mxRectangle width="230" height="177" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-58" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="7" y="1510" width="820" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-54" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-58">
+          <mxGeometry width="820" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-55" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="PI3ejiKASkyPd-d5WvOY-58">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="413" y="70" as="sourcePoint" />
+            <mxPoint x="413" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="413" y="170" />
+              <mxPoint x="413" y="70" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-56" value="Accept Payment" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-58">
+          <mxGeometry x="160" y="50" width="100" height="40" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;div class=&quot;head-container&quot; style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px; display: flex; justify-content: center; align-items: center; color: rgb(102, 102, 102); font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 800; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;img class=&quot;head-icon&quot; src=&quot;data:image/svg+xml;base64,PHN2ZyBpZD0iQ29tcG9uZW50XzI5M18yIiBkYXRhLW5hbWU9IkNvbXBvbmVudCAyOTMg4oCTIDIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDMwIDMwIj4KICA8ZGVmcz4KICAgIDxjbGlwUGF0aCBpZD0iY2xpcC1wYXRoIj4KICAgICAgPHJlY3QgaWQ9Ik1hc2siIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgcng9IjUiIGZpbGw9IiNkOGQ4ZDgiLz4KICAgIDwvY2xpcFBhdGg+CiAgICA8Y2xpcFBhdGggaWQ9ImNsaXAtcGF0aC0yIj4KICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZV81NTM3IiBkYXRhLW5hbWU9IlJlY3RhbmdsZSA1NTM3IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzcwNzA3MCIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8L2NsaXBQYXRoPgogIDwvZGVmcz4KICA8ZyBpZD0iR3JvdXBfMjEzNzEiIGRhdGEtbmFtZT0iR3JvdXAgMjEzNzEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMCkiPgogICAgPGcgaWQ9IlJlY3RhbmdsZV81NTM4IiBkYXRhLW5hbWU9IlJlY3RhbmdsZSA1NTM4IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIiBmaWxsPSIjZmZmIiBzdHJva2U9IiM3MDcwNzAiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMCI+CiAgICAgIDxyZWN0IHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgc3Ryb2tlPSJub25lIi8+CiAgICAgIDxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iMjkiIGhlaWdodD0iMjkiIGZpbGw9Im5vbmUiLz4KICAgIDwvZz4KICAgIDxwYXRoIGlkPSJTdWJ0cmFjdGlvbl84IiBkYXRhLW5hbWU9IlN1YnRyYWN0aW9uIDgiIGQ9Ik0tNzUuNDA5LDI3YS45MzguOTM4LDAsMCwxLS41Ny0uMTkxbC0yLjU1My0xLjkyOWMtLjYtLjQ1My0xLjE4Ny0uOTM4LTEuNzUtMS40NDFoMi45NzVsMS45LDEuNDMxLDEuODk0LTEuNDMxaDIuOTc2Yy0uNTYzLjUwNy0xLjE1MS45OTEtMS43NSwxLjQ0MWwtMi41NTQsMS45MjlhLjk0Ny45NDcsMCwwLDEtLjU2My4xOTFabS0zLjcxMi04Ljc1aC0xLjYzOWEyMy4xMjIsMjMuMTIyLDAsMCwxLTMuMjA4LTUuNDA3LDIzLjIyMywyMy4yMjMsMCwwLDEtMS43MzgtMTAuOS42MjcuNjI3LDAsMCwxLC4yNjMtLjQ2Mi42MjcuNjI3LDAsMCwxLC4zNjQtLjExNy42MjcuNjI3LDAsMCwxLC4xNTkuMDIxLDE0LjAyOCwxNC4wMjgsMCwwLDAsMy41MzcuNDUzQTE0LjE3MywxNC4xNzMsMCwwLDAtNzUuNjY3LjYyNS42MzIuNjMyLDAsMCwxLTc1LjQxLjU3MWEuNjI4LjYyOCwwLDAsMSwuMjU2LjA1NCwxNC4xOCwxNC4xOCwwLDAsMCw1LjcxNywxLjIxN0ExNC4wMzIsMTQuMDMyLDAsMCwwLTY1LjksMS4zODlhLjYyMi42MjIsMCwwLDEsLjE2LS4wMjEuNjI0LjYyNCwwLDAsMSwuMzY0LjExNy42MjguNjI4LDAsMCwxLC4yNjQuNDYyQTIzLjIzMywyMy4yMzMsMCwwLDEtNjYuODUsMTIuODRhMjMuMTE2LDIzLjExNiwwLDAsMS0zLjIwNSw1LjQxSC03MS43YTIxLjg0LDIxLjg0LDAsMCwwLDMuNjg2LTUuOSwyMi4wMjgsMjIuMDI4LDAsMCwwLDEuNjktOS41NzIsMTUuMzI4LDE1LjMyOCwwLDAsMS0zLjExNi4zMiwxNS40NzEsMTUuNDcxLDAsMCwxLTUuOTcyLTEuMjEzQTE1LjQ3OSwxNS40NzksMCwwLDEtODEuMzgzLDMuMWExNS4zMzEsMTUuMzMxLDAsMCwxLTMuMTItLjMyLDIyLjAzOSwyMi4wMzksMCwwLDAsMS42OTMsOS41NzEsMjEuODMzLDIxLjgzMywwLDAsMCwzLjY4Nyw1LjlabS0zLjMwNiwwaC0yLjI5NUEyNi4yMjUsMjYuMjI1LDAsMCwxLTg4LjYsOC40NDNhMjYuMTgyLDI2LjE4MiwwLDAsMSwuMzIxLTEwLjcxNy45NDguOTQ4LDAsMCwxLC41NS0uNjQ5QS45MzcuOTM3LDAsMCwxLTg3LjM1NS0zYS45NDcuOTQ3LDAsMCwxLC40NzkuMTMsMTAuODQ1LDEwLjg0NSwwLDAsMCw1LjQ5NCwxLjVBMTAuODQ1LDEwLjg0NSwwLDAsMC03NS44ODgtMi44Ny45NDUuOTQ1LDAsMCwxLTc1LjQwOS0zYS45NDguOTQ4LDAsMCwxLC40NzkuMTMxLDEwLjg0MiwxMC44NDIsMCwwLDAsNS40OTMsMS41LDEwLjg0MywxMC44NDMsMCwwLDAsNS41LTEuNUEuOTUxLjk1MSwwLDAsMS02My40NjItM2EuOTM3LjkzNywwLDAsMSwuMzcuMDc2Ljk0OC45NDgsMCwwLDEsLjU0OS42NDlBMjYuMTgzLDI2LjE4MywwLDAsMS02Mi4yMTksOC40NCwyNi4yMjUsMjYuMjI1LDAsMCwxLTY2LjEsMTguMjVoLTIuM0EyNC4zMzQsMjQuMzM0LDAsMCwwLTY0LjMyMyw5LjNhMjQuMjg4LDI0LjI4OCwwLDAsMCwuMi05Ljk0MkExMi42NDQsMTIuNjQ0LDAsMCwxLTY5LjQzNS41MTcsMTIuNzY4LDEyLjc2OCwwLDAsMS03NS40MDktLjk3MSwxMi43NzQsMTIuNzc0LDAsMCwxLTgxLjM4My41MTcsMTIuNjQyLDEyLjY0MiwwLDAsMS04Ni42OTEtLjY0MiwyNC4yOTMsMjQuMjkzLDAsMCwwLTg2LjUsOS4zYTI0LjMzMywyNC4zMzMsMCwwLDAsNC4wNjksOC45NVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDkwLjQxIDMpIi8+CiAgICA8ZyBpZD0iR3JvdXAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQuNzQzIDMuMzMzKSIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAtcGF0aCkiPgogICAgICA8ZyBpZD0iTWFza19Hcm91cF83NTMiIGRhdGEtbmFtZT0iTWFzayBHcm91cCA3NTMiIGNsaXAtcGF0aD0idXJsKCNjbGlwLXBhdGgtMikiPgogICAgICAgIDxnIGlkPSJHcm91cF8zNzUzIiBkYXRhLW5hbWU9Ikdyb3VwIDM3NTMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgNC40NzMpIHJvdGF0ZSgtMTYuMDI0KSI+CiAgICAgICAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlXzIyMDYiIGRhdGEtbmFtZT0iUmVjdGFuZ2xlIDIyMDYiIHdpZHRoPSIxNi4yMjUiIGhlaWdodD0iMTYuMDEzIiBvcGFjaXR5PSIwIi8+CiAgICAgICAgICA8cGF0aCBpZD0iUGF0aF8xNDc3IiBkYXRhLW5hbWU9IlBhdGggMTQ3NyIgZD0iTTguMTc1LDcuNDU0YTMuMywzLjMsMCwxLDEtLjYxNy00LjUzbDEuNDI2LTEuNjlBNS41MDksNS41MDksMCwxLDAsMTAsOC43WiIgdHJhbnNmb3JtPSJtYXRyaXgoMC45OTEsIDAuMTM2LCAtMC4xMzYsIDAuOTkxLCAzLjkxLCAxLjc1OSkiLz4KICAgICAgICA8L2c+CiAgICAgIDwvZz4KICAgIDwvZz4KICAgIDxwYXRoIGlkPSJTdWJ0cmFjdGlvbl85IiBkYXRhLW5hbWU9IlN1YnRyYWN0aW9uIDkiIGQ9Ik0tNjQuNDE2LDdILTgzLjU4M2EuNjc4LjY3OCwwLDAsMS0uNzM5LS41OTFWNC4wNjFoLTMuOTM2YS44LjgsMCwwLDEtLjYyOC0uMjgxLjQ4OC40ODgsMCwwLDEtLjAzMy0uNTc1TC04Ny4yNS41MzFsLTEuNjcyLTIuNjc1YS40OTMuNDkzLDAsMCwxLC4wMzMtLjU3NUEuNzkxLjc5MSwwLDAsMS04OC4yNjEtM2g0LjE3OHYxLjE4MmgtMi45NzhsMS4zLDIuMDgzYS40ODYuNDg2LDAsMCwxLDAsLjUyOGwtMS4zLDIuMDgzaDIuNzQxVi41MzFhLjUzNC41MzQsMCwwLDEsLjIxNi0uNDE3TC04My45NjgsMGgxOS45Vi0uMDM0bC4xODIuMTQ2YS41MzcuNTM3LDAsMCwxLC4yMTYuNDE3djIuMzVoMi43NDFsLTEuMy0yLjA4M2EuNDg4LjQ4OCwwLDAsMSwwLS41MjhsMS4zLTIuMDgzaC0zLjEzOFYtM2g0LjMzM2EuNzkyLjc5MiwwLDAsMSwuNjI5LjI4LjQ5My40OTMsMCwwLDEsLjAzMy41NzVMLTYwLjc1LjUzMS01OS4wNzgsMy4yYS40ODguNDg4LDAsMCwxLS4wMzMuNTc1LjguOCwwLDAsMS0uNjI4LjI4MWgtMy45MzZWNi40MDlBLjY3OC42NzgsMCwwLDEtNjQuNDE2LDdaTS04Mi44NDcsMS4xMjJ2NC43aDE3Ljd2LTQuN1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDg5IDE5LjY2NykiLz4KICAgIDxwYXRoIGlkPSJTdWJ0cmFjdGlvbl8xMCIgZGF0YS1uYW1lPSJTdWJ0cmFjdGlvbiAxMCIgZD0iTS03MC42NjcsMi44MzNILTg5Vi0zaDE4LjMzM1pNLTc5LjI1LTEuNjIyYy0uOTczLDAtMS41NzguNzEtMS41NzgsMS44NTNzLjYsMS44NjgsMS41NzgsMS44NjgsMS41NzUtLjcxNywxLjU3NS0xLjg3MVMtNzguMjc1LTEuNjIyLTc5LjI1LTEuNjIyWm0tMy41MjMsMGMtLjk3MywwLTEuNTc3LjcxLTEuNTc3LDEuODUzcy42LDEuODY4LDEuNTc3LDEuODY4Uy04MS4yLDEuMzgyLTgxLjIuMjI4cy0uNi0xLjg1LTEuNTcyLTEuODVabTkuMiwxLjY2N2EuODguODgsMCwwLDAtLjY4Ni4yODkuODguODgsMCwwLDAtLjIxOS43MTEuODk0Ljg5NCwwLDAsMCwuMjIuNzE1Ljg5NC44OTQsMCwwLDAsLjY4Ni4zLjkuOSwwLDAsMCwuNjg3LS4zLjkuOSwwLDAsMCwuMjE5LS43MTcuODc5Ljg3OSwwLDAsMC0uMjE5LS43MDkuODc5Ljg3OSwwLDAsMC0uNjgzLS4yODlaTS03NC0xLjU4M2EuMzQ4LjM0OCwwLDAsMC0uMzMzLjJsLS45ODIsMS41LS45NTgsMS40NDNhLjM3Mi4zNzIsMCwwLDAtLjA3My4yMjUuMy4zLDAsMCwwLC4xLjIwNS4zLjMsMCwwLDAsLjIxNy4wNzMuMzMzLjMzMywwLDAsMCwuMy0uMTkxbDEuMDI1LTEuNTYuOTIzLTEuMzk0YS4zODQuMzg0LDAsMCwwLC4wNzgtLjIxNC4yODcuMjg3LDAsMCwwLS4wOS0uMjA4QS4yODcuMjg3LDAsMCwwLTc0LTEuNTgzWk0tODYuMDYtLjYzN2guMDE5VjEuNTUxYS40ODIuNDgyLDAsMCwwLC4xNDIuMzczLjQ4Mi40ODIsMCwwLDAsLjM3NS4xMzcuNDgyLjQ4MiwwLDAsMCwuMzc1LS4xMzcuNDgyLjQ4MiwwLDAsMCwuMTQyLS4zNzNWLTEuMDA2YS41NDMuNTQzLDAsMCwwLS4xNjMtLjQyNy41NDMuNTQzLDAsMCwwLS40MzEtLjE1Mi45NTYuOTU2LDAsMCwwLS41ODMuMTU2bC0uNjQuNDI3YS40LjQsMCwwLDAtLjE5NS4zNTQuMzMzLjMzMywwLDAsMCwuMDk1LjI0OS4zMzMuMzMzLDAsMCwwLC4yNDcuMS4zNjcuMzY3LDAsMCwwLC4yNDItLjA4M2wuMzczLS4yNThabTkuNjA5LS45NDdhLjg4OC44ODgsMCwwLDAtLjY4My4yOTIuODg4Ljg4OCwwLDAsMC0uMjIzLjcwOC44OTQuODk0LDAsMCwwLC4yMTkuNzE1Ljg5NC44OTQsMCwwLDAsLjY4Ni4zLjkuOSwwLDAsMCwuNjg3LS4zLjkuOSwwLDAsMCwuMjItLjcxNS44NzkuODc5LDAsMCwwLS4yMTktLjcxMkEuODc5Ljg3OSwwLDAsMC03Ni40NTEtMS41ODNabTIuODgzLDMuMTMzYy0uMTM2LDAtLjIwOC0uMTcyLS4yMDgtLjVzLjA2OC0uNDg4LjIwOC0uNDg4LjIwNy4xNi4yMDcuNDg4LS4wNjkuNS0uMjA3LjVaTS03OS4yNSwxLjNjLS4zMzMsMC0uNTIyLS4zODEtLjUyMi0xLjA3MnMuMTgxLTEuMDU3LjUyMi0xLjA1Ny41MjEuMzY1LjUyMSwxLjA1N1MtNzguOTExLDEuMy03OS4yNSwxLjNabS0zLjUyMywwQy04My4xMDYsMS4zLTgzLjMuOTIxLTgzLjMuMjNzLjE4MS0xLjA1Ny41MjItMS4wNTcuNTIyLjM2NS41MjIsMS4wNTdTLTgyLjQyOSwxLjMtODIuNzY5LDEuM1ptNi4zMjItMS4zODVjLS4xMzYsMC0uMjA3LS4xNzMtLjIwNy0uNXMuMDY4LS40ODguMjA3LS40ODguMjA4LjE2LjIwOC40ODhTLTc2LjMxMy0uMDgzLTc2LjQ1MS0uMDgzWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTQuODMzIDIzKSIvPgogICAgPHBhdGggaWQ9IlBhdGhfNDU0ODQiIGRhdGEtbmFtZT0iUGF0aCA0NTQ4NCIgZD0iTTE3MzkuNjA3LDcyNi44OTFoMy42MThsMS40LDIuNzgtLjQ4MywzLjA1OEgxNzM5LjJsMS42NzctMy4yODlaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTczOC4yIC03MDkuNDgyKSIvPgogICAgPHBhdGggaWQ9IlBhdGhfNDU0ODUiIGRhdGEtbmFtZT0iUGF0aCA0NTQ4NSIgZD0iTTE3NDQuMjIyLDcyNi44OTFIMTc0MC42bC0xLjQsMi43OC40ODMsMy4wNThoNC45MzdsLTEuNjc2LTMuMjg5WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE3MTUuNzAxIC03MDkuNDgyKSIvPgogIDwvZz4KPC9zdmc+Cg==&quot; loading=&quot;lazy&quot; alt=&quot;footer image&quot; style=&quot;box-sizing: border-box; border: 0px; vertical-align: middle; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px; width: 36px; height: 36px; margin: 0px 10px 0px 0px;&quot;&gt;&lt;span class=&quot;head-title&quot; style=&quot;box-sizing: border-box; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px; font-style: normal; font-weight: 800; font-size: 24px; line-height: 28px; color: rgb(0, 0, 0);&quot;&gt;100% Satisfaction Guaranteed&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;content-container&quot; style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px; max-width: 500px; text-align: center; color: rgb(102, 102, 102); font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 800; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span class=&quot;content-text&quot; style=&quot;box-sizing: border-box; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px; font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-style: normal; font-size: 16px; line-height: 19.2px; color: rgb(139, 139, 139); font-weight: 500 !important;&quot;&gt;生作 offers&lt;br style=&quot;box-sizing: border-box; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px;&quot;&gt;&quot;10-day No Questions Asked Return or Exchange&quot;&lt;br style=&quot;box-sizing: border-box; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px;&quot;&gt;and &quot;6-month Product Warranty&quot; to selected product purchased.&lt;br style=&quot;box-sizing: border-box; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/contact&quot; class=&quot;underline&quot; target=&quot;_blank&quot; style=&quot;box-sizing: border-box; text-decoration: underline; color: rgb(139, 139, 139); background-color: transparent; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px; font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-style: normal; font-size: 16px; line-height: 19.2px; font-weight: 500 !important;&quot;&gt;Contact us&lt;/a&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;or&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.casetify.com/support/protection-plan&quot; class=&quot;underline&quot; target=&quot;_blank&quot; style=&quot;box-sizing: border-box; text-decoration: underline; color: rgb(139, 139, 139); background-color: transparent; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px; font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-style: normal; font-size: 16px; line-height: 19.2px; font-weight: 500 !important;&quot;&gt;learn more&lt;/a&gt;.&lt;/span&gt;&lt;/div&gt;" link="&lt;div class=&quot;head-container&quot; style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px; display: flex; justify-content: center; align-items: center; color: rgb(102, 102, 102); font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 800; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;img class=&quot;head-icon&quot; src=&quot;data:image/svg+xml;base64,PHN2ZyBpZD0iQ29tcG9uZW50XzI5M18yIiBkYXRhLW5hbWU9IkNvbXBvbmVudCAyOTMg4oCTIDIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDMwIDMwIj4KICA8ZGVmcz4KICAgIDxjbGlwUGF0aCBpZD0iY2xpcC1wYXRoIj4KICAgICAgPHJlY3QgaWQ9Ik1hc2siIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgcng9IjUiIGZpbGw9IiNkOGQ4ZDgiLz4KICAgIDwvY2xpcFBhdGg+CiAgICA8Y2xpcFBhdGggaWQ9ImNsaXAtcGF0aC0yIj4KICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZV81NTM3IiBkYXRhLW5hbWU9IlJlY3RhbmdsZSA1NTM3IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzcwNzA3MCIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8L2NsaXBQYXRoPgogIDwvZGVmcz4KICA8ZyBpZD0iR3JvdXBfMjEzNzEiIGRhdGEtbmFtZT0iR3JvdXAgMjEzNzEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMCkiPgogICAgPGcgaWQ9IlJlY3RhbmdsZV81NTM4IiBkYXRhLW5hbWU9IlJlY3RhbmdsZSA1NTM4IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIiBmaWxsPSIjZmZmIiBzdHJva2U9IiM3MDcwNzAiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMCI+CiAgICAgIDxyZWN0IHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgc3Ryb2tlPSJub25lIi8+CiAgICAgIDxyZWN0IHg9IjAuNSIgeT0iMC41IiB3aWR0aD0iMjkiIGhlaWdodD0iMjkiIGZpbGw9Im5vbmUiLz4KICAgIDwvZz4KICAgIDxwYXRoIGlkPSJTdWJ0cmFjdGlvbl84IiBkYXRhLW5hbWU9IlN1YnRyYWN0aW9uIDgiIGQ9Ik0tNzUuNDA5LDI3YS45MzguOTM4LDAsMCwxLS41Ny0uMTkxbC0yLjU1My0xLjkyOWMtLjYtLjQ1My0xLjE4Ny0uOTM4LTEuNzUtMS40NDFoMi45NzVsMS45LDEuNDMxLDEuODk0LTEuNDMxaDIuOTc2Yy0uNTYzLjUwNy0xLjE1MS45OTEtMS43NSwxLjQ0MWwtMi41NTQsMS45MjlhLjk0Ny45NDcsMCwwLDEtLjU2My4xOTFabS0zLjcxMi04Ljc1aC0xLjYzOWEyMy4xMjIsMjMuMTIyLDAsMCwxLTMuMjA4LTUuNDA3LDIzLjIyMywyMy4yMjMsMCwwLDEtMS43MzgtMTAuOS42MjcuNjI3LDAsMCwxLC4yNjMtLjQ2Mi42MjcuNjI3LDAsMCwxLC4zNjQtLjExNy42MjcuNjI3LDAsMCwxLC4xNTkuMDIxLDE0LjAyOCwxNC4wMjgsMCwwLDAsMy41MzcuNDUzQTE0LjE3MywxNC4xNzMsMCwwLDAtNzUuNjY3LjYyNS42MzIuNjMyLDAsMCwxLTc1LjQxLjU3MWEuNjI4LjYyOCwwLDAsMSwuMjU2LjA1NCwxNC4xOCwxNC4xOCwwLDAsMCw1LjcxNywxLjIxN0ExNC4wMzIsMTQuMDMyLDAsMCwwLTY1LjksMS4zODlhLjYyMi42MjIsMCwwLDEsLjE2LS4wMjEuNjI0LjYyNCwwLDAsMSwuMzY0LjExNy42MjguNjI4LDAsMCwxLC4yNjQuNDYyQTIzLjIzMywyMy4yMzMsMCwwLDEtNjYuODUsMTIuODRhMjMuMTE2LDIzLjExNiwwLDAsMS0zLjIwNSw1LjQxSC03MS43YTIxLjg0LDIxLjg0LDAsMCwwLDMuNjg2LTUuOSwyMi4wMjgsMjIuMDI4LDAsMCwwLDEuNjktOS41NzIsMTUuMzI4LDE1LjMyOCwwLDAsMS0zLjExNi4zMiwxNS40NzEsMTUuNDcxLDAsMCwxLTUuOTcyLTEuMjEzQTE1LjQ3OSwxNS40NzksMCwwLDEtODEuMzgzLDMuMWExNS4zMzEsMTUuMzMxLDAsMCwxLTMuMTItLjMyLDIyLjAzOSwyMi4wMzksMCwwLDAsMS42OTMsOS41NzEsMjEuODMzLDIxLjgzMywwLDAsMCwzLjY4Nyw1LjlabS0zLjMwNiwwaC0yLjI5NUEyNi4yMjUsMjYuMjI1LDAsMCwxLTg4LjYsOC40NDNhMjYuMTgyLDI2LjE4MiwwLDAsMSwuMzIxLTEwLjcxNy45NDguOTQ4LDAsMCwxLC41NS0uNjQ5QS45MzcuOTM3LDAsMCwxLTg3LjM1NS0zYS45NDcuOTQ3LDAsMCwxLC40NzkuMTMsMTAuODQ1LDEwLjg0NSwwLDAsMCw1LjQ5NCwxLjVBMTAuODQ1LDEwLjg0NSwwLDAsMC03NS44ODgtMi44Ny45NDUuOTQ1LDAsMCwxLTc1LjQwOS0zYS45NDguOTQ4LDAsMCwxLC40NzkuMTMxLDEwLjg0MiwxMC44NDIsMCwwLDAsNS40OTMsMS41LDEwLjg0MywxMC44NDMsMCwwLDAsNS41LTEuNUEuOTUxLjk1MSwwLDAsMS02My40NjItM2EuOTM3LjkzNywwLDAsMSwuMzcuMDc2Ljk0OC45NDgsMCwwLDEsLjU0OS42NDlBMjYuMTgzLDI2LjE4MywwLDAsMS02Mi4yMTksOC40NCwyNi4yMjUsMjYuMjI1LDAsMCwxLTY2LjEsMTguMjVoLTIuM0EyNC4zMzQsMjQuMzM0LDAsMCwwLTY0LjMyMyw5LjNhMjQuMjg4LDI0LjI4OCwwLDAsMCwuMi05Ljk0MkExMi42NDQsMTIuNjQ0LDAsMCwxLTY5LjQzNS41MTcsMTIuNzY4LDEyLjc2OCwwLDAsMS03NS40MDktLjk3MSwxMi43NzQsMTIuNzc0LDAsMCwxLTgxLjM4My41MTcsMTIuNjQyLDEyLjY0MiwwLDAsMS04Ni42OTEtLjY0MiwyNC4yOTMsMjQuMjkzLDAsMCwwLTg2LjUsOS4zYTI0LjMzMywyNC4zMzMsMCwwLDAsNC4wNjksOC45NVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDkwLjQxIDMpIi8+CiAgICA8ZyBpZD0iR3JvdXAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQuNzQzIDMuMzMzKSIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAtcGF0aCkiPgogICAgICA8ZyBpZD0iTWFza19Hcm91cF83NTMiIGRhdGEtbmFtZT0iTWFzayBHcm91cCA3NTMiIGNsaXAtcGF0aD0idXJsKCNjbGlwLXBhdGgtMikiPgogICAgICAgIDxnIGlkPSJHcm91cF8zNzUzIiBkYXRhLW5hbWU9Ikdyb3VwIDM3NTMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgNC40NzMpIHJvdGF0ZSgtMTYuMDI0KSI+CiAgICAgICAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlXzIyMDYiIGRhdGEtbmFtZT0iUmVjdGFuZ2xlIDIyMDYiIHdpZHRoPSIxNi4yMjUiIGhlaWdodD0iMTYuMDEzIiBvcGFjaXR5PSIwIi8+CiAgICAgICAgICA8cGF0aCBpZD0iUGF0aF8xNDc3IiBkYXRhLW5hbWU9IlBhdGggMTQ3NyIgZD0iTTguMTc1LDcuNDU0YTMuMywzLjMsMCwxLDEtLjYxNy00LjUzbDEuNDI2LTEuNjlBNS41MDksNS41MDksMCwxLDAsMTAsOC43WiIgdHJhbnNmb3JtPSJtYXRyaXgoMC45OTEsIDAuMTM2LCAtMC4xMzYsIDAuOTkxLCAzLjkxLCAxLjc1OSkiLz4KICAgICAgICA8L2c+CiAgICAgIDwvZz4KICAgIDwvZz4KICAgIDxwYXRoIGlkPSJTdWJ0cmFjdGlvbl85IiBkYXRhLW5hbWU9IlN1YnRyYWN0aW9uIDkiIGQ9Ik0tNjQuNDE2LDdILTgzLjU4M2EuNjc4LjY3OCwwLDAsMS0uNzM5LS41OTFWNC4wNjFoLTMuOTM2YS44LjgsMCwwLDEtLjYyOC0uMjgxLjQ4OC40ODgsMCwwLDEtLjAzMy0uNTc1TC04Ny4yNS41MzFsLTEuNjcyLTIuNjc1YS40OTMuNDkzLDAsMCwxLC4wMzMtLjU3NUEuNzkxLjc5MSwwLDAsMS04OC4yNjEtM2g0LjE3OHYxLjE4MmgtMi45NzhsMS4zLDIuMDgzYS40ODYuNDg2LDAsMCwxLDAsLjUyOGwtMS4zLDIuMDgzaDIuNzQxVi41MzFhLjUzNC41MzQsMCwwLDEsLjIxNi0uNDE3TC04My45NjgsMGgxOS45Vi0uMDM0bC4xODIuMTQ2YS41MzcuNTM3LDAsMCwxLC4yMTYuNDE3djIuMzVoMi43NDFsLTEuMy0yLjA4M2EuNDg4LjQ4OCwwLDAsMSwwLS41MjhsMS4zLTIuMDgzaC0zLjEzOFYtM2g0LjMzM2EuNzkyLjc5MiwwLDAsMSwuNjI5LjI4LjQ5My40OTMsMCwwLDEsLjAzMy41NzVMLTYwLjc1LjUzMS01OS4wNzgsMy4yYS40ODguNDg4LDAsMCwxLS4wMzMuNTc1LjguOCwwLDAsMS0uNjI4LjI4MWgtMy45MzZWNi40MDlBLjY3OC42NzgsMCwwLDEtNjQuNDE2LDdaTS04Mi44NDcsMS4xMjJ2NC43aDE3Ljd2LTQuN1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDg5IDE5LjY2NykiLz4KICAgIDxwYXRoIGlkPSJTdWJ0cmFjdGlvbl8xMCIgZGF0YS1uYW1lPSJTdWJ0cmFjdGlvbiAxMCIgZD0iTS03MC42NjcsMi44MzNILTg5Vi0zaDE4LjMzM1pNLTc5LjI1LTEuNjIyYy0uOTczLDAtMS41NzguNzEtMS41NzgsMS44NTNzLjYsMS44NjgsMS41NzgsMS44NjgsMS41NzUtLjcxNywxLjU3NS0xLjg3MVMtNzguMjc1LTEuNjIyLTc5LjI1LTEuNjIyWm0tMy41MjMsMGMtLjk3MywwLTEuNTc3LjcxLTEuNTc3LDEuODUzcy42LDEuODY4LDEuNTc3LDEuODY4Uy04MS4yLDEuMzgyLTgxLjIuMjI4cy0uNi0xLjg1LTEuNTcyLTEuODVabTkuMiwxLjY2N2EuODguODgsMCwwLDAtLjY4Ni4yODkuODguODgsMCwwLDAtLjIxOS43MTEuODk0Ljg5NCwwLDAsMCwuMjIuNzE1Ljg5NC44OTQsMCwwLDAsLjY4Ni4zLjkuOSwwLDAsMCwuNjg3LS4zLjkuOSwwLDAsMCwuMjE5LS43MTcuODc5Ljg3OSwwLDAsMC0uMjE5LS43MDkuODc5Ljg3OSwwLDAsMC0uNjgzLS4yODlaTS03NC0xLjU4M2EuMzQ4LjM0OCwwLDAsMC0uMzMzLjJsLS45ODIsMS41LS45NTgsMS40NDNhLjM3Mi4zNzIsMCwwLDAtLjA3My4yMjUuMy4zLDAsMCwwLC4xLjIwNS4zLjMsMCwwLDAsLjIxNy4wNzMuMzMzLjMzMywwLDAsMCwuMy0uMTkxbDEuMDI1LTEuNTYuOTIzLTEuMzk0YS4zODQuMzg0LDAsMCwwLC4wNzgtLjIxNC4yODcuMjg3LDAsMCwwLS4wOS0uMjA4QS4yODcuMjg3LDAsMCwwLTc0LTEuNTgzWk0tODYuMDYtLjYzN2guMDE5VjEuNTUxYS40ODIuNDgyLDAsMCwwLC4xNDIuMzczLjQ4Mi40ODIsMCwwLDAsLjM3NS4xMzcuNDgyLjQ4MiwwLDAsMCwuMzc1LS4xMzcuNDgyLjQ4MiwwLDAsMCwuMTQyLS4zNzNWLTEuMDA2YS41NDMuNTQzLDAsMCwwLS4xNjMtLjQyNy41NDMuNTQzLDAsMCwwLS40MzEtLjE1Mi45NTYuOTU2LDAsMCwwLS41ODMuMTU2bC0uNjQuNDI3YS40LjQsMCwwLDAtLjE5NS4zNTQuMzMzLjMzMywwLDAsMCwuMDk1LjI0OS4zMzMuMzMzLDAsMCwwLC4yNDcuMS4zNjcuMzY3LDAsMCwwLC4yNDItLjA4M2wuMzczLS4yNThabTkuNjA5LS45NDdhLjg4OC44ODgsMCwwLDAtLjY4My4yOTIuODg4Ljg4OCwwLDAsMC0uMjIzLjcwOC44OTQuODk0LDAsMCwwLC4yMTkuNzE1Ljg5NC44OTQsMCwwLDAsLjY4Ni4zLjkuOSwwLDAsMCwuNjg3LS4zLjkuOSwwLDAsMCwuMjItLjcxNS44NzkuODc5LDAsMCwwLS4yMTktLjcxMkEuODc5Ljg3OSwwLDAsMC03Ni40NTEtMS41ODNabTIuODgzLDMuMTMzYy0uMTM2LDAtLjIwOC0uMTcyLS4yMDgtLjVzLjA2OC0uNDg4LjIwOC0uNDg4LjIwNy4xNi4yMDcuNDg4LS4wNjkuNS0uMjA3LjVaTS03OS4yNSwxLjNjLS4zMzMsMC0uNTIyLS4zODEtLjUyMi0xLjA3MnMuMTgxLTEuMDU3LjUyMi0xLjA1Ny41MjEuMzY1LjUyMSwxLjA1N1MtNzguOTExLDEuMy03OS4yNSwxLjNabS0zLjUyMywwQy04My4xMDYsMS4zLTgzLjMuOTIxLTgzLjMuMjNzLjE4MS0xLjA1Ny41MjItMS4wNTcuNTIyLjM2NS41MjIsMS4wNTdTLTgyLjQyOSwxLjMtODIuNzY5LDEuM1ptNi4zMjItMS4zODVjLS4xMzYsMC0uMjA3LS4xNzMtLjIwNy0uNXMuMDY4LS40ODguMjA3LS40ODguMjA4LjE2LjIwOC40ODhTLTc2LjMxMy0uMDgzLTc2LjQ1MS0uMDgzWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTQuODMzIDIzKSIvPgogICAgPHBhdGggaWQ9IlBhdGhfNDU0ODQiIGRhdGEtbmFtZT0iUGF0aCA0NTQ4NCIgZD0iTTE3MzkuNjA3LDcyNi44OTFoMy42MThsMS40LDIuNzgtLjQ4MywzLjA1OEgxNzM5LjJsMS42NzctMy4yODlaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTczOC4yIC03MDkuNDgyKSIvPgogICAgPHBhdGggaWQ9IlBhdGhfNDU0ODUiIGRhdGEtbmFtZT0iUGF0aCA0NTQ4NSIgZD0iTTE3NDQuMjIyLDcyNi44OTFIMTc0MC42bC0xLjQsMi43OC40ODMsMy4wNThoNC45MzdsLTEuNjc2LTMuMjg5WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE3MTUuNzAxIC03MDkuNDgyKSIvPgogIDwvZz4KPC9zdmc+Cg==&quot; loading=&quot;lazy&quot; alt=&quot;footer image&quot; style=&quot;box-sizing: border-box; border: 0px; vertical-align: middle; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px; width: 36px; height: 36px; margin: 0px 10px 0px 0px;&quot;&gt;&lt;span class=&quot;head-title&quot; style=&quot;box-sizing: border-box; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px; font-style: normal; font-weight: 800; font-size: 24px; line-height: 28px; color: rgb(0, 0, 0);&quot;&gt;100% Satisfaction Guaranteed&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;content-container&quot; style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px; max-width: 500px; text-align: center; color: rgb(102, 102, 102); font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 800; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span class=&quot;content-text&quot; style=&quot;box-sizing: border-box; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px; font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-style: normal; font-size: 16px; line-height: 19.2px; color: rgb(139, 139, 139); font-weight: 500 !important;&quot;&gt;CASETiFY offers&lt;br style=&quot;box-sizing: border-box; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px;&quot;&gt;&quot;10-day No Questions Asked Return or Exchange&quot;&lt;br style=&quot;box-sizing: border-box; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px;&quot;&gt;and &quot;6-month Product Warranty&quot; to selected product purchased.&lt;br style=&quot;box-sizing: border-box; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/contact&quot; class=&quot;underline&quot; target=&quot;_blank&quot; style=&quot;box-sizing: border-box; text-decoration: underline; color: rgb(139, 139, 139); background-color: transparent; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px; font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-style: normal; font-size: 16px; line-height: 19.2px; font-weight: 500 !important;&quot;&gt;Contact us&lt;/a&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;or&lt;span&gt;&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.casetify.com/support/protection-plan&quot; class=&quot;underline&quot; target=&quot;_blank&quot; style=&quot;box-sizing: border-box; text-decoration: underline; color: rgb(139, 139, 139); background-color: transparent; --FOOTER_2024-payment-method-icon-width: 48px; --FOOTER_2024-payment-method-icon-height: 33px; font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-style: normal; font-size: 16px; line-height: 19.2px; font-weight: 500 !important;&quot;&gt;learn more&lt;/a&gt;.&lt;/span&gt;&lt;/div&gt;" id="PI3ejiKASkyPd-d5WvOY-65">
+          <mxCell style="text;whiteSpace=wrap;html=1;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-58">
+            <mxGeometry x="427" y="10" width="385" height="120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-59" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="1720" width="817" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-60" value="Newsletter&lt;div&gt;subscribe&lt;/div&gt;&lt;div&gt;using mailgun.com&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="57" y="1770" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-61" value="" style="line;strokeWidth=2;direction=south;html=1;" vertex="1" parent="1">
+          <mxGeometry x="267" y="1720" width="10" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-62" value="" style="line;strokeWidth=2;direction=south;html=1;" vertex="1" parent="1">
+          <mxGeometry x="457" y="1720" width="10" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-63" value="" style="line;strokeWidth=2;direction=south;html=1;" vertex="1" parent="1">
+          <mxGeometry x="637" y="1720" width="10" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-64" value="&lt;div class=&quot;mobile-footer-item&quot; style=&quot;box-sizing: border-box; margin: 0px; padding: 20px 0px; border: 0px; flex: 0 0 18%; color: rgb(255, 255, 255); font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-size: 16px; text-align: start; background-color: rgb(0, 0, 0);&quot;&gt;&lt;ul class=&quot;list-unstyled support-list&quot; style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; list-style: none; display: flex; flex-direction: column; gap: 16px;&quot;&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;span style=&quot;text-transform: uppercase; font-size: 16px;&quot;&gt;Device&lt;/span&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div class=&quot;mobile-footer-item hidden-xs&quot; style=&quot;box-sizing: border-box; margin: 0px; padding: 20px 0px; border: 0px; flex: 0 0 18%; color: rgb(255, 255, 255); font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-size: 16px; text-align: start; background-color: rgb(0, 0, 0);&quot;&gt;&lt;ul class=&quot;list-unstyled support-list device-list&quot; style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; list-style: none; display: flex; flex-direction: column; gap: 16px; overflow: hidden;&quot;&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;strong style=&quot;box-sizing: border-box;&quot;&gt;Apple&lt;/strong&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/iphone-cases/iphone-16-pro-max-cases&quot; title=&quot;iPhone 16 Pro Max&quot; style=&quot;box-sizing: border-box; text-decoration-line: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;iPhone 16 Pro Max&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/iphone-cases/iphone-16-pro-cases&quot; title=&quot;iPhone 16 Pro&quot; style=&quot;box-sizing: border-box; text-decoration-line: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;iPhone 16 Pro&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/iphone-cases/iphone-16-plus-cases&quot; title=&quot;iPhone 16 Plus&quot; style=&quot;box-sizing: border-box; text-decoration-line: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;iPhone 16 Plus&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/iphone-cases/iphone-16-cases&quot; title=&quot;iPhone 16&quot; style=&quot;box-sizing: border-box; text-decoration-line: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;iPhone 16&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="297" y="1750" width="140" height="280" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;div class=&quot;text-uppercase collapse-row&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.about-list&quot; style=&quot;box-sizing: border-box; margin: 0px 0px 14px; padding: 0px; text-transform: uppercase; color: rgb(255, 255, 255); font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 500; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(0, 0, 0); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;About 生作&lt;/div&gt;&lt;ul class=&quot;list-unstyled support-list collapse-list about-list&quot; style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; list-style: none; display: flex; flex-direction: column; gap: 16px; color: rgb(255, 255, 255); font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 500; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(0, 0, 0); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/about-us&quot; title=&quot;About Us&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;About Us&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/casetifysustainability&quot; title=&quot;#CASETiFYSustainability&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;#生作Sustainability&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/casetify-cares&quot; title=&quot;#CASETiFYCares&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;#生佢Cares&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/press-release&quot; title=&quot;Press&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;Press&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/careers&quot; title=&quot;Careers&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;Careers&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/visit-us&quot; title=&quot;Visit Us&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;Visit Us&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;" link="&lt;div class=&quot;text-uppercase collapse-row&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.about-list&quot; style=&quot;box-sizing: border-box; margin: 0px 0px 14px; padding: 0px; text-transform: uppercase; color: rgb(255, 255, 255); font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 500; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(0, 0, 0); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;About CASETiFY&lt;/div&gt;&lt;ul class=&quot;list-unstyled support-list collapse-list about-list&quot; style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; list-style: none; display: flex; flex-direction: column; gap: 16px; color: rgb(255, 255, 255); font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 500; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(0, 0, 0); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/about-us&quot; title=&quot;About Us&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;About Us&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/casetifysustainability&quot; title=&quot;#CASETiFYSustainability&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;#CASETiFYSustainability&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/casetify-cares&quot; title=&quot;#CASETiFYCares&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;#CASETiFYCares&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/press-release&quot; title=&quot;Press&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;Press&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/careers&quot; title=&quot;Careers&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;Careers&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/visit-us&quot; title=&quot;Visit Us&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;Visit Us&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;" id="PI3ejiKASkyPd-d5WvOY-66">
+          <mxCell style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+            <mxGeometry x="486" y="1770" width="190" height="240" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;div class=&quot;text-uppercase collapse-row&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.get-help-list&quot; style=&quot;box-sizing: border-box; margin: 0px 0px 14px; padding: 0px; text-transform: uppercase; color: rgb(255, 255, 255); font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 500; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(0, 0, 0); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;Get Help&lt;/div&gt;&lt;ul class=&quot;list-unstyled support-list collapse-list get-help-list&quot; style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; list-style: none; display: flex; flex-direction: column; gap: 16px; color: rgb(255, 255, 255); font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 500; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(0, 0, 0); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/faq&quot; title=&quot;FAQs&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;FAQs&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/support/customer-satisfaction-guarantee&quot; title=&quot;100% Satisfaction Guaranteed&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;100% Satisfaction Guaranteed&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/setting/order_history&quot; title=&quot;TRACK MY ORDER&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;TRACK MY ORDER&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/contact&quot; title=&quot;Contact Us&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;" link="&lt;div class=&quot;text-uppercase collapse-row&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.get-help-list&quot; style=&quot;box-sizing: border-box; margin: 0px 0px 14px; padding: 0px; text-transform: uppercase; color: rgb(255, 255, 255); font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 500; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(0, 0, 0); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;Get Help&lt;/div&gt;&lt;ul class=&quot;list-unstyled support-list collapse-list get-help-list&quot; style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; list-style: none; display: flex; flex-direction: column; gap: 16px; color: rgb(255, 255, 255); font-family: &amp;quot;PP Pangram Sans&amp;quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 500; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(0, 0, 0); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/faq&quot; title=&quot;FAQs&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;FAQs&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/support/customer-satisfaction-guarantee&quot; title=&quot;100% Satisfaction Guaranteed&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;100% Satisfaction Guaranteed&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/setting/order_history&quot; title=&quot;TRACK MY ORDER&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;TRACK MY ORDER&lt;/a&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin: 0px; padding: 0px; font-size: 0.9em;&quot;&gt;&lt;a href=&quot;https://www.casetify.com/contact&quot; title=&quot;Contact Us&quot; style=&quot;box-sizing: border-box; text-decoration: none; color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;" id="PI3ejiKASkyPd-d5WvOY-67">
+          <mxCell style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+            <mxGeometry x="654" y="1770" width="153" height="170" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-71" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="247" y="1340" width="350" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-68" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-71">
+          <mxGeometry width="350" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-70" value="&amp;lt;&amp;nbsp; &amp;nbsp; &amp;nbsp;1 2 3 ... 999&amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;gt;" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-71">
+          <mxGeometry x="45" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-74" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="70" y="5" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-72" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-74">
+          <mxGeometry width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PI3ejiKASkyPd-d5WvOY-73" value="Search" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="PI3ejiKASkyPd-d5WvOY-74">
+          <mxGeometry x="17.142857142857142" y="4" width="85.71428571428571" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="E82EG3s371X6FRiSkzU--3" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="209" y="70" width="410" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="E82EG3s371X6FRiSkzU--1" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="E82EG3s371X6FRiSkzU--3">
+          <mxGeometry width="410" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="E82EG3s371X6FRiSkzU--2" value="Create your own phone case" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="E82EG3s371X6FRiSkzU--3">
+          <mxGeometry x="155" y="5" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="E82EG3s371X6FRiSkzU--4" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="40" y="160" width="330" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="E82EG3s371X6FRiSkzU--5" value="Product Image" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="157" y="305" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="E82EG3s371X6FRiSkzU--6" value="" style="line;strokeWidth=2;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="240" width="310" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="E82EG3s371X6FRiSkzU--7" value="Type in your favourite keyword" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="545" y="200" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="E82EG3s371X6FRiSkzU--8" value="&lt;font style=&quot;font-size: 21px;&quot;&gt;Buy now!&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="495" y="375" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="E82EG3s371X6FRiSkzU--21" value="&lt;font style=&quot;font-size: 21px;&quot;&gt;Add to cart&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="495" y="440" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="E82EG3s371X6FRiSkzU--22" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Summit&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="539" y="260" width="115" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="W4otdKaIgrNm_6PBepuU" name="Product page">
+    <mxGraphModel dx="993" dy="1401" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hBtHrp1RaSOZWXnE-Osa-1" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.rect;fillColor2=none;strokeWidth=1;size=20;indent=5;" vertex="1" parent="1">
+          <mxGeometry width="820" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="hBtHrp1RaSOZWXnE-Osa-2" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="10" y="15" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="hBtHrp1RaSOZWXnE-Osa-3" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="hBtHrp1RaSOZWXnE-Osa-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint as="sourcePoint" />
+            <mxPoint x="30" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hBtHrp1RaSOZWXnE-Osa-4" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="hBtHrp1RaSOZWXnE-Osa-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="10" as="sourcePoint" />
+            <mxPoint x="30" y="10" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hBtHrp1RaSOZWXnE-Osa-5" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="hBtHrp1RaSOZWXnE-Osa-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="20" as="sourcePoint" />
+            <mxPoint x="30" y="20" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hBtHrp1RaSOZWXnE-Osa-6" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="730" y="10" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hBtHrp1RaSOZWXnE-Osa-7" value="" style="shape=manualInput;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="10" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hBtHrp1RaSOZWXnE-Osa-8" value="" style="shape=actor;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="10" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hBtHrp1RaSOZWXnE-Osa-9" value="生作PHONE" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="360" y="5" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="hBtHrp1RaSOZWXnE-Osa-10" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="70" y="5" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="hBtHrp1RaSOZWXnE-Osa-11" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="hBtHrp1RaSOZWXnE-Osa-10">
+          <mxGeometry width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="hBtHrp1RaSOZWXnE-Osa-12" value="Search" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="hBtHrp1RaSOZWXnE-Osa-10">
+          <mxGeometry x="17.142857142857142" y="4" width="85.71428571428571" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="hBtHrp1RaSOZWXnE-Osa-13" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="30" y="160" width="330" height="330" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

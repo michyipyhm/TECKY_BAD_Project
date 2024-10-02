@@ -1,6 +1,5 @@
 import express, { Request, Response, Router } from 'express';
-import { pgClient } from '../main';
-import Stripe from 'stripe';
+
 
 export const productRoutes = express.Router()
 
@@ -22,21 +21,17 @@ export const productRoutes = express.Router()
 //     }
 // })
 
-// const express = require('express');
-const router = express.Router();
-const knex = require('knex')(/* 你的数据库配置 */);
 
-router.get("/product", async (req, res) => {
+const knex = require('knex');
+
+productRoutes.get("/product", async (req, res) => {
     const productId = req.query.product;
     try {
         const data = await knex('product')
             .select('*')
             .join('product_image', 'product.id', '=', 'product_image.product_id')
-            .join('brand', 'product.brand_id', '=', 'brand.id')
-            .join('origin', 'product.origin_id', '=', 'origin.id')
-            .join('format', 'product.format_id', '=', 'format.id')
             .where('product.id', productId)
-            .first(); // 只获取第一条结果
+            .first(); 
 
         res.status(200).json({ data });
     } catch (err) {
@@ -44,4 +39,4 @@ router.get("/product", async (req, res) => {
     }
 });
 
-module.exports = router;
+module.exports = productRoutes;

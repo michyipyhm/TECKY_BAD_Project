@@ -1,6 +1,6 @@
 `yarn init`
 
-`yarn add ts-node @type/node typescript ts-node-dev`
+`yarn add --dev typescript ts-jest @types/jest @types/node ts-node ts-node-dev`
 
 `yarn add pg @types/pg knex`
 

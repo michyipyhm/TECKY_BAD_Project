@@ -7,6 +7,9 @@ import Knex from "knex";
 
 dotenv.config();
 
+
+import { filter } from './routes/filterRoutes';
+import { productRoutes } from "./routes/productRoutes";
 const knexConfigs = require("./knexfile");
 const configMode = process.env.NODE_ENV || "development";
 const knexConfig = knexConfigs[configMode];

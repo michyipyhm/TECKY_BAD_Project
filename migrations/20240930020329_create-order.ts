@@ -16,6 +16,8 @@ export async function up(knex: Knex) {
 
 
 export async function down(knex: Knex) {
-    await knex.schema.dropTable('order')
+    await knex.schema.dropTableIfExists('orders')
+    await knex.schema.dropTableIfExists('order')
+
 }
 

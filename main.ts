@@ -2,11 +2,19 @@ import express , { Request, Response }from "express";
 import expressSession from "express-session";
 import dotenv from "dotenv";
 import { Client } from "pg";
+<<<<<<< HEAD
 dotenv.config();
 import { userRouter } from "./routes/userRouter";
 import { filter } from './routes/filterRoutes';
 import { productRoutes } from "./routes/productRoutes";
 import Knex from "knex";
+=======
+
+dotenv.config();
+import { userRouter } from "./routes/userRouter";
+
+import Knex from "knex";  
+>>>>>>> 02c7deddcc8920aa8e45dd40a4a1bdca53e5bc9a
 const knexConfigs = require("./knexfile");
 const configMode = process.env.NODE_ENV || "development";
 const knexConfig = knexConfigs[configMode];

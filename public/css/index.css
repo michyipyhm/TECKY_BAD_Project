@@ -19,6 +19,14 @@ body {
     width: 50%;
 }
 
+<<<<<<< HEAD
+=======
+.userInfoFont{
+    font-size: xx-large;
+    color: white;
+}
+
+>>>>>>> 02c7deddcc8920aa8e45dd40a4a1bdca53e5bc9a
 .userArea {
     height: 100%;
     width: 50%;

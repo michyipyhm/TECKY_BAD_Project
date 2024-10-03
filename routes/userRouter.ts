@@ -17,7 +17,6 @@ async function registerNewMember(req: Request, res: Response) {
     const phone = data.phone;
     const address = data.address;
     const email = data.email
-
     const nameResult = await knex.select('username').from('members').where('username', username)
     if (nameResult.length > 0) {
         res.status(400).json({ message: "Username has been registered." });

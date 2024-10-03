@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+window.onload = () => {
+    const signupBtn = document.getElementById('signupBtn');
+    const overlay = document.getElementById('overlay');
+    const closeBtn = document.getElementById('closeBtn');
+
+    signupBtn.onclick = function () {
+        overlay.style.display = 'flex';
+    };
+
+    closeBtn.onclick = function () {
+        overlay.style.display = 'none';
+    };
+=======
 window.onload = async () => {
     const signupBtn = document.getElementById('signupBtn');
     const loginBtn = document.getElementById('loginBtn');
@@ -11,6 +25,7 @@ window.onload = async () => {
 
     signUpCloseBtn.onclick = function () { signUpOverlay.style.display = 'none' };
     loginCloseBtn.onclick = function () { loginOverlay.style.display = 'none' };
+>>>>>>> 02c7deddcc8920aa8e45dd40a4a1bdca53e5bc9a
 
     const registerEle = document.querySelector("#registerForm")
     registerEle.addEventListener("submit", async (e) => {
@@ -25,6 +40,10 @@ window.onload = async () => {
             password,
             email
         }
+<<<<<<< HEAD
+        console.log(body)
+=======
+>>>>>>> 02c7deddcc8920aa8e45dd40a4a1bdca53e5bc9a
         const res = await fetch("/register", {
             method: "POST",
             headers: {
@@ -34,6 +53,17 @@ window.onload = async () => {
         })
         const data = await res.json()
         if (res.ok) {
+<<<<<<< HEAD
+            window.location.href = "/login.html"
+            alert("Register successful")
+        } else {
+            alert(data.message)
+        }
+
+        document.getElementById('registerForm').reset();
+        overlay.style.display = 'none';
+    })
+=======
             window.location.reload();
         } else {
             alert(data.message)
@@ -82,4 +112,5 @@ window.onload = async () => {
             `;
         }
     }
+>>>>>>> 02c7deddcc8920aa8e45dd40a4a1bdca53e5bc9a
 }

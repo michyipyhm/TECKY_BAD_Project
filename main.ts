@@ -6,7 +6,7 @@ import { Client } from "pg";
 dotenv.config();
 import { userRouter } from "./routes/userRouter";
 
-import { memberRouter } from "./routes/memberRouter";
+
 import { filter } from './routes/filterRoutes';
 import { productRoutes } from "./routes/productRoutes";
 import Knex from "knex";

@@ -6,6 +6,9 @@ import { Client } from "pg";
 dotenv.config();
 import { userRouter } from "./routes/userRouter";
 
+
+import { filter } from './routes/filterRoutes';
+import { productRoutes } from "./routes/productRoutes";
 import Knex from "knex";
 const knexConfigs = require("./knexfile");
 const configMode = process.env.NODE_ENV || "development";

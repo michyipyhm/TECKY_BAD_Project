@@ -1,6 +1,6 @@
 import express, { Request, Response, Router } from 'express';
 
-
+export { knex } from "knex";
 export const productRoutes = express.Router()
 
 // productRoutes.get("/product", async (req, res) => {
@@ -24,13 +24,13 @@ export const productRoutes = express.Router()
 
 const knex = require('knex');
 
-productRoutes.get("/product", async (req, res) => {
+productRoutes.get("/products", async (req, res) => {
     const productId = req.query.product;
     try {
-        const data = await knex('product')
+        const data = await knex('products')
             .select('*')
-            .join('product_image', 'product.id', '=', 'product_image.product_id')
-            .where('product.id', productId)
+            .join('product_image', 'products.id', '=', 'products_image.product_id')
+            .where('products.id', productId)
             .first(); 
 
         res.status(200).json({ data });

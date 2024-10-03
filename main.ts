@@ -3,7 +3,8 @@ import expressSession from "express-session";
 import dotenv from "dotenv";
 dotenv.config();
 import { memberRouter } from "./routes/memberRouter";
-
+import { filter } from './routes/filterRoutes';
+import { productRoutes } from "./routes/productRoutes";
 import Knex from "knex";
 const knexConfigs = require("./knexfile");
 const configMode = process.env.NODE_ENV || "development";

@@ -18,3 +18,6 @@
 `yarn knex migrate:up`
 ## 行下一個migrations
 `yarn knex migrate:down`
+
+## install replicate AI for generating picture
+`yarn add replicate`

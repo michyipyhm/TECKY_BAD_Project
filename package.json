@@ -7,7 +7,6 @@
     "dev": "ts-node-dev main.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-
   "repository": "git@github.com:michyipyhm/TECKY_BAD_Project.git",
   "author": "michyipyhm <micmicyip@hotmail.com>",
   "license": "MIT",

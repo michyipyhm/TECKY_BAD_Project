@@ -1,8 +1,10 @@
 import express , { Request, Response }from "express";
 import expressSession from "express-session";
 import dotenv from "dotenv";
+import { Client } from "pg";
+
 dotenv.config();
-import { memberRouter } from "./routes/memberRouter";
+import { userRouter } from "./routes/userRouter";
 
 import Knex from "knex";
 const knexConfigs = require("./knexfile");
@@ -12,8 +14,8 @@ export const knex = Knex(knexConfig);　//knex instance
 
 const main = express();
 
-
-
+main.use(express.urlencoded({ extended: true }));
+main.use(express.json());
 main.use(
   expressSession({
     secret: process.env.SECRET as string,
@@ -29,11 +31,13 @@ declare module "express-session" {
   }
 }
 
+main.use(express.static("public"));
+
 main.get("/", function (req: Request, res: Response) {
   res.end("Hello World");
 });
 
-main.use(memberRouter);
+main.use(userRouter);
 
 const PORT = 8080;
 

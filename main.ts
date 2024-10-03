@@ -1,15 +1,12 @@
 import express , { Request, Response }from "express";
 import expressSession from "express-session";
 import dotenv from "dotenv";
-import { userRouter } from "./routes/userRouter";
-import { replicateAi } from "./routes/replicateAI";
-import Knex from "knex";
 
 dotenv.config();
-
-
+import { userRouter } from "./routes/userRouter";
 import { filter } from './routes/filterRoutes';
 import { productRoutes } from "./routes/productRoutes";
+import Knex from "knex";
 const knexConfigs = require("./knexfile");
 const configMode = process.env.NODE_ENV || "development";
 const knexConfig = knexConfigs[configMode];

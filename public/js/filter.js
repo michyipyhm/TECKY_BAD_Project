@@ -1,5 +1,4 @@
 const productTypeSelect = document.getElementById("productType");
-
 const decOrderBtn = document.querySelector("#price-dec");
 const ascOrderBtn = document.querySelector("#price-asc");
 
@@ -28,11 +27,7 @@ const handlePriceOrder = async (e) => {
       body[key] = value.toLowerCase();
     }
 
-   
-
     body = { ...body, ...priceOrder };
-
-    
 
     try {
       const res = await fetch("/filter", {
@@ -44,8 +39,7 @@ const handlePriceOrder = async (e) => {
       });
       const result = await res.json();
       
-
-      document.querySelector(`#products-container`).innerHTML = "";
+      document.querySelector(`#productDetails`).innerHTML = "";
       for (let i = 0; i < result.products.length; i++) {
         
         let imagePath = result.products[i].image_path;
@@ -96,7 +90,7 @@ window.onload = async () => {
     const result = await res.json();
 
     
-    document.querySelector(`#products-container`).innerHTML = "";
+    document.querySelector(`#productDetails`).innerHTML = "";
     for (let i = 0; i < result.length; i++) {
       
       let imagePath = result[i].image_path;
@@ -119,7 +113,7 @@ window.onload = async () => {
         quantityClass = "quantity-red";
       }
 
-      document.querySelector(`#products-container`).innerHTML += `
+      document.querySelector(`#productDetails`).innerHTML += `
         <div class="col">
           <div class="card" id="card1">
             <img src="${imagePath}" class="gallery-item" alt="gallery" />
@@ -145,7 +139,6 @@ handlePriceOrder();
 const handleSelectChange = async (e) => {
   e.preventDefault();
  
-
   let body = {};
 
   let clearArray = [
@@ -158,21 +151,16 @@ const handleSelectChange = async (e) => {
     (element) => element == e.target.name + "_area"
   );
   
-
   for (let i = currentPosition + 1; i < clearArray.length; i++) {
     
     clearContent(clearArray[i]);
   }
   const formData = new FormData(document.querySelector("#filterForm"));
   
-
   for (const [key, value] of formData) {
    
     body[key] = value.toLowerCase();
   }
-
-  
-
   
   const res = await fetch("/filter", {
     method: "POST",
@@ -182,10 +170,6 @@ const handleSelectChange = async (e) => {
     body: JSON.stringify(body),
   });
   const result = await res.json();
-
-  
-
-  
 
   let htmlName;
   let displayName;
@@ -235,8 +219,6 @@ const handleSelectChange = async (e) => {
     }
   }
 
-
-
   if (result.nextCriteria) {
     document.querySelector(`#${result.nextCriteria + "_area"}`).innerHTML = `
           <label for="${htmlName}">${displayName}:</label>
@@ -254,7 +236,7 @@ const handleSelectChange = async (e) => {
     }
   }
 
-  document.querySelector(`#products-container`).innerHTML = "";
+  document.querySelector(`#productDetails`).innerHTML = "";
   for (let i = 0; i < result.products.length; i++) {
     
     let imagePath = result.products[i].image_path;
@@ -278,7 +260,7 @@ const handleSelectChange = async (e) => {
       quantityClass = "quantity-red";
     }
 
-    document.querySelector(`#products-container`).innerHTML += `
+    document.querySelector(`#productDetails`).innerHTML += `
           <div class="col">
             <div class="card" id="card1">
               <img src="${imagePath}" class="gallery-item" alt="gallery" />

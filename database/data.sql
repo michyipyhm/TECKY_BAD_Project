@@ -3,14 +3,14 @@
 
 INSERT INTO category (category_name, category_type)
 VALUES
-(1,'phoneCase','ownBrand'),
-(2,'phoneCase','notOwnBrand'),
-(3,'lensProtector','cameraGuard'),
-(4,'lensProtector','lensGuard'),
-(5,'screenProtector','ar'),
-(6,'screenProtector','privacy'),
-(7,'screenProtector','antiBlue'),
-(8,'screenProtector','antiFingerprint');
+('phoneCase','ownBrand'),
+('phoneCase','notOwnBrand'),
+('lensProtector','cameraGuard'),
+('lensProtector','lensGuard'),
+('screenProtector','ar'),
+('screenProtector','privacy'),
+('screenProtector','antiBlue'),
+('screenProtector','antiFingerprint');
 
 INSERT INTO product (product_name, category_id, phone_type, color, product_price, product_quantity)
 VALUES

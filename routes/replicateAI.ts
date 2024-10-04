@@ -41,6 +41,8 @@ replicateAi.post("/replicateAI", async function (req: Request, res: Response) {
     console.error("Error running replicate:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
+
+  console.log("res.json = ", res.json());
 });
 
 

@@ -4,15 +4,16 @@ import dotenv from "dotenv";
 import { userRouter } from "./routes/userRouter";
 import { replicateAi } from "./routes/replicateAI";
 import Knex from "knex";
+import { filter } from './routes/filterRoutes';
+import { productRoutes } from "./routes/productRoutes";
 
 dotenv.config();
 
 
-import { filter } from './routes/filterRoutes';
-import { productRoutes } from "./routes/productRoutes";
 const knexConfigs = require("./knexfile");
 const configMode = process.env.NODE_ENV || "development";
 const knexConfig = knexConfigs[configMode];
+
 export const knex = Knex(knexConfig);　//knex instance
 
 const main = express();
@@ -26,6 +27,7 @@ main.use(
     saveUninitialized: true,
   })
 );
+
 
 declare module "express-session" {
   interface SessionData {
@@ -41,6 +43,7 @@ main.get("/", function (req: Request, res: Response) {
 });
 
 main.use(userRouter);
+main.use(replicateAi);
 
 const PORT = 8080;
 

@@ -8,6 +8,7 @@ export const userRouter = express.Router();
 userRouter.post("/register", registerNewMember);
 userRouter.post("/login", loginUser);
 userRouter.get("/userinfo", checkUserInfo);
+userRouter.post("/logout", logoutUser);
 
 async function registerNewMember(req: Request, res: Response) {
     const data = req.body;
@@ -66,12 +67,22 @@ async function loginUser(req: Request, res: Response) {
 }
 
 async function checkUserInfo(req: Request, res: Response) {
-const userId = req.session.userId
+    const userId = req.session.userId
     if (!userId) {
-      res.status(401).json({ message: "Please login first." });
-      return;
+        res.status(401).json({ message: "Please login first." });
+        return;
     }
-    const userResult =  await knex.select('*').from('members').where('id', userId)
+    const userResult = await knex.select('*').from('members').where('id', userId)
     const userInfo = userResult[0]
     res.json({ userInfo })
+}
+
+async function logoutUser(req: Request, res: Response) {
+    if (req.session.userId) {
+        req.session.destroy(() => {
+            res.json({ message: "Logout successful." })
+        })
+    } else {
+        res.json({ message: "Please login first." })
+    }
 }

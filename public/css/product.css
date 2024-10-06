@@ -37,9 +37,7 @@ body {
   margin: 0;
 }
 
-/* .navbar a:hover, .dropdown:hover .dropbtn { */
-  /* background-color: red; */
-/* } */
+
 
 .dropdown-content {
   display: none;
@@ -51,11 +49,7 @@ body {
   z-index: 1;
 }
 
-.dropdown-content .header {
-  background: red;
-  padding: 16px;
-  color: white;
-}
+
 
 .dropdown:hover .dropdown-content {
   display: block;
@@ -84,12 +78,13 @@ body {
   background-color: #ddd;
 }
 
-/* Clear floats after the columns */
+Clear floats after the columns
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
+
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
@@ -97,4 +92,46 @@ body {
     width: 100%;
     height: auto;
   }
+}
+
+
+
+.row3 {
+  position: absolute;
+  left: -9999px;
+}
+
+.row2 {
+  position: absolute;
+  left: -9999px;
+}
+
+.row4 {
+  position: absolute;
+  left: -9999px;
+}
+
+.column:hover .row2 {
+  display: block;
+  left: 0;
+}
+
+.column:hover .row3 {
+  display: block;
+  left: 0;
+}
+
+.column:hover .row4 {
+  display: block;
+  left: 0;
+}
+
+.model {
+  position: absolute;
+  left: -9999px;
+}
+
+.ownBrandbtn:hover .model{
+  display: block;
+  left: 0;
 }

@@ -6,6 +6,7 @@ import { replicateAi } from "./routes/replicateAI";
 import Knex from "knex";
 import { filter } from './routes/filterRoutes';
 import { productRoutes } from "./routes/productRoutes";
+import { shoppingCartRouter } from "./routes/shoppingCartRoute";
 
 dotenv.config();
 
@@ -44,6 +45,7 @@ main.get("/", function (req: Request, res: Response) {
 
 main.use(userRouter);
 main.use(replicateAi);
+main.use(shoppingCartRouter);
 
 const PORT = 8080;
 

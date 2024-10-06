@@ -1,4 +1,4 @@
-import express, { query, Request, response, Response } from "express";
+import express, { Request, Response } from "express";
 import Replicate from "replicate";
 import dotenv from "dotenv";
 

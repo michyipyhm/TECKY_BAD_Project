@@ -9,24 +9,24 @@ userRouter.post("/register", registerNewMember);
 userRouter.post("/login", loginUser);
 userRouter.get("/userinfo", checkUserInfo);
 userRouter.post("/logout", logoutUser);
+userRouter.post("/editProfile", editUserInfo);
 
 async function registerNewMember(req: Request, res: Response) {
-    const data = req.body;
-    console.log(data)
-    const username = data.username;
-    const password = data.password;
-    const phone = data.phone;
-    const address = data.address;
+    const data = req.body
+    const username = data.username
+    const password = data.password
+    const phone = data.phone
+    const address = data.address
     const email = data.email
     const nameResult = await knex.select('username').from('members').where('username', username)
     if (nameResult.length > 0) {
-        res.status(400).json({ message: "Username has been registered." });
-        return;
+        res.status(400).json({ message: "Username has been registered." })
+        return
     } else {
         const emailResult = await knex.select('email').from('members').where('email', email)
         if (emailResult.length > 0) {
-            res.status(400).json({ message: "Email has been registered." });
-            return;
+            res.status(400).json({ message: "Email has been registered." })
+            return
         }
     }
 
@@ -41,7 +41,7 @@ async function registerNewMember(req: Request, res: Response) {
         }
     ]).into('members').returning('id')
     req.session.userId = insertResult[0].id
-    res.json({ message: "Register successful" });
+    res.json({ message: "Register successful" })
 }
 
 async function loginUser(req: Request, res: Response) {
@@ -85,4 +85,18 @@ async function logoutUser(req: Request, res: Response) {
     } else {
         res.json({ message: "Please login first." })
     }
+}
+
+async function editUserInfo(req: Request, res: Response) {
+    const data = req.body;
+    const phone = data.phone;
+    const address = data.address;
+    const userId = req.session.userId
+    await knex('members')
+    .where('id', userId)
+    .update({
+        phone: phone,
+        address: address
+    })
+    res.json({ message: "Update successful" })
 }

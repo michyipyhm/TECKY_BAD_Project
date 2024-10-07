@@ -1,13 +1,23 @@
 window.onload = async () => {
-    await getUserProfile();
-    
+
+    const usernameLabel = document.querySelector("#usernameLabel")
+    const emailLabel = document.querySelector("#emailLabel")
+    const phoneLabel = document.getElementById('phoneLabel')
+    const addressLabel = document.getElementById('addressLabel')
+
+    await getUserProfile()
     async function getUserProfile() {
-        const res = await fetch("/userinfo");
-        const data = await res.json();
-        const userInfo = data.userInfo;
-        const userArea = document.querySelector('.userArea');
-        
+        const res = await fetch("/userinfo")
+        const data = await res.json()
+        const userInfo = data.userInfo
+        const userArea = document.querySelector('.userArea')
+
         if (res.ok && userInfo) {
+            usernameLabel.innerHTML = userInfo.username;
+            emailLabel.innerHTML = userInfo.email
+            phoneLabel.value = userInfo.phone
+            addressLabel.value = userInfo.address
+
             userArea.innerHTML = `
                 <div class="userInfo"><span class="userInfoFont">Welcome! ${userInfo.username}!</span></div>
                 <div class="settingBtn"><a href="/profile.html"><span class="userInfoFont">Profile</span></a></div>
@@ -18,7 +28,7 @@ window.onload = async () => {
                 logoutEle.addEventListener("click", async () => {
                     const res = await fetch("/logout", { method: "POST" });
                     if (res.ok) {
-                        window.location.reload();
+                        window.location.href = './index.html';
                     } else {
                         alert('Logout failed');
                     }
@@ -36,7 +46,7 @@ window.onload = async () => {
         const loginOverlay = document.getElementById('loginOverlay');
         const signUpCloseBtn = document.getElementById('signUpCloseBtn');
         const loginCloseBtn = document.getElementById('loginCloseBtn');
-        
+
         if (signupBtn) {
             signupBtn.onclick = function () {
                 signUpOverlay.style.display = 'flex';
@@ -115,4 +125,28 @@ window.onload = async () => {
         }
     }
 
-};
+    const saveEditBtn = document.querySelector("#saveEditBtn");
+    saveEditBtn.addEventListener('click', async function (e) {
+        e.preventDefault()
+
+        const formObject = {
+            phone: password,
+            address: nickname
+        }
+        const res = await fetch('/editProfile', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formObject),
+        }
+        )
+        const data = await res.json()
+        if (res.ok) {
+            alert("Updated")
+            window.location.href = "/profile.html";
+        } else {
+            alert(data.message, "Update Failed")
+        }
+    })
+}

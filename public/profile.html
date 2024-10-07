@@ -15,7 +15,7 @@
 
 <body>
     <div class="firstSection">
-        <div class="logoLocation"></div>
+        <div class="logoLocation"><a href="./index.html">LOGO位置(可回到主頁)</a></div>
         <div class="userArea">
             <button id="loginBtn" type="button" class="btn btn-outline-primary">Sign in</button>
             <div class="overlay" id="loginOverlay">
@@ -24,9 +24,9 @@
                     <h2>Login</h2>
                     <form id="loginForm">
                         <label for="email">Email:</label><br>
-                        <input type="email" id="email" required><br><br>
+                        <input type="email" id="loginEmail" required><br><br>
                         <label for="password">Password:</label><br>
-                        <input type="password" id="password" required><br><br>
+                        <input type="password" id="loginPassword" required><br><br>
                         <button type="submit">Submit</button>
                     </form>
                 </div>
@@ -51,40 +51,25 @@
     </div>
     <div class="secondSection">
         <div class="profile-container">
-            <h1 class="title">Profile Page</h1>
-            <div id="profile-form">
-                <div class="form-group">
-                    Username : <span id="usernameLabel">??</span>
-                </div>
-                <div class="form-group">
-                    Nickname :<span id="nicknameLabel">??</span>
-                </div>
-
-                <div class="form-group">Gender :<span id="genderLabel">??</span></div>
-                <div class="form-group">
-                    Birthday :<span id="birthdayLabel">??</span>
-                </div>
-                <div class="form-group">Phone :<span id="phoneLabel">??</span></div>
-                <div class="form-group">
-                    Address :<span id="addressLabel">??</span>
-                </div>
-                <div class="form-group">Email :<span id="emailLabel">??</span></div>
+            <h1 class="title">Profile</h1>
+            <div id="profileForm">
+                <span class="profileFont">Username</span><br><br>
+                <span id="usernameLabel">empty</span>
+                <br><br><br>
+                <span class="profileFont">Email</span><br><br>
+                <span id="emailLabel">empty</span>
+                <br><br><br>
+                <span class="profileFont">Phone</span><br><br>
+                <input type="phone" id="phoneLabel">
+                <br><br><br>
+                <span class="profileFont">Address</span><br><br>
+                <input type="text" id="addressLabel">
+                <br><br><br>
             </div>
-            <button type="button" id="updateBtn" class="updateBtn btn btn-1">
-                Update Your Profile
-            </button>
-            <button type="button" id="shoppingCartBtn" class="shoppingCartBtn btn btn-2">
-                Shopping Cart
-            </button>
-            <button type="button" id="orderRecordBtn" class="orderRecordBtn btn btn-1">
-                Order Record
-            </button>
-            <button type="button" id="logoutBtn" class="logoutBtn btn btn-2">
-                Logout
-            </button>
+            <button type="button" id="saveEditBtn" class="saveEditBtn btn btn-1">Save Edit</button>
         </div>
     </div>
-    <script src="./js/index.js"></script>
+    <script src="./js/profile.js"></script>
 </body>
 
 </html>

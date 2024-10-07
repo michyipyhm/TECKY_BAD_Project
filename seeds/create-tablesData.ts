@@ -71,7 +71,7 @@ export async function seed(knex: Knex): Promise<void> {
             id: 1,
             product_name: "2.5D ANTI-BLUE FILTERING HARMFUL LIGHT FOR HEALTHY EYES",
             category_id: 7,
-            product_price: 100,
+            product_price: 120,
             product_quantity: 100,
             custom_made:false
         },
@@ -79,7 +79,7 @@ export async function seed(knex: Knex): Promise<void> {
             id: 2,
             product_name: '2.5D ANTI-FINGERPRINT WITH NANO COATING FOR GAME PLAYER', 
             category_id: 8,
-            product_price: 100, 
+            product_price: 120, 
             product_quantity: 100,
             custom_made:false
         },
@@ -87,7 +87,7 @@ export async function seed(knex: Knex): Promise<void> {
             id: 3,
             product_name: '2.5D ANTI-REFLECTION FOR BETTER SCREEN CLARITY & COLOR VIBRANCY', 
             category_id: 5,
-            product_price: 100, 
+            product_price: 120, 
             product_quantity: 100,
             custom_made:false
         },
@@ -95,7 +95,7 @@ export async function seed(knex: Knex): Promise<void> {
             id: 4,
             product_name: '2.5D 360 ° PRIVACY PROTECTING SCREEN PRIVATE FROM ALL SIDES', 
             category_id: 6,
-            product_price: 100, 
+            product_price: 120, 
             product_quantity: 100,
             custom_made:false
         },
@@ -103,15 +103,15 @@ export async function seed(knex: Knex): Promise<void> {
             id: 5,
             product_name: 'AR LENS GUARD WITH 99% OPTIAL LIGHT TECHNOLOGY', 
             category_id: 4,
-            product_price: 100, 
-            product_quantity: 100,
+            product_price: 70, 
+            product_quantity: 1,
             custom_made:false
         },
         {
             id: 6,
             product_name: 'HD CAMERA GUARD FOR FULL COVERAGE', 
             category_id: 3,
-            product_price: 100, 
+            product_price: 80, 
             product_quantity: 100,
             custom_made:false
         },
@@ -119,7 +119,7 @@ export async function seed(knex: Knex): Promise<void> {
             id: 7,
             product_name: 'AR LENS GUARD WITH 99% OPTIAL LIGHT TECHNOLOGY', 
             category_id: 4,
-            product_price: 100, 
+            product_price: 80, 
             product_quantity: 100,
             custom_made:false
         },
@@ -127,7 +127,7 @@ export async function seed(knex: Knex): Promise<void> {
             id: 8,
             product_name: 'Flying Chess Case For Iphone16ProMax', 
             category_id: 1,
-            product_price: 100, 
+            product_price: 160, 
             product_quantity: 100,
             custom_made:false
         }

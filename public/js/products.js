@@ -1,5 +1,4 @@
 const productTypeSelect = document.getElementById("productType");
-
 const decOrderBtn = document.querySelector("#price-dec");
 const ascOrderBtn = document.querySelector("#price-asc");
 
@@ -17,38 +16,33 @@ const handlePriceOrder = async (e) => {
     };
     let body = {};
 
-    const formData = new FormData(document.querySelector("#filterForm"));
+    const formData = new FormData(document.querySelector("#productsForm"));
 
     let test = [...formData];
 
     let limit = test[0].length;
     
-
     for (const [key, value] of formData) {
-      
+     
       body[key] = value.toLowerCase();
     }
 
-    
-
     body = { ...body, ...priceOrder };
 
-    
-
     try {
-      const res = await fetch("/filter", {
-        method: "POST",
+      const res = await fetch("/products", {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(body),
       });
       const result = await res.json();
-      // console.log("result is", result);
+      
 
       document.querySelector(`#products-container`).innerHTML = "";
       for (let i = 0; i < result.products.length; i++) {
-        console.log("product is", result.products[i]);
+       
         let imagePath = result.products[i].image_path;
         let productId = result.products[i].product_id;
         let quantity = result.products[i].product_quantity;
@@ -89,16 +83,15 @@ const handlePriceOrder = async (e) => {
     }
   }
 };
-
 window.onload = async () => {
   try {
-    const res = await fetch("/getProduct");
+    const res = await fetch("/products");
     const result = await res.json();
 
-    console.log("result is", result);
+    
     document.querySelector(`#products-container`).innerHTML = "";
     for (let i = 0; i < result.length; i++) {
-      console.log("102 product is", result[i].product_name);
+      
       let imagePath = result[i].image_path;
       let productId = result[i].product_id;
       let quantity = result[i].product_quantity;
@@ -124,7 +117,7 @@ window.onload = async () => {
           <div class="card" id="card1">
             <img src="${imagePath}" class="gallery-item" alt="gallery" />
             <div class="card-body">
-              <div class="producy-idDiv">WSP012-<span class="product-id">${productId}</span>                
+              <div class="producy-idDiv"><span class="product-id">${quantity}</span>                
               &nbsp;<span class="quantity ${quantityClass}">${quantityText}</span>
               </div>
               <div class="product-name">${productName}</div>
@@ -137,55 +130,48 @@ window.onload = async () => {
   } catch (error) {
     console.error("Error fetching data");
   }
+  productTypeSelect.addEventListener("change", getAllProducts);
 };
 
 handlePriceOrder();
 
 const handleSelectChange = async (e) => {
   e.preventDefault();
-  // console.log("js 5 selected:", e.target.value, e.target.name + "_area");
-
+  
   let body = {};
 
   let clearArray = [
     "product_type_area",
-    "camera_type_area",
-    "is_used_area",
-    "format_name_area",
-    "iso_area",
-    "origin_country_area",
-    "brand_name_area",
+    "category_type_area",
+    "model_name_area",
+    "color_name_area",
+    
   ];
 
   let currentPosition = clearArray.findIndex(
     (element) => element == e.target.name + "_area"
   );
- 
-
+  
   for (let i = currentPosition + 1; i < clearArray.length; i++) {
-    
+   
     clearContent(clearArray[i]);
   }
-  const formData = new FormData(document.querySelector("#filterForm"));
+  const formData = new FormData(document.querySelector("#productsForm"));
   
+
   for (const [key, value] of formData) {
-   
+    
     body[key] = value.toLowerCase();
   }
 
-  
-
-  
-  const res = await fetch("/filter", {
-    method: "POST",
+  const res = await fetch("/products", {
+    method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(body),
   });
   const result = await res.json();
-
-  
 
   let htmlName;
   let displayName;
@@ -195,36 +181,25 @@ const handleSelectChange = async (e) => {
       htmlName = "productType";
       displayName = "Product Type";
       break;
-    case "format_name":
-      htmlName = "formatName";
-      displayName = "Format";
+    case "category_type":
+      htmlName = "categoryType";
+      displayName = "Category Type";
       break;
-    case "camera_type":
-      htmlName = "cameraType";
-      displayName = "Camera Type";
+    case "model_name":
+      htmlName = "modelName";
+      displayName = "Model";
       break;
-    case "is_used":
-      htmlName = "isUsed";
-      displayName = "New or Used";
+    case "color_name":
+      htmlName = "colorName";
+      displayName = "Color";
       break;
-    case "origin_country":
-      htmlName = "originCountry";
-      displayName = "Origin";
-      break;
-    case "brand_name":
-      htmlName = "brandName";
-      displayName = "Brand";
-      break;
-    case "iso":
-      htmlName = "iso";
-      displayName = "ISO";
-      break;
+   
   }
 
   let dynamicHTML = "";
-  console.log("Nextcrit result is", result.nextCriteria);
+  
   for (let option of result.nextOptions) {
-    // console.log("js61 option is", option);
+    
     if (
       option[`${result.nextCriteria}`] !== undefined &&
       option[`${result.nextCriteria}`] !== null
@@ -235,9 +210,6 @@ const handleSelectChange = async (e) => {
     }
   }
 
-  // console.log(displayName, "html", htmlName);
-  // console.log(dynamicHTML);
-
   if (result.nextCriteria) {
     document.querySelector(`#${result.nextCriteria + "_area"}`).innerHTML = `
           <label for="${htmlName}">${displayName}:</label>
@@ -247,7 +219,7 @@ const handleSelectChange = async (e) => {
             </select>`;
 
     const newSelect = document.querySelector(`#${htmlName}`);
-    // console.log("new select is", newSelect);
+   
     if (newSelect) {
       newSelect.addEventListener("change", handleSelectChange);
     } else {
@@ -257,7 +229,7 @@ const handleSelectChange = async (e) => {
 
   document.querySelector(`#products-container`).innerHTML = "";
   for (let i = 0; i < result.products.length; i++) {
-    // console.log("product is", result.products[i]);
+    
     let imagePath = result.products[i].image_path;
     let productId = result.products[i].product_id;
     let quantity = result.products[i].product_quantity;
@@ -283,7 +255,7 @@ const handleSelectChange = async (e) => {
             <div class="card" id="card1">
               <img src="${imagePath}" class="gallery-item" alt="gallery" />
               <div class="card-body">
-                <div class="producy-idDiv">WSP012-<span class="product-id">${productId}</span>
+                <div class="producy-idDiv">-<span class="product-id">${quantity}</span>
                 &nbsp;<span class="quantity ${quantityClass}">${quantityText}</span>
                 </div>
                 <div class="product-name">${productName}</div>
@@ -333,8 +305,20 @@ const handleSelectChange = async (e) => {
   });
 };
 
-productTypeSelect.addEventListener("change", handleSelectChange);
 
-function clearContent(target) {
-  document.querySelector(`#${target}`).innerHTML = "";
-}
+  
+
+
+const getAllProducts = async (e) => {
+  
+const body = { productType: productTypeSelect.value };
+  const res = await fetch("/products", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+
+};
+getAllProducts();

@@ -125,12 +125,109 @@ export async function seed(knex: Knex): Promise<void> {
         },
         {
             id: 8,
-            product_name: 'Flying Chess Case For Iphone16ProMax', 
+            product_name: 'Flying Chess Phone Case For Iphone16ProMax', 
             category_id: 1,
             product_price: 160, 
             product_quantity: 100,
             custom_made:false
-        }
+        },
+        {
+            id: 9,
+            product_name: 'Condom Phone Case For Iphone15ProMax', 
+            category_id: 1,
+            product_price: 160, 
+            product_quantity: 100,
+            custom_made:false
+        },
+        {
+            id: 10,
+            product_name: 'Condom Phone Case For Iphone15Pro', 
+            category_id: 1,
+            product_price: 160, 
+            product_quantity: 100,
+            custom_made:false
+        },
+        {
+            id: 11,
+            product_name: 'Cheers Phone Case For Iphone15Plue', 
+            category_id: 1,
+            product_price: 160, 
+            product_quantity: 100,
+            custom_made:false
+        },
+        {
+            id: 12,
+            product_name: 'Cheers Phone Case For Iphone15', 
+            category_id: 1,
+            product_price: 160, 
+            product_quantity: 100,
+            custom_made:false
+        },
+        {
+            id: 13,
+            product_name: 'Merry-Go-Meow Phone Case For Iphone16ProMax', 
+            category_id: 1,
+            product_price: 160, 
+            product_quantity: 100,
+            custom_made:false
+        },
+        {
+            id: 14,
+            product_name: 'Merry-Go-Meow Phone Case For Iphone16Pro', 
+            category_id: 1,
+            product_price: 160, 
+            product_quantity: 100,
+            custom_made:false
+        },
+        {
+            id: 15,
+            product_name: 'Merry-Go-Meow Phone Case For Iphone15ProMax', 
+            category_id: 1,
+            product_price: 160, 
+            product_quantity: 100,
+            custom_made:false
+        },
+        {
+            id: 16,
+            product_name: 'Merry-Go-Meow Phone Case For Iphone15Pro', 
+            category_id: 1,
+            product_price: 160, 
+            product_quantity: 100,
+            custom_made:false
+        },
+        {
+            id: 17,
+            product_name: 'Merry-Go-Meow Phone Case For Iphone14ProMax', 
+            category_id: 1,
+            product_price: 160, 
+            product_quantity: 100,
+            custom_made:false
+        },
+        {
+            id: 18,
+            product_name: 'Merry-Go-Meow Phone Case For Iphone14Pro', 
+            category_id: 1,
+            product_price: 160, 
+            product_quantity: 100,
+            custom_made:false
+        },
+        {
+            id: 19,
+            product_name: 'Hai Lou Phone Case For Iphone16ProMax', 
+            category_id: 1,
+            product_price: 160, 
+            product_quantity: 100,
+            custom_made:false
+        },
+        {
+            id: 20,
+            product_name: 'Hai Lou Phone Case For Iphone16Pro', 
+            category_id: 1,
+            product_price: 160, 
+            product_quantity: 100,
+            custom_made:false
+        },
+
 
     ]);
 
@@ -140,8 +237,21 @@ export async function seed(knex: Knex): Promise<void> {
         {id: 3, model_id: 5, color_id: 9, products_id: 2},
         {id: 4, model_id: 8, color_id: 9, products_id: 4},
         {id: 5, model_id: 6, color_id: 9, products_id: 3},
-        {id: 6, model_id: 10, color_id: 6, products_id: 5},
-        {id: 7, model_id: 2, color_id: 4, products_id: 7}
+        {id: 6, model_id: 10, color_id: 9, products_id: 5},
+        {id: 7, model_id: 2, color_id: 4, products_id: 7},
+        {id: 8, model_id: 3, color_id: 5, products_id: 6},
+        {id: 9, model_id: 5, color_id: 9, products_id: 9},
+        {id: 10, model_id: 6, color_id: 9, products_id: 10},
+        {id: 11, model_id: 1, color_id: 9, products_id: 11},
+        {id: 12, model_id: 2, color_id: 9, products_id: 12},
+        {id: 13, model_id: 1, color_id: 9, products_id: 13},
+        {id: 14, model_id: 2, color_id: 9, products_id: 14},
+        {id: 15, model_id: 5, color_id: 9, products_id: 15},    
+        {id: 16, model_id: 6, color_id: 9, products_id: 16},
+        {id: 17, model_id: 9, color_id: 9, products_id: 17},
+        {id: 18, model_id: 10, color_id: 9, products_id: 18},   
+        {id: 19, model_id: 1, color_id: 9, products_id: 19},
+        {id: 20, model_id: 2, color_id: 9, products_id: 20},
     ]);
 
     await knex("product_image").insert([
@@ -152,7 +262,19 @@ export async function seed(knex: Knex): Promise<void> {
         { id:5, product_id: 5, image_path: "/photos/products/cameraIphonePro1.jpg" },
         { id:6, product_id: 6, image_path: "/photos/products/cameraIphonePro7.jpg" },
         { id:7, product_id: 7, image_path: "/photos/products/cameraIphone1.jpg" },
-        { id:8, product_id: 8, image_path: "/photos/products/case13To15_1.jpg" }
+        { id:8, product_id: 8, image_path: "/photos/products/case13To15_1.jpg" },
+        { id:9, product_id: 9, image_path: "/photos/products/case15_3.jpg" },
+        { id:10, product_id: 10, image_path: "/photos/products/case15_3.jpg" },
+        { id:11, product_id: 11, image_path: "/photos/products/case13To16_3.jpg" },
+        { id:12, product_id: 12, image_path: "/photos/products/case13To16_3.jpg" },
+        { id:13, product_id: 13, image_path: "/photos/products/case14To16_1.jpg" },
+        { id:14, product_id: 14, image_path: "/photos/products/case14To16_1.jpg" },
+        { id:15, product_id: 15, image_path: "/photos/products/case14To16_1.jpg" },
+        { id:16, product_id: 16, image_path: "/photos/products/case14To16_1.jpg" },
+        { id:17, product_id: 17, image_path: "/photos/products/case14To16_1.jpg" },
+        { id:18, product_id: 18, image_path: "/photos/products/case14To16_1.jpg" },
+        { id:19, product_id: 19, image_path: "/photos/products/case13To16_2.jpg" },
+        { id:20, product_id: 20, image_path: "/photos/products/case13To16_2.jpg" },
     ]);
 
     await knex("orders").insert([

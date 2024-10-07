@@ -31,6 +31,7 @@ main.use(express.urlencoded({ extended: true }));
 main.use(express.json());
 
 main.use(express.static("public"));
+main.use("/photos", express.static("photos"));
 
 main.get("/", function (req: Request, res: Response) {
   res.end("Hello World");

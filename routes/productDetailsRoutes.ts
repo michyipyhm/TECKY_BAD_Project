@@ -1,12 +1,11 @@
 import express, { Request, Response } from "express";
-// import formidable from "formidable";
 import { knex } from "../main";
-// import { createTypeReferenceDirectiveResolutionCache } from "typescript";
+
 export const productDetailsRoutes = express.Router();
-productDetailsRoutes.post("/productDetails", productdetails);
+productDetailsRoutes.get("/product/details/:product_id", productdetails);
 
 async function productdetails(req: Request, res: Response) {
- 
+  const product_id = req.params.product_id;
   try {
     
     const product_info_result = await knex
@@ -20,7 +19,6 @@ async function productdetails(req: Request, res: Response) {
         "products.product_price",
         "products.product_quantity",
         "products.id as product_id"
-     
       )
       .from("product_option As po")
       .join("products", "products.id", "po.products_id")
@@ -28,7 +26,7 @@ async function productdetails(req: Request, res: Response) {
       .join("model", "model.id", "po.model_id")
       .join("category", "category.id", "category_id")
       .join("product_image", "products.id", "product_image.product_id")
-      .where("products.id", req.body.product_id)
+      .where("products.id", product_id)
     
     res.json(
       product_info_result.map((row: any) => ({
@@ -36,10 +34,11 @@ async function productdetails(req: Request, res: Response) {
         product_name: row.product_name,
         product_price: row.product_price,
         image_path: row.image_path,
-        product_id: row.product_id,
+        product_id: product_id,
         product_quantity: row.product_quantity,
       }))
     );
+    // res.json({ product_id });
   } catch (error) {
     res.status(500).json({
       message: "An error occurred while retrieving the product information.",

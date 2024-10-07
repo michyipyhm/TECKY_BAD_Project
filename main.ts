@@ -43,5 +43,7 @@ main.use(productDetailsRoutes);
 const PORT = 8080;
 
 main.listen(PORT, () => {
-  console.log(`Listening at http://project.michaelyip.info`);
+  // console.log(`Listening at http://project.michaelyip.info`);
+  console.log(`Listening at ${PORT}`);
+
 });

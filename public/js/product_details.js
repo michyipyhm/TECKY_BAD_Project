@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', async () => {
               <div class="price"><span class="priceFont">Price: $${products.product_price}<span>
               </div>
               <div class="pickUp">
-                  <div calss="pickUpLocation">Pickup available at Kowloon Bay Tecky Academy
+                  <div calss="pickUpLocation">Pickup available at 
                   </div>
-                  <div class="pickUpTime">Usually ready in 2-4 days
+                  <div class="pickUpTime">Usually ready in 2 days
                   </div>
               </div>
               <div class="addToCart">

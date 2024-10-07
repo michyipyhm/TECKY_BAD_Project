@@ -17,7 +17,7 @@ replicateAi.post("/replicateAI", async function (req: Request, res: Response) {
 
     const prompt = " image of " + req.body.prompt + " and a vibrant artistic graffiti background on an iphone 14 case and a plain background" || "a photo of vibrant artistic graffiti about giraffe on a iphone 15 case with plain background";
     
-    console.log("final prompt: ", prompt);
+    // console.log("final prompt: ", prompt);
 
     const input = {
       prompt: prompt,

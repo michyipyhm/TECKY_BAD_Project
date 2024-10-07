@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import { userRouter } from "./routes/userRouter";
 import Knex from "knex";
 import { replicateAi } from "./routes/replicateAI";
-import { productsRoutes } from './routes/productsRoutes';
+import { productsRoutes } from './routes/productsFilterRoutes';
 import { productDetailsRoutes } from "./routes/productDetailsRoutes";
 import { shoppingCartRouter } from "./routes/shoppingCartRoute";
 

@@ -6,7 +6,7 @@ export async function up(knex: Knex){
         table.increments()
         table.string('username').unique().notNullable(); //string = varchar(256)
         table.string('password').notNullable();
-        table.string('phone').unique();
+        table.string('phone');
         table.string('address');
         table.string('email').unique();
         table.boolean('admin').defaultTo(false);

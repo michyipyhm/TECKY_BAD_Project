@@ -325,7 +325,10 @@ export async function seed(knex: Knex): Promise<void> {
     await knex("shopping_cart").insert([
         { id:1, product_option_id: 1, member_id: 1, quantity: 2 },
         { id:2, product_option_id: 2, member_id: 2, quantity: 3 },
-        { id:3, product_option_id: 3, member_id: 3, quantity: 3 }
+        { id:3, product_option_id: 3, member_id: 3, quantity: 3 },
+        { id:4, product_option_id: 6, member_id: 2, quantity: 3 },
+        { id:5, product_option_id: 7, member_id: 2, quantity: 3 },
+
     ]);
 
 };

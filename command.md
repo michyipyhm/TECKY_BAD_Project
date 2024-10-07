@@ -21,3 +21,6 @@
 
 ## install replicate AI for generating picture
 `yarn add replicate`
+
+## permission denied for schema public
+`GRANT ALL PRIVILEGES ON SCHEMA public TO`

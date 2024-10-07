@@ -130,9 +130,10 @@ window.onload = async () => {
         e.preventDefault()
 
         const formObject = {
-            phone: password,
-            address: nickname
+            phone: phoneLabel.value,
+            address: addressLabel.value
         }
+        console.log(formObject)
         const res = await fetch('/editProfile', {
             method: 'POST',
             headers: {

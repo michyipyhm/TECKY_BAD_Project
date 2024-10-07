@@ -61,9 +61,9 @@ export async function seed(knex: Knex): Promise<void> {
     ]);
 
     await knex("members").insert([
-        { id:1, username: "admin", password: "111111", phone: "98765432", address: "tuen mun ", email: "admin@gmail.com" , admin: true },
-        { id:2, username: "kees", password: "111111", phone: "98765452", address: "tuen mun", email: "kees@gmail.com" , admin: false },
-        { id:3, username: "victor", password: "111111", phone: "98765472", address: "tuen mun", email: "victor@gmail.com" , admin: false }
+        { id:1, username: "admin", password: "123123", phone: "97776888", address: "tuen mun ", email: "admin@gmail.com" , admin: true },
+        { id:2, username: "kees", password: "123123", phone: "98887666", address: "tuen mun", email: "kees@gmail.com" , admin: false },
+        { id:3, username: "victor", password: "123123", phone: "96668777", address: "tuen mun", email: "victor@gmail.com" , admin: false }
     ]);
 
     await knex("products").insert([

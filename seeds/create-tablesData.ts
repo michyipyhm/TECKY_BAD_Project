@@ -8,12 +8,47 @@ export async function seed(knex: Knex): Promise<void> {
     await knex("transaction").del();
     await knex("orders").del();
     await knex("product_image").del();
+    await knex("product_option").del();
     await knex("products").del();
     await knex("members").del();
     await knex("category").del();
+    await knex("color").del();
+    await knex("model").del();
     
 
     // Inserts seed entries
+
+    await knex("model").insert([
+        {id: 1, name:"Iphone 16 ProMax"},
+        {id: 2, name:"Iphone 16 Pro"},
+        {id: 3, name:"Iphone 16 Plus"},
+        {id: 4, name:"Iphone 16"},
+        {id: 5, name:"Iphone 15 ProMax"},
+        {id: 6, name:"Iphone 15 Pro"},
+        {id: 7, name:"Iphone 15 Plus"},
+        {id: 8, name:"Iphone 15"},
+        {id: 9, name:"Iphone 14 ProMax"},
+        {id: 10, name:"Iphone 14 Pro"},
+        {id: 11, name:"Iphone 14 Plus"},
+        {id: 12, name:"Iphone 14"},
+        {id: 13, name:"Iphone 13 ProMax"},
+        {id: 14, name:"Iphone 13 Pro"},
+        {id: 15, name:"Iphone 13 Plus"},
+        {id: 16, name:"Iphone 13"}
+    ]);
+
+    await knex("color").insert([
+       {id: 1, name: "Desert Titanium"},
+       {id: 2, name: "Natural Titanium"},
+       {id: 3, name: "White Titanium"},
+       {id: 4, name: "Black Titanium"},
+       {id: 5, name: "Black"},
+       {id: 6, name: "White "},
+       {id: 7, name: "Pink "},
+       {id: 8, name: "Teal "},
+       {id: 9, name:"null"}
+    ]);
+
     await knex("category").insert([
         { id: 1, category_name: 'phoneCase', category_type: "ownBrand" },
         { id: 2, category_name: 'phoneCase', category_type: "notOwnBrand" },
@@ -36,75 +71,77 @@ export async function seed(knex: Knex): Promise<void> {
             id: 1,
             product_name: "2.5D ANTI-BLUE FILTERING HARMFUL LIGHT FOR HEALTHY EYES",
             category_id: 7,
-            phone_type: "iPhone16ProMax",
-            color: "",
             product_price: 100,
-            product_quantity: 100
+            product_quantity: 100,
+            custom_made:false
         },
         {
             id: 2,
             product_name: '2.5D ANTI-FINGERPRINT WITH NANO COATING FOR GAME PLAYER', 
             category_id: 8,
-            phone_type: "iPhone16ProMax", 
-            color: "",
             product_price: 100, 
-            product_quantity: 100
+            product_quantity: 100,
+            custom_made:false
         },
         {
             id: 3,
             product_name: '2.5D ANTI-REFLECTION FOR BETTER SCREEN CLARITY & COLOR VIBRANCY', 
             category_id: 5,
-            phone_type: "iPhone16ProMax", 
-            color: "",
             product_price: 100, 
-            product_quantity: 100
+            product_quantity: 100,
+            custom_made:false
         },
         {
             id: 4,
             product_name: '2.5D 360 ° PRIVACY PROTECTING SCREEN PRIVATE FROM ALL SIDES', 
             category_id: 6,
-            phone_type: "iPhone16ProMax", 
-            color: "",
             product_price: 100, 
-            product_quantity: 100
+            product_quantity: 100,
+            custom_made:false
         },
         {
             id: 5,
             product_name: 'AR LENS GUARD WITH 99% OPTIAL LIGHT TECHNOLOGY', 
             category_id: 4,
-            phone_type: "iPhone16ProMax", 
-            color: "blackTitanium",
             product_price: 100, 
-            product_quantity: 100
+            product_quantity: 100,
+            custom_made:false
         },
         {
             id: 6,
             product_name: 'HD CAMERA GUARD FOR FULL COVERAGE', 
             category_id: 3,
-            phone_type: "iPhone16ProMax", 
-            color: "",
             product_price: 100, 
-            product_quantity: 100
+            product_quantity: 100,
+            custom_made:false
         },
         {
             id: 7,
             product_name: 'AR LENS GUARD WITH 99% OPTIAL LIGHT TECHNOLOGY', 
             category_id: 4,
-            phone_type: "iPhone16", 
-            color: "black",
             product_price: 100, 
-            product_quantity: 100
+            product_quantity: 100,
+            custom_made:false
         },
         {
             id: 8,
             product_name: 'Flying Chess Case For Iphone16ProMax', 
             category_id: 1,
-            phone_type: "iPhone16ProMax", 
-            color: "",
             product_price: 100, 
-            product_quantity: 100
+            product_quantity: 100,
+            custom_made:false
         }
 
+    ]);
+
+    await knex("product_option").insert([
+        {id: 1, model_id: 1, color_id: 9 , products_id: 1},
+        {id: 2, model_id: 4, color_id: 9, products_id: 8},
+        {id: 3, model_id: 5, color_id: 9, products_id: 2},
+        {id: 4, model_id: 8, color_id: 9, products_id: 4},
+        {id: 5, model_id: 6, color_id: 9, products_id: 3},
+        {id: 6, model_id: 10, color_id: 6, products_id: 5},
+        {id: 7, model_id: 2, color_id: 4, products_id: 7}
     ]);
 
     await knex("product_image").insert([
@@ -164,9 +201,9 @@ export async function seed(knex: Knex): Promise<void> {
     ]);
     
     await knex("shopping_cart").insert([
-        { id:1, product_id: 1, member_id: 1, quantity: 2 },
-        { id:2, product_id: 2, member_id: 2, quantity: 3 },
-        { id:3, product_id: 3, member_id: 3, quantity: 3 }
+        { id:1, product_option_id: 1, member_id: 1, quantity: 2 },
+        { id:2, product_option_id: 2, member_id: 2, quantity: 3 },
+        { id:3, product_option_id: 3, member_id: 3, quantity: 3 }
     ]);
 
 };

@@ -11,6 +11,15 @@ userRouter.get("/userinfo", checkUserInfo);
 userRouter.post("/logout", logoutUser);
 userRouter.post("/editProfile", editUserInfo);
 
+import 'express-session';
+
+declare module 'express-session' {
+    interface SessionData {
+        userId: string; 
+    }
+}
+
+
 async function registerNewMember(req: Request, res: Response) {
     const data = req.body
     const username = data.username

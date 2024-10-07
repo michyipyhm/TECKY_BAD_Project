@@ -1,6 +1,7 @@
 {
-  "name": "TECKY_BAD_Project",
+  "name": "tecky_bad_project",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "ts-node main.ts",
@@ -17,22 +18,22 @@
     "@types/formidable": "2",
     "@types/jest": "^29.5.13",
     "@types/node": "^22.7.4",
-    "bcryptjs": "^2.4.3",
-    "express": "^4.21.0",
-    "express-session": "^1.18.0",
-    "formidable": "2",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.2",
+    "@types/jsonfile": "^6.1.4",
+    "@types/pg": "^8.11.10"
   },
   "dependencies": {
-    "@types/jsonfile": "^6.1.4",
-    "@types/pg": "^8.11.10",
     "dotenv": "^16.4.5",
     "jsonfile": "^6.1.0",
     "knex": "^3.1.0",
     "pg": "^8.13.0",
-    "replicate": "^0.34.1"
+    "replicate": "^0.34.1",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "formidable": "2"
   }
 }

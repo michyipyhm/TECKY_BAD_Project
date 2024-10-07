@@ -3,9 +3,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   const productId = urlParams.get('products');
   const res = await fetch(`/products?products=${productId}`)
 
+
+
   const result = await res.json()
   const product = result.data
-  
+  console.log(product)
   const productDetails = document.getElementById('productDetails');
   const productDiv = document.createElement('div');
   productDiv.className = 'product';

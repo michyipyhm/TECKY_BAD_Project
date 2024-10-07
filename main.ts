@@ -2,12 +2,10 @@ import express, { Request, Response } from "express";
 import expressSession from "express-session";
 import dotenv from "dotenv";
 import { userRouter } from "./routes/userRouter";
-// import { filter } from "./routes/filterRoutes";
-// import { productRoutes } from "./routes/productRoutes";
 import Knex from "knex";
 import { replicateAi } from "./routes/replicateAI";
-import { filter } from './routes/filterRoutes';
-import { productRoutes } from "./routes/productRoutes";
+import { productsRoutes } from './routes/productsRoutes';
+import { productDetailsRoutes } from "./routes/productDetailsRoutes";
 import { shoppingCartRouter } from "./routes/shoppingCartRoute";
 
 dotenv.config();
@@ -40,10 +38,15 @@ main.get("/", function (req: Request, res: Response) {
 
 main.use(userRouter);
 main.use(replicateAi);
+main.use(productsRoutes);
+main.use(productDetailsRoutes);
 main.use(shoppingCartRouter);
+
 
 const PORT = 8080;
 
 main.listen(PORT, () => {
-  console.log(`Listening at http://project.michaelyip.info`);
+  // console.log(`Listening at http://project.michaelyip.info`);
+  console.log(`Listening at ${PORT}`);
+
 });

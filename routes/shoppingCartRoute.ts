@@ -1,25 +1,32 @@
 import express, { Request, Response, Router } from "express";
 import { knex } from "../main";
 
-export const shoppingCartRouter = express();
+export const shoppingCartRouter = express.Router();
 
 shoppingCartRouter.get("/shoppingcart", getAllItems);
 
 async function getAllItems(req: Request, res: Response) {
-  const userId = req.session.userId;
-  if (!userId) {
-    res.status(401).json();
-    return;
-  }
+  // const userId = req.session.userId;
+  // if (!userId) {
+  //   res.status(401).json();
+  //   console.log('session id error')
+  //   return;
+  // }
 
   try {
-    let queryResult = await knex("products")
-      .join("category", "products.category_id", "=", "category.products.category_id")
-      .join("product_option", "products.product_id", "=", "Product_option.products_id")
-      .join("table2", "products.id", "=", "table2.table1_id")
-      .join("table2", "products.id", "=", "table2.table1_id")
-      .join("table2", "products.id", "=", "table2.table1_id")
-      .select("*");
+    let queryResult = await knex
+      .select("*")
+      .from("shopping_cart sc")
+      .join("products", "products.id", "=", "sc.product_id")
+      .join("product_image", "product_image.id", "=", "sc.product_image_id")
+      .join("product_option", "products.id", "=", "product_option.products_id")
+      // .where("sc.member_id", userId);
+
+      let data = queryResult.map
+      console.log(data)
+
+     
+    
   } catch (err) {
     console.error(err);
     res.status(500).send("Error fetching shopping cart");

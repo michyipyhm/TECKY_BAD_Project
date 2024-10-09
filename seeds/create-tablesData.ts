@@ -72,7 +72,6 @@ export async function seed(knex: Knex): Promise<void> {
             product_name: "2.5D ANTI-BLUE FILTERING HARMFUL LIGHT FOR HEALTHY EYES",
             category_id: 7,
             product_price: 120,
-            product_quantity: 100,
             custom_made:false
         },
         {
@@ -80,7 +79,6 @@ export async function seed(knex: Knex): Promise<void> {
             product_name: '2.5D ANTI-FINGERPRINT WITH NANO COATING FOR GAME PLAYER', 
             category_id: 8,
             product_price: 120, 
-            product_quantity: 100,
             custom_made:false
         },
         {
@@ -88,7 +86,6 @@ export async function seed(knex: Knex): Promise<void> {
             product_name: '2.5D ANTI-REFLECTION FOR BETTER SCREEN CLARITY & COLOR VIBRANCY', 
             category_id: 5,
             product_price: 120, 
-            product_quantity: 100,
             custom_made:false
         },
         {
@@ -96,7 +93,6 @@ export async function seed(knex: Knex): Promise<void> {
             product_name: '2.5D 360 ° PRIVACY PROTECTING SCREEN PRIVATE FROM ALL SIDES', 
             category_id: 6,
             product_price: 120, 
-            product_quantity: 100,
             custom_made:false
         },
         {
@@ -104,7 +100,6 @@ export async function seed(knex: Knex): Promise<void> {
             product_name: 'AR LENS GUARD WITH 99% OPTIAL LIGHT TECHNOLOGY', 
             category_id: 4,
             product_price: 70, 
-            product_quantity: 1,
             custom_made:false
         },
         {
@@ -112,7 +107,6 @@ export async function seed(knex: Knex): Promise<void> {
             product_name: 'HD CAMERA GUARD FOR FULL COVERAGE', 
             category_id: 3,
             product_price: 80, 
-            product_quantity: 100,
             custom_made:false
         },
         {
@@ -120,138 +114,94 @@ export async function seed(knex: Knex): Promise<void> {
             product_name: 'AR LENS GUARD WITH 99% OPTIAL LIGHT TECHNOLOGY', 
             category_id: 4,
             product_price: 80, 
-            product_quantity: 100,
             custom_made:false
         },
         {
             id: 8,
-            product_name: 'Flying Chess Phone Case For Iphone16ProMax', 
+            product_name: 'Flying Chess Phone Case ', 
             category_id: 1,
             product_price: 160, 
-            product_quantity: 100,
             custom_made:false
         },
         {
             id: 9,
-            product_name: 'Condom Phone Case For Iphone15ProMax', 
+            product_name: 'Condom Phone Case ', 
             category_id: 1,
             product_price: 160, 
-            product_quantity: 100,
             custom_made:false
         },
         {
             id: 10,
-            product_name: 'Condom Phone Case For Iphone15Pro', 
+            product_name: 'Cheers Phone Case ', 
             category_id: 1,
             product_price: 160, 
-            product_quantity: 100,
             custom_made:false
         },
         {
             id: 11,
-            product_name: 'Cheers Phone Case For Iphone15Plue', 
+            product_name: 'Merry-Go-Meow Phone Case ', 
             category_id: 1,
             product_price: 160, 
-            product_quantity: 100,
             custom_made:false
         },
         {
             id: 12,
-            product_name: 'Cheers Phone Case For Iphone15', 
+            product_name: 'Hai Lou Phone Case ', 
             category_id: 1,
             product_price: 160, 
-            product_quantity: 100,
             custom_made:false
         },
         {
             id: 13,
-            product_name: 'Merry-Go-Meow Phone Case For Iphone16ProMax', 
+            product_name: 'Condom/2 Phone Case ', 
             category_id: 1,
             product_price: 160, 
-            product_quantity: 100,
             custom_made:false
         },
         {
             id: 14,
-            product_name: 'Merry-Go-Meow Phone Case For Iphone16Pro', 
+            product_name: 'Condom/3 Phone Case ', 
             category_id: 1,
             product_price: 160, 
-            product_quantity: 100,
             custom_made:false
         },
         {
             id: 15,
-            product_name: 'Merry-Go-Meow Phone Case For Iphone15ProMax', 
+            product_name: 'Cat Nation Phone Case ', 
             category_id: 1,
             product_price: 160, 
-            product_quantity: 100,
             custom_made:false
         },
         {
             id: 16,
-            product_name: 'Merry-Go-Meow Phone Case For Iphone15Pro', 
+            product_name: 'Egg Puffs Phone Case ', 
             category_id: 1,
             product_price: 160, 
-            product_quantity: 100,
             custom_made:false
         },
-        {
-            id: 17,
-            product_name: 'Merry-Go-Meow Phone Case For Iphone14ProMax', 
-            category_id: 1,
-            product_price: 160, 
-            product_quantity: 100,
-            custom_made:false
-        },
-        {
-            id: 18,
-            product_name: 'Merry-Go-Meow Phone Case For Iphone14Pro', 
-            category_id: 1,
-            product_price: 160, 
-            product_quantity: 100,
-            custom_made:false
-        },
-        {
-            id: 19,
-            product_name: 'Hai Lou Phone Case For Iphone16ProMax', 
-            category_id: 1,
-            product_price: 160, 
-            product_quantity: 100,
-            custom_made:false
-        },
-        {
-            id: 20,
-            product_name: 'Hai Lou Phone Case For Iphone16Pro', 
-            category_id: 1,
-            product_price: 160, 
-            product_quantity: 100,
-            custom_made:false
-        },
-
+       
 
     ]);
 
     await knex("product_option").insert([
-        {id: 1, model_id: 1, color_id: 9 , products_id: 1},
-        {id: 2, model_id: 4, color_id: 9, products_id: 8},
-        {id: 3, model_id: 5, color_id: 9, products_id: 2},
-        {id: 4, model_id: 8, color_id: 9, products_id: 4},
-        {id: 5, model_id: 6, color_id: 9, products_id: 3},
-        {id: 6, model_id: 10, color_id: 9, products_id: 5},
-        {id: 7, model_id: 2, color_id: 4, products_id: 7},
-        {id: 8, model_id: 3, color_id: 5, products_id: 6},
-        {id: 9, model_id: 5, color_id: 9, products_id: 9},
-        {id: 10, model_id: 6, color_id: 9, products_id: 10},
-        {id: 11, model_id: 1, color_id: 9, products_id: 11},
-        {id: 12, model_id: 2, color_id: 9, products_id: 12},
-        {id: 13, model_id: 1, color_id: 9, products_id: 13},
-        {id: 14, model_id: 2, color_id: 9, products_id: 14},
-        {id: 15, model_id: 5, color_id: 9, products_id: 15},    
-        {id: 16, model_id: 6, color_id: 9, products_id: 16},
-        {id: 17, model_id: 9, color_id: 9, products_id: 17},
-        {id: 18, model_id: 10, color_id: 9, products_id: 18},   
-        {id: 19, model_id: 1, color_id: 9, products_id: 19},
-        {id: 20, model_id: 2, color_id: 9, products_id: 20},
+        {id: 1, model_id: 4, color_id: 9, products_id: 1, product_quantity: 100},
+        {id: 2, model_id: 5, color_id: 9, products_id: 8, product_quantity: 100},
+        {id: 3, model_id: 4, color_id: 9, products_id: 2, product_quantity: 100},
+        {id: 4, model_id: 4, color_id: 9, products_id: 4, product_quantity: 100},
+        {id: 5, model_id: 4, color_id: 9, products_id: 3, product_quantity: 100},
+        {id: 6, model_id: 10, color_id: 4, products_id: 5, product_quantity: 100},
+        {id: 7, model_id: 2, color_id: 2, products_id: 7, product_quantity: 100},
+        {id: 8, model_id: 3, color_id: 1, products_id: 6, product_quantity: 100},
+        {id: 9, model_id: 5, color_id: 9, products_id: 9, product_quantity: 100},
+        {id: 10, model_id: 1, color_id: 9, products_id: 10, product_quantity: 100},
+        {id: 11, model_id: 1, color_id: 9, products_id: 11, product_quantity: 100},
+        {id: 12, model_id: 1, color_id: 9, products_id: 12, product_quantity: 100},
+        {id: 13, model_id: 1, color_id: 9, products_id: 13, product_quantity: 100},
+        {id: 14, model_id: 1, color_id: 9, products_id: 14, product_quantity: 100},
+        {id: 15, model_id: 1, color_id: 9, products_id: 15, product_quantity: 100},
+        {id: 16, model_id: 1, color_id: 9, products_id: 16, product_quantity: 100},
+    
+
     ]);
 
     await knex("product_image").insert([
@@ -261,20 +211,17 @@ export async function seed(knex: Knex): Promise<void> {
         { id:4, product_id: 4, image_path: "/photos/products/privacy_16.jpg" },
         { id:5, product_id: 5, image_path: "/photos/products/cameraIphonePro1.jpg" },
         { id:6, product_id: 6, image_path: "/photos/products/cameraIphonePro7.jpg" },
-        { id:7, product_id: 7, image_path: "/photos/products/cameraIphone1.jpg" },
+        { id:7, product_id: 7, image_path: "/photos/products/cameraIphonePro2.jpg" },
         { id:8, product_id: 8, image_path: "/photos/products/case13To15_1.jpg" },
         { id:9, product_id: 9, image_path: "/photos/products/case15_3.jpg" },
-        { id:10, product_id: 10, image_path: "/photos/products/case15_3.jpg" },
-        { id:11, product_id: 11, image_path: "/photos/products/case13To16_3.jpg" },
-        { id:12, product_id: 12, image_path: "/photos/products/case13To16_3.jpg" },
-        { id:13, product_id: 13, image_path: "/photos/products/case14To16_1.jpg" },
-        { id:14, product_id: 14, image_path: "/photos/products/case14To16_1.jpg" },
-        { id:15, product_id: 15, image_path: "/photos/products/case14To16_1.jpg" },
-        { id:16, product_id: 16, image_path: "/photos/products/case14To16_1.jpg" },
-        { id:17, product_id: 17, image_path: "/photos/products/case14To16_1.jpg" },
-        { id:18, product_id: 18, image_path: "/photos/products/case14To16_1.jpg" },
-        { id:19, product_id: 19, image_path: "/photos/products/case13To16_2.jpg" },
-        { id:20, product_id: 20, image_path: "/photos/products/case13To16_2.jpg" },
+        { id:10, product_id: 10, image_path: "/photos/products/case13To16_3.jpg" },
+        { id:11, product_id: 11, image_path: "/photos/products/case14To16_1.jpg" },
+        { id:12, product_id: 12, image_path: "/photos/products/case13To16_2.jpg" },
+        { id:13, product_id: 13, image_path: "/photos/products/case15_2.jpg" },
+        { id:14, product_id: 14, image_path: "/photos/products/case15_1.jpg" },
+        { id:15, product_id: 15, image_path: "/photos/products/case13To16_1.jpg" },
+        { id:16, product_id: 16, image_path: "/photos/products/case13To15_2.jpg" },
+
     ]);
 
     await knex("orders").insert([

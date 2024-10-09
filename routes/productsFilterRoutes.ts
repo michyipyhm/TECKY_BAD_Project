@@ -20,7 +20,7 @@ async function getProducts(req: Request, res: Response) {
         "color.name as color_name",
         "products.product_name",
         "products.product_price",
-        "products.product_quantity"
+        "product_quantity"
       )
       .from("product_option As po")
       .join("products", "products.id", "po.products_id")

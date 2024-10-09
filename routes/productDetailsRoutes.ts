@@ -19,7 +19,7 @@ async function productdetails(req: Request, res: Response) {
         "color.name as color_name",
         "products.product_name",
         "products.product_price",
-        "products.product_quantity",
+        "product_quantity",
         "products.id as product_id"
       )
       .from("product_option As po")

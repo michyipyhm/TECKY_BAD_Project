@@ -179,7 +179,77 @@ export async function seed(knex: Knex): Promise<void> {
             product_price: 160, 
             custom_made:false
         },
-       
+        {
+            id: 17,
+            product_name: 'Purple Color Phone Case ', 
+            category_id: 2,
+            product_price: 160, 
+            custom_made:false
+        },
+        {
+            id: 18,
+            product_name: 'Merry-Go-Meow Phone Case ', 
+            category_id: 1,
+            product_price: 160, 
+            custom_made:false
+        },
+        {
+            id: 19,
+            product_name: 'Pink Color Phone Case ', 
+            category_id: 2,
+            product_price: 160, 
+            custom_made:false
+        },
+        {
+            id: 20,
+            product_name: 'Contrasting Color Phone Case ', 
+            category_id: 2,
+            product_price: 160, 
+            custom_made:false
+        },
+        {
+            id: 21,
+            product_name: 'Sky Blue Color Phone Case ', 
+            category_id: 2,
+            product_price: 160, 
+            custom_made:false
+        },
+        {
+            id: 22,
+            product_name: 'Contrasting Color Phone Case ', 
+            category_id: 2,
+            product_price: 160, 
+            custom_made:false
+        },
+        {
+            id: 23,
+            product_name: 'Contrasting Color Phone Case ', 
+            category_id: 2,
+            product_price: 160, 
+            custom_made:false
+        },
+        {
+            id: 24,
+            product_name: 'Cat Nation Phone Case ', 
+            category_id: 1,
+            product_price: 160, 
+            custom_made:false
+        },
+        {
+            id: 25,
+            product_name: 'Hai Lou Phone Case ', 
+            category_id: 1,
+            product_price: 160, 
+            custom_made:false
+        },
+        {
+            id: 26,
+            product_name: 'Cat Nation Phone Case ', 
+            category_id: 1,
+            product_price: 160, 
+            custom_made:false
+        },
+        
 
     ]);
 
@@ -190,7 +260,7 @@ export async function seed(knex: Knex): Promise<void> {
         {id: 4, model_id: 4, color_id: 9, products_id: 4, product_quantity: 100},
         {id: 5, model_id: 4, color_id: 9, products_id: 3, product_quantity: 100},
         {id: 6, model_id: 10, color_id: 4, products_id: 5, product_quantity: 100},
-        {id: 7, model_id: 2, color_id: 2, products_id: 7, product_quantity: 100},
+        {id: 7, model_id: 3, color_id: 4, products_id: 7, product_quantity: 100},
         {id: 8, model_id: 3, color_id: 1, products_id: 6, product_quantity: 100},
         {id: 9, model_id: 5, color_id: 9, products_id: 9, product_quantity: 100},
         {id: 10, model_id: 1, color_id: 9, products_id: 10, product_quantity: 100},
@@ -200,6 +270,32 @@ export async function seed(knex: Knex): Promise<void> {
         {id: 14, model_id: 1, color_id: 9, products_id: 14, product_quantity: 100},
         {id: 15, model_id: 1, color_id: 9, products_id: 15, product_quantity: 100},
         {id: 16, model_id: 1, color_id: 9, products_id: 16, product_quantity: 100},
+        {id: 17, model_id: 1, color_id: 9, products_id: 17, product_quantity: 100},
+        {id: 18, model_id: 3, color_id: 9, products_id: 18, product_quantity: 100},
+        {id: 19, model_id: 1, color_id: 9, products_id: 19, product_quantity: 100},
+        {id: 20, model_id: 1, color_id: 9, products_id: 20, product_quantity: 100},
+        {id: 21, model_id: 3, color_id: 9, products_id: 21, product_quantity: 100},
+        {id: 22, model_id: 3, color_id: 9, products_id: 22, product_quantity: 100},
+        {id: 23, model_id: 3, color_id: 9, products_id: 23, product_quantity: 100},
+        {id: 24, model_id: 3, color_id: 9, products_id: 24, product_quantity: 100},
+        {id: 25, model_id: 3, color_id: 9, products_id: 25, product_quantity: 100},
+        {id: 26, model_id: 3, color_id: 9, products_id: 26, product_quantity: 100},
+        {id: 27, model_id: 3, color_id: 1, products_id: 5, product_quantity: 100},
+        {id: 28, model_id: 3, color_id: 4, products_id: 7, product_quantity: 100},
+        {id: 29, model_id: 3, color_id: 8, products_id: 7, product_quantity: 100},
+        {id: 30, model_id: 3, color_id: 6, products_id: 7, product_quantity: 100},
+        {id: 31, model_id: 3, color_id: 9, products_id: 1, product_quantity: 100},
+        {id: 32, model_id: 2, color_id: 9, products_id: 1, product_quantity: 100},
+        {id: 33, model_id: 1, color_id: 9, products_id: 1, product_quantity: 100},
+        {id: 34, model_id: 3, color_id: 9, products_id: 2, product_quantity: 100},
+        {id: 35, model_id: 2, color_id: 9, products_id: 2, product_quantity: 100},
+        {id: 36, model_id: 1, color_id: 9, products_id: 2, product_quantity: 100},
+        {id: 37, model_id: 3, color_id: 9, products_id: 3, product_quantity: 100},
+        {id: 38, model_id: 2, color_id: 9, products_id: 3, product_quantity: 100},
+        {id: 39, model_id: 1, color_id: 9, products_id: 3, product_quantity: 100},
+        {id: 40, model_id: 3, color_id: 9, products_id: 4, product_quantity: 100},
+        {id: 41, model_id: 2, color_id: 9, products_id: 4, product_quantity: 100},
+        {id: 42, model_id: 1, color_id: 9, products_id: 4, product_quantity: 100},
     
 
     ]);
@@ -211,7 +307,7 @@ export async function seed(knex: Knex): Promise<void> {
         { id:4, product_id: 4, image_path: "/photos/products/privacy_16.jpg" },
         { id:5, product_id: 5, image_path: "/photos/products/cameraIphonePro1.jpg" },
         { id:6, product_id: 6, image_path: "/photos/products/cameraIphonePro7.jpg" },
-        { id:7, product_id: 7, image_path: "/photos/products/cameraIphonePro2.jpg" },
+        { id:7, product_id: 7, image_path: "/photos/products/cameraIphone6.jpg" },
         { id:8, product_id: 8, image_path: "/photos/products/case13To15_1.jpg" },
         { id:9, product_id: 9, image_path: "/photos/products/case15_3.jpg" },
         { id:10, product_id: 10, image_path: "/photos/products/case13To16_3.jpg" },
@@ -221,6 +317,36 @@ export async function seed(knex: Knex): Promise<void> {
         { id:14, product_id: 14, image_path: "/photos/products/case15_1.jpg" },
         { id:15, product_id: 15, image_path: "/photos/products/case13To16_1.jpg" },
         { id:16, product_id: 16, image_path: "/photos/products/case13To15_2.jpg" },
+        { id:17, product_id: 17, image_path: "/photos/products/case15To16NOB_PM_1.jpg" },
+        { id:18, product_id: 18, image_path: "/photos/products/case14To16_2.jpg" },
+        { id:19, product_id: 19, image_path: "/photos/products/case13To16NOB_PM_2.jpg" },
+        { id:20, product_id: 20, image_path: "/photos/products/case13To16NOB_PM_1.jpg" },
+        { id:21, product_id: 21, image_path: "/photos/products/case13To16NOB_3.jpg" },
+        { id:22, product_id: 22, image_path: "/photos/products/case13To16NOB_2.jpg" },
+        { id:23, product_id: 23, image_path: "/photos/products/case13To16NOB_1.jpg" },
+        { id:24, product_id: 24, image_path: "/photos/products/case13To16_6.jpg" },
+        { id:25, product_id: 25, image_path: "/photos/products/case13To16_5.jpg" },
+        { id:26, product_id: 26, image_path: "/photos/products/case13To16_4.jpg" },
+        { id:27, product_id: 5, image_path: "/photos/products/cameraIphonePro2.jpg" },
+        { id:28, product_id: 7, image_path: "/photos/products/cameraIphone3.jpg" },
+        { id:29, product_id: 7, image_path: "/photos/products/cameraIphone2.jpg" },
+        { id:30, product_id: 7, image_path: "/photos/products/cameraIphone1.jpg" },
+        { id:31, product_id: 1, image_path: "/photos/products/antiBlue_16Plus.jpg" },
+        { id:32, product_id: 1, image_path: "/photos/products/antiBlue_16Pro.jpg" },
+        { id:33, product_id: 1, image_path: "/photos/products/antiBlue_16ProMax.jpg" },
+        { id:34, product_id: 2, image_path: "/photos/products/antiFingerprint_16Plus.jpg" },
+        { id:35, product_id: 2, image_path: "/photos/products/antiFingerprint_16Pro.jpg" },
+        { id:36, product_id: 2, image_path: "/photos/products/antiFingerprint_16ProMax.jpg" },
+        { id:37, product_id: 3, image_path: "/photos/products/ar_16Plus.jpg" },
+        { id:38, product_id: 3, image_path: "/photos/products/ar_16Pro.jpg" },
+        { id:39, product_id: 3, image_path: "/photos/products/ar_16ProMax.jpg" },
+        { id:40, product_id: 4, image_path: "/photos/products/privacy_16Plus.jpg" },
+        { id:41, product_id: 4, image_path: "/photos/products/privacy_16Pro.jpg" },
+        { id:42, product_id: 4, image_path: "/photos/products/privacy_16ProMax.jpg" },
+
+        
+
+
 
     ]);
 

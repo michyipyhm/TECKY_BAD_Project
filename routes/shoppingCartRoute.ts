@@ -1,14 +1,13 @@
 import express, { Request, Response, Router } from "express";
-import { Session, SessionData } from "express-session";
 import { knex } from "../main";
 
 export const shoppingCartRouter = express.Router();
 
-shoppingCartRouter.get("/shoppingcart", getAllItems);
-shoppingCartRouter.post("/addToCart", addToCart);
-shoppingCartRouter.post("/selectedQuantity", postQuantity);
-shoppingCartRouter.delete("/deleteShoppingCartItem", deleteItem);
-shoppingCartRouter.post("/shoppingCartSendOrder", checkout);
+shoppingCartRouter.get("/shoppingcart", getAllItems); //shoppingCart
+shoppingCartRouter.post("/addToCart", addToCart); // productdetails
+shoppingCartRouter.post("/selectedQuantity", postQuantity); //shoppingCart
+shoppingCartRouter.delete("/deleteShoppingCartItem", deleteItem); //shoppingCart
+shoppingCartRouter.post("/shoppingCartSendOrder", checkout); //shoppingCart
 
 // interface CustomRequest extends Request {
 //   session: Session & Partial<SessionData> & {
@@ -18,6 +17,7 @@ shoppingCartRouter.post("/shoppingCartSendOrder", checkout);
 
 async function getAllItems(req: Request, res: Response) {
   const userId = req.session.userId;
+  console.log("userId in ts =", userId);
   if (!userId) {
     res.status(401).json();
     console.log("session id error");
@@ -27,7 +27,7 @@ async function getAllItems(req: Request, res: Response) {
   try {
     let queryResult = await knex
       .select("*")
-      .from("shopping_cart")
+      .from("shopping_cart")    
       .join(
         "product_option",
         "product_option.id",
@@ -38,9 +38,11 @@ async function getAllItems(req: Request, res: Response) {
       .join("model", "model.id", "product_option.model_id")
       .join("color", "color.id", "product_option.color_id")
       .join("category", "category.id", "products.category_id")
+
+
       .where("shopping_cart.member_id", userId);
 
-    // console.log("queryResult =",queryResult)
+    console.log("join all table queryResult =",queryResult)
 
     let data = queryResult.map((row: any) => ({
       id: row.id,
@@ -70,8 +72,8 @@ async function addToCart(req: Request, res: Response) {
     const userId = req.session.userId;
     const productName = req.body.name;
 
-    console.log("productName =", productName);
-    console.log("userId =", userId);
+    console.log("ts productName =", productName);
+    console.log("ts userId =", userId);
 
     const productIdResult = await knex
       .select("id")
@@ -124,6 +126,8 @@ async function addToCart(req: Request, res: Response) {
       .from("shopping_cart")
       .where("member_id", userId);
 
+    console.log("checkLimitQuery =", checkLimitQuery);
+
     const checkLimit = checkLimitQuery.length;
 
     if (checkLimit > 5) {
@@ -133,19 +137,17 @@ async function addToCart(req: Request, res: Response) {
       });
       return;
     } else {
-      res.status(200).send({ message: "You can add more items." });
-    }
-
-    //add to cart
-
-    await knex("shopping_cart")
+       await knex
     .insert({
       product_option_id: productId,
       member_id: userId,
       quantity: 1,
-    });
+    })
+    .into("shopping_cart");
+    return;
+    }
 
-    res.status(200).json({ message: "Added to shopping Cart!" });
+    //add to cart
 
   } catch (err) {
     console.error(err);

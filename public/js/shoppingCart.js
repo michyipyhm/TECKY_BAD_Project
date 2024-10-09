@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 })
 
-//去order畫面
+//去orderdetails畫面
 const orderBtn = document.querySelector('#order-button')
 orderBtn.addEventListener("click", async (e) => {
     e.preventDefault()
@@ -126,7 +126,7 @@ orderBtn.addEventListener("click", async (e) => {
     const data = await res.json()
     if (res.ok) {
         alert(data.message);
-        window.location.href = "/order.html"
+        window.location.href = "/orderDetail.html"
     }
     if (res.status === 500) {
         alert(data.message);

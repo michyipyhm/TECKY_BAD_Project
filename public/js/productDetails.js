@@ -59,12 +59,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       </div>
   `;
   productDetails.appendChild(productDiv);
-  const name = products.product_name;
+  const name = product.product_name;
   const addToCartBtns = document.querySelector(".btn.btn-light");
   addToCartBtns.addEventListener("click", async (e) => {
     e.preventDefault();
     const body = {
       name: name,
+      
     };
     const res = await fetch("/addToCart", {
       method: "POST",

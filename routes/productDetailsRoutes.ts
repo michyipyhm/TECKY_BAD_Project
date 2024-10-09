@@ -4,8 +4,10 @@ import { knex } from "../main";
 export const productDetailsRoutes = express.Router();
 productDetailsRoutes.get("/product/details/:product_id", productdetails);
 
+
 async function productdetails(req: Request, res: Response) {
   const product_id = req.params.product_id;
+  
   try {
     
     const product_info_result = await knex
@@ -27,18 +29,24 @@ async function productdetails(req: Request, res: Response) {
       .join("category", "category.id", "category_id")
       .join("product_image", "products.id", "product_image.product_id")
       .where("products.id", product_id)
-    
+  
     res.json(
-      product_info_result.map((row: any) => ({
-        id: row.product_id,
-        product_name: row.product_name,
-        product_price: row.product_price,
-        image_path: row.image_path,
-        product_id: product_id,
-        product_quantity: row.product_quantity,
-      }))
+      {
+        data: product_info_result.map((row: any) => ({
+          id: row.product_id,
+          product_name: row.product_name,
+          product_price: row.product_price,
+          image_path: row.image_path,
+          product_id: product_id,
+          product_quantity: row.product_quantity,
+          model: row.model_name,
+          color: row.color_name,
+          product_type: row.product_type,
+          category_type: row.category_types
+        }))
+      }
     );
-    // res.json({ product_id });
+    
   } catch (error) {
     res.status(500).json({
       message: "An error occurred while retrieving the product information.",

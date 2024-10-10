@@ -7,7 +7,8 @@ productsRoutes.get("/products", getProducts);
 // productsRoutes.get("/filterProducts", filterProducts);
 
 async function getProducts(req: Request, res: Response) {
-  const { productType , categoryType } = req.query;
+  const { productType , categoryType, sorting } = req.query;
+  console.log("sorting: ", sorting)
   // const { category_type } = req.query;
   try {
     const product_info_result = knex
@@ -32,9 +33,9 @@ async function getProducts(req: Request, res: Response) {
     if (productType) {
       product_info_result.where("category_name", productType);
     }
-    // if(categoryType)  {
-    //   product_info_result.where("category_type",categoryType)
-    // }
+    if (sorting) {
+      product_info_result.orderBy("products.product_price", sorting.toString());
+    }
 
     const results = await product_info_result;
     res.json(

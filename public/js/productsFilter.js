@@ -19,6 +19,8 @@ window.onload = async () => {
     getAllProducts();
   });
 
+ 
+
   const getSubCategory = async () => {
     const categoryType = categoryTypeSelect.value;
     const res = await fetch(`/category/${categoryType}/subcategory`, {
@@ -30,17 +32,15 @@ window.onload = async () => {
       displaySubCategories(data);
     }
   };
-
   const displaySubCategories = (subCategories) => {
     subCategoryTypeSelect.innerHTML = ""; // 清空之前的內容
     subCategories.forEach((subCategory) => {
       subCategoryTypeSelect.innerHTML += `<option value="${subCategory.id}">${subCategory.category_name}</option>`;
     });
-    subCategoryTypeSelect.addEventListener("change", () => {
+    document.querySelector('#subCategoryTypeSelect').addEventListener("change", async () => {
       console.log("sub Change")
-    })
-  };
-
+  })
+  }
   const getAllProducts = async () => {
     const searching = [];
     const sorting = { sorting: sortingInput.value };
@@ -130,4 +130,5 @@ window.onload = async () => {
   };
 
   getAllProducts();
+      
 };

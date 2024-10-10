@@ -19,7 +19,7 @@ body {
     width: 50%;
 }
 
-.userInfoFont{
+.userInfoFont {
     font-size: xx-large;
     color: white;
 }
@@ -70,12 +70,107 @@ body {
 }
 
 .imagecontainer {
-    
+
     height: 500px;
     width: 500px;
 }
 
-#result >img {
+#result>img {
     height: 100%;
     width: 100%;
 }
+
+/* 浮動聊天窗口 */
+#chatBox {
+    display: none;
+    position: fixed;
+    bottom: 80px; /* 留出空間給浮動按鈕 */
+    right: 20px;
+    width: 400px;
+    height: 400px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: none; /* 默認隱藏 */
+  }
+  
+  /* 聊天窗口的標題 */
+  #chatBoxHeader {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  /* 聊天記錄區域 */
+  #chatBody {
+    height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    border-top: 1px solid #ccc; 
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* 聊天輸入區域 */
+  #chatInput {
+    width: calc(100% - 80px);
+    padding: 10px;
+    border: none;
+    border-top: 1px solid #ccc;
+  }
+  
+  /* 發送按鈕 */
+  #sendBtn {
+    width: 70px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* 浮動按鈕 */
+  #chatToggleBtn {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .chatMsg {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .responseMsg{
+    border:solid 1px;
+    border-radius: 10px;
+    background-color: #d4edda;
+    padding: 20px;
+  }
+
+  .responseMsg:empty{
+    border: none;
+    background-color: transparent;
+  }
+
+  .userMsg{
+    border:solid 1px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+  }
+
+  .userMsg:empty{
+    border: none;
+    background-color: transparent;
+  }

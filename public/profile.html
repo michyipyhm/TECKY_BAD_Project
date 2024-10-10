@@ -11,6 +11,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/profile.css" />
 </head>
 
 <body>
@@ -50,24 +51,60 @@
         </div>
     </div>
     <div class="secondSection">
-        <div class="profile-container">
-            <h1 class="title">Profile</h1>
-            <div id="profileForm">
-                <span class="profileFont">Username</span><br><br>
-                <span id="usernameLabel">empty</span>
-                <br><br><br>
-                <span class="profileFont">Email</span><br><br>
-                <span id="emailLabel">empty</span>
-                <br><br><br>
-                <span class="profileFont">Phone</span><br><br>
-                <input type="phone" id="phoneLabel">
-                <br><br><br>
-                <span class="profileFont">Address</span><br><br>
-                <input type="text" id="addressLabel">
-                <br><br><br>
-            </div>
-            <button type="button" id="saveEditBtn" class="saveEditBtn btn btn-1">Save</button>
+        <div class="profileTabs">
+            <div class="tab active" onclick="showTab(0)">Profile</div>
+            <div class="tab" onclick="showTab(1)">Password</div>
+            <div class="tab" onclick="showTab(2)">Purchase History</div>
         </div>
+        <div class="content">
+            <div class="active">
+                <div class="tabTitle">
+                    <h1>Profile</h1>
+                </div>
+                <div class="tabDetailes">
+                    <span class="profileFont">Username</span><br><br>
+                    <span id="usernameLabel">empty</span>
+                    <br><br><br>
+                    <span class="profileFont">Email</span><br><br>
+                    <span id="emailLabel">empty</span>
+                    <br><br><br>
+                    <span class="profileFont">Phone</span><br><br>
+                    <input type="phone" id="phoneLabel">
+                    <br><br><br>
+                    <span class="profileFont">Address</span><br><br>
+                    <input type="text" id="addressLabel">
+                    <br><br><br>
+                    <button type="button" id="saveProfileBtn" class="saveBtn">Save</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="tabTitle">
+                    <h1>Password</h1>
+                </div>
+                <div class="tabDetailes">
+                    <span class="passwordFont">Old password</span><br><br>
+                    <input type="password" id="oldPasswordLabel">
+                    <br><br><br>
+                    <span class="passwordFont">Old password</span><br><br>
+                    <input type="password" id="newPasswordLabel">
+                    <br><br><br>
+                    <button type="button" id="savePasswordBtn" class="saveBtn">Save</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="tabTitle">
+                    <h1>Purchase History</h1>
+                </div>
+                <div class="tabDetailes">
+
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
     <script src="./js/profile.js"></script>
 </body>

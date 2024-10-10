@@ -5,13 +5,11 @@ import { userRouter } from "./routes/userRouter";
 
 import Knex from "knex";
 import { replicateAi } from "./routes/replicateAI";
+import { chatBot } from "./routes/chatBot";
 import { productsRoutes } from './routes/productsRoutes';
 import { productDetailsRoutes } from "./routes/productDetailsRoutes";
 
 dotenv.config();
-
-
-
 
 const knexConfigs = require("./knexfile");
 const configMode = process.env.NODE_ENV || "development";
@@ -33,12 +31,9 @@ main.use(express.json());
 main.use(express.static("public"));
 main.use("/photos", express.static("photos"));
 
-main.get("/", function (req: Request, res: Response) {
-  res.end("Hello World");
-});
-
 main.use(userRouter);
 main.use(replicateAi);
+main.use(chatBot);
 main.use(productsRoutes);
 main.use(productDetailsRoutes);
 const PORT = 8080;

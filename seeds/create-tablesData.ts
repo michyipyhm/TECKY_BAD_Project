@@ -19,22 +19,22 @@ export async function seed(knex: Knex): Promise<void> {
     // Inserts seed entries
 
     await knex("model").insert([
-        {id: 1, name:"Iphone 16 ProMax"},
-        {id: 2, name:"Iphone 16 Pro"},
-        {id: 3, name:"Iphone 16 Plus"},
-        {id: 4, name:"Iphone 16"},
-        {id: 5, name:"Iphone 15 ProMax"},
-        {id: 6, name:"Iphone 15 Pro"},
-        {id: 7, name:"Iphone 15 Plus"},
-        {id: 8, name:"Iphone 15"},
-        {id: 9, name:"Iphone 14 ProMax"},
-        {id: 10, name:"Iphone 14 Pro"},
-        {id: 11, name:"Iphone 14 Plus"},
-        {id: 12, name:"Iphone 14"},
-        {id: 13, name:"Iphone 13 ProMax"},
-        {id: 14, name:"Iphone 13 Pro"},
-        {id: 15, name:"Iphone 13 Plus"},
-        {id: 16, name:"Iphone 13"}
+        {id: 1, name:"iPhone 16 ProMax"},
+        {id: 2, name:"iPhone 16 Pro"},
+        {id: 3, name:"iPhone 16 Plus"},
+        {id: 4, name:"iPhone 16"},
+        {id: 5, name:"iPhone 15 ProMax"},
+        {id: 6, name:"iPhone 15 Pro"},
+        {id: 7, name:"iPhone 15 Plus"},
+        {id: 8, name:"iPhone 15"},
+        {id: 9, name:"iPhone 14 ProMax"},
+        {id: 10, name:"iPhone 14 Pro"},
+        {id: 11, name:"iPhone 14 Plus"},
+        {id: 12, name:"iPhone 14"},
+        {id: 13, name:"iPhone 13 ProMax"},
+        {id: 14, name:"iPhone 13 Pro"},
+        {id: 15, name:"iPhone 13 Plus"},
+        {id: 16, name:"iPhone 13"}
     ]);
 
     await knex("color").insert([
@@ -43,10 +43,10 @@ export async function seed(knex: Knex): Promise<void> {
        {id: 3, name: "White Titanium"},
        {id: 4, name: "Black Titanium"},
        {id: 5, name: "Black"},
-       {id: 6, name: "White "},
-       {id: 7, name: "Pink "},
-       {id: 8, name: "Teal "},
-       {id: 9, name:"null"}
+       {id: 6, name: "White"},
+       {id: 7, name: "Pink"},
+       {id: 8, name: "Teal"},
+       {id: 9, name: "null"}
     ]);
 
     await knex("category").insert([
@@ -130,6 +130,14 @@ export async function seed(knex: Knex): Promise<void> {
             product_price: 160, 
             product_quantity: 100,
             custom_made:false
+        },
+        {
+            id: 9,
+            product_name: "4D ANTI-BLUE FILTERING HARMFUL LIGHT FOR HEALTHY EYES",
+            category_id: 7,
+            product_price: 120,
+            product_quantity: 100,
+            custom_made:false
         }
 
     ]);
@@ -141,7 +149,8 @@ export async function seed(knex: Knex): Promise<void> {
         {id: 4, model_id: 8, color_id: 9, products_id: 4},
         {id: 5, model_id: 6, color_id: 9, products_id: 3},
         {id: 6, model_id: 10, color_id: 6, products_id: 5},
-        {id: 7, model_id: 2, color_id: 4, products_id: 7}
+        {id: 7, model_id: 2, color_id: 4, products_id: 7},
+        {id: 8, model_id: 1, color_id: 9, products_id: 9}
     ]);
 
     await knex("product_image").insert([
@@ -176,28 +185,16 @@ export async function seed(knex: Knex): Promise<void> {
     await knex("chat_box").insert([
         { 
             id:1,
-            role: "admin", 
-            member_id: 1, 
-            order_id: 1, 
-            product_id: 3, 
-            comment_text:"nice", 
-            comment_image:"/photos/products/antiFingerprint_16.jpg" },
+            member_id: 2,
+            user_message:"Hello, I want to ask something.",
+            response_message:"",
+        },
         { 
             id:2,
-            role: "robot", 
-            member_id: 2, 
-            order_id: 2, 
-            product_id: 2, 
-            comment_text:"very good", 
-            comment_image:"/photos/products/antiFingerprint_16.jpg" },
-        { 
-            id:3,
-            role: "robot", 
-            member_id: 3, 
-            order_id: 3, 
-            product_id: 1, 
-            comment_text:"good", 
-            comment_image:"/photos/products/antiFingerprint_16.jpg" }
+            member_id: 2,
+            user_message:"",
+            response_message:"What can i help you?"
+        }
     ]);
     
     await knex("shopping_cart").insert([

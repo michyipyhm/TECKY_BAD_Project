@@ -1,6 +1,8 @@
 window.onload = async () => {
   await getUserProfile();
   await replicateAi();
+  chatBoxToggle();
+  // chatBox();
 
   async function getUserProfile() {
     const res = await fetch("/userinfo");
@@ -155,9 +157,8 @@ window.onload = async () => {
                           <img src="${imageUrl}" alt="Generated image">
                       `;
         } else {
-          resultDiv.innerHTML = `Error: ${
-            data.message || "Unknown error occurred"
-          }`;
+          resultDiv.innerHTML = `Error: ${data.message || "Unknown error occurred"
+            }`;
         }
       } catch (error) {
         console.error("Error:", error);
@@ -165,4 +166,39 @@ window.onload = async () => {
       }
     });
   }
+
+  function chatBoxToggle() {
+    const chatWindow = document.getElementById('chatBox');
+    const toggleBtn = document.getElementById('chatToggleBtn');
+
+    toggleBtn.addEventListener('click', () => {
+      if (chatWindow.style.display === 'none' || chatWindow.style.display === '') {
+        chatWindow.style.display = 'block';
+        loadChatMessages()
+      } else {
+        chatWindow.style.display = 'none';
+      }
+    });
+  }
+
+  async function loadChatMessages() {
+    const res = await fetch("/readMessage")
+    const data = await res.json()
+    const results = data.userMessage
+    const chatBody = document.getElementById('chatBody')
+    chatBody.innerHTML = ''
+
+    for (const result of results) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = 'chatBoxMessage'
+      messageDiv.innerHTML = `
+      <div class="chatMsg">
+        <div class="responseMsg">${result.response_message}</div>
+        <div class="userMsg">${result.user_message}</div>
+      </div>
+      `
+      chatBody.appendChild(messageDiv)
+    }
+  }
 };
+

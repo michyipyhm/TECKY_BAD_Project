@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
   let result = await res.json();
 
+  console.log("fetch result: ", result);
+  
   const shoppingCartForm = document.getElementById("shoppingCartForm");
   const cartEmptyDiv = document.querySelector(".cartEmpty");
   const orderBtn = document.querySelector("#orderBtnForm");

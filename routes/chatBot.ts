@@ -15,6 +15,7 @@ chatBot.post("/checkProduct", checkProduct)
 chatBot.get("/readMessage", readMessage)
 chatBot.post("/writeMessage", writeMessage)
 chatBot.post("/responseMessage", responseMessage)
+chatBot.post("/createNewChat", createNewChat)
 
 
 async function checkProduct(req: Request, res: Response) {
@@ -85,6 +86,7 @@ async function writeMessage(req: Request, res: Response) {
     const userId = req.session.userId;
     const data = req.body;
     const message = data.message
+
     if (!userId) {
         res.status(401).json({ message: "Please login first." });
         return;
@@ -94,7 +96,8 @@ async function writeMessage(req: Request, res: Response) {
         return;
     }
     try {
-        await knex.insert([{member_id: userId, user_message: message}]).into("chat_box")
+
+        await knex.insert([{ member_id: userId, user_message: message, response_message: "" }]).into("chat_box")
         res.json({ message: "Message sent" })
     } catch {
         res.status(500).json({ message: "Failed to send message." });
@@ -110,9 +113,24 @@ async function responseMessage(req: Request, res: Response) {
         return;
     }
     try {
-        await knex.insert([{member_id: userId, response_message: message}]).into("chat_box")
+        await knex.insert([{ member_id: userId, user_message: "", response_message: message }]).into("chat_box")
         res.json({ message: "Message sent" })
     } catch {
         res.status(500).json({ message: "Failed to send message." });
     }
 }
+
+async function createNewChat(req: Request, res: Response) {
+    const userId = req.session.userId;
+    if (!userId) {
+        res.status(401).json({ message: "Please login first." });
+        return;
+    }
+    try {
+        await knex("chat_box").where("member_id", userId).del();
+        res.json({ message: "New chat created." })
+    } catch {
+        res.status(500).json({ message: "Failed to create new Chat" });
+    }
+}
+

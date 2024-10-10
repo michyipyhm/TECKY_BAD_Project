@@ -125,14 +125,6 @@ export async function seed(knex: Knex): Promise<void> {
         },
         {
             id: 9,
-<<<<<<< HEAD
-            product_name: "4D ANTI-BLUE FILTERING HARMFUL LIGHT FOR HEALTHY EYES",
-            category_id: 7,
-            product_price: 120,
-            product_quantity: 100,
-            custom_made:false
-        }
-=======
             product_name: 'Condom Phone Case ', 
             category_id: 1,
             product_price: 160, 
@@ -258,21 +250,10 @@ export async function seed(knex: Knex): Promise<void> {
             custom_made:false
         },
         
->>>>>>> 795c736087290be7b3f79e5d2f3a1059da833a27
 
     ]);
 
     await knex("product_option").insert([
-<<<<<<< HEAD
-        {id: 1, model_id: 1, color_id: 9 , products_id: 1},
-        {id: 2, model_id: 4, color_id: 9, products_id: 8},
-        {id: 3, model_id: 5, color_id: 9, products_id: 2},
-        {id: 4, model_id: 8, color_id: 9, products_id: 4},
-        {id: 5, model_id: 6, color_id: 9, products_id: 3},
-        {id: 6, model_id: 10, color_id: 6, products_id: 5},
-        {id: 7, model_id: 2, color_id: 4, products_id: 7},
-        {id: 8, model_id: 1, color_id: 9, products_id: 9}
-=======
         {id: 1, model_id: 4, color_id: 9, products_id: 1, product_quantity: 100},
         {id: 2, model_id: 5, color_id: 9, products_id: 8, product_quantity: 100},
         {id: 3, model_id: 4, color_id: 9, products_id: 2, product_quantity: 100},
@@ -317,7 +298,6 @@ export async function seed(knex: Knex): Promise<void> {
         {id: 42, model_id: 1, color_id: 9, products_id: 4, product_quantity: 100},
     
 
->>>>>>> 795c736087290be7b3f79e5d2f3a1059da833a27
     ]);
 
     await knex("product_image").insert([

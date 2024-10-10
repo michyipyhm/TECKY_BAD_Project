@@ -16,6 +16,7 @@ export async function seed(knex: Knex): Promise<void> {
   await knex("color").del();
   await knex("model").del();
 
+
   // Inserts seed entries
 
   await knex("model").insert([
@@ -95,6 +96,7 @@ export async function seed(knex: Knex): Promise<void> {
     },
   ]);
 
+<<<<<<< HEAD:seeds/create-tablesData.ts
     await knex("products").insert([
         {
             id: 1,
@@ -279,6 +281,200 @@ export async function seed(knex: Knex): Promise<void> {
             custom_made:false
         },
       ]);
+=======
+  await knex("products").insert([
+    {
+      id: 1,
+      product_name: "2.5D ANTI-BLUE FILTERING HARMFUL LIGHT FOR HEALTHY EYES",
+      sub_category_id: 1,
+      product_price: 120,
+      custom_made: false,
+    },
+    {
+      id: 2,
+      product_name: "2.5D ANTI-FINGERPRINT WITH NANO COATING FOR GAME PLAYER",
+      sub_category_id: 8,
+      product_price: 120,
+      custom_made: false,
+    },
+    {
+      id: 3,
+      product_name:
+        "2.5D ANTI-REFLECTION FOR BETTER SCREEN CLARITY & COLOR VIBRANCY",
+      sub_category_id: 5,
+      product_price: 120,
+      custom_made: false,
+    },
+    {
+      id: 4,
+      product_name:
+        "2.5D 360 ° PRIVACY PROTECTING SCREEN PRIVATE FROM ALL SIDES",
+      sub_category_id: 6,
+      product_price: 120,
+      custom_made: false,
+    },
+    {
+      id: 5,
+      product_name: "AR LENS GUARD WITH 99% OPTIAL LIGHT TECHNOLOGY",
+      sub_category_id: 4,
+      product_price: 70,
+      custom_made: false,
+    },
+    {
+      id: 6,
+      product_name: "HD CAMERA GUARD FOR FULL COVERAGE",
+      sub_category_id: 3,
+      product_price: 80,
+      custom_made: false,
+    },
+    {
+      id: 7,
+      product_name: "AR LENS GUARD WITH 99% OPTIAL LIGHT TECHNOLOGY",
+      sub_category_id: 4,
+      product_price: 80,
+      custom_made: false,
+    },
+    {
+      id: 8,
+      product_name: "Flying Chess Phone Case ",
+      sub_category_id: 1,
+      product_price: 160,
+      custom_made: false,
+    },
+    {
+      id: 9,
+      product_name: "4D ANTI-BLUE FILTERING HARMFUL LIGHT FOR HEALTHY EYES",
+      sub_category_id: 7,
+      product_price: 120,
+      custom_made: false,
+    },
+    //   {
+    //     product_name: "Condom Phone Case ",
+    //     sub_category_id: 1,
+    //     product_price: 160,
+    //     custom_made: false,
+    //   },
+    {
+      id: 10,
+      product_name: "Cheers Phone Case ",
+      sub_category_id: 1,
+      product_price: 160,
+      custom_made: false,
+    },
+    {
+      id: 11,
+      product_name: "Merry-Go-Meow Phone Case ",
+      sub_category_id: 1,
+      product_price: 160,
+      custom_made: false,
+    },
+    {
+      id: 12,
+      product_name: "Hai Lou Phone Case ",
+      sub_category_id: 1,
+      product_price: 160,
+      custom_made: false,
+    },
+    {
+      id: 13,
+      product_name: "Condom/2 Phone Case ",
+      sub_category_id: 1,
+      product_price: 160,
+      custom_made: false,
+    },
+    {
+      id: 14,
+      product_name: "Condom/3 Phone Case ",
+      sub_category_id: 1,
+      product_price: 160,
+      custom_made: false,
+    },
+    {
+      id: 15,
+      product_name: "Cat Nation Phone Case ",
+      sub_category_id: 1,
+      product_price: 160,
+      custom_made: false,
+    },
+    {
+      id: 16,
+      product_name: "Egg Puffs Phone Case ",
+      sub_category_id: 1,
+      product_price: 160,
+      custom_made: false,
+    },
+    {
+      id: 17,
+      product_name: "Purple Color Phone Case ",
+      sub_category_id: 2,
+      product_price: 160,
+      custom_made: false,
+    },
+    {
+      id: 18,
+      product_name: "Merry-Go-Meow Phone Case ",
+      sub_category_id: 1,
+      product_price: 160,
+      custom_made: false,
+    },
+    {
+      id: 19,
+      product_name: "Pink Color Phone Case ",
+      sub_category_id: 2,
+      product_price: 160,
+      custom_made: false,
+    },
+    {
+      id: 20,
+      product_name: "Contrasting Color Phone Case ",
+      sub_category_id: 2,
+      product_price: 160,
+      custom_made: false,
+    },
+    {
+      id: 21,
+      product_name: "Sky Blue Color Phone Case ",
+      sub_category_id: 2,
+      product_price: 160,
+      custom_made: false,
+    },
+    {
+      id: 22,
+      product_name: "Contrasting Color Phone Case ",
+      sub_category_id: 2,
+      product_price: 160,
+      custom_made: false,
+    },
+    {
+      id: 23,
+      product_name: "Contrasting Color Phone Case ",
+      sub_category_id: 2,
+      product_price: 160,
+      custom_made: false,
+    },
+    {
+      id: 24,
+      product_name: "Cat Nation Phone Case ",
+      sub_category_id: 1,
+      product_price: 160,
+      custom_made: false,
+    },
+    {
+      id: 25,
+      product_name: "Hai Lou Phone Case ",
+      sub_category_id: 1,
+      product_price: 160,
+      custom_made: false,
+    },
+    {
+      id: 26,
+      product_name: "Cat Nation Phone Case ",
+      sub_category_id: 1,
+      product_price: 160,
+      custom_made: false,
+    },
+  ]);
+>>>>>>> bacd07a26027a7a8c19e8e5b22bccb9453081595:seeds/seed.ts
 
   await knex("product_option").insert([
     { id: 1, model_id: 4, color_id: 9, products_id: 1, product_quantity: 100 },
@@ -599,4 +795,18 @@ export async function seed(knex: Knex): Promise<void> {
     { id: 4, product_option_id: 6, member_id: 2, quantity: 3 },
     { id: 5, product_option_id: 7, member_id: 2, quantity: 3 },
   ]);
+
+  await knex.raw("ALTER SEQUENCE shopping_cart_id_seq RESTART WITH 5;")  
+  await knex.raw("ALTER SEQUENCE chat_box_id_seq RESTART WITH 2;")
+  await knex.raw("ALTER SEQUENCE order_details_id_seq RESTART WITH 4;")
+  await knex.raw("ALTER SEQUENCE transaction_id_seq RESTART WITH 4;")
+  await knex.raw("ALTER SEQUENCE order_id_seq RESTART WITH 4;")
+  await knex.raw("ALTER SEQUENCE product_image_id_seq RESTART WITH 43;")
+  await knex.raw("ALTER SEQUENCE product_option_id_seq RESTART WITH 43;")
+  await knex.raw("ALTER SEQUENCE products_id_seq RESTART WITH 27;")
+  await knex.raw("ALTER SEQUENCE members_id_seq RESTART WITH 4;")
+  await knex.raw("ALTER SEQUENCE sub_category_id_seq RESTART WITH 9;")
+  await knex.raw("ALTER SEQUENCE category_id_seq RESTART WITH 4;")
+  await knex.raw("ALTER SEQUENCE color_id_seq RESTART WITH 10;")
+  await knex.raw("ALTER SEQUENCE model_id_seq RESTART WITH 17;")
 }

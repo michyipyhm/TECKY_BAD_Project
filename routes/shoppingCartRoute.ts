@@ -1,6 +1,7 @@
 import express, { Request, Response, Router } from "express";
 import { Session } from 'express-session';
 import { knex } from "../main";
+import { isLoggedIn } from "../utils/guards";
 
 export const shoppingCartRouter = express.Router();
 
@@ -18,13 +19,6 @@ interface CustomRequest extends Request {
 
 async function getAllItems(req: Request, res: Response) {
   const userId = req.session.userId;
-  console.log("userId in ts =", userId);
-  if (!userId) {
-    res.status(401).json();
-    console.log("session id error");
-    return;
-  }
-
   try {
     let queryResult = await knex
       .select("*")
@@ -38,7 +32,8 @@ async function getAllItems(req: Request, res: Response) {
       .join("product_image", "products.id", "product_image.product_id")
       .join("model", "model.id", "product_option.model_id")
       .join("color", "color.id", "product_option.color_id")
-      .join("category", "category.id", "products.category_id")
+      .join("sub_category", "sub_category.id", "products.sub_category_id")
+      .join("category", "category.id", "sub_category.category_id")
 
 
       .where("shopping_cart.member_id", userId);

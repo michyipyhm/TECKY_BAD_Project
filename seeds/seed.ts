@@ -16,6 +16,7 @@ export async function seed(knex: Knex): Promise<void> {
   await knex("color").del();
   await knex("model").del();
 
+
   // Inserts seed entries
 
   await knex("model").insert([
@@ -625,4 +626,18 @@ export async function seed(knex: Knex): Promise<void> {
     { id: 4, product_option_id: 6, member_id: 2, quantity: 3 },
     { id: 5, product_option_id: 7, member_id: 2, quantity: 3 },
   ]);
+
+  await knex.raw("ALTER SEQUENCE shopping_cart_id_seq RESTART WITH 5;")  
+  await knex.raw("ALTER SEQUENCE chat_box_id_seq RESTART WITH 2;")
+  await knex.raw("ALTER SEQUENCE order_details_id_seq RESTART WITH 4;")
+  await knex.raw("ALTER SEQUENCE transaction_id_seq RESTART WITH 4;")
+  await knex.raw("ALTER SEQUENCE order_id_seq RESTART WITH 4;")
+  await knex.raw("ALTER SEQUENCE product_image_id_seq RESTART WITH 43;")
+  await knex.raw("ALTER SEQUENCE product_option_id_seq RESTART WITH 43;")
+  await knex.raw("ALTER SEQUENCE products_id_seq RESTART WITH 27;")
+  await knex.raw("ALTER SEQUENCE members_id_seq RESTART WITH 4;")
+  await knex.raw("ALTER SEQUENCE sub_category_id_seq RESTART WITH 9;")
+  await knex.raw("ALTER SEQUENCE category_id_seq RESTART WITH 4;")
+  await knex.raw("ALTER SEQUENCE color_id_seq RESTART WITH 10;")
+  await knex.raw("ALTER SEQUENCE model_id_seq RESTART WITH 17;")
 }

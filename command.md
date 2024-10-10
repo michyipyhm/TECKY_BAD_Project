@@ -24,3 +24,6 @@
 
 ## permission denied for schema public
 `GRANT ALL PRIVILEGES ON SCHEMA public TO`
+
+## openAI
+`yarn openai @types/openai`

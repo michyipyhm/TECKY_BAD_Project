@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import { userRouter } from "./routes/userRouter";
 import Knex from "knex";
 import { replicateAi } from "./routes/replicateAI";
+import { chatRouter } from "./routes/chatRouter";
 import { chatBot } from "./routes/chatBot";
 import { productsRoutes } from './routes/productsFilterRoutes';
 import { productDetailsRoutes } from "./routes/productDetailsRoutes";
@@ -38,6 +39,7 @@ main.use("/photos", express.static("photos"));
 
 main.use(userRouter);
 main.use(replicateAi);
+main.use(chatRouter);
 main.use(chatBot);
 main.use(categoryRoutes);
 main.use(productsRoutes);

@@ -13,8 +13,8 @@ async function productdetails(req: Request, res: Response) {
     const product_info_result = await knex
       .select(
         "product_image.image_path",
-        "category_name as product_type",
-        "category_type",
+        "sub_category.category_name as sub_category_name",
+        "category.category_name as category_name",
         "model.name as model_name",
         "color.name as color_name",
         "products.product_name",
@@ -26,7 +26,8 @@ async function productdetails(req: Request, res: Response) {
       .join("products", "products.id", "po.products_id")
       .join("color", "color.id", "po.color_id")
       .join("model", "model.id", "po.model_id")
-      .join("category", "category.id", "category_id")
+      .join("sub_category", "sub_category.id", "products.sub_category_id")
+      .join("category", "category.id", "sub_category.category_id")
       .join("product_image", "products.id", "product_image.product_id")
       .where("products.id", product_id)
   
@@ -42,7 +43,7 @@ async function productdetails(req: Request, res: Response) {
           model: row.model_name,
           color: row.color_name,
           product_type: row.product_type,
-          category_type: row.category_types
+        category_name: row.category_name,
         }))
       }
     );

@@ -6,7 +6,12 @@
   "scripts": {
     "start": "ts-node main.ts",
     "dev": "ts-node-dev main.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "latest": "yarn knex migrate:latest",
+    "rollback": "yarn knex migrate:rollback",
+    "seed": "yarn knex seed:run",
+    "data": "psql -f database/init.sql && ts-node database/insert_user.ts && psql -f database/data.sql"
+
   },
   "repository": "git@github.com:michyipyhm/TECKY_BAD_Project.git",
   "author": "michyipyhm <micmicyip@hotmail.com>",

@@ -46,6 +46,7 @@ main.use(productsRoutes);
 main.use(productDetailsRoutes);
 // main.use(isLoggedIn, shoppingCartRouter);
 main.use(orderRouter);
+main.use(shoppingCartRouter);
 
 
 const PORT = 8080;

@@ -10,7 +10,7 @@ import { productDetailsRoutes } from "./routes/productDetailsRoutes";
 import { shoppingCartRouter } from "./routes/shoppingCartRoute";
 import { orderRouter } from "./routes/orderRoute";
 import { categoryRoutes } from "./routes/categoryRoutes";
-import { isLoggedIn } from "./utils/guards";
+// import { isLoggedIn } from "./utils/guards";
 
 dotenv.config();
 
@@ -42,7 +42,7 @@ main.use(chatBot);
 main.use(categoryRoutes);
 main.use(productsRoutes);
 main.use(productDetailsRoutes);
-main.use(isLoggedIn, shoppingCartRouter);
+// main.use(isLoggedIn, shoppingCartRouter);
 main.use(orderRouter);
 
 

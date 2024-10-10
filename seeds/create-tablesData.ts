@@ -95,7 +95,6 @@ export async function seed(knex: Knex): Promise<void> {
     },
   ]);
 
-<<<<<<< HEAD
   await knex("products").insert([
     {
       id: 1,
@@ -288,192 +287,6 @@ export async function seed(knex: Knex): Promise<void> {
       custom_made: false,
     },
   ]);
-=======
-    await knex("products").insert([
-        {
-            id: 1,
-            product_name: "2.5D ANTI-BLUE FILTERING HARMFUL LIGHT FOR HEALTHY EYES",
-            category_id: 7,
-            product_price: 120,
-            custom_made:false
-        },
-        {
-            id: 2,
-            product_name: '2.5D ANTI-FINGERPRINT WITH NANO COATING FOR GAME PLAYER', 
-            category_id: 8,
-            product_price: 120, 
-            custom_made:false
-        },
-        {
-            id: 3,
-            product_name: '2.5D ANTI-REFLECTION FOR BETTER SCREEN CLARITY & COLOR VIBRANCY', 
-            category_id: 5,
-            product_price: 120, 
-            custom_made:false
-        },
-        {
-            id: 4,
-            product_name: '2.5D 360 ° PRIVACY PROTECTING SCREEN PRIVATE FROM ALL SIDES', 
-            category_id: 6,
-            product_price: 120, 
-            custom_made:false
-        },
-        {
-            id: 5,
-            product_name: 'AR LENS GUARD WITH 99% OPTIAL LIGHT TECHNOLOGY', 
-            category_id: 4,
-            product_price: 70, 
-            custom_made:false
-        },
-        {
-            id: 6,
-            product_name: 'HD CAMERA GUARD FOR FULL COVERAGE', 
-            category_id: 3,
-            product_price: 80, 
-            custom_made:false
-        },
-        {
-            id: 7,
-            product_name: 'AR LENS GUARD WITH 99% OPTIAL LIGHT TECHNOLOGY', 
-            category_id: 4,
-            product_price: 80, 
-            custom_made:false
-        },
-        {
-            id: 8,
-            product_name: 'Flying Chess Phone Case ', 
-            category_id: 1,
-            product_price: 160, 
-            custom_made:false
-        },
-        {
-            id: 9,
-            product_name: 'Condom Phone Case ', 
-            category_id: 1,
-            product_price: 160, 
-            custom_made:false
-        },
-        {
-            id: 10,
-            product_name: 'Cheers Phone Case ', 
-            category_id: 1,
-            product_price: 160, 
-            custom_made:false
-        },
-        {
-            id: 11,
-            product_name: 'Merry-Go-Meow Phone Case ', 
-            category_id: 1,
-            product_price: 160, 
-            custom_made:false
-        },
-        {
-            id: 12,
-            product_name: 'Hai Lou Phone Case ', 
-            category_id: 1,
-            product_price: 160, 
-            custom_made:false
-        },
-        {
-            id: 13,
-            product_name: 'Condom/2 Phone Case ', 
-            category_id: 1,
-            product_price: 160, 
-            custom_made:false
-        },
-        {
-            id: 14,
-            product_name: 'Condom/3 Phone Case ', 
-            category_id: 1,
-            product_price: 160, 
-            custom_made:false
-        },
-        {
-            id: 15,
-            product_name: 'Cat Nation Phone Case ', 
-            category_id: 1,
-            product_price: 160, 
-            custom_made:false
-        },
-        {
-            id: 16,
-            product_name: 'Egg Puffs Phone Case ', 
-            category_id: 1,
-            product_price: 160, 
-            custom_made:false
-        },
-        {
-            id: 17,
-            product_name: 'Purple Color Phone Case ', 
-            category_id: 2,
-            product_price: 160, 
-            custom_made:false
-        },
-        {
-            id: 18,
-            product_name: 'Merry-Go-Meow Phone Case ', 
-            category_id: 1,
-            product_price: 160, 
-            custom_made:false
-        },
-        {
-            id: 19,
-            product_name: 'Pink Color Phone Case ', 
-            category_id: 2,
-            product_price: 160, 
-            custom_made:false
-        },
-        {
-            id: 20,
-            product_name: 'Contrasting Color Phone Case ', 
-            category_id: 2,
-            product_price: 160, 
-            custom_made:false
-        },
-        {
-            id: 21,
-            product_name: 'Sky Blue Color Phone Case ', 
-            category_id: 2,
-            product_price: 160, 
-            custom_made:false
-        },
-        {
-            id: 22,
-            product_name: 'Contrasting Color Phone Case ', 
-            category_id: 2,
-            product_price: 160, 
-            custom_made:false
-        },
-        {
-            id: 23,
-            product_name: 'Contrasting Color Phone Case ', 
-            category_id: 2,
-            product_price: 160, 
-            custom_made:false
-        },
-        {
-            id: 24,
-            product_name: 'Cat Nation Phone Case ', 
-            category_id: 1,
-            product_price: 160, 
-            custom_made:false
-        },
-        {
-            id: 25,
-            product_name: 'Hai Lou Phone Case ', 
-            category_id: 1,
-            product_price: 160, 
-            custom_made:false
-        },
-        {
-            id: 26,
-            product_name: 'Cat Nation Phone Case ', 
-            category_id: 1,
-            product_price: 160, 
-            custom_made:false
-        },
-        
->>>>>>> 12a33db2828c58d4d5c377235343333264b2238b
 
   await knex("product_option").insert([
     { id: 1, model_id: 4, color_id: 9, products_id: 1, product_quantity: 100 },
@@ -622,7 +435,6 @@ export async function seed(knex: Knex): Promise<void> {
     { id: 42, model_id: 1, color_id: 9, products_id: 4, product_quantity: 100 },
   ]);
 
-<<<<<<< HEAD
   await knex("product_image").insert([
     { id: 1, product_id: 1, image_path: "/photos/products/antiBlue_16.jpg" },
     {
@@ -766,54 +578,6 @@ export async function seed(knex: Knex): Promise<void> {
       payment_type: "Credit Card",
     },
   ]);
-=======
-    await knex("product_option").insert([
-        {id: 1, model_id: 4, color_id: 9, products_id: 1, product_quantity: 100},
-        {id: 2, model_id: 5, color_id: 9, products_id: 8, product_quantity: 100},
-        {id: 3, model_id: 4, color_id: 9, products_id: 2, product_quantity: 100},
-        {id: 4, model_id: 4, color_id: 9, products_id: 4, product_quantity: 100},
-        {id: 5, model_id: 4, color_id: 9, products_id: 3, product_quantity: 100},
-        {id: 6, model_id: 10, color_id: 4, products_id: 5, product_quantity: 100},
-        {id: 7, model_id: 3, color_id: 4, products_id: 7, product_quantity: 100},
-        {id: 8, model_id: 3, color_id: 1, products_id: 6, product_quantity: 100},
-        {id: 9, model_id: 5, color_id: 9, products_id: 9, product_quantity: 100},
-        {id: 10, model_id: 1, color_id: 9, products_id: 10, product_quantity: 100},
-        {id: 11, model_id: 1, color_id: 9, products_id: 11, product_quantity: 100},
-        {id: 12, model_id: 1, color_id: 9, products_id: 12, product_quantity: 100},
-        {id: 13, model_id: 1, color_id: 9, products_id: 13, product_quantity: 100},
-        {id: 14, model_id: 1, color_id: 9, products_id: 14, product_quantity: 100},
-        {id: 15, model_id: 1, color_id: 9, products_id: 15, product_quantity: 100},
-        {id: 16, model_id: 1, color_id: 9, products_id: 16, product_quantity: 100},
-        {id: 17, model_id: 1, color_id: 9, products_id: 17, product_quantity: 100},
-        {id: 18, model_id: 3, color_id: 9, products_id: 18, product_quantity: 100},
-        {id: 19, model_id: 1, color_id: 9, products_id: 19, product_quantity: 100},
-        {id: 20, model_id: 1, color_id: 9, products_id: 20, product_quantity: 100},
-        {id: 21, model_id: 3, color_id: 9, products_id: 21, product_quantity: 100},
-        {id: 22, model_id: 3, color_id: 9, products_id: 22, product_quantity: 100},
-        {id: 23, model_id: 3, color_id: 9, products_id: 23, product_quantity: 100},
-        {id: 24, model_id: 3, color_id: 9, products_id: 24, product_quantity: 100},
-        {id: 25, model_id: 3, color_id: 9, products_id: 25, product_quantity: 100},
-        {id: 26, model_id: 3, color_id: 9, products_id: 26, product_quantity: 100},
-        {id: 27, model_id: 3, color_id: 1, products_id: 5, product_quantity: 100},
-        {id: 28, model_id: 3, color_id: 4, products_id: 7, product_quantity: 100},
-        {id: 29, model_id: 3, color_id: 8, products_id: 7, product_quantity: 100},
-        {id: 30, model_id: 3, color_id: 6, products_id: 7, product_quantity: 100},
-        {id: 31, model_id: 3, color_id: 9, products_id: 1, product_quantity: 100},
-        {id: 32, model_id: 2, color_id: 9, products_id: 1, product_quantity: 100},
-        {id: 33, model_id: 1, color_id: 9, products_id: 1, product_quantity: 100},
-        {id: 34, model_id: 3, color_id: 9, products_id: 2, product_quantity: 100},
-        {id: 35, model_id: 2, color_id: 9, products_id: 2, product_quantity: 100},
-        {id: 36, model_id: 1, color_id: 9, products_id: 2, product_quantity: 100},
-        {id: 37, model_id: 3, color_id: 9, products_id: 3, product_quantity: 100},
-        {id: 38, model_id: 2, color_id: 9, products_id: 3, product_quantity: 100},
-        {id: 39, model_id: 1, color_id: 9, products_id: 3, product_quantity: 100},
-        {id: 40, model_id: 3, color_id: 9, products_id: 4, product_quantity: 100},
-        {id: 41, model_id: 2, color_id: 9, products_id: 4, product_quantity: 100},
-        {id: 42, model_id: 1, color_id: 9, products_id: 4, product_quantity: 100},
-    
-
-    ]);
->>>>>>> 12a33db2828c58d4d5c377235343333264b2238b
 
   await knex("transaction").insert([
     { id: 1, order_id: 1, success: true, log: "", payment_type: "Cash" },

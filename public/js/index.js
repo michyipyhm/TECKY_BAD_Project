@@ -68,7 +68,7 @@ window.onload = async () => {
     if (registerForm) {
       registerForm.addEventListener("submit", async (e) => {
         e.preventDefault();
-
+        console.log("ReG")
         const username = e.target.registerUsername.value;
         const password = e.target.registerPassword.value;
         const email = e.target.registerEmail.value;
@@ -200,5 +200,43 @@ window.onload = async () => {
       chatBody.appendChild(messageDiv)
     }
   }
-};
+
+  document.getElementById('sendBtn').addEventListener('click', async function () {
+    const chatInputElem = document.getElementById('chatInput')
+    const chatInput = chatInputElem.value
+    const body = { message: chatInput }
+
+    const res = await fetch("/writeMessage", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    })
+    if (res.ok) {
+      loadChatMessages()
+      chatInputElem.value = ""
+      const chatBody = document.getElementById('chatBody')
+      chatBody.scrollTop = chatBody.scrollHeight
+    } else {
+      const data = await res.json()
+      alert(data.message)
+    }
+  })
+
+  document.getElementById('createNewChatBtn').addEventListener('click', async function () {
+const res = await fetch("/createNewChat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      }
+    })
+    if (res.ok) {
+      loadChatMessages()
+    } else {
+      const data = await res.json()
+      alert(data.message)
+    }
+  })
+}
 

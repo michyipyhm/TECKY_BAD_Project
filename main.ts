@@ -2,12 +2,12 @@ import express, { Request, Response } from "express";
 import expressSession from "express-session";
 import dotenv from "dotenv";
 import { userRouter } from "./routes/userRouter";
-
 import Knex from "knex";
 import { replicateAi } from "./routes/replicateAI";
 import { chatBot } from "./routes/chatBot";
-import { productsRoutes } from './routes/productsRoutes';
+import { productsRoutes } from './routes/productsFilterRoutes';
 import { productDetailsRoutes } from "./routes/productDetailsRoutes";
+import { shoppingCartRouter } from "./routes/shoppingCartRoute";
 
 dotenv.config();
 
@@ -36,6 +36,9 @@ main.use(replicateAi);
 main.use(chatBot);
 main.use(productsRoutes);
 main.use(productDetailsRoutes);
+main.use(shoppingCartRouter);
+
+
 const PORT = 8080;
 
 main.listen(PORT, () => {

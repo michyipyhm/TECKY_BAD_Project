@@ -7,6 +7,7 @@ export async function up(knex: Knex) {
         table.integer('model_id').unsigned();
         table.integer('color_id').unsigned();
         table.integer('products_id').unsigned();
+        table.integer('product_quantity').unsigned();
         table.foreign('products_id').references('products.id');
         table.foreign('color_id').references('color.id');
         table.foreign('model_id').references('model.id');

@@ -8,6 +8,7 @@ import { chatBot } from "./routes/chatBot";
 import { productsRoutes } from './routes/productsFilterRoutes';
 import { productDetailsRoutes } from "./routes/productDetailsRoutes";
 import { shoppingCartRouter } from "./routes/shoppingCartRoute";
+import { categoryRoutes } from "./routes/categoryRoutes";
 
 dotenv.config();
 
@@ -34,6 +35,7 @@ main.use("/photos", express.static("photos"));
 main.use(userRouter);
 main.use(replicateAi);
 main.use(chatBot);
+main.use(categoryRoutes);
 main.use(productsRoutes);
 main.use(productDetailsRoutes);
 main.use(shoppingCartRouter);

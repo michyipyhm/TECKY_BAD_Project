@@ -3,20 +3,21 @@ import { knex } from "../main";
 
 export const productsRoutes = express.Router();
 
+productsRoutes.get("/products/subcategory/")
 productsRoutes.get("/products", getProducts);
 // productsRoutes.get("/filterProducts", filterProducts);
 
 async function getProducts(req: Request, res: Response) {
-  const { productType , categoryType, sorting } = req.query;
-  console.log("sorting: ", sorting)
+  const { categoryType, subCategoryType, sorting } = req.query;
+  console.log("sorting: ", sorting);
   // const { category_type } = req.query;
   try {
     const product_info_result = knex
       .select(
         "products.id as product_id",
         "product_image.image_path",
-        "category_name as product_type",
-        "category_type as category_type",
+        "sub_category.category_name as sub_category_name",
+        "category.category_name as category_name",
         "model.name as model_name",
         "color.name as color_name",
         "products.product_name",
@@ -27,11 +28,12 @@ async function getProducts(req: Request, res: Response) {
       .join("products", "products.id", "po.products_id")
       .join("color", "color.id", "po.color_id")
       .join("model", "model.id", "po.model_id")
-      .join("category", "category.id", "category_id")
+      .join("sub_category", "sub_category.id", "products.sub_category_id")
+      .join("category", "category.id", "sub_category.category_id")
       .join("product_image", "products.id", "product_image.product_id")
       .orderBy("po.created_at", "desc");
-    if (productType) {
-      product_info_result.where("category_name", productType);
+    if (categoryType) {
+      product_info_result.where("category.id", categoryType);
     }
     if (sorting) {
       product_info_result.orderBy("products.product_price", sorting.toString());
@@ -46,6 +48,7 @@ async function getProducts(req: Request, res: Response) {
         image_path: row.image_path,
         product_id: row.product_id,
         product_type: row.product_type,
+        category_name: row.category_name,
         product_quantity: row.product_quantity,
       }))
     );

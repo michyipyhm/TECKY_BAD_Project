@@ -1,11 +1,14 @@
-const productTypeSelect = document.getElementById("productType");
-const categoryTypeSelect = document.getElementById("categoryType");
+const categoryTypeSelect = document.getElementById("category_type");
+const subCategoryTypeSelect = document.getElementById("subCategoryTypeSelect");
 const decOrderBtn = document.querySelector("#price-dec");
 const ascOrderBtn = document.querySelector("#price-asc");
 const sortingInput = document.querySelector("#sorting");
 
 window.onload = async () => {
-  productTypeSelect.addEventListener("change", () => getAllProducts());
+  categoryTypeSelect.addEventListener("change", () => {
+    getSubCategory();
+    // getAllProducts()
+  });
 
   decOrderBtn.addEventListener("click", () => {
     sortingInput.value = "desc";
@@ -15,23 +18,45 @@ window.onload = async () => {
     sortingInput.value = "asc";
     getAllProducts();
   });
-  
+
+  const getSubCategory = async () => {
+    const categoryType = categoryTypeSelect.value;
+    const res = await fetch(`/category/${categoryType}/subcategory`, {
+      method: "GET",
+    });
+    const data = await res.json();
+    console.log(data);
+    if (res.ok) {
+      displaySubCategories(data);
+    }
+  };
+
+  const displaySubCategories = (subCategories) => {
+    subCategoryTypeSelect.innerHTML = ""; // 清空之前的內容
+    subCategories.forEach((subCategory) => {
+      subCategoryTypeSelect.innerHTML += `<option value="${subCategory.id}">${subCategory.category_name}</option>`;
+    });
+    subCategoryTypeSelect.addEventListener("change", () => {
+      console.log("sub Change")
+    })
+  };
+
   const getAllProducts = async () => {
     const searching = [];
     const sorting = { sorting: sortingInput.value };
-    const productType = { productType: productTypeSelect.value };
-    const category_type = { categoryType: productTypeSelect.value };
-    if (productType.productType) {
-      searching.push(productType);
+    const categoryType = { categoryType: categoryTypeSelect.value };
+    // const sub_category_type = { categoryType: subCategoryTypeArea.value };
+    if (categoryType.categoryType) {
+      searching.push(categoryType);
     }
-    if (category_type.categoryType) {
-      searching.push(category_type);
-    }
+    // if (sub_category_type.categoryType) {
+    //   searching.push(category_type);
+    // }
     if (sorting.sorting) {
       searching.push(sorting);
     }
     document.querySelector(`#products-container`).innerHTML = "";
-  
+
     let query = "";
     for (let i = 0; i < searching.length; i++) {
       const key = Object.keys(searching[i])[0];
@@ -44,12 +69,12 @@ window.onload = async () => {
       query += `${key}=${value}`;
     }
     console.log(query);
-  
+
     const res = await fetch(`/products${query}`, {
       method: "GET",
     });
     const result = await res.json();
-  
+
     if (res.ok) {
       document.querySelector(`#products-container`).innerHTML = "";
       for (let i = 0; i < result.length; i++) {
@@ -58,10 +83,10 @@ window.onload = async () => {
         let quantity = result[i].product_quantity;
         let productName = result[i].product_name;
         let price = result[i].product_price;
-  
+
         let quantityText = "";
         let quantityClass = "";
-  
+
         if (quantity > 1) {
           quantityText = "In stock";
           quantityClass = "quantity-green";
@@ -87,7 +112,7 @@ window.onload = async () => {
             </div>
           </div>`;
       }
-  
+
       document.querySelectorAll(".card").forEach((cardDiv) => {
         const checkProductDetails = cardDiv.querySelectorAll(".gallery-item");
         checkProductDetails.forEach((button) => {
@@ -105,5 +130,4 @@ window.onload = async () => {
   };
 
   getAllProducts();
-
 };

@@ -74,15 +74,30 @@
         </div>
         <form id="productsForm">
           <div class="form-group" id="product_type_area">
-            <label for="productType">Product Type:</label>
-            <select name="product_type" id="productType">
-              <option value="" disabled selected>Select Product Type</option>
-              <option value="phoneCase">Phone Case</option>
+            <label for="productType">Category:</label>
+            <select name="category_type" id="category_type">
+              <option value="" disabled selected>Select Category Type</option>
+              <option value="1">Phone Case</option>
+              <option value="2">Lens Protector</option>
+              <option value="3">Screen Protector</option>
+              <!-- <option value="phoneCase">Phone Case</option>
               <option value="lensProtector">Lens Protector</option>
-              <option value="screenProtector">Screen Protector</option>
+              <option value="screenProtector">Screen Protector</option> -->
             </select>
           </div>
-          <div class="form-group" id="category_type_area"></div>
+          <div class="form-group" id="sub_category_type_area">
+            <label for="subCategoryType">Sub Category:</label>
+            <select id="subCategoryTypeSelect">
+              <option value="">請選擇類別</option>
+              <option value="1">類別 1</option>
+              <option value="2">類別 2</option>
+              <option value="3">類別 3</option>
+          </select>
+
+            <!-- <select name="sub_category_type" id="sub_category_type">
+              <option value="" disabled selected>Select Sub Category Type</option>
+            </select> -->
+          </div>
         </form>
       </div>
       <div id="results"></div>

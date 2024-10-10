@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const data = await res.json();
     if (res.ok) {
       alert(data.message);
+      window.location = "/shoppingCart.html"
     } else {
       alert(data.message);
     }

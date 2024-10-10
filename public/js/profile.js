@@ -125,8 +125,8 @@ window.onload = async () => {
         }
     }
 
-    const saveEditBtn = document.querySelector("#saveEditBtn");
-    saveEditBtn.addEventListener('click', async function (e) {
+    const saveProfileBtn = document.querySelector("#saveProfileBtn");
+    saveProfileBtn.addEventListener('click', async function (e) {
         e.preventDefault()
 
         const formObject = {
@@ -147,7 +147,19 @@ window.onload = async () => {
             alert("Updated")
             window.location.href = "/profile.html";
         } else {
-            alert(data.message, "Update Failed")
+            alert(data.message)
         }
     })
+
+}
+
+async function showTab(index) {
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.content > div');
+
+    tabs.forEach(tab => tab.classList.remove('active'));
+    contents.forEach(content => content.classList.remove('active'));
+
+    tabs[index].classList.add('active');
+    contents[index].classList.add('active');
 }

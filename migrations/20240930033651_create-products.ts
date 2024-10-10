@@ -5,10 +5,10 @@ export async function up(knex: Knex) {
     await knex.schema.createTable('products', table=>{
         table.increments()
         table.string('product_name');
-        table.integer('category_id').unsigned();
+        table.integer('sub_category_id').unsigned();
         table.integer('product_price');
         table.boolean('custom_made');
-        table.foreign('category_id').references('category.id');
+        table.foreign('sub_category_id').references('sub_category.id');
         table.timestamps(false,true);
     })
 }

@@ -31,13 +31,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <div class="productRow">
                         <div class="productDetails">
                             <span id="productDetailsH1">Product Details</span><br>
-                            <div>Type: <span>${product.camera_type || 'N/A'}</span></div>
-                            <div>Format:  <span id="productDetailsFormat">
-                                ${product.format_name === 'digital' ? 'N/A' : product.format_name}</span></div>
-                            <div>Origin: <span>${product.origin_country || 'N/A'}</span></div>
-                            <div>ISO: <span>${product.iso || 'N/A'}</span></div>
-                            <div>Year:  <span>${product.production_year || 'N/A'}</span></div>
-                            <div>Weight:  <span">${product.weight || 'N/A'}</span></div>
+                            <div>Color: <span>${product.color_name || 'N/A'}</span></div>
                         </div>
                         <div class="productQuantity">
                             <div class="productPrice">Product Price:<span id="priceNum">$${product.product_price}</span></div>
@@ -57,7 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         `;
         shoppingCartForm.appendChild(productDiv);
         const totalPrice = document.getElementById('totalPrice');
-        totalPrice.textContent = `Total Price: $${result.totalPrice.total}`
+        totalPrice.textContent = `Total Price: $${result.totalPrice}`
         //選擇數量
         const quantitySelect = productDiv.querySelector('#quantity')
         quantitySelect.addEventListener("change", async (e) => {
@@ -138,3 +132,4 @@ orderBtn.addEventListener("click", async (e) => {
     }
 
 })
+

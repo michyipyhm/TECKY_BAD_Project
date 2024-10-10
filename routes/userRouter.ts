@@ -9,6 +9,8 @@ userRouter.post("/register", registerNewMember);
 userRouter.post("/login", loginUser);
 userRouter.get("/userinfo", checkUserInfo);
 userRouter.post("/logout", logoutUser);
+userRouter.post("/editProfile", editUserInfo);
+// userRouter.post("/password", changePassword);
 
 import "express-session";
 
@@ -20,15 +22,13 @@ declare module "express-session" {
 
 async function registerNewMember(req: Request, res: Response) {
   const data = req.body;
-  console.log(data);
   const username = data.username;
   const password = data.password;
   const phone = data.phone;
   const address = data.address;
   const email = data.email;
-  const nameResult = await knex
+  const nameResult = await knex("members")
     .select("username")
-    .from("members")
     .where("username", username);
   if (nameResult.length > 0) {
     res.status(400).json({ message: "Username has been registered." });
@@ -66,18 +66,16 @@ async function loginUser(req: Request, res: Response) {
   const email = data.email;
   const password = data.password;
 
-  const emailResult = await knex
+  const emailResult = await knex("members")
     .select("*")
-    .from("members")
     .where("email", email)
     .returning("id");
   if (emailResult.length == 0) {
     res.status(400).json({ message: "The email or password is incorrect." });
     return;
   } else {
-    const passwordResult = await knex
+    const passwordResult = await knex("members")
       .select("username")
-      .from("members")
       .where("password", password);
     if (!passwordResult) {
       res
@@ -111,3 +109,35 @@ async function logoutUser(req: Request, res: Response) {
     res.json({ message: "Please login first." });
   }
 }
+
+async function editUserInfo(req: Request, res: Response) {
+  const userId = req.session.userId;
+  const data = req.body;
+  const phone = data.phone;
+  const address = data.address;
+
+  const userResult = await knex("members")
+  .update({
+    phone: phone,
+    address: address
+  })
+  .where("id", userId);
+
+  res.json({ message: "Date updated successfully" });
+}
+
+// async function changePassword(req: Request, res: Response) {
+//   const userId = req.session.userId;
+//   const data = req.body;
+//   const oldPassword = data.oldPassword;
+//   const newPassword = data.oldPassword;
+
+//   const userResult = await knex("members")
+//   .update({
+//     phone: phone,
+//     address: address
+//   })
+//   .where("id", userId);
+
+//   res.json({ message: "Date updated successfully" });
+// }

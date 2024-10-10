@@ -21,6 +21,8 @@
   <body>
     <div class="firstSection">
         <div class="logoLocation"><a href="./index.html">LOGO位置(可回到主頁)</a></div>
+        <a href="./productsFilter.html">product</a>
+        <a href="./shoppingCart.html">CART</a>
         <div class="userArea">
             <button id="loginBtn" type="button" class="btn btn-outline-primary">Sign in</button>
             <div class="overlay" id="loginOverlay">
@@ -43,11 +45,11 @@
                     <h2>Register</h2>
                     <form id="registerForm">
                         <label for="username">Username:</label><br>
-                        <input type="text" id="username" required><br><br>
+                        <input type="text" id="registerUsername" required><br><br>
                         <label for="password">Password:</label><br>
-                        <input type="password" id="password" required><br><br>
+                        <input type="password" id="registerPassword" required><br><br>
                         <label for="email">Email:</label><br>
-                        <input type="email" id="email" required><br><br>
+                        <input type="email" id="registerEmail" required><br><br>
                         <button type="submit">Submit</button>
                     </form>
                 </div>
@@ -70,6 +72,14 @@
         </div>
       </div>
     </div>
+
+    <div id="chatBox">
+      <div id="chatBoxHeader"><div>ChatBot</div><div><button id="createNewChatBtn">NEW CHAT</button></div></div>
+      <div id="chatBody"></div>
+      <input type="text" id="chatInput" placeholder="Type your question...">
+      <button id="sendBtn">Send</button>
+    </div>
+    <button id="chatToggleBtn">Chat</button>
 
     <script src="./js/index.js"></script>
   </body>

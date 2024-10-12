@@ -4,13 +4,14 @@ import dotenv from "dotenv";
 import { userRouter } from "./routes/userRouter";
 import Knex from "knex";
 import { replicateAi } from "./routes/replicateAI";
+import { chatRouter } from "./routes/chatRouter";
 import { chatBot } from "./routes/chatBot";
 import { productsRoutes } from './routes/productsFilterRoutes';
 import { productDetailsRoutes } from "./routes/productDetailsRoutes";
 import { shoppingCartRouter } from "./routes/shoppingCartRoute";
 import { orderRouter } from "./routes/orderRoute";
 import { categoryRoutes } from "./routes/categoryRoutes";
-import { isLoggedIn } from "./utils/guards";
+// import { isLoggedIn } from "./utils/guards";
 
 dotenv.config();
 
@@ -38,12 +39,14 @@ main.use("/photos", express.static("photos"));
 
 main.use(userRouter);
 main.use(replicateAi);
+main.use(chatRouter);
 main.use(chatBot);
 main.use(categoryRoutes);
 main.use(productsRoutes);
 main.use(productDetailsRoutes);
-main.use(isLoggedIn, shoppingCartRouter);
+// main.use(isLoggedIn, shoppingCartRouter);
 main.use(orderRouter);
+main.use(shoppingCartRouter);
 
 
 const PORT = 8080;

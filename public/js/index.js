@@ -204,9 +204,9 @@ window.onload = async () => {
   document.getElementById('sendBtn').addEventListener('click', async function () {
     const chatInputElem = document.getElementById('chatInput')
     const chatInput = chatInputElem.value
-    const body = { message: chatInput }
+    const body = { question: chatInput }
 
-    const res = await fetch("/writeMessage", {
+    const res = await fetch("/aiBot", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -24,3 +24,14 @@
 
 ## permission denied for schema public
 `GRANT ALL PRIVILEGES ON SCHEMA public TO`
+
+## openAI
+`yarn openai @types/openai`
+
+DB_NAME=bad_project
+DB_USERNAME=Kees
+DB_PASSWORD=kees123
+SECRET=kees11223344556677889900
+
+OPENAI_API_KEY=edbcea00-423f-45ff-8e37-e2e4f23a11c1
+BASE_URL=https://api.gpt.tecky.ai/v1

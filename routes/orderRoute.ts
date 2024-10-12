@@ -20,8 +20,12 @@ async function checkOrder(req: Request, res: Response) {
       .select("*")
       .from("order_details")
       .join("orders", "orders.id", "order_details.order_id")
-      .where("member_id", userId);
+      .join("products", "products.id", "order_details.product_id")
+      .join("product_image", "products.id", "product_image.product_id")
+      .where("member_id", userId)
+      .where("state", "Pending");
 
+    console.log("orderResult", orderResult);
     res.status(200).json({ orderResult });
   } catch (err) {
     console.error(err);

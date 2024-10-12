@@ -3,7 +3,7 @@ import { knex } from "../main";
 
 export const productsRoutes = express.Router();
 
-productsRoutes.get("/products/subcategory/")
+productsRoutes.get("/products/subcategory/", getProducts)
 productsRoutes.get("/products", getProducts);
 // productsRoutes.get("/filterProducts", filterProducts);
 
@@ -37,6 +37,9 @@ async function getProducts(req: Request, res: Response) {
     }
     if (sorting) {
       product_info_result.orderBy("products.product_price", sorting.toString());
+    }
+    if (subCategoryType) {
+      product_info_result.where("sub_category.id", subCategoryType);
     }
 
     const results = await product_info_result;

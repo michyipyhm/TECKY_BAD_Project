@@ -8,14 +8,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   console.log("res is =", res);
   const result = await res.json();
   console.log("result is ", result);
-  const products = result.data; // result {result: {data: {}}}
-  const product = products[0]; // result {result: {data: {}}}
+  const products = result.data; 
+  const product = products[0]; 
 
   console.log("product is ", product);
 
   const productDetails = document.getElementById("productDetails");
   const productDiv = document.createElement("div");
   productDiv.className = "product";
+  
   productDiv.innerHTML = `
       <div class="firstSection">
           <div class="row">
@@ -53,11 +54,13 @@ document.addEventListener("DOMContentLoaded", async () => {
                   <div><span class="descriptionRow">Color: </span>${
                     product.color === "null" ? "N/A" : product.color
                   }</div>
+                 
               </div>
           </div>
           </div>
       </div>
   `;
+  
   productDetails.appendChild(productDiv);
   const name = product.product_name;
   const addToCartBtns = document.querySelector(".btn.btn-light");

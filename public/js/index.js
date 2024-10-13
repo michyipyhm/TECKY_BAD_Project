@@ -12,7 +12,7 @@ window.onload = async () => {
 
     if (res.ok && userInfo) {
       userArea.innerHTML = `
-                <div class="userInfo"><span class="userInfoFont">Welcome! ${userInfo.username}!</span></div>
+                <div class="userInfo"><span class="userInfoFont">${userInfo.username}</span></div>
                 <div class="settingBtn"><a href="/profile.html"><span class="userInfoFont">Profile</span></a></div>
                 <div class="logout"><button type="button" id="logoutBtn" class="userInfoFont">Logout</button></div>
             `;

@@ -1,9 +1,7 @@
 import express, { Request, Response } from "express";
-import { knex } from "../main";
 import OpenAI from "openai";
 import { ChatCompletionTool } from "openai/resources";
 import { ProductService } from "../services/productService";
-import { JSONParser } from "formidable/parsers";
 
 
 type Messages = OpenAI.Chat.Completions.ChatCompletionMessageParam[];
@@ -107,6 +105,10 @@ export class GptController {
                 // }
 
                 // console.log("result: ", result);
+                if (!question || typeof question !== 'string' || question.trim().length === 0) {
+                    res.status(400).json({ message: "Message cannot be empty." });
+                    return;
+                }
                 res.json({ result });
                 return
             }
@@ -119,7 +121,6 @@ export class GptController {
             return
         }
     }
-
 
     checkProduct = async (req: Request, res: Response) => {
         const { model, category, color } = req.body

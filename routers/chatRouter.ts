@@ -3,6 +3,15 @@ import dotenv from "dotenv";
 import { knex } from "../main";
 export const chatRouter = express();
 
+import { GptController } from "../controllers/gptController";
+import { ProductService } from "../services/productService";
+
+const productService = new ProductService()
+const gptController = new GptController(productService)
+
+chatRouter.post("/checkProduct", gptController.checkProduct)
+chatRouter.post("/aiBot", gptController.aiBot)
+
 dotenv.config();
 
 chatRouter.get("/readMessage", readMessage)
@@ -38,7 +47,6 @@ async function writeMessage(req: Request, res: Response) {
         return;
     }
     try {
-
         await knex.insert([{ member_id: userId, user_message: message, response_message: "" }]).into("chat_box")
         res.json({ message: "Message sent" })
     } catch {

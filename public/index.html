@@ -23,6 +23,10 @@
         <div class="logoLocation"><a href="./index.html">LOGO位置(可回到主頁)</a></div>
         <a href="./productsFilter.html">product</a>
         <a href="./shoppingCart.html">CART</a>
+        <a href="./orderDetail.html">ORDER DETAIL</a>
+        <a href="./orderHistory.html">ORDER History</a>
+
+
         <div class="userArea">
             <button id="loginBtn" type="button" class="btn btn-outline-primary">Sign in</button>
             <div class="overlay" id="loginOverlay">
@@ -57,6 +61,22 @@
         </div>
     </div>
 
+    <!-- <div class="secondSection">
+      <div class="aicontainer">
+        <h1>Phone Case Design Generator</h1>
+        <div class="promptcontainer">
+          <form id="promptForm">
+            <label for="prompt">Enter your prompt:</label>
+            <input type="text" id="prompt" name="prompt" required />
+            <button type="submit">Generate Image</button>
+          </form>
+        </div>
+        <div class="imagecontainer">
+          <div id="result"></div>
+        </div>
+      </div>
+    </div> -->
+
     <div class="secondSection">
       <div class="aicontainer">
         <h1>Phone Case Design Generator</h1>
@@ -64,6 +84,13 @@
           <form id="promptForm">
             <label for="prompt">Enter your prompt:</label>
             <input type="text" id="prompt" name="prompt" required />
+            <label for="phoneModel">Select Phone Model:</label>
+            <select id="phoneModel" name="phoneModel" required>
+              <option value="iphone15">iPhone 15</option>
+              <option value="iphone15plus">iPhone 15 Plus</option>
+              <option value="iphone15pro">iPhone 15 Pro</option>
+              <option value="iphone15promax">iPhone 15 Pro Max</option>
+            </select>
             <button type="submit">Generate Image</button>
           </form>
         </div>

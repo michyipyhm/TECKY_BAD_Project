@@ -11,7 +11,6 @@
     "rollback": "yarn knex migrate:rollback",
     "seed": "yarn knex seed:run",
     "data": "psql -f database/init.sql && ts-node database/insert_user.ts && psql -f database/data.sql"
-
   },
   "repository": "git@github.com:michyipyhm/TECKY_BAD_Project.git",
   "author": "michyipyhm <micmicyip@hotmail.com>",
@@ -21,6 +20,7 @@
     "@types/express": "^5.0.0",
     "@types/express-session": "^1.18.0",
     "@types/formidable": "2",
+    "@types/fs-extra": "^11.0.4",
     "@types/jest": "^29.5.13",
     "@types/jsonfile": "^6.1.4",
     "@types/node": "^22.7.4",
@@ -31,15 +31,19 @@
     "typescript": "^5.6.2"
   },
   "dependencies": {
+    "axios": "^1.7.7",
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
     "express-session": "^1.18.0",
     "formidable": "2",
+    "fs-extra": "^11.2.0",
     "jsonfile": "^6.1.0",
     "knex": "^3.1.0",
     "openai": "^4.67.3",
+    "path": "^0.12.7",
     "pg": "^8.13.0",
-    "replicate": "^0.34.1"
+    "replicate": "^0.34.1",
+    "stripe": "^17.2.0"
   }
 }

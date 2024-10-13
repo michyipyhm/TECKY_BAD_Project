@@ -64,8 +64,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   addToCartBtns.addEventListener("click", async (e) => {
     e.preventDefault();
     const body = {
-      name: name,
-      
+      name: name,  
     };
     const res = await fetch("/addToCart", {
       method: "POST",

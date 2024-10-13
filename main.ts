@@ -9,9 +9,11 @@ import { chatBot } from "./routes/chatBot";
 import { productsRoutes } from './routes/productsFilterRoutes';
 import { productDetailsRoutes } from "./routes/productDetailsRoutes";
 import { shoppingCartRouter } from "./routes/shoppingCartRoute";
-import { orderRouter } from "./routes/orderRoute";
+import { orderRouter } from "./routes/orderDetailRoute";
 import { categoryRoutes } from "./routes/categoryRoutes";
+import { stripeCheckout } from "./routes/StripeRoutes";
 // import { isLoggedIn } from "./utils/guards";
+
 
 dotenv.config();
 
@@ -44,9 +46,11 @@ main.use(chatBot);
 main.use(categoryRoutes);
 main.use(productsRoutes);
 main.use(productDetailsRoutes);
-// main.use(isLoggedIn, shoppingCartRouter);
 main.use(orderRouter);
 main.use(shoppingCartRouter);
+main.use(stripeCheckout);
+// main.use(isLoggedIn, shoppingCartRouter);
+
 
 
 const PORT = 8080;

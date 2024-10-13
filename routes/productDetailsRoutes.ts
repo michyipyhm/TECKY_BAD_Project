@@ -44,6 +44,8 @@ async function productdetails(req: Request, res: Response) {
           color: row.color_name,
           product_type: row.product_type,
         category_name: row.category_name,
+        sub_category_name: row.sub_category_name,
+      
         }))
       }
     );

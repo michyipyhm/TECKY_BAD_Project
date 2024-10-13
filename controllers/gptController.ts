@@ -1,7 +1,11 @@
 import express, { Request, Response } from "express";
 import OpenAI from "openai";
 import { ChatCompletionTool } from "openai/resources";
+<<<<<<< HEAD
+import { GptService } from "../services/gptService";
+=======
 import { ProductService } from "../services/gptService";
+>>>>>>> f4f3777d748f589bfb90ebc67d9b5a237a6c43c4
 
 
 type Messages = OpenAI.Chat.Completions.ChatCompletionMessageParam[];
@@ -15,10 +19,10 @@ export class GptController {
         baseURL: this.baseURL,
     });
 
-    constructor(private productService: ProductService) { }
+    constructor(private productService: GptService) { }
 
     add = (number1: number, number2: number) => {
-        // console.log(number1, number2)
+        console.log(number1, number2)
         return number1 + number2;
     };
     subtract = (number1: number, number2: number) => {

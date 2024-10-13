@@ -4,6 +4,7 @@ window.onload = async () => {
     const emailLabel = document.querySelector("#emailLabel")
     const phoneLabel = document.getElementById('phoneLabel')
     const addressLabel = document.getElementById('addressLabel')
+    const getInAdminBtn = document.querySelector('#getInAdmin')
 
     await getUserProfile()
     async function getUserProfile() {
@@ -150,6 +151,45 @@ window.onload = async () => {
             alert(data.message)
         }
     })
+
+    async function getUserProfile() {
+        const res = await fetch("/userinfo")
+        const data = await res.json()
+        const userInfo = data.userInfo
+        const userArea = document.querySelector('.userArea')
+
+        if (res.ok && userInfo) {
+            usernameLabel.innerHTML = userInfo.username;
+            emailLabel.innerHTML = userInfo.email
+            phoneLabel.value = userInfo.phone
+            addressLabel.value = userInfo.address
+
+            userArea.innerHTML = `
+                <div class="userInfo"><span class="userInfoFont">Welcome! ${userInfo.username}!</span></div>
+                <div class="settingBtn"><a href="/profile.html"><span class="userInfoFont">Profile</span></a></div>
+                <div class="logout"><button type="button" id="logoutBtn" class="userInfoFont">Logout</button></div>
+            `;
+            if (userInfo.admin) {
+                const adminLink = document.createElement('a')
+                adminLink.href = "/admin.html"
+                adminLink.innerHTML = '<span class="profileFont">Admin Panel</span>'
+                getInAdminBtn.appendChild(adminLink)
+            }
+            const logoutEle = document.querySelector("#logoutBtn");
+            if (logoutEle) {
+                logoutEle.addEventListener("click", async () => {
+                    const res = await fetch("/logout", { method: "POST" });
+                    if (res.ok) {
+                        window.location.href = './index.html';
+                    } else {
+                        alert('Logout failed');
+                    }
+                });
+            }
+        } else {
+            bindAuthButtons();
+        }
+    }
 
 }
 

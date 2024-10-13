@@ -3,7 +3,7 @@ import type { Knex } from "knex";
 
 export async function up(knex: Knex) {
     await knex.schema.createTable('product_option', table=>{
-        table.increments()
+        table.increments('id')
         table.integer('model_id').unsigned();
         table.integer('color_id').unsigned();
         table.integer('products_id').unsigned();

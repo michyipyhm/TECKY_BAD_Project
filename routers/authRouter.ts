@@ -13,6 +13,13 @@ authRouter.get("/userinfo", authController.getUserInfo);
 authRouter.post("/logout", authController.logoutUser);
 authRouter.post("/editProfile", authController.editUserInfo);
 authRouter.post("/changePassword", authController.changePassword);
+authRouter.get("/getallItem", authController.getAllItem);
+authRouter.post("/adminDeleteItem", authController.adminDeleteItem);
+authRouter.post("/adminCopyItem", authController.adminCopyItem);
+authRouter.get("/editProduct", authController.adminGetItem);
+
+
+
 
 import "express-session";
 

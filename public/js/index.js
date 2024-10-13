@@ -68,7 +68,7 @@ window.onload = async () => {
     if (registerForm) {
       registerForm.addEventListener("submit", async (e) => {
         e.preventDefault();
-        console.log("ReG")
+        console.log("ReG");
         const username = e.target.registerUsername.value;
         const password = e.target.registerPassword.value;
         const email = e.target.registerEmail.value;
@@ -120,123 +120,174 @@ window.onload = async () => {
 
   async function replicateAi() {
     const promptForm = document.querySelector("#promptForm");
-    promptForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
+  const addToCartBtn = document.querySelector("#addToCartBtn");
+  let generatedProductData = null;
 
-      const prompt = e.target.prompt.value;
-      const resultDiv = document.querySelector("#result");
+  promptForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-      // console.log("prompt is ", prompt);
-      // console.log("resultDiv is ", resultDiv);
+    const prompt = e.target.prompt.value;
+    const phoneModel = e.target.phoneModel.value;
+    const resultDiv = document.querySelector("#result");
 
-      resultDiv.innerHTML = "Generating image...";
+    resultDiv.innerHTML = "Generating image...";
+    addToCartBtn.disabled = true;
 
-      const body = {
-        prompt: prompt,
-      };
+    const body = {
+      prompt: prompt,
+      phoneModel: phoneModel,
+    };
 
-      console.log("109 body is ", body);
+    try {
+      const res = await fetch("/replicateAI", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
 
-      try {
-        const res = await fetch("/replicateAI", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(body),
-        });
+      const data = await res.json();
 
-        const data = await res.json();
+      console.log("Response data:", data);
 
-        console.log("120 data is ", data);
+      if (res.ok) {
+        const imageUrl = data.data;
+        console.log("Image URL:", imageUrl);
 
-        if (res.ok) {
-          const imageUrl = data.data[0];
-          resultDiv.innerHTML = `
-                          <h2>Generated Image:</h2>
-                          <img src="${imageUrl}" alt="Generated image">
-                      `;
-        } else {
-          resultDiv.innerHTML = `Error: ${data.message || "Unknown error occurred"
-            }`;
-        }
-      } catch (error) {
-        console.error("Error:", error);
-        resultDiv.innerHTML = "An error occurred while generating the image.";
+        resultDiv.innerHTML = `
+          <h2>Generated Image:</h2>
+          <img src="/uploads/${imageUrl}" alt="Generated image">
+        `;
+        generatedProductData = data;
+
+        console.log("Generated product data:", generatedProductData);
+        addToCartBtn.disabled = false;
+      } else {
+        resultDiv.innerHTML = `Error: ${
+          data.message || "Unknown error occurred"
+        }`;
       }
-    });
-  }
+    } catch (error) {
+      console.error("Error:", error);
+      resultDiv.innerHTML = "An error occurred while generating the image.";
+    }
+  });
+
+  addToCartBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    if (!generatedProductData) {
+      alert("Please generate an image first");
+      return;
+    }
+
+    console.log("data to be added to cart", generatedProductData);
+    console.log("productName to be added to cart", generatedProductData.productName);
+    
+    const body = {
+      name: generatedProductData.productName,
+    };
+
+    try {
+      const res = await fetch("/addToCart", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        alert(data.message);
+        window.location = "/index.html";
+      } else {
+        alert(data.message);
+      }
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+      alert("An error occurred while adding to cart");
+    }
+  });
+}
 
   function chatBoxToggle() {
-    const chatWindow = document.getElementById('chatBox');
-    const toggleBtn = document.getElementById('chatToggleBtn');
+    const chatWindow = document.getElementById("chatBox");
+    const toggleBtn = document.getElementById("chatToggleBtn");
 
-    toggleBtn.addEventListener('click', () => {
-      if (chatWindow.style.display === 'none' || chatWindow.style.display === '') {
-        chatWindow.style.display = 'block';
-        loadChatMessages()
+    toggleBtn.addEventListener("click", () => {
+      if (
+        chatWindow.style.display === "none" ||
+        chatWindow.style.display === ""
+      ) {
+        chatWindow.style.display = "block";
+        loadChatMessages();
       } else {
-        chatWindow.style.display = 'none';
+        chatWindow.style.display = "none";
       }
     });
   }
 
   async function loadChatMessages() {
-    const res = await fetch("/readMessage")
-    const data = await res.json()
-    const results = data.userMessage
-    const chatBody = document.getElementById('chatBody')
-    chatBody.innerHTML = ''
+    const res = await fetch("/readMessage");
+    const data = await res.json();
+    const results = data.userMessage;
+    const chatBody = document.getElementById("chatBody");
+    chatBody.innerHTML = "";
 
     for (const result of results) {
-      const messageDiv = document.createElement('div');
-      messageDiv.className = 'chatBoxMessage'
+      const messageDiv = document.createElement("div");
+      messageDiv.className = "chatBoxMessage";
       messageDiv.innerHTML = `
       <div class="chatMsg">
         <div class="responseMsg">${result.response_message}</div>
         <div class="userMsg">${result.user_message}</div>
       </div>
-      `
-      chatBody.appendChild(messageDiv)
+      `;
+      chatBody.appendChild(messageDiv);
     }
   }
 
-  document.getElementById('sendBtn').addEventListener('click', async function () {
-    const chatInputElem = document.getElementById('chatInput')
-    const chatInput = chatInputElem.value
-    const body = { question: chatInput }
+  document
+    .getElementById("sendBtn")
+    .addEventListener("click", async function () {
+      const chatInputElem = document.getElementById("chatInput");
+      const chatInput = chatInputElem.value;
+      const body = { question: chatInput };
 
-    const res = await fetch("/aiBot", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    })
-    if (res.ok) {
-      loadChatMessages()
-      chatInputElem.value = ""
-      const chatBody = document.getElementById('chatBody')
-      chatBody.scrollTop = chatBody.scrollHeight
-    } else {
-      const data = await res.json()
-      alert(data.message)
-    }
-  })
-
-  document.getElementById('createNewChatBtn').addEventListener('click', async function () {
-const res = await fetch("/createNewChat", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+      const res = await fetch("/aiBot", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+      if (res.ok) {
+        loadChatMessages();
+        chatInputElem.value = "";
+        const chatBody = document.getElementById("chatBody");
+        chatBody.scrollTop = chatBody.scrollHeight;
+      } else {
+        const data = await res.json();
+        alert(data.message);
       }
-    })
-    if (res.ok) {
-      loadChatMessages()
-    } else {
-      const data = await res.json()
-      alert(data.message)
-    }
-  })
-}
+    });
+
+  document
+    .getElementById("createNewChatBtn")
+    .addEventListener("click", async function () {
+      const res = await fetch("/createNewChat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (res.ok) {
+        loadChatMessages();
+      } else {
+        const data = await res.json();
+        alert(data.message);
+      }
+    });
+};
 

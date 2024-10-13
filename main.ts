@@ -10,7 +10,9 @@ import { productDetailsRoutes } from "./routers/productDetailsRoutes";
 import { shoppingCartRouter } from "./routers/shoppingCartRoute";
 import { orderRouter } from "./routers/orderRoute";
 import { categoryRoutes } from "./routers/categoryRoutes";
+import { stripeCheckout } from "./routers/StripeRoutes";
 // import { isLoggedIn } from "./utils/guards";
+
 
 dotenv.config();
 
@@ -30,6 +32,7 @@ main.use(
   })
 );
 
+
 main.use(express.urlencoded({ extended: true }));
 main.use(express.json());
 
@@ -42,9 +45,11 @@ main.use(chatRouter);
 main.use(categoryRoutes);
 main.use(productsRoutes);
 main.use(productDetailsRoutes);
-// main.use(isLoggedIn, shoppingCartRouter);
 main.use(orderRouter);
 main.use(shoppingCartRouter);
+main.use(stripeCheckout);
+// main.use(isLoggedIn, shoppingCartRouter);
+
 
 
 const PORT = 8080;

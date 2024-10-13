@@ -5,14 +5,12 @@ export const productsRoutes = express.Router();
 
 productsRoutes.get("/products/subcategory/", getProducts);
 productsRoutes.get("/products", getProducts);
-// productsRoutes.get("/filterProducts", filterProducts);
+
 
 async function getProducts(req: Request, res: Response) {
-  console.log("productsFilterRoutes.ts getProducts start");
+ 
   const { categoryType, subCategoryType, sorting } = req.query;
-  console.log("sorting: ", sorting);
-  // const { category_type } = req.query;
-  console.log("productsFilterRoutes.ts getProducts hi 1.1");
+ 
   try {
     const product_image_result = knex
       .select("*")
@@ -22,14 +20,6 @@ async function getProducts(req: Request, res: Response) {
       .orderBy("product_id", "desc");
 
     const test = await product_image_result;
-
-    console.log(
-      "productsFilterRoutes.ts test:[" +
-        test.length +
-        "] product_image_result:[" +
-        JSON.stringify(test) +
-        "]"
-    );
 
     const product_info_result = knex
       .select(
@@ -76,15 +66,9 @@ async function getProducts(req: Request, res: Response) {
     if (subCategoryType) {
       product_info_result.where("sub_category.id", subCategoryType);
     }
-    console.log("productsFilterRoutes.ts getProducts hi 3");
-
+  
     const results = await product_info_result;
 
-    console.log(
-      "productsFilterRoutes.ts getProducts hi 4 results:[" +
-        results.length +
-        "]"
-    );
     res.json(
       results.map((row: any) => ({
         id: row.product_id,
@@ -98,10 +82,10 @@ async function getProducts(req: Request, res: Response) {
       }))
     );
   } catch (error) {
-    console.log("error: [" + error + "]");
+    
     res.status(500).json({
       message: "An error occurred while retrieving the product information.",
     });
   }
-  console.log("productsFilterRoutes.ts getProducts end");
+  
 }

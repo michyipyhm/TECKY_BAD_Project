@@ -13,11 +13,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   let result = await res.json();
   let grandTotal = 0;
-
-  for (let resultObject of result.orderResult) {
+  let fetchPackage = result.fetchOrderDetail;
+  for (let resultObject of fetchPackage) {
     console.log("orderResult is", resultObject);
 
-    const orderId = document.getElementById("orderNum");
+    // const orderId = document.getElementById("orderNum");
     const orderDetails = document.getElementById("orderDetails");
     // orderId.textContent = `TECKYACADEMY-C32-WSP012-${orderNumber}`
 
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     productDiv.className = "product";
     productDiv.innerHTML = `
                 <div class="productPicName">
-                    <div class="productPicture"><img src="${resultObject.image_path}" width="100" height="100"/></div>
+                    <div class="productPicture"><img src="${resultObject.product_images[0]}" width="100" height="100"/></div>
                     <div class="productName">PRODUCT NAME: ${resultObject.product_name}</div>
                 </div>
                 <div class="productRow">
@@ -42,83 +42,61 @@ document.addEventListener("DOMContentLoaded", async () => {
     orderDetails.appendChild(productDiv);
 
     grandTotal += resultObject.subtotal;
-
-    //價錢
-
-    const checkOut = document.getElementById("checkOutBtn");
-    const cancelBtn = document.getElementById("cancelOrder");
-    const orderStatus = document.getElementById("status");
   }
-  
+
   const totalPrice = document.getElementById("totalPrice");
   totalPrice.textContent = `${grandTotal}`;
 
-  // orderStatus.textContent = `${resultObject.orderStatus.state}`
+  //Cancel order
+  const cancelBtn = document.getElementById("cancelOrder");
+  cancelBtn.addEventListener("click", async (event) => {
+    event.preventDefault();
 
-  // if (orderStatus.textContent === 'Paid') {
-  //   checkOut.style.display = 'none'
-  //   cancelBtn.style.display = 'none'
-  //   orderStatus.classList.add('paid')
-  // } else if (orderStatus.textContent === 'Canceled') {
-  //   checkOut.style.display = 'none'
-  //   cancelBtn.style.display = 'none'
-  //   orderStatus.classList.add('canceled')
+    const orderIds = fetchPackage.map((order) => order.order_id);
 
-  // } else {
-  //   checkOut.style.display = 'block';
-  //   cancelBtn.style.display = 'block';
-  // }
+    const res = await fetch("/orderCancel", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ orderIds }),
+    });
 
-  // //Stripe
-  // const stripe = Stripe('pk_test_51PreUORwdDaooQDsXVRYADhkpUyJjq3dMOSpQuv4mYsDcrw1kR9F0l157cC5IeJSOeSC0ipQXwVCy4cy6p2j05F100pYHXCLcU');
-  // const orderId = orderNumber
-  // // console.log(orderId)
+    const data = await res.json();
+    if (res.ok) {
+      alert(data.message);
+      window.location = "/index.html";
+    } else {
+      alert(data.message);
+    }
+  });
 
-  // checkOut.addEventListener('click', async (event) => {
-  //   event.preventDefault();
+  //Stripe
+  const stripe = Stripe(
+    "pk_test_51Q8k8BRxPcdn4EKsbQzTyA8MmMbbatLcaT7ble016SP62sGEVmyflvK3FkQcFfRpvu512FBrYSMbr0QuEHaBdMCc00C3S67Z7d"
+  );
 
-  //   const response = await fetch('/create-checkout-session', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({ orderId })
-  //   })
-  //   const session = await response.json();
+  const checkOut = document.getElementById("checkOutBtn");
+  checkOut.addEventListener("click", async (event) => {
+    event.preventDefault();
 
-  //   const result = await stripe.redirectToCheckout({
-  //     sessionId: session.id,
-  //   })
+    const orderIds = fetchPackage.map((order) => order.order_id);
 
-  //   if (result.error) {
-  //     alert(result.error.message);
-  //   }
-  // })
-  //     }
-  // }
-  // console.log("grandTotal is", grandTotal)
+    const response = await fetch("/create-checkout-session", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ orderIds, grandTotal }),
+    });
+    const session = await response.json();
 
-  // //Cancel order
-  // const urlParams = new URLSearchParams(window.location.search);
-  // const orderId = urlParams.get('orderNum');
-  // const cancelBtn = document.getElementById('cancelOrder')
-  // console.log(orderId)
-  // cancelBtn.addEventListener('click', async (event) => {
-  //   event.preventDefault();
+    const result = await stripe.redirectToCheckout({
+      sessionId: session.id,
+    });
 
-  //   const res = await fetch('/orderCancel', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({ orderId })
-  //   })
-
-  //   const data = await res.json()
-  //   if (res.ok) {
-  //     alert(data.message)
-  //     window.location = "/index.html"
-  //   } else {
-  //     alert(data.message)
-  //   }
+    if (result.error) {
+      alert(result.error.message);
+    }
+  });
 });

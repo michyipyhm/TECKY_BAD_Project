@@ -11,7 +11,6 @@
     "rollback": "yarn knex migrate:rollback",
     "seed": "yarn knex seed:run",
     "data": "psql -f database/init.sql && ts-node database/insert_user.ts && psql -f database/data.sql"
-
   },
   "repository": "git@github.com:michyipyhm/TECKY_BAD_Project.git",
   "author": "michyipyhm <micmicyip@hotmail.com>",

@@ -1,0 +1,13 @@
+.orderStatus .Cancelled{
+    font-weight: bold;
+    color: red;
+}
+
+.orderStatus .Pending{
+    color: rgb(255, 255, 0);
+}
+
+.orderStatus .Completed {
+    
+    color: green;
+}

@@ -1,6 +1,7 @@
 import express, { Request, Response, Router } from "express";
 import { Session } from 'express-session';
 import { knex } from "../main";
+// import path from 'path';
 // import { isLoggedIn } from "../utils/guards";
 
 export const shoppingCartRouter = express.Router();
@@ -10,6 +11,7 @@ shoppingCartRouter.post("/addToCart", addToCart as express.RequestHandler); // p
 shoppingCartRouter.post("/selectedQuantity", postQuantity); //shoppingCart
 shoppingCartRouter.delete("/deleteShoppingCartItem", deleteItem); //shoppingCart
 shoppingCartRouter.post("/shoppingCartSendOrder", checkout); //shoppingCart
+// shoppingCartRouter.use(express.static(path.join(__dirname, 'public')));
 
 interface CustomRequest extends Request {
   session: Session & {
@@ -19,8 +21,11 @@ interface CustomRequest extends Request {
 
 async function getAllItems(req: Request, res: Response) {
   const userId = req.session.userId;
-
-  console.log("userId =", userId);
+ 
+  if (!userId) {
+    res.status(401).json();
+    return;
+  }
 
   try {
     let queryResult = await knex.raw(
@@ -55,48 +60,12 @@ async function getAllItems(req: Request, res: Response) {
       images as (
           select product_id, json_agg(product_image.id) as product_image_ids, json_agg(product_image.image_path) as product_images from product_image group by product_id
       )
-      select * from carts left join images on carts.product_id = images.product_id;`, [1]
+      select * from carts left join images on carts.product_id = images.product_id;`, [userId]
     )
 
     const result = queryResult.rows;
-    // let queryResult = await knex
-    //   .select("*")
-    //   .from("shopping_cart")    
-    //   .join(
-    //     "product_option",
-    //     "product_option.id",
-    //     "shopping_cart.product_option_id"
-    //   )
-    //   .join("products", "products.id", "product_option.products_id")
-    //   .join("product_image", "products.id", "product_image.product_id")
-    //   .join("model", "model.id", "product_option.model_id")
-    //   .join("color", "color.id", "product_option.color_id")
-    //   .join("sub_category", "sub_category.id", "products.sub_category_id")
-    //   .join("category", "category.id", "sub_category.category_id")
-
-
-    //   .where("shopping_cart.member_id", userId);
 
     console.log("join all table queryResult =",result)
-
-    // let data = result.map((row: any) => ({
-    //   id: row.id,
-    //   product_id: row.product_id,
-    //   product_images: row.product_images,
-    //   quantity: row.quantity,
-    //   product_price: row.product_price,
-    //   product_name: row.product_name,
-    //   color_name: row.color_name,
-    //   custom_made: row.custom_made
-    // }));
-
-    // console.log("data =", data);
-
-    // let totalPrice = data.reduce((accumulator, item) => {
-    //   return accumulator + item.product_price * item.quantity;
-    // }, 0);
-
-    // console.log("totalPrice =", totalPrice);
 
     res.status(200).json({ result });
   } catch (err) {
@@ -120,6 +89,8 @@ async function addToCart(req: CustomRequest, res: Response): Promise<void> {
       .from("products")
       .where({ product_name: productName });
 
+      console.log("productIdResult =", productIdResult)
+
     if (productIdResult.length === 0) {
        res.status(404).json({ message: "Product not found" });
        return;
@@ -127,12 +98,16 @@ async function addToCart(req: CustomRequest, res: Response): Promise<void> {
 
     const productId = productIdResult[0].id;
 
+    console.log("productId =", productId);
+
     // Check if product is already in cart
     const checkProductQuery = await knex
       .select("product_option_id")
       .from("shopping_cart")
       .where({ member_id: userId, product_option_id: productId });
 
+      console.log("checkProductQuery =", checkProductQuery)
+      
     if (checkProductQuery.length > 0) {
        res.status(400).json({ message: "It is already in your shopping cart" });
        return;
@@ -162,7 +137,8 @@ async function addToCart(req: CustomRequest, res: Response): Promise<void> {
       return;
     }
 
-    console.log(productId, userId)
+    
+    console.log("productId =", productId, userId)
 
     // Add to cart
     await knex("shopping_cart").insert({
@@ -214,12 +190,12 @@ async function postQuantity(req: Request, res: Response) {
 
 async function deleteItem(req: Request, res: Response) {
   const data = req.body;
-  const id = data.id;
-  console.log("You are delected product", data);
+  const product_id = data.product.product_option_id;
+ 
   try {
     await knex
     .from("shopping_cart")
-    .where("product_option_id", id)
+    .where("product_option_id", product_id)
     .del();
     res.status(200).json({ message: "Item deteted!" });
   } catch (err) {
@@ -231,6 +207,7 @@ async function deleteItem(req: Request, res: Response) {
 async function checkout(req: Request, res: Response) {
   try {
     const userId = req.session.userId;
+    
 
     // 檢查order
     const checkOrderQuery = await knex
@@ -303,12 +280,12 @@ async function checkout(req: Request, res: Response) {
       const subtotal =
         shoppingCartResult.quantity * shoppingCartResult.product_price;
 
-      // console.log("orderId =", orderId);
-      // console.log("productName =", productName);
-      // console.log("product_id =", product_id);
+      console.log("orderId =", orderId);
+      console.log("productName =", productName);
+      console.log("product_id =", product_id);
       console.log("quantity =", quantity);
-      // console.log("product_price =", product_price);
-      // console.log("subtotal =", subtotal);
+      console.log("product_price =", product_price);
+      console.log("subtotal =", subtotal);
 
 
       //Check stock
@@ -343,12 +320,6 @@ async function checkout(req: Request, res: Response) {
         subtotal: subtotal,
       });
     }
-
-    //清空shopping cart
-    // await knex
-    //   .from("shopping_cart")
-    //   .where("member_id", userId)
-    //   .del();
 
     // //刪除session
     // await knex.from("shopping_cart").where("member_id", userId).del();

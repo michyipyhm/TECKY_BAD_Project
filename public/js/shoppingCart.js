@@ -5,28 +5,28 @@ document.addEventListener("DOMContentLoaded", async () => {
     window.location.href = "/index.html";
     return;
   }
-  let result = await res.json();
+  let data = await res.json();
 
-  console.log("fetch result: ", result);
-  
+  console.log("fetch result: ", data);
+
   const shoppingCartForm = document.getElementById("shoppingCartForm");
   const cartEmptyDiv = document.querySelector(".cartEmpty");
   const orderBtn = document.querySelector("#orderBtnForm");
 
-  if (result.data.length > 0) {
+  if (data.result.length > 0) {
     cartEmptyDiv.style.display = "none";
   }
-  if (result.data.length <= 0) {
+  if (data.result.length <= 0) {
     orderBtn.style.display = "none";
   }
 
-  for (let product of result.data) {
+  for (let product of data.result) {
     const productDiv = document.createElement("div");
     productDiv.className = "product";
     productDiv.innerHTML = `
             <div class="card" id="shoppingCartCard">
                 <div class="productPicture"><img src="${
-                  product.image_path
+                  product.product_images[0]
                 }" width="300" height="300"/></div>
                 <div class="productProperty">
                     <div class="productName">${product.product_name}
@@ -67,18 +67,19 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <div>
         `;
     shoppingCartForm.appendChild(productDiv);
-    const totalPrice = document.getElementById("totalPrice");
-    totalPrice.textContent = `Total Price: $${result.totalPrice}`;
-    //選擇數量
+
+    // 選擇數量
     const quantitySelect = productDiv.querySelector("#quantity");
     quantitySelect.addEventListener("change", async (e) => {
       e.preventDefault();
       const newQuantity = e.target.value;
-      const id = product.product_id;
+      const id = product.product_option_id;
+
       const body = {
         id: id,
         quantity: newQuantity,
       };
+
       const res = await fetch("/selectedQuantity", {
         method: "POST",
         headers: {
@@ -95,14 +96,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         location.reload();
       }
     });
+
     //刪除物品
     const deleteProduct = productDiv.querySelector("#deleteProduct");
     deleteProduct.addEventListener("click", async (e) => {
       e.preventDefault();
 
-      const id = product.product_id;
       const body = {
-        id: id,
+        product,
       };
       const res = await fetch("/deleteShoppingCartItem", {
         method: "DELETE",
@@ -120,6 +121,18 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     });
   }
+
+  //totalprice
+  let totalPrice = 0;
+  let pricedata = data.result;
+
+  for (let i = 0; i < pricedata.length; i++) {
+    totalPrice += pricedata[i].product_price;
+    finalPrice = totalPrice * pricedata[i].quantity;
+  }
+
+  const totalPriceBox = document.getElementById("totalPrice");
+  totalPriceBox.textContent = `Total Price: $ ${finalPrice}`;
 });
 
 //去orderdetails畫面
@@ -127,6 +140,9 @@ const orderBtn = document.querySelector("#order-button");
 orderBtn.addEventListener("click", async (e) => {
   e.preventDefault();
 
+  // const body = {
+
+  // }
   const res = await fetch("/shoppingCartSendOrder", {
     method: "POST",
     headers: {

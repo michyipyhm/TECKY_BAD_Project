@@ -326,7 +326,7 @@ export async function seed(knex: Knex): Promise<void> {
     { id: 40, model_id: 2, color_id: 9, products_id: 4, product_quantity: 100 },
     { id: 41, model_id: 3, color_id: 9, products_id: 4, product_quantity: 100 },
     { id: 42, model_id: 4, color_id: 9, products_id: 4, product_quantity: 100 },
-    // { id: 43, model_id: 1, color_id: 4, products_id: 5, product_quantity: 100 },
+    { id: 43, model_id: 16, color_id: 9, products_id: 26, product_quantity: 100 },
     { id: 44, model_id: 2, color_id: 4, products_id: 5, product_quantity: 100 },
     { id: 45, model_id: 5, color_id: 4, products_id: 5, product_quantity: 100 },
     { id: 46, model_id: 6, color_id: 4, products_id: 5, product_quantity: 100 },
@@ -438,7 +438,6 @@ export async function seed(knex: Knex): Promise<void> {
     { id: 152, model_id: 11, color_id: 9, products_id: 26, product_quantity: 100 },
     { id: 153, model_id: 12, color_id: 9, products_id: 26, product_quantity: 100 },
     { id: 154, model_id: 15, color_id: 9, products_id: 26, product_quantity: 100 },
-    { id: 155, model_id: 16, color_id: 9, products_id: 26, product_quantity: 100 },
   ]);
 
   await knex("product_image").insert([

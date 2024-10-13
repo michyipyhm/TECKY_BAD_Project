@@ -4,9 +4,9 @@ import { knex } from "../main";
 export const chatRouter = express();
 
 import { GptController } from "../controllers/gptController";
-import { ProductService } from "../services/productService";
+import { GptService } from "../services/gptService";
 
-const productService = new ProductService()
+const productService = new GptService()
 const gptController = new GptController(productService)
 
 chatRouter.post("/checkProduct", gptController.checkProduct)

@@ -1,6 +1,6 @@
 import { knex } from "../main"
 
-export class ProductService {
+export class GptService {
     constructor() { }
 
     checkProduct = async (model: string, category: string, color: string) => {

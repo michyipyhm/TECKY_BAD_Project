@@ -1,8 +1,8 @@
 import { AuthService } from '../services/authService'
-import { Request, Response } from "express";
+import { Request, Response, NextFunction } from "express";
 
 export class AuthController {
-    constructor(private authService: AuthService) { }
+    constructor(private authService: AuthService) { this.authService = authService }
 
     registerNewMember = async (req: Request, res: Response) => {
         const data = req.body;
@@ -91,6 +91,48 @@ export class AuthController {
             res.json({ message: "Password changed successfully" });
         } catch (error) {
             res.status(400).json({ message: "Fail to change password." });
+        }
+    }
+
+    getAllItem = async (req: Request, res: Response) => {
+        try {
+            const allProductOptions = await this.authService.getAllItem()
+            res.json(allProductOptions)
+        } catch (error) {
+            res.status(500).json({ message: "Failed to get products." })
+        }
+    }
+
+    adminDeleteItem = async (req: Request, res: Response) => {
+        const { id } = req.body
+        const product_option_id = id
+        try {
+            await this.authService.adminDeleteItem(product_option_id);
+            res.json({ message: "Product deleted successfully" });
+        } catch (error) {
+            res.status(400).json({ message: "Fail to delete product." });
+        }
+    }
+
+    adminCopyItem = async (req: Request, res: Response) => {
+        const { id } = req.body
+        const product_option_id = id
+        console.log(id)
+        try {
+            await this.authService.adminCopyItem(product_option_id)
+            res.json({ message: "New Product created successfully" })
+        } catch (error) {
+            res.status(400).json({ message: "Fail to create new product." })
+        }
+    }
+
+    adminGetItem = async (req: Request, res: Response) => {
+        const product_option_id = req.query.product
+        try {
+            const result = await this.authService.adminGetItem(Number(product_option_id))
+            res.json(result)
+        }catch (error) {
+            res.status(500).json({ message: "Failed to get product." })
         }
     }
 }

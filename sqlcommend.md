@@ -42,3 +42,19 @@ JOIN products ON products.id = order_details.product_id
 join images on products.id = images.product_id
 WHERE orders.member_id = :userId
   AND orders.state = 'Pending';
+
+  images as (
+          select product_id, 
+                 json_agg(product_image.id) as product_image_ids, 
+                 json_agg(s
+                   CASE 
+                     WHEN product_image.image_path LIKE 'public/%' 
+                     THEN substring(product_image.image_path from 8)
+                     ELSE product_image.image_path 
+                   END
+                 ) as product_images 
+          from product_image 
+          group by product_id
+      )
+      select * from carts left join images on carts.product_id = images.product_id;`, [userId]
+    )

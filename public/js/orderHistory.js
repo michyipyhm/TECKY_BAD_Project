@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     let result = await res.json()
     
     const orderDetail = result.orderHistoryResult
-    // console.log(orderDetail)
+    console.log("orderDetail", orderDetail)
     const orderForm = document.getElementById('orderForm');
 
     for (let order of orderDetail) {

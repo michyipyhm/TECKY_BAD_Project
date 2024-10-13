@@ -120,54 +120,96 @@ window.onload = async () => {
 
   async function replicateAi() {
     const promptForm = document.querySelector("#promptForm");
-    promptForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
+  const addToCartBtn = document.querySelector("#addToCartBtn");
+  let generatedProductData = null;
 
-      const prompt = e.target.prompt.value;
-      const phoneModel = e.target.phoneModel.value;
-      const resultDiv = document.querySelector("#result");
+  promptForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-      resultDiv.innerHTML = "Generating image...";
+    const prompt = e.target.prompt.value;
+    const phoneModel = e.target.phoneModel.value;
+    const resultDiv = document.querySelector("#result");
 
-      const body = {
-        prompt: prompt,
-        phoneModel: phoneModel,
-      };
+    resultDiv.innerHTML = "Generating image...";
+    addToCartBtn.disabled = true;
 
-      console.log("109 body is ", body);
+    const body = {
+      prompt: prompt,
+      phoneModel: phoneModel,
+    };
 
-      try {
-        const res = await fetch("/replicateAI", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(body),
-        });
+    try {
+      const res = await fetch("/replicateAI", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
 
-        const data = await res.json();
+      const data = await res.json();
 
-        console.log("Response data:", data);
+      console.log("Response data:", data);
 
-        if (res.ok) {
-          const imageUrl = data.data;
-          console.log("Image URL:", imageUrl);
+      if (res.ok) {
+        const imageUrl = data.data;
+        console.log("Image URL:", imageUrl);
 
-          resultDiv.innerHTML = `
+        resultDiv.innerHTML = `
           <h2>Generated Image:</h2>
-          <img src="./uploads/${imageUrl}" alt="Generated image">
+          <img src="/uploads/${imageUrl}" alt="Generated image">
         `;
-        } else {
-          resultDiv.innerHTML = `Error: ${
-            data.message || "Unknown error occurred"
-          }`;
-        }
-      } catch (error) {
-        console.error("Error:", error);
-        resultDiv.innerHTML = "An error occurred while generating the image.";
+        generatedProductData = data;
+
+        console.log("Generated product data:", generatedProductData);
+        addToCartBtn.disabled = false;
+      } else {
+        resultDiv.innerHTML = `Error: ${
+          data.message || "Unknown error occurred"
+        }`;
       }
-    });
-  }
+    } catch (error) {
+      console.error("Error:", error);
+      resultDiv.innerHTML = "An error occurred while generating the image.";
+    }
+  });
+
+  addToCartBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    if (!generatedProductData) {
+      alert("Please generate an image first");
+      return;
+    }
+
+    console.log("data to be added to cart", generatedProductData);
+    console.log("productName to be added to cart", generatedProductData.productName);
+    
+    const body = {
+      name: generatedProductData.productName,
+    };
+
+    try {
+      const res = await fetch("/addToCart", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        alert(data.message);
+        window.location = "/index.html";
+      } else {
+        alert(data.message);
+      }
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+      alert("An error occurred while adding to cart");
+    }
+  });
+}
 
   function chatBoxToggle() {
     const chatWindow = document.getElementById("chatBox");
@@ -248,3 +290,4 @@ window.onload = async () => {
       }
     });
 };
+

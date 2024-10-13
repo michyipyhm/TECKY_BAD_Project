@@ -60,8 +60,15 @@ async function downloadImage(url: string, filename: string): Promise<string> {
 
 replicateAi.post("/replicateAI", async function (req: Request, res: Response) {
   try {
-    const { prompt, phoneModel } = req.body;
 
+    const userId = req.session.userId;
+
+    if (!userId) {
+      res.status(401).json({ message: "Please login first" });
+      return;
+    }
+
+    const { prompt, phoneModel } = req.body;
     const product_Id = await getNextProductId(knex);
     const productOptionId = await getNextProductOptionId(knex);
     const productImageId = await getNextProductImageId(knex);
@@ -70,9 +77,7 @@ replicateAi.post("/replicateAI", async function (req: Request, res: Response) {
       `a ${phoneModel} case with image of ${prompt} and vibrant artistic graffiti fit in the case` ||
       "a photo of vibrant artistic graffiti about giraffe on a iphone 15 case with plain background";
 
-    console.log("finalPrompt = ", finalPrompt);
-
-    const productName = `AI generated Image of ${prompt} ${phoneModel} case # ${product_Id}`;
+    const product_Name = `AI generated Image of ${prompt} ${phoneModel} case #${product_Id}`;
 
     const input = {
       prompt: finalPrompt,
@@ -97,11 +102,12 @@ replicateAi.post("/replicateAI", async function (req: Request, res: Response) {
     
     await downloadImage(imageUrl, filename);
 
+    console.log
     await knex("products").select("*").insert({
       id: product_Id,
       sub_category_id: 1,
       custom_made: true,
-      product_name: productName,
+      product_name: product_Name,
       product_price: 200,
     });
 
@@ -118,13 +124,15 @@ replicateAi.post("/replicateAI", async function (req: Request, res: Response) {
       .insert({
         id: productImageId,
         product_id: product_Id,
-        image_path: `/uploads/${filename}`,
+        image_path: `./public/uploads/${filename}`,
       });
 
     res.json({
       success: true,
       data: filename,
       productId: product_Id,
+      productOptionId: productOptionId,
+      productName: product_Name,
       message: "Image generated successfully",
     });
   } catch (error) {

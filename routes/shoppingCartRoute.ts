@@ -1,6 +1,7 @@
 import express, { Request, Response, Router } from "express";
 import { Session } from 'express-session';
 import { knex } from "../main";
+// import path from 'path';
 // import { isLoggedIn } from "../utils/guards";
 
 export const shoppingCartRouter = express.Router();
@@ -10,6 +11,7 @@ shoppingCartRouter.post("/addToCart", addToCart as express.RequestHandler); // p
 shoppingCartRouter.post("/selectedQuantity", postQuantity); //shoppingCart
 shoppingCartRouter.delete("/deleteShoppingCartItem", deleteItem); //shoppingCart
 shoppingCartRouter.post("/shoppingCartSendOrder", checkout); //shoppingCart
+// shoppingCartRouter.use(express.static(path.join(__dirname, 'public')));
 
 interface CustomRequest extends Request {
   session: Session & {
@@ -87,12 +89,16 @@ async function addToCart(req: CustomRequest, res: Response): Promise<void> {
       .from("products")
       .where({ product_name: productName });
 
+      console.log("productIdResult =", productIdResult)
+
     if (productIdResult.length === 0) {
        res.status(404).json({ message: "Product not found" });
        return;
     }
 
     const productId = productIdResult[0].id;
+
+    console.log("productId =", productId);
 
     // Check if product is already in cart
     const checkProductQuery = await knex
@@ -131,7 +137,7 @@ async function addToCart(req: CustomRequest, res: Response): Promise<void> {
       return;
     }
 
-    console.log(productId, userId)
+    console.log("productId =", productId, userId)
 
     // Add to cart
     await knex("shopping_cart").insert({

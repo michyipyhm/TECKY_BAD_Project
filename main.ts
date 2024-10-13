@@ -10,6 +10,7 @@ import { productDetailsRoutes } from "./routers/productDetailsRoutes";
 import { shoppingCartRouter } from "./routers/shoppingCartRoute";
 import { orderRouter } from "./routers/orderRoute";
 import { categoryRoutes } from "./routers/categoryRoutes";
+import { stripeCheckout } from "./routers/StripeRoutes";
 // import { isLoggedIn } from "./utils/guards";
 
 

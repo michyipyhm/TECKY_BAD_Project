@@ -117,7 +117,6 @@ export class AuthController {
     adminCopyItem = async (req: Request, res: Response) => {
         const { id } = req.body
         const product_option_id = id
-        console.log(id)
         try {
             await this.authService.adminCopyItem(product_option_id)
             res.json({ message: "New Product created successfully" })
@@ -133,6 +132,37 @@ export class AuthController {
             res.json(result)
         }catch (error) {
             res.status(500).json({ message: "Failed to get product." })
+        }
+    }
+
+    saveEditProduct = async (req: Request, res: Response) => {
+        const { product_option_id, quantity, color_id, model_id } = req.body;
+        console.log(req.body)
+        try {
+            await this.authService.saveEditProduct(product_option_id, quantity, color_id, model_id);
+            res.json({ message: "Data updated successfully" });
+        } catch (error) {
+            res.status(500).json({ message: "Fail to update user information" });
+        }
+    }
+
+    addProductSelect = async (req: Request, res: Response) => {
+        try {
+            const result = await this.authService.addProductSelect()
+            res.json(result)
+        } catch (error) {
+            res.status(500).json({ message: "Failed to get products." })
+        }
+
+    }
+
+    addNewProduct = async (req: Request, res: Response) => {
+        const { products_id, quantity, color_id, model_id } = req.body
+        try {
+            await this.authService.addNewProduct(products_id, quantity, color_id, model_id)
+            res.json({ message: "New Product created successfully" })
+        } catch (error) {
+            res.status(400).json({ message: "Fail to create new product." })
         }
     }
 }

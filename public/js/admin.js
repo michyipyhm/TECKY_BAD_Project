@@ -119,7 +119,7 @@ window.onload = async () => {
     async function getAllItem() {
         const res = await fetch("/getallItem");
         const products = await res.json();
-        // console.log(products)
+        console.log(products)
         for (const product of products) {
             const productDiv = document.createElement('div');
             productDiv.classList.add('productDiv');
@@ -128,6 +128,7 @@ window.onload = async () => {
                     <div class="productName">${product.product_name}</div>
                     <div class="productModel">${product.model_name}</div>
                     <div class="productColor">${product.color_name !== "null" ? product.color_name : 'N/A'}</div>
+                    <div class="productQuantity">${product.product_quantity} in stock</div>
                     <div class="productListBtn">
                         <button type="button" class="btn btn-outline-primary" class="detailsBtn" id="editProduct">Edit</button>
                         <button type="button" class="btn btn-outline-success" class="copyBtn" id="copyProduct">Copy</button>
@@ -185,27 +186,8 @@ window.onload = async () => {
             })
 
             const editProduct = productDiv.querySelector('#editProduct')
-            copyProduct.addEventListener("click", async (e) => {
-                e.preventDefault()
-
-                const id = product.product_option_id
-                const body = {  
-                    id: id
-                }
-                console.log("copy item:", id)
-                const res = await fetch("/adminCopyItem", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(body)
-                })
-                const data = await res.json()
-                if (res.ok) {
-                    alert(data.message);
-                    location.reload();
-                    return;
-                }
+            editProduct.addEventListener('click', () => {
+                window.location.href = `/editProduct.html?product=${product.product_option_id}`;
             })
         }
     }

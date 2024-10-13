@@ -17,6 +17,9 @@ authRouter.get("/getallItem", authController.getAllItem);
 authRouter.post("/adminDeleteItem", authController.adminDeleteItem);
 authRouter.post("/adminCopyItem", authController.adminCopyItem);
 authRouter.get("/editProduct", authController.adminGetItem);
+authRouter.post("/saveEditProduct", authController.saveEditProduct);
+authRouter.get("/addProductSelect", authController.addProductSelect);
+
 
 
 

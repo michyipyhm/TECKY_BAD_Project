@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const res = await fetch(`/product/details/${product_id}`);
 
-  console.log("res is =", res);
+  
   const result = await res.json();
-  console.log("result is ", result);
+  
   const products = result.data;
   const product = products[0];
   selectedImage = product.image_path;
@@ -61,12 +61,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     modelDropdown.innerHTML += `<option value="${product.model}">${product.model}</option>`;
   });
 
-  console.log("product is ", product);
+  
 
   const productDetails = document.getElementById("productDetails");
+
+  loadEmblaCarousel();
   // const productDiv = document.createElement("div");
   // productDiv.className = "product";
-
   // productDiv.innerHTML = `
   //     <div class="firstSection">
   //         <div class="row">
@@ -82,13 +83,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   //             <div class="productName"><h1>${product.product_name}</h1><br>
   //                 <span class="productId">BAD-${product.id}</span>
   //             </div>
-
+             
   //             <div class="price"><span class="priceFont">Price: $${
   //               product.product_price
   //             }<span>
   //             </div>
   //             <div class="pickUp">
-  //                 <div calss="pickUpLocation">Pickup available at
+  //                 <div calss="pickUpLocation">Pickup available at 
   //                 </div>
   //                 <div class="pickUpTime">Usually ready in 2 days
   //                 </div>
@@ -104,12 +105,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   //                 <div><span class="descriptionRow">Color: </span>${
   //                   product.color === "null" ? "N/A" : product.color
   //                 }</div>
-
   //             </div>
   //         </div>
   //         </div>
   //     </div>
   // `;
+<<<<<<< HEAD
+=======
 
   // productDetails.appendChild(productDiv);
   // const name = product.product_name;
@@ -180,6 +182,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           </div>
       </div>
   `;
+>>>>>>> 5c7108edd71b1431ebbc13adb24bcf1a944fb8b3
   productDetails.appendChild(productDiv);
   const name = product.product_name;
   console.log("name is ", name);

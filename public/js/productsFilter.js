@@ -56,54 +56,7 @@ window.onload = async () => {
       .querySelector("#subCategoryTypeSelect")
       .addEventListener("change", async () => {
         getAllProducts();
-        // document.querySelector(`#products-container`).innerHTML = "";
-        // for (let i = 0; i < searching.length; i++) {
-        //   let imagePath = searching[i].image_path;
-        //   let productId = searching[i].product_id;
-        //   let quantity = searching[i].product_quantity;
-        //   let productName = searching[i].product_name;
-        //   let price = searching[i].product_price;
-
-        //   let quantityText = "";
-        //   let quantityClass = "";
-
-        //   if (quantity > 1) {
-        //     quantityText = "In stock";
-        //     quantityClass = "quantity-green";
-        //   } else if (quantity <= 0) {
-        //     quantityText = "Out of stock";
-        //     quantityClass = "quantity-gray";
-        //   } else if (quantity === 1) {
-        //     quantityText = `Still ${quantity} left`;
-        //     quantityClass = "quantity-red";
-        //   }
-        //   document.querySelector(`#products-container`).innerHTML += `
-        //   <div class="col">
-        //     <div class="card" id="card1">
-        //       <img src="${imagePath}" class="gallery-item" data-id="${productId}" alt="gallery" />
-        //       <div class="card-body">
-        //         <div class="producy-idDiv">BAD-<span class="product-id">${productId}</span>
-        //           &nbsp;<span class="quantity ${quantityClass}">${quantityText}</span>
-        //           </div>
-        //         <div class="product-name">${productName}</div>
-                
-        //         <a href="#" class="btn btn-light">$${price}</a>
-        //       </div>
-        //     </div>
-        //   </div>`;
-        // }
-
-        // document.querySelectorAll(".card").forEach((cardDiv) => {
-        //   const checkProductDetails = cardDiv.querySelectorAll(".gallery-item");
-        //   checkProductDetails.forEach((button) => {
-        //     button.addEventListener("click", async (e) => {
-        //       e.preventDefault();
-        //       const id = button.dataset.id;
-
-        //       window.location.href = `/productdetails.html?product=${id}`;
-        //     });
-        //   });
-        // });
+       
       });
 
     console.log("productionFilter.js displaySubCategories start");

@@ -16,6 +16,7 @@
   "author": "michyipyhm <micmicyip@hotmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/bcryptjs": "^2.4.6",
     "@types/express": "^5.0.0",
     "@types/express-session": "^1.18.0",

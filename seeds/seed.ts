@@ -100,7 +100,7 @@ export async function seed(knex: Knex): Promise<void> {
     {
       id: 1,
       product_name: "2.5D ANTI-BLUE FILTERING HARMFUL LIGHT FOR HEALTHY EYES",
-      sub_category_id: 1,
+      sub_category_id: 7,
       product_price: 120,
       custom_made: false,
     },
@@ -157,8 +157,8 @@ export async function seed(knex: Knex): Promise<void> {
     },
     {
       id: 9,
-      product_name: "4D ANTI-BLUE FILTERING HARMFUL LIGHT FOR HEALTHY EYES",
-      sub_category_id: 7,
+      product_name: "Condom/1 Phone Case",
+      sub_category_id: 1,
       product_price: 120,
       custom_made: false,
     },

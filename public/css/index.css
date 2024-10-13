@@ -1,12 +1,12 @@
-body {
+ body { 
     background-color: rgb(255, 255, 255);
     height: 100vh;
     width: 100vw;
     margin: 0;
     overflow: hidden;
-    /* display: flex;
-    flex-direction: column; */
-}
+    display: flex;
+    flex-direction: column;
+} 
 
 .firstSection {
     height: 20%;
@@ -180,4 +180,19 @@ body {
   .userMsg:empty{
     border: none;
     background-color: transparent;
+  }
+
+  /**/
+  .productListOne { 
+    display: flex; 
+    justify-content: space-evenly; 
+  }
+  
+  .product {
+    margin-right: 10px; 
+  }
+
+  .productListTwo { 
+    display: flex; 
+    justify-content: space-evenly; 
   }

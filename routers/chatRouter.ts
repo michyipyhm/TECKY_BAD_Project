@@ -4,11 +4,7 @@ import { knex } from "../main";
 export const chatRouter = express();
 
 import { GptController } from "../controllers/gptController";
-<<<<<<< HEAD
 import { GptService } from "../services/gptService";
-=======
-import { ProductService } from "../services/gptService";
->>>>>>> f4f3777d748f589bfb90ebc67d9b5a237a6c43c4
 
 const productService = new GptService()
 const gptController = new GptController(productService)

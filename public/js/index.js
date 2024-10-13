@@ -2,6 +2,7 @@ window.onload = async () => {
   await getUserProfile();
   await replicateAi();
   chatBoxToggle();
+  getproductBySubCategory();
   // chatBox();
 
   async function getUserProfile() {
@@ -120,95 +121,94 @@ window.onload = async () => {
 
   async function replicateAi() {
     const promptForm = document.querySelector("#promptForm");
-  const addToCartBtn = document.querySelector("#addToCartBtn");
-  let generatedProductData = null;
+    const addToCartBtn = document.querySelector("#addToCartBtn");
+    let generatedProductData = null;
 
-  promptForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
+    promptForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-    const prompt = e.target.prompt.value;
-    const phoneModel = e.target.phoneModel.value;
-    const resultDiv = document.querySelector("#result");
+      const prompt = e.target.prompt.value;
+      const phoneModel = e.target.phoneModel.value;
+      const resultDiv = document.querySelector("#result");
 
-    resultDiv.innerHTML = "Generating image...";
-    addToCartBtn.disabled = true;
+      resultDiv.innerHTML = "Generating image...";
+      addToCartBtn.disabled = true;
 
-    const body = {
-      prompt: prompt,
-      phoneModel: phoneModel,
-    };
+      const body = {
+        prompt: prompt,
+        phoneModel: phoneModel,
+      };
 
-    try {
-      const res = await fetch("/replicateAI", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(body),
-      });
+      try {
+        const res = await fetch("/replicateAI", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(body),
+        });
 
-      const data = await res.json();
+        const data = await res.json();
 
-      console.log("Response data:", data);
+        console.log("Response data:", data);
 
-      if (res.ok) {
-        const imageUrl = data.data;
-        console.log("Image URL:", imageUrl);
+        if (res.ok) {
+          const imageUrl = data.data;
+          console.log("Image URL:", imageUrl);
 
-        resultDiv.innerHTML = `
+          resultDiv.innerHTML = `
           <h2>Generated Image:</h2>
           <img src="/uploads/${imageUrl}" alt="Generated image">
         `;
-        generatedProductData = data;
+          generatedProductData = data;
 
-        console.log("Generated product data:", generatedProductData);
-        addToCartBtn.disabled = false;
-      } else {
-        resultDiv.innerHTML = `Error: ${
-          data.message || "Unknown error occurred"
-        }`;
+          console.log("Generated product data:", generatedProductData);
+          addToCartBtn.disabled = false;
+        } else {
+          resultDiv.innerHTML = `Error: ${
+            data.message || "Unknown error occurred"
+          }`;
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        resultDiv.innerHTML = "An error occurred while generating the image.";
       }
-    } catch (error) {
-      console.error("Error:", error);
-      resultDiv.innerHTML = "An error occurred while generating the image.";
-    }
-  });
+    });
 
-  addToCartBtn.addEventListener("click", async (e) => {
-    e.preventDefault();
+    addToCartBtn.addEventListener("click", async (e) => {
+      e.preventDefault();
 
-    if (!generatedProductData) {
-      alert("Please generate an image first");
-      return;
-    }
-
-   
-    const body = {
-      name: generatedProductData.productName,
-      product_option_id: generatedProductData.productOptionId
-    };
-
-    try {
-      const res = await fetch("/addToCart", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(body),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        alert(data.message);
-        window.location = "/index.html";
-      } else {
-        alert(data.message);
+      if (!generatedProductData) {
+        alert("Please generate an image first");
+        return;
       }
-    } catch (error) {
-      console.error("Error adding to cart:", error);
-      alert("An error occurred while adding to cart");
-    }
-  });
-}
+
+      const body = {
+        name: generatedProductData.productName,
+        product_option_id: generatedProductData.productOptionId,
+      };
+
+      try {
+        const res = await fetch("/addToCart", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(body),
+        });
+        const data = await res.json();
+        if (res.ok) {
+          alert(data.message);
+          window.location = "/index.html";
+        } else {
+          alert(data.message);
+        }
+      } catch (error) {
+        console.error("Error adding to cart:", error);
+        alert("An error occurred while adding to cart");
+      }
+    });
+  }
 
   function chatBoxToggle() {
     const chatWindow = document.getElementById("chatBox");
@@ -290,3 +290,70 @@ window.onload = async () => {
     });
 };
 
+const getproductBySubCategory = async () => {
+  // const searching = [];
+
+  // const subCategoryType = { subCategoryType: subCategoryTypeSelect.value };
+
+  // if (subCategoryType.subCategoryType) {
+  //   searching.push(subCategoryType);
+  // }
+  // const displaySubCategories = (subCategories) => {
+
+  //   for (let i = 0; i <= 6; i++) {
+  //     const key = Object.keys(searching[i])[0];
+  //     const value = Object.values(searching[i])[0];
+  //     if (i == 0) {
+  //       query += "?";
+  //     } else {
+  //       query += "&";
+  //     }
+  //     query += `${key}=${value}`;
+  //   }
+  //   };
+  const res = await fetch(`/index`, {
+    method: "GET",
+  });
+  const data = await res.json();
+  console.log("321-data", data);
+  if (res.ok) {
+    document.querySelector(`#products-container`).innerHTML = "";
+    let displayedCount = 0;
+    for (let i = 0; i < data.length && displayedCount < 7; i++) {
+      let imagePath = data[i].image_path;
+      let productId = data[i].product_id;
+      let subCategoryName = data[i].sub_category_name;
+      if (subCategoryName === "Own Brand") {
+      console.log("328-imagePath", imagePath);
+      console.log("329-productId", productId);
+
+      document.querySelector(`#products-container`).innerHTML += `
+    <div class="col">
+      <div class="card" id="card1">
+        <img src="${imagePath}" class="gallery-item" data-id="${productId}" alt="gallery" />
+        <div class="card-body">
+            </div>
+          <div class="cards">
+          <a href="#" class="btn btn-light" data-id="${productId}">Details</a>
+          </div>
+        </div>
+      </div>
+    </div>`;
+    displayedCount++;
+    }
+  }
+    document.querySelectorAll(".cards").forEach((cardDiv) => {
+      const checkProductDetails = cardDiv.querySelectorAll(".btn");
+      checkProductDetails.forEach((button) => {
+        button.addEventListener("click", async (e) => {
+          e.preventDefault();
+          const id = button.dataset.id;
+
+          window.location.href = `/productdetails.html?product=${id}`;
+        });
+      });
+    });
+  } else {
+    alert(data.message);
+  }
+};

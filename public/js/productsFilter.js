@@ -29,12 +29,6 @@ window.onload = async () => {
       searching.push(subCategoryType);
     }
 
-    console.log(
-      "productionFilter.js getSubCategory start categoryType[" +
-        categoryType +
-        "]"
-    );
-
     const res = await fetch(`/category/${categoryType}/subcategory`, {
       method: "GET",
     });
@@ -43,12 +37,12 @@ window.onload = async () => {
     if (res.ok) {
       displaySubCategories(data);
     }
-    console.log("productionFilter.js getSubCategory end");
+    
   };
 
   const displaySubCategories = (subCategories) => {
     console.log("productionFilter.js displaySubCategories start subCategories[" + JSON.stringify(subCategories) + "]");
-    subCategoryTypeSelect.innerHTML = `<option value="all">全部</option>`;
+    subCategoryTypeSelect.innerHTML = `<option value="all">Select Subcategory Type</option>`;
     subCategories.forEach((subCategory) => {
       subCategoryTypeSelect.innerHTML += `<option value="${subCategory.id}">${subCategory.category_name}</option>`;
     });

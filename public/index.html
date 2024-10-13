@@ -20,89 +20,70 @@
 
   <body>
     <div class="firstSection">
-        <div class="logoLocation"><a href="./index.html">LOGO位置(可回到主頁)</a></div>
-        <a href="./productsFilter.html">product</a>
-        <a href="./shoppingCart.html">CART</a>
-        <a href="./orderDetail.html">ORDER DETAIL</a>
-        <a href="./orderHistory.html">ORDER History</a>
+      <div class="logoLocation">
+        <a href="./index.html">LOGO位置(可回到主頁)</a>
+      </div>
+      <a href="./productsFilter.html">product</a>
+      <a href="./shoppingCart.html">CART</a>
+      <a href="./orderDetail.html">ORDER DETAIL</a>
+      <a href="./orderHistory.html">ORDER History</a>
 
-
-        <div class="userArea">
-          <a href="./productsFilter.html">Product</a>
-          <a href="./shoppingCart.html">Shopping Cart</a>
-            <button id="loginBtn" type="button" class="btn btn-outline-primary">Sign in</button>
-            <div class="overlay" id="loginOverlay">
-                <div class="popup">
-                    <span class="close-btn" id="loginCloseBtn">&times;</span>
-                    <h2>Login</h2>
-                    <form id="loginForm">
-                        <label for="email">Email:</label><br>
-                        <input type="email" id="loginEmail" required><br><br>
-                        <label for="password">Password:</label><br>
-                        <input type="password" id="loginPassword" required><br><br>
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-            </div>
-            <button id="signupBtn" type="button" class="btn btn-outline-light">Sign up</button>
-            <div class="overlay" id="signUpOverlay">
-                <div class="popup">
-                    <span class="close-btn" id="signUpCloseBtn">&times;</span>
-                    <h2>Register</h2>
-                    <form id="registerForm">
-                        <label for="username">Username:</label><br>
-                        <input type="text" id="registerUsername" required><br><br>
-                        <label for="password">Password:</label><br>
-                        <input type="password" id="registerPassword" required><br><br>
-                        <label for="email">Email:</label><br>
-                        <input type="email" id="registerEmail" required><br><br>
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-            </div>
+      <div class="userArea">
+        <a href="./productsFilter.html">Product</a>
+        <a href="./shoppingCart.html">Shopping Cart</a>
+        <button id="loginBtn" type="button" class="btn btn-outline-primary">
+          Sign in
+        </button>
+        <div class="overlay" id="loginOverlay">
+          <div class="popup">
+            <span class="close-btn" id="loginCloseBtn">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+              <label for="email">Email:</label><br />
+              <input type="email" id="loginEmail" required /><br /><br />
+              <label for="password">Password:</label><br />
+              <input type="password" id="loginPassword" required /><br /><br />
+              <button type="submit">Submit</button>
+            </form>
+          </div>
         </div>
+        <button id="signupBtn" type="button" class="btn btn-outline-light">
+          Sign up
+        </button>
+        <div class="overlay" id="signUpOverlay">
+          <div class="popup">
+            <span class="close-btn" id="signUpCloseBtn">&times;</span>
+            <h2>Register</h2>
+            <form id="registerForm">
+              <label for="username">Username:</label><br />
+              <input type="text" id="registerUsername" required /><br /><br />
+              <label for="password">Password:</label><br />
+              <input
+                type="password"
+                id="registerPassword"
+                required
+              /><br /><br />
+              <label for="email">Email:</label><br />
+              <input type="email" id="registerEmail" required /><br /><br />
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- <div class="secondSection">
-      <div class="aicontainer">
-        <h1>Phone Case Design Generator</h1>
-        <div class="promptcontainer">
-          <form id="promptForm">
-            <label for="prompt">Enter your prompt:</label>
-            <input type="text" id="prompt" name="prompt" required />
-            <button type="submit">Generate Image</button>
-          </form>
+    
+    <div class="productsection">
+      <section class="gallery min-vh-100" id="productcard">
+        <div class="container-lg">
+          <div
+            id="products-container"
+            class="products-container row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3"
+          ></div>
         </div>
-        <div class="imagecontainer">
-          <div id="result"></div>
-        </div>
-      </div>
-    </div> -->
-
-    <!-- <div class="secondSection">
-      <div class="aicontainer">
-        <h1>Phone Case Design Generator</h1>
-        <div class="promptcontainer">
-          <form id="promptForm">
-            <label for="prompt">Enter your prompt:</label>
-            <input type="text" id="prompt" name="prompt" required />
-            <label for="phoneModel">Select Phone Model:</label>
-            <select id="phoneModel" name="phoneModel" required>
-              <option value="iphone15">iPhone 15</option>
-              <option value="iphone15plus">iPhone 15 Plus</option>
-              <option value="iphone15pro">iPhone 15 Pro</option>
-              <option value="iphone15promax">iPhone 15 Pro Max</option>
-            </select>
-            <button type="submit">Generate Image</button>
-           
-              <button type="button" class="btn btn-light" id="addToCartBtn">Add to cart</button>
-          </form>
-        </div>
-        <div class="imagecontainer">
-          <div id="result"></div>
-        </div>
-      </div>
-    </div> -->
+      </section>
+    </div>
+    
+    
 
     <div class="secondSection">
       <div class="aicontainer">
@@ -120,18 +101,28 @@
             </select>
             <button type="submit">Generate Image</button>
           </form>
-          <button type="button" class="btn btn-light" id="addToCartBtn" disabled>Add to cart</button>
+          <button
+            type="button"
+            class="btn btn-light"
+            id="addToCartBtn"
+            disabled
+          >
+            Add to cart
+          </button>
         </div>
         <div class="imagecontainer">
           <div id="result"></div>
         </div>
       </div>
     </div>
-    
+
     <div id="chatBox">
-      <div id="chatBoxHeader"><div>ChatBot</div><div><button id="createNewChatBtn">CLEAR</button></div></div>
+      <div id="chatBoxHeader">
+        <div>ChatBot</div>
+        <div><button id="createNewChatBtn">CLEAR</button></div>
+      </div>
       <div id="chatBody"></div>
-      <input type="text" id="chatInput" placeholder="Type your question...">
+      <input type="text" id="chatInput" placeholder="Type your question..." />
       <button id="sendBtn">Send</button>
     </div>
     <button id="chatToggleBtn">Chat</button>

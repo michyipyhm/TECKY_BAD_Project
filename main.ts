@@ -12,6 +12,7 @@ import { orderRouter } from "./routers/orderRoute";
 import { categoryRoutes } from "./routers/categoryRoutes";
 // import { isLoggedIn } from "./utils/guards";
 
+
 dotenv.config();
 
 const knexConfigs = require("./knexfile");
@@ -29,6 +30,7 @@ main.use(
     saveUninitialized: true,
   })
 );
+
 
 main.use(express.urlencoded({ extended: true }));
 main.use(express.json());

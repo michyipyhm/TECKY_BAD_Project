@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import OpenAI from "openai";
 import { ChatCompletionTool } from "openai/resources";
-import { ProductService } from "../services/productService";
+import { ProductService } from "../services/gptService";
 
 
 type Messages = OpenAI.Chat.Completions.ChatCompletionMessageParam[];

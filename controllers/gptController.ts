@@ -1,9 +1,7 @@
 import express, { Request, Response } from "express";
-import { knex } from "../main";
 import OpenAI from "openai";
 import { ChatCompletionTool } from "openai/resources";
 import { ProductService } from "../services/productService";
-import { JSONParser } from "formidable/parsers";
 
 
 type Messages = OpenAI.Chat.Completions.ChatCompletionMessageParam[];
@@ -123,7 +121,6 @@ export class GptController {
             return
         }
     }
-
 
     checkProduct = async (req: Request, res: Response) => {
         const { model, category, color } = req.body

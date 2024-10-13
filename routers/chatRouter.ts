@@ -3,6 +3,15 @@ import dotenv from "dotenv";
 import { knex } from "../main";
 export const chatRouter = express();
 
+import { GptController } from "../controllers/gptController";
+import { ProductService } from "../services/productService";
+
+const productService = new ProductService()
+const gptController = new GptController(productService)
+
+chatRouter.post("/checkProduct", gptController.checkProduct)
+chatRouter.post("/aiBot", gptController.aiBot)
+
 dotenv.config();
 
 chatRouter.get("/readMessage", readMessage)

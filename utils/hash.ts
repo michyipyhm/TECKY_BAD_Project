@@ -1,6 +1,6 @@
 import * as bcrypt from 'bcryptjs'
 
-const SALT_ROUNDS = 10
+const SALT_ROUNDS = 2
 
 /**
  * @params plainPassword: supplied when signup
@@ -10,11 +10,10 @@ export async function hashPassword(plainPassword: string) {
   return hash
 }
 
-/*
+/**
  * @params options.plainPassword: supplied when login
  * @params options.hashedPassword: looked up from database
  */
-
 export async function checkPassword(options: {
   plainPassword: string
   hashedPassword: string

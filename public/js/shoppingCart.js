@@ -126,6 +126,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   let totalPrice = 0;
   let pricedata = data.result;
 
+
   for (let i = 0; i < pricedata.length; i++) {
     totalPrice += pricedata[i].product_price;
     finalPrice = totalPrice * pricedata[i].quantity;
@@ -140,15 +141,15 @@ const orderBtn = document.querySelector("#order-button");
 orderBtn.addEventListener("click", async (e) => {
   e.preventDefault();
 
-  // const body = {
-
-  // }
+  const body = {
+    finalPrice: finalPrice
+  }
   const res = await fetch("/shoppingCartSendOrder", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({}),
+    body: JSON.stringify({finalPrice}),
   });
   const data = await res.json();
   if (res.ok) {

@@ -5,6 +5,7 @@ export const productsRoutes = express.Router();
 
 productsRoutes.get("/products/subcategory/", getProducts);
 productsRoutes.get("/products", getProducts);
+productsRoutes.get("/index", getProducts);
 
 
 async function getProducts(req: Request, res: Response) {
@@ -76,6 +77,7 @@ async function getProducts(req: Request, res: Response) {
         product_price: row.product_price,
         image_path: row.image_path,
         product_id: row.product_id,
+        sub_category_name: row.sub_category_name,
         product_type: row.product_type,
         category_name: row.category_name,
         product_quantity: row.product_quantity,
@@ -89,3 +91,4 @@ async function getProducts(req: Request, res: Response) {
   }
   
 }
+

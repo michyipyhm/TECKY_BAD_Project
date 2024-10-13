@@ -1,122 +1,123 @@
 window.onload = async () => {
-  await getUserProfile();
+  // await getUserProfile();
   await replicateAi();
   chatBoxToggle();
+  getproductBySubCategory();
   // chatBox();
 
-  async function getUserProfile() {
-    const res = await fetch("/userinfo");
-    const data = await res.json();
-    const userInfo = data.userInfo;
-    const userArea = document.querySelector(".userArea");
+  // async function getUserProfile() {
+  //   const res = await fetch("/userinfo");
+  //   const data = await res.json();
+  //   const userInfo = data.userInfo;
+  //   const userArea = document.querySelector(".userArea");
 
-    if (res.ok && userInfo) {
-      userArea.innerHTML = `
-                <div class="userInfo"><span class="userInfoFont">${userInfo.username}</span></div>
-                <div class="settingBtn"><a href="/profile.html"><span class="userInfoFont">Profile</span></a></div>
-                <div class="logout"><button type="button" id="logoutBtn" class="userInfoFont">Logout</button></div>
-            `;
-      const logoutEle = document.querySelector("#logoutBtn");
-      if (logoutEle) {
-        logoutEle.addEventListener("click", async () => {
-          const res = await fetch("/logout", { method: "POST" });
-          if (res.ok) {
-            window.location.reload();
-          } else {
-            alert("Logout failed");
-          }
-        });
-      }
-    } else {
-      bindAuthButtons();
-    }
-  }
+  //   if (res.ok && userInfo) {
+  //     userArea.innerHTML = `
+  //               <div class="userInfo"><span class="userInfoFont">${userInfo.username}</span></div>
+  //               <div class="settingBtn"><a href="/profile.html"><span class="userInfoFont">Profile</span></a></div>
+  //               <div class="logout"><button type="button" id="logoutBtn" class="userInfoFont">Logout</button></div>
+  //           `;
+  //     const logoutEle = document.querySelector("#logoutBtn");
+  //     if (logoutEle) {
+  //       logoutEle.addEventListener("click", async () => {
+  //         const res = await fetch("/logout", { method: "POST" });
+  //         if (res.ok) {
+  //           window.location.reload();
+  //         } else {
+  //           alert("Logout failed");
+  //         }
+  //       });
+  //     }
+  //   } else {
+  //     bindAuthButtons();
+  //   }
+  // }
 
-  function bindAuthButtons() {
-    const signupBtn = document.getElementById("signupBtn");
-    const loginBtn = document.getElementById("loginBtn");
-    const signUpOverlay = document.getElementById("signUpOverlay");
-    const loginOverlay = document.getElementById("loginOverlay");
-    const signUpCloseBtn = document.getElementById("signUpCloseBtn");
-    const loginCloseBtn = document.getElementById("loginCloseBtn");
+  // function bindAuthButtons() {
+  //   const signupBtn = document.getElementById("signupBtn");
+  //   const loginBtn = document.getElementById("loginBtn");
+  //   const signUpOverlay = document.getElementById("signUpOverlay");
+  //   const loginOverlay = document.getElementById("loginOverlay");
+  //   const signUpCloseBtn = document.getElementById("signUpCloseBtn");
+  //   const loginCloseBtn = document.getElementById("loginCloseBtn");
 
-    if (signupBtn) {
-      signupBtn.onclick = function () {
-        signUpOverlay.style.display = "flex";
-      };
-    }
+  //   if (signupBtn) {
+  //     signupBtn.onclick = function () {
+  //       signUpOverlay.style.display = "flex";
+  //     };
+  //   }
 
-    if (loginBtn) {
-      loginBtn.onclick = function () {
-        loginOverlay.style.display = "flex";
-      };
-    }
+  //   if (loginBtn) {
+  //     loginBtn.onclick = function () {
+  //       loginOverlay.style.display = "flex";
+  //     };
+  //   }
 
-    if (signUpCloseBtn) {
-      signUpCloseBtn.onclick = function () {
-        signUpOverlay.style.display = "none";
-      };
-    }
+  //   if (signUpCloseBtn) {
+  //     signUpCloseBtn.onclick = function () {
+  //       signUpOverlay.style.display = "none";
+  //     };
+  //   }
 
-    if (loginCloseBtn) {
-      loginCloseBtn.onclick = function () {
-        loginOverlay.style.display = "none";
-      };
-    }
+  //   if (loginCloseBtn) {
+  //     loginCloseBtn.onclick = function () {
+  //       loginOverlay.style.display = "none";
+  //     };
+  //   }
 
-    const registerForm = document.querySelector("#registerForm");
-    if (registerForm) {
-      registerForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        console.log("ReG");
-        const username = e.target.registerUsername.value;
-        const password = e.target.registerPassword.value;
-        const email = e.target.registerEmail.value;
+  //   const registerForm = document.querySelector("#registerForm");
+  //   if (registerForm) {
+  //     registerForm.addEventListener("submit", async (e) => {
+  //       e.preventDefault();
+  //       console.log("ReG");
+  //       const username = e.target.registerUsername.value;
+  //       const password = e.target.registerPassword.value;
+  //       const email = e.target.registerEmail.value;
 
-        const body = { username, password, email };
-        const res = await fetch("/register", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(body),
-        });
+  //       const body = { username, password, email };
+  //       const res = await fetch("/register", {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify(body),
+  //       });
 
-        if (res.ok) {
-          window.location.reload();
-        } else {
-          const data = await res.json();
-          alert(data.message);
-        }
-      });
-    }
+  //       if (res.ok) {
+  //         window.location.reload();
+  //       } else {
+  //         const data = await res.json();
+  //         alert(data.message);
+  //       }
+  //     });
+  //   }
 
-    const loginForm = document.querySelector("#loginForm");
-    if (loginForm) {
-      loginForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
+  //   const loginForm = document.querySelector("#loginForm");
+  //   if (loginForm) {
+  //     loginForm.addEventListener("submit", async (e) => {
+  //       e.preventDefault();
 
-        const email = e.target.loginEmail.value;
-        const password = e.target.loginPassword.value;
+  //       const email = e.target.loginEmail.value;
+  //       const password = e.target.loginPassword.value;
 
-        const body = { email, password };
-        const res = await fetch("/login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(body),
-        });
+  //       const body = { email, password };
+  //       const res = await fetch("/login", {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify(body),
+  //       });
 
-        if (res.ok) {
-          window.location.reload();
-        } else {
-          const data = await res.json();
-          alert(data.message);
-        }
-      });
-    }
-  }
+  //       if (res.ok) {
+  //         window.location.reload();
+  //       } else {
+  //         const data = await res.json();
+  //         alert(data.message);
+  //       }
+  //     });
+  //   }
+  // }
 
   async function replicateAi() {
     const promptForm = document.querySelector("#promptForm");
@@ -164,8 +165,9 @@ window.onload = async () => {
           console.log("Generated product data:", generatedProductData);
           addToCartBtn.disabled = false;
         } else {
-          resultDiv.innerHTML = `Error: ${data.message || "Unknown error occurred"
-            }`;
+          resultDiv.innerHTML = `Error: ${
+            data.message || "Unknown error occurred"
+          }`;
         }
       } catch (error) {
         console.error("Error:", error);
@@ -181,11 +183,9 @@ window.onload = async () => {
         return;
       }
 
-      console.log("data to be added to cart", generatedProductData);
-      console.log("productName to be added to cart", generatedProductData.productName);
-
       const body = {
         name: generatedProductData.productName,
+        product_option_id: generatedProductData.productOptionId,
       };
 
       try {
@@ -288,3 +288,74 @@ window.onload = async () => {
     });
 };
 
+const getproductBySubCategory = async () => {
+  // const searching = [];
+
+  // const subCategoryType = { subCategoryType: subCategoryTypeSelect.value };
+
+  // if (subCategoryType.subCategoryType) {
+  //   searching.push(subCategoryType);
+  // }
+  // const displaySubCategories = (subCategories) => {
+
+  //   for (let i = 0; i <= 6; i++) {
+  //     const key = Object.keys(searching[i])[0];
+  //     const value = Object.values(searching[i])[0];
+  //     if (i == 0) {
+  //       query += "?";
+  //     } else {
+  //       query += "&";
+  //     }
+  //     query += `${key}=${value}`;
+  //   }
+  //   };
+
+
+
+
+  const res = await fetch(`/index`, {
+    method: "GET",
+  });
+  const data = await res.json();
+  console.log("321-data", data);
+  if (res.ok) {
+    document.querySelector(`#products-container`).innerHTML = "";
+    let displayedCount = 0;
+    for (let i = 0; i < data.length && displayedCount < 7; i++) {
+      let imagePath = data[i].image_path;
+      let productId = data[i].product_id;
+      let subCategoryName = data[i].sub_category_name;
+      if (subCategoryName === "Own Brand") {
+      console.log("328-imagePath", imagePath);
+      console.log("329-productId", productId);
+
+      document.querySelector(`#products-container`).innerHTML += `
+    <div class="col">
+      <div class="card" id="card1">
+        <img src="${imagePath}" class="gallery-item" data-id="${productId}" alt="gallery" />
+        <div class="card-body">
+            </div>
+          <div class="cards">
+          <a href="#" class="btn btn-light" data-id="${productId}">Details</a>
+          </div>
+        </div>
+      </div>
+    </div>`;
+    displayedCount++;
+    }
+  }
+    document.querySelectorAll(".cards").forEach((cardDiv) => {
+      const checkProductDetails = cardDiv.querySelectorAll(".btn");
+      checkProductDetails.forEach((button) => {
+        button.addEventListener("click", async (e) => {
+          e.preventDefault();
+          const id = button.dataset.id;
+
+          window.location.href = `/productdetails.html?product=${id}`;
+        });
+      });
+    });
+  } else {
+    alert(data.message);
+  }
+};

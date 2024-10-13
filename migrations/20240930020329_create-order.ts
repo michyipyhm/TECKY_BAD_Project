@@ -2,7 +2,7 @@ import type { Knex } from "knex";
 
 
 export async function up(knex: Knex) {
-    await knex.schema.createTable('order', table=>{
+    await knex.schema.createTable('orders', table=>{
         table.increments('id').primary();
         table.integer('member_id').unsigned(); //unsigned() = 不能是負數，只能0或正數
         table.integer('total').unsigned();

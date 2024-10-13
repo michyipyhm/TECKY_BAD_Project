@@ -12,37 +12,54 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   let result = await res.json();
+  console.log("fetch result: ", result);
+
   let grandTotal = 0;
   let fetchPackage = result.fetchOrderDetail;
+
+  console.log("fetchPackage is", fetchPackage);
+  
+  const orderDetails = document.getElementById("orderDetails");
+
+// Check if fetchPackage exists and is an array
+if (Array.isArray(fetchPackage) && fetchPackage.length > 0) {
   for (let resultObject of fetchPackage) {
     console.log("orderResult is", resultObject);
-
-    // const orderId = document.getElementById("orderNum");
-    const orderDetails = document.getElementById("orderDetails");
-    // orderId.textContent = `TECKYACADEMY-C32-WSP012-${orderNumber}`
 
     const productDiv = document.createElement("div");
     productDiv.className = "product";
     productDiv.innerHTML = `
-                <div class="productPicName">
-                    <div class="productPicture"><img src="${resultObject.product_images[0]}" width="100" height="100"/></div>
-                    <div class="productName">PRODUCT NAME: ${resultObject.product_name}</div>
-                </div>
-                <div class="productRow">
-                    <div>UNIT PRICE: $${resultObject.product_price}</div>
-                </div>
-                <div class="productRow">
-                    <div>QUANTITY: ${resultObject.quantity}</div>
-                </div>
-                <div class="productRow">
-                    <div>SUBTOTAL: $${resultObject.subtotal}</div>
-                </div>
-              </div>
-          `;
+      <div class="productPicName">
+        <div class="productPicture"><img src="${resultObject.product_images[0]}" width="100" height="100" alt="${resultObject.product_name}"/></div>
+        <div class="productName">PRODUCT NAME: ${resultObject.product_name}</div>
+      </div>
+      <div class="productRow">
+        <div>UNIT PRICE: $${resultObject.product_price}</div>
+      </div>
+      <div class="productRow">
+        <div>QUANTITY: ${resultObject.quantity}</div>
+      </div>
+      <div class="productRow">
+        <div>SUBTOTAL: $${resultObject.subtotal}</div>
+      </div>
+    `;
     orderDetails.appendChild(productDiv);
 
     grandTotal += resultObject.subtotal;
   }
+
+  const totalPrice = document.getElementById("totalPrice");
+  if (totalPrice) {
+    totalPrice.textContent = `$${grandTotal.toFixed(2)}`;
+  } else {
+    console.error("totalPrice element not found");
+  }
+} else {
+  console.error("fetchPackage is empty or not an array", fetchPackage);
+  const errorMessage = document.createElement("p");
+  errorMessage.textContent = "No order details available.";
+  orderDetails.appendChild(errorMessage);
+}
 
   const totalPrice = document.getElementById("totalPrice");
   totalPrice.textContent = `${grandTotal}`;

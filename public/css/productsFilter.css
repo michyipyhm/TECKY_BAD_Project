@@ -83,10 +83,7 @@ body {
     height: 100%;
     width: 100%;
 }
-/* .card{
-    width:296px ;
-    height:469px;
-} */
+
 
 .card-body .btn {
     background-color: transparent;
@@ -171,3 +168,6 @@ body {
     padding: 0 5px;
   
   }
+
+
+  

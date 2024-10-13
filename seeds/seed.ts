@@ -567,7 +567,7 @@ export async function seed(knex: Knex): Promise<void> {
   await knex.raw("ALTER SEQUENCE transaction_id_seq RESTART WITH 4;")
   await knex.raw("ALTER SEQUENCE order_id_seq RESTART WITH 4;")
   await knex.raw("ALTER SEQUENCE product_image_id_seq RESTART WITH 45;")
-  await knex.raw("ALTER SEQUENCE product_option_id_seq RESTART WITH 156;")
+  await knex.raw("ALTER SEQUENCE product_option_id_seq RESTART WITH 155;")
   await knex.raw("ALTER SEQUENCE products_id_seq RESTART WITH 27;")
   await knex.raw("ALTER SEQUENCE members_id_seq RESTART WITH 4;")
   await knex.raw("ALTER SEQUENCE sub_category_id_seq RESTART WITH 9;")

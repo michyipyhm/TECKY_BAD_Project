@@ -182,11 +182,10 @@ window.onload = async () => {
       return;
     }
 
-    console.log("data to be added to cart", generatedProductData);
-    console.log("productName to be added to cart", generatedProductData.productName);
-    
+   
     const body = {
       name: generatedProductData.productName,
+      product_option_id: generatedProductData.productOptionId
     };
 
     try {

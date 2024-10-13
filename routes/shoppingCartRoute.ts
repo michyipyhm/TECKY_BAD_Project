@@ -137,6 +137,7 @@ async function addToCart(req: CustomRequest, res: Response): Promise<void> {
       return;
     }
 
+    
     console.log("productId =", productId, userId)
 
     // Add to cart

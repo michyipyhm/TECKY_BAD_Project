@@ -107,6 +107,10 @@ export class GptController {
                 // }
 
                 // console.log("result: ", result);
+                if (!question || typeof question !== 'string' || question.trim().length === 0) {
+                    res.status(400).json({ message: "Message cannot be empty." });
+                    return;
+                }
                 res.json({ result });
                 return
             }

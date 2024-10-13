@@ -38,7 +38,6 @@ async function writeMessage(req: Request, res: Response) {
         return;
     }
     try {
-
         await knex.insert([{ member_id: userId, user_message: message, response_message: "" }]).into("chat_box")
         res.json({ message: "Message sent" })
     } catch {

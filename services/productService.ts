@@ -2,7 +2,7 @@ import { knex } from "../main"
 
 export class ProductService {
     constructor() { }
-    // model_id: 4, category_id: 7, color_id: 9
+
     checkProduct = async (model: string, category: string, color: string) => {
         model = model?.toLowerCase().split(' ').join('')
         category = category?.toLowerCase().split(' ').join('')
@@ -68,7 +68,4 @@ export class ProductService {
             throw error
         }
     }
-
-    // aiBot = async (model: string, category: string, color: string) => {
-    //     const userId = req.session.userId;    }
 }

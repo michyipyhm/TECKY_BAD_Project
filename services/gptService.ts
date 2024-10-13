@@ -1,4 +1,3 @@
-<<<<<<< HEAD:services/gptService.ts
 import { knex } from "../main"
 
 export class GptService {
@@ -70,5 +69,3 @@ export class GptService {
         }
     }
 }
-=======
->>>>>>> f4f3777d748f589bfb90ebc67d9b5a237a6c43c4:services/productService.ts

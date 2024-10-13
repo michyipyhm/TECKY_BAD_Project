@@ -8,7 +8,7 @@ import { chatRouter } from "./routers/chatRouter";
 import { productsRoutes } from './routers/productsFilterRoutes';
 import { productDetailsRoutes } from "./routers/productDetailsRoutes";
 import { shoppingCartRouter } from "./routers/shoppingCartRoute";
-import { orderRouter } from "./routers/orderRoute";
+import { orderRouter } from "./routers/orderDetailRoute";
 import { categoryRoutes } from "./routers/categoryRoutes";
 import { stripeCheckout } from "./routers/StripeRoutes";
 // import { isLoggedIn } from "./utils/guards";

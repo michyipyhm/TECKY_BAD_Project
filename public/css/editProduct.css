@@ -1,0 +1,66 @@
+body {
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    overflow: hidden;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.firstSection {
+    height: 20%;
+    width: 100%;
+    display: flex;
+}
+
+.logoLocation {
+    height: 100%;
+    width: 50%;
+}
+
+.userInfoFont {
+    font-size: xx-large;
+    color: rgb(0, 0, 0);
+}
+
+.userArea {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2%;
+    gap: 2%;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.close-btn {
+    cursor: pointer;
+    color: red;
+    float: right;
+}
+
+/* editProduct */
+#productNameLabel {
+    width: 40%
+}

@@ -1,5 +1,5 @@
 import express, { Request, Response, Router } from "express";
-import { Session } from 'express-session';
+import { Session } from "express-session";
 import { knex } from "../main";
 // import path from 'path';
 // import { isLoggedIn } from "../utils/guards";
@@ -21,7 +21,7 @@ interface CustomRequest extends Request {
 
 async function getAllItems(req: Request, res: Response) {
   const userId = req.session.userId;
- 
+
   if (!userId) {
     res.status(401).json();
     return;
@@ -60,12 +60,13 @@ async function getAllItems(req: Request, res: Response) {
       images as (
           select product_id, json_agg(product_image.id) as product_image_ids, json_agg(product_image.image_path) as product_images from product_image group by product_id
       )
-      select * from carts left join images on carts.product_id = images.product_id;`, [userId]
-    )
+      select * from carts left join images on carts.product_id = images.product_id;`,
+      [userId]
+    );
 
     const result = queryResult.rows;
 
-    console.log("join all table queryResult =",result)
+    console.log("join all table queryResult =", result);
 
     res.status(200).json({ result });
   } catch (err) {
@@ -78,50 +79,58 @@ async function addToCart(req: CustomRequest, res: Response): Promise<void> {
   try {
     const userId = req.session.userId;
     const productName = req.body.name;
+    const productOptionId = req.body.product_option_id;
+
+    console.log("shoppingcart userId =", userId);
+    console.log("shoppingcart productName =", productName);
+    console.log("shoppingcart productOptionId =", productOptionId);
 
     if (!userId) {
       res.status(401).json({ message: "Please login first" });
       return;
     }
 
-    const productIdResult = await knex
-      .select("id")
-      .from("products")
-      .where({ product_name: productName });
+    // const productIdResult = await knex
+    //   .select("id")
+    //   .from("products")
+    //   .where({ product_name: productName });
 
-      console.log("productIdResult =", productIdResult)
+    //   console.log("productIdResult =", productIdResult)
 
-    if (productIdResult.length === 0) {
-       res.status(404).json({ message: "Product not found" });
-       return;
-    }
+    // if (productIdResult.length === 0) {
+    //    res.status(404).json({ message: "Product not found" });
+    //    return;
+    // }
 
-    const productId = productIdResult[0].id;
+    // const productId = productIdResult[0].id;
 
-    console.log("productId =", productId);
+    // console.log("productId =", productId);
 
     // Check if product is already in cart
     const checkProductQuery = await knex
       .select("product_option_id")
       .from("shopping_cart")
-      .where({ member_id: userId, product_option_id: productId });
+      .where({ member_id: userId, product_option_id: productOptionId });
 
-      console.log("checkProductQuery =", checkProductQuery)
-      
+    console.log("checkProductQuery =", checkProductQuery);
+
     if (checkProductQuery.length > 0) {
-       res.status(400).json({ message: "It is already in your shopping cart" });
-       return;
+      res.status(400).json({ message: "It is already in your shopping cart" });
+      return;
     }
 
     // Check stock
     const checkStockQuery = await knex
       .select("product_quantity")
       .from("product_option")
-      .where("id", productId);
+      .where("id", productOptionId);
 
-    if (checkStockQuery.length === 0 || checkStockQuery[0].product_quantity <= 0) {
-       res.status(400).json({ message: "It is sold out." });
-       return;
+    if (
+      checkStockQuery.length === 0 ||
+      checkStockQuery[0].product_quantity <= 0
+    ) {
+      res.status(400).json({ message: "It is sold out." });
+      return;
     }
 
     // Check shopping cart limit
@@ -131,28 +140,27 @@ async function addToCart(req: CustomRequest, res: Response): Promise<void> {
       .where("member_id", userId);
 
     if (checkLimitQuery.length >= 5) {
-       res.status(400).json({
-        message: "Shopping cart is full. Please check out or clear your shopping cart.",
+      res.status(400).json({
+        message:
+          "Shopping cart is full. Please check out or clear your shopping cart.",
       });
       return;
     }
 
-    
-    console.log("productId =", productId, userId)
+    // console.log("productId =", productId, userId)
 
     // Add to cart
     await knex("shopping_cart").insert({
-      product_option_id: productId,
+      product_option_id: productOptionId,
       member_id: userId,
       quantity: 1,
     });
 
-     res.status(200).json({ message: "Added to shopping cart successfully" });
-     return;
-
+    res.status(200).json({ message: "Added to shopping cart successfully" });
+    return;
   } catch (err) {
     console.error(err);
-     res.status(500).json({ message: "An error occurred while adding to cart" });
+    res.status(500).json({ message: "An error occurred while adding to cart" });
   }
 }
 
@@ -174,6 +182,7 @@ async function postQuantity(req: Request, res: Response) {
       res.status(400).json({
         message: `Available: ${currentStock}, Requested: ${quantity}`,
       });
+      return;
     }
 
     await knex
@@ -185,18 +194,19 @@ async function postQuantity(req: Request, res: Response) {
   } catch (err) {
     console.error(err);
     res.status(500).send("Quantity failed");
+    return;
   }
 }
 
 async function deleteItem(req: Request, res: Response) {
   const data = req.body;
   const product_id = data.product.product_option_id;
- 
+
   try {
     await knex
-    .from("shopping_cart")
-    .where("product_option_id", product_id)
-    .del();
+      .from("shopping_cart")
+      .where("product_option_id", product_id)
+      .del();
     res.status(200).json({ message: "Item deteted!" });
   } catch (err) {
     console.error(err);
@@ -207,8 +217,10 @@ async function deleteItem(req: Request, res: Response) {
 async function checkout(req: Request, res: Response) {
   try {
     const userId = req.session.userId;
-    
+    const data = req.body;
 
+
+    console.log("data =", data);
     // 檢查order
     const checkOrderQuery = await knex
       .select("*")
@@ -218,22 +230,20 @@ async function checkout(req: Request, res: Response) {
     if (checkOrderQuery.length > 0) {
       res.status(400).send({
         message: "Please check out or cancel your unpaid order first.",
-        
-      })
+      });
       return;
     }
- 
-    const shoppingCartResults = await knex
-      .select("*")
-      .from("shopping_cart")
-      .join(
-        "product_option",
-        "product_option.id",
-        "shopping_cart.product_option_id"
-      )
-      .join("products", "products.id", "shopping_cart.product_option_id")
-      .where("member_id", userId);
 
+    const shoppingCartResults = await knex.raw(
+      `SELECT *
+FROM shopping_cart
+JOIN product_option ON product_option.id = shopping_cart.product_option_id
+JOIN products ON products.id = product_option.products_id
+WHERE shopping_cart.member_id = ?`,
+      [userId]
+    );
+
+    console.log("shoppingCartResults =", shoppingCartResults.rows);
 
     // const shoppingCartResults = shoppingCartQuery[0];
 
@@ -245,19 +255,18 @@ async function checkout(req: Request, res: Response) {
         "product_option.id",
         "shopping_cart.product_option_id"
       )
-      .join("products", "products.id", "shopping_cart.product_option_id")
+      .join("products", "products.id", "product_option.products_id")
       .where("member_id", userId);
 
- 
+    console.log("totalPriceQueryResult =", totalPriceQueryResult);
+
     const totalPrice = totalPriceQueryResult[0].total;
-    const state = 'Pending';
+    const state = "Pending";
 
     console.log("userId =", userId);
     console.log("totalPrice =", totalPrice);
     console.log("state =", state);
-  
 
-    
     //更新orders
     const sendOrder = await knex
       .insert({
@@ -267,11 +276,11 @@ async function checkout(req: Request, res: Response) {
       })
       .from("orders")
       .returning("id");
-    
-      console.log(sendOrder[0].id )
-      console.log("shoppingCartResults =", shoppingCartResults);
 
-    for (const shoppingCartResult of shoppingCartResults) {
+    // console.log(sendOrder[0].id);
+    // console.log("shoppingCartResults =", shoppingCartResults);
+
+    for (const shoppingCartResult of shoppingCartResults.rows) {
       const orderId = sendOrder[0].id;
       const productName = shoppingCartResult.product_name;
       const product_id = shoppingCartResult.products_id;
@@ -280,26 +289,29 @@ async function checkout(req: Request, res: Response) {
       const subtotal =
         shoppingCartResult.quantity * shoppingCartResult.product_price;
 
-      console.log("orderId =", orderId);
-      console.log("productName =", productName);
-      console.log("product_id =", product_id);
-      console.log("quantity =", quantity);
-      console.log("product_price =", product_price);
-      console.log("subtotal =", subtotal);
-
+      // console.log("orderId =", orderId);
+      // console.log("productName =", productName);
+      // console.log("product_id =", product_id);
+      // console.log("quantity =", quantity);
+      // console.log("product_price =", product_price);
+      // console.log("subtotal =", subtotal);
 
       //Check stock
       const checkStockQuery = await knex
         .select("product_quantity")
         .from("product_option")
         .where("id", product_id);
-      
+
       const currentStock = checkStockQuery[0].product_quantity;
 
       console.log("currentStock =", currentStock);
 
       if (currentStock < quantity) {
-        res.status(400).json({ message: `'${productName}'. Available: ${currentStock}, Requested: ${quantity}` })
+        res
+          .status(400)
+          .json({
+            message: `'${productName}'. Available: ${currentStock}, Requested: ${quantity}`,
+          });
         return;
       }
 
@@ -310,9 +322,7 @@ async function checkout(req: Request, res: Response) {
         .decrement("product_quantity", quantity);
 
       //更新order details
-      await knex
-      .from("order_details")
-      .insert({
+      await knex.from("order_details").insert({
         order_id: orderId,
         product_id: product_id,
         quantity: quantity,
@@ -321,9 +331,9 @@ async function checkout(req: Request, res: Response) {
       });
     }
 
-    // //刪除session
-    // await knex.from("shopping_cart").where("member_id", userId).del();
-  
+    //刪除session
+    await knex.from("shopping_cart").where("member_id", userId).del();
+
     res.status(200).json({ message: "Order submitted!" });
     return;
   } catch (err) {
@@ -332,4 +342,3 @@ async function checkout(req: Request, res: Response) {
     return;
   }
 }
-

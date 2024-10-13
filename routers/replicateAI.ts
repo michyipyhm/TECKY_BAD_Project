@@ -124,7 +124,7 @@ replicateAi.post("/replicateAI", async function (req: Request, res: Response) {
       .insert({
         id: productImageId,
         product_id: product_Id,
-        image_path: `./public/uploads/${filename}`,
+        image_path: `/uploads/${filename}`,
       });
 
     res.json({

@@ -17,9 +17,10 @@ const stripe = new Stripe(STRIPE_SECRET_KEY!);
 stripeCheckout.post("/create-checkout-session", async (req, res) => {
   try {
     const { orderIds, grandTotal } = req.body;
-
-    console.log("orderIds:", orderIds);
-    console.log("grandTotal:", grandTotal);
+    console.log("===================================");
+    console.log("req.body",req.body)
+    // console.log("orderIds:", orderIds);
+    // console.log("grandTotal:", grandTotal);
 
     // Create a new Checkout Session for the order
     const session = await stripe.checkout.sessions.create({

@@ -10,7 +10,7 @@ import { productDetailsRoutes } from "./routers/productDetailsRoutes";
 import { shoppingCartRouter } from "./routers/shoppingCartRoute";
 import { orderRouter } from "./routers/orderDetailRoute";
 import { categoryRoutes } from "./routers/categoryRoutes";
-// import { stripeCheckout } from "./routers/StripeRoutes";
+import { stripeCheckout } from "./routers/StripeRoutes";
 import { isLoggedIn, isAdmin } from "./utils/guards"
 
 
@@ -45,11 +45,11 @@ main.use(chatRouter);
 main.use(categoryRoutes);
 main.use(productsRoutes);
 main.use(productDetailsRoutes);
+main.use(stripeCheckout);
 main.use(isLoggedIn, orderRouter);
 main.use(isLoggedIn, shoppingCartRouter);
-main.use(isAdmin, express.static("admin"));
 main.use(isLoggedIn, express.static("private"));
-// main.use(isLoggedIn, stripeCheckout);
+main.use(isAdmin, express.static("admin"));
 
 
 

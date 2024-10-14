@@ -18,17 +18,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   let fetchPackage = result.fetchOrderDetail;
 
   console.log("fetchPackage is", fetchPackage);
-  
+
   const orderDetails = document.getElementById("orderDetails");
 
-// Check if fetchPackage exists and is an array
-if (Array.isArray(fetchPackage) && fetchPackage.length > 0) {
-  for (let resultObject of fetchPackage) {
-    console.log("orderResult is", resultObject);
+  // Check if fetchPackage exists and is an array
+  if (Array.isArray(fetchPackage) && fetchPackage.length > 0) {
+    for (let resultObject of fetchPackage) {
+      console.log("orderResult is", resultObject);
 
-    const productDiv = document.createElement("div");
-    productDiv.className = "product";
-    productDiv.innerHTML = `
+      const productDiv = document.createElement("div");
+      productDiv.className = "product";
+      productDiv.innerHTML = `
       <div class="productPicName">
         <div class="productPicture"><img src="${resultObject.product_images[0]}" width="100" height="100" alt="${resultObject.product_name}"/></div>
         <div class="productName">PRODUCT NAME: ${resultObject.product_name}</div>
@@ -43,23 +43,23 @@ if (Array.isArray(fetchPackage) && fetchPackage.length > 0) {
         <div>SUBTOTAL: $${resultObject.subtotal}</div>
       </div>
     `;
-    orderDetails.appendChild(productDiv);
+      orderDetails.appendChild(productDiv);
 
-    grandTotal += resultObject.subtotal;
-  }
+      grandTotal += resultObject.subtotal;
+    }
 
-  const totalPrice = document.getElementById("totalPrice");
-  if (totalPrice) {
-    totalPrice.textContent = `$${grandTotal.toFixed(2)}`;
+    const totalPrice = document.getElementById("totalPrice");
+    if (totalPrice) {
+      totalPrice.textContent = `$${grandTotal.toFixed(2)}`;
+    } else {
+      console.error("totalPrice element not found");
+    }
   } else {
-    console.error("totalPrice element not found");
+    console.error("fetchPackage is empty or not an array", fetchPackage);
+    const errorMessage = document.createElement("p");
+    errorMessage.textContent = "No order details available.";
+    orderDetails.appendChild(errorMessage);
   }
-} else {
-  console.error("fetchPackage is empty or not an array", fetchPackage);
-  const errorMessage = document.createElement("p");
-  errorMessage.textContent = "No order details available.";
-  orderDetails.appendChild(errorMessage);
-}
 
   const totalPrice = document.getElementById("totalPrice");
   totalPrice.textContent = `${grandTotal}`;
@@ -99,12 +99,14 @@ if (Array.isArray(fetchPackage) && fetchPackage.length > 0) {
 
     const orderIds = fetchPackage.map((order) => order.order_id);
 
+    console.log("click checkout orderIds", orderIds);
+    console.log("total", grandTotal);
     const response = await fetch("/create-checkout-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ orderIds, grandTotal }),
+      body: JSON.stringify({ orderIds:orderIds, grandTotal:grandTotal }),
     });
     const session = await response.json();
 

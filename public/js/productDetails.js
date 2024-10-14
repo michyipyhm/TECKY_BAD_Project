@@ -30,8 +30,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   //image
   emblaContainer.innerHTML = "";
   emblaThumbsContainer.innerHTML = "";
-  
+  const displayedImages = new Set();
+  const displayedModel = new Set();
+  const displayedColor = new Set();
   products.forEach((product) => {
+    if (!displayedImages.has(product.image_path)) {
+      displayedImages.add(product.image_path);
     emblaContainer.innerHTML += `
     <div class="embla__slide">
       <div class="embla__slide__number"><img src="${product.image_path}" width="300" height="300">
@@ -43,24 +47,31 @@ document.addEventListener("DOMContentLoaded", async () => {
         <img src="${product.image_path}" width="50" height="50">
       </button>
     </div>`;
+    }
   });
 
   //color_dropdown
   if (product.color !== "null") {
-    colorDropdown.innerHTML = ``;
+    if (!displayedColor.has(product.color)) {
+      displayedColor.add(product.color);
+    // colorDropdown.innerHTML = ``;
     products.forEach((product) => {
       colorDropdown.innerHTML += `<option value="${product.color}">${product.color}</option>`;
     });
+  }
   } else {
     colorDropdownArea.style.display = "none";
   }
 
   //model_dropdown
+  if (!displayedModel.has(product.model)) {
+    displayedModel.add(product.model);
   modelDropdown.innerHTML = ``;
   products.forEach((product) => {
     modelDropdown.innerHTML += `<option value="${product.model}">${product.model}</option>`;
+  
   });
-
+  }
   
 
   const productDetails = document.getElementById("productDetails");

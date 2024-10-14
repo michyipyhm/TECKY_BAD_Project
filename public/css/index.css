@@ -31,6 +31,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: "IBM Plex Sans KR", sans-serif;
+
 }
 
 /* navbar */
@@ -458,6 +459,90 @@ h1 {
     background-color: transparent;
   }
 
+  /* newsletter */
+#newsletter-constainer{
+  background-color: rgb(251, 236, 228);
+}
+
+
+.newsletter-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+}
+
+.newsletter-icon .newsletter-icon {
+  text-align: center;
+}
+
+.newsletter-title-text {
+  position: relative;
+  display: inline-block;
+
+}
+
+.newsletter-title .newsletter-text {
+  text-align: center;
+  color: #6c757d;
+  size: 16px;
+  max-width: 400px;
+}
+
+.newsletter-title .input-group {
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsletter-title .form-control {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  height: 38px;
+}
+
+.newsletter-title .btn {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  background-color: #ffd8c2;
+  color: white;
+  border-color: #ffd8c2;
+}
+
+.newsletter-title .btn:hover {
+  background-color: rgba(254, 190, 152, 0.6);
+  border-color: rgba(254, 190, 152, 0.6);
+  color: #6d757d;
+}
+
+/*footer*/
+.contact-us-box{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: #6c757d;
+}
+
+.follow-us-box{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.fa-instagram{
+  font-size: 30px;
+}
+
+.quantity {
+  border: transparent;
+  border-radius: 3px;
+  margin: 5px;
+  padding: 0px 5px;
+}
+
+.fa-facebook{
+  font-size: 28px;
+}
   /**/
   .productListOne { 
     display: flex; 

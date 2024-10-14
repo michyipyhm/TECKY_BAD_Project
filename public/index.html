@@ -57,11 +57,56 @@
               </li>
             </ul>
           </div>
-        </div>
-
-        <div id="loginbox">
-          <button id="loginBtn" type="button" class="btn btn-outline-primary">
-            Sign in
+          <div class="overlay" id="loginOverlay">
+            <div class="popup">
+              <span class="close-btn" id="loginCloseBtn">&times;</span>
+              <h2>Login</h2>
+              <form id="loginForm">
+                <label for="email">Email:</label><br />
+                <input type="email" id="loginEmail" required /><br /><br />
+                <label for="password">Password:</label><br />
+                <input
+                  type="password"
+                  id="loginPassword"
+                  required
+                /><br /><br />
+                <button type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+          <div id="signupbox">
+            <button id="signupBtn" type="button" class="btn btn-outline-light">
+              Sign up
+            </button>
+          </div>
+          <div class="overlay" id="signUpOverlay">
+            <div class="popup">
+              <span class="close-btn" id="signUpCloseBtn">&times;</span>
+              <h2>Register</h2>
+              <form id="registerForm">
+                <label for="username">Username:</label><br />
+                <input type="text" id="registerUsername" required /><br /><br />
+                <label for="password">Password:</label><br />
+                <input
+                  type="password"
+                  id="registerPassword"
+                  required
+                /><br /><br />
+                <label for="email">Email:</label><br />
+                <input type="email" id="registerEmail" required /><br /><br />
+                <button type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+          <div class="userArea"></div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+          >
+            <span class="navbar-toggler-icon"></span>
           </button>
         </div>
         <div class="overlay" id="loginOverlay">
@@ -124,7 +169,142 @@
     </div>
   </div>
 
-  <div class="aicontainer mt-5">
+
+  <div id="newsletter-constainer" class="py-5">
+    <div class="newsletter-inner-container">
+      <div class="newsletter-title">
+        <div class="newsletter-icon pt-3 pb-4">
+          <h2 class="newsletter-title-text ms-4">Newsletter Subscription</h2>
+        </div>
+
+        <div class="newsletter-text">
+          Subscribe today and get more updated information!
+        </div>
+
+        <div class="input-group mb-4 mt-4">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter your email here..."
+          />
+          <button class="btn btn-primary" type="submit">subscribe</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer py-5">
+    <div class="container-lg">
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <h5 class="fw-light mb-3">Quick links</h5>
+
+          <ul class="list-unstyled">
+            <li class="my-3">
+              <a href="#" class="text-decoration-none text-muted">
+                <i class="fa-solid fa-chevron-right me-1"></i>About us
+              </a>
+            </li>
+          </ul>
+          <ul class="list-unstyled">
+            <li class="my-3">
+              <a href="#" class="text-decoration-none text-muted">
+                <i class="fa-solid fa-chevron-right me-1"></i>Privacy Policy
+              </a>
+            </li>
+          </ul>
+          <ul class="list-unstyled">
+            <li class="my-3">
+              <a href="#" class="text-decoration-none text-muted">
+                <i class="fa-solid fa-chevron-right me-1"></i>Refund Policy
+              </a>
+            </li>
+          </ul>
+          <ul class="list-unstyled">
+            <li class="my-3">
+              <a href="#" class="text-decoration-none text-muted">
+                <i class="fa-solid fa-chevron-right me-1"></i>Shipping Policy
+              </a>
+            </li>
+          </ul>
+          <ul class="list-unstyled">
+            <li class="my-3">
+              <a href="#" class="text-decoration-none text-muted">
+                <i class="fa-solid fa-chevron-right me-1"></i>Shop Location
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <h5 class="fw-light mb-3">Contact Us</h5>
+          <div class="contact-us-box my-2">
+            <span class="me-3">
+              <i class="fas fa-map-marker-alt"></i>
+            </span>
+            <span class="fw-light">
+              Room 1103, 11/F, Exchange Tower 33 Wang Chiu Road, Kowloon Bay,
+              Kowloon, Hong Kong
+            </span>
+          </div>
+          <div class="contact-us-box my-2">
+            <span class="me-3">
+              <i class="fa-solid fa-phone"></i>
+            </span>
+            <span class="fw-light"> +852 9725 6400 </span>
+          </div>
+          <div class="contact-us-box my-2">
+            <span class="me-3">
+              <i class="fa-solid fa-envelope"></i>
+            </span>
+            <span class="fw-light"> hello@tecky.io </span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <h5 class="fw-light mb-3">Follow Us</h5>
+          <div class="follow-us-box my-2">
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  href="#"
+                  class="text-decoration-none text-muted text-white"
+                >
+                  <i class="fa-brands fa-instagram fa-lg"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="follow-us-box my-2">
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  href="#"
+                  class="text-decoration-none text-muted text-white"
+                >
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+              </li>
+            </ul>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+    <div id="chatBox">
+      <div id="chatBoxHeader">
+        <div>ChatBot</div>
+        <div><button id="createNewChatBtn">CLEAR</button></div>
+      </div>
+      <div id="chatBody"></div>
+      <input type="text" id="chatInput" placeholder="Type your question..." />
+      <button id="sendBtn">Send</button>
+    </div>
+    <button id="chatToggleBtn">Chat</button> -->
 
     <div class="product-image-container">
       <div id="result" class="product-image">Product Image</div>
@@ -152,6 +332,17 @@
           cart</button>
       </div>
     </div>
+  </div>
+
+  <div class="productsection">
+    <section class="gallery min-vh-100" id="productcard">
+      <div class="container-lg">
+        <div
+          id="products-container"
+          class="products-container row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3"
+        ></div>
+      </div>
+    </section>
   </div>
 
   <div id="chatBox">

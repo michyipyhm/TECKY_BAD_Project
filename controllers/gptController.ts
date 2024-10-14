@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import OpenAI from "openai";
 import { ChatCompletionTool } from "openai/resources";
 import { GptService } from "../services/gptService";
+import { knex } from "../main";
 
 
 type Messages = OpenAI.Chat.Completions.ChatCompletionMessageParam[];
@@ -26,8 +27,14 @@ export class GptController {
     };
 
     aiBot = async (req: Request, res: Response) => {
+        const userId = req.session.userId
         const { question } = req.body;
-        console.log(req.body)
+        await knex('chat_box').insert({
+            member_id: userId,
+            response_message: "",
+            user_message: question
+        })
+        console.log(req.body);
         try {
             const messageArr: Messages = [
                 {
@@ -53,22 +60,6 @@ export class GptController {
                     },
                     type: "function",
                 },
-                // {
-                //     function: {
-                //         name: "abc",
-                //         description: "find out all products by model, category, color",
-                //         parameters: {
-                //             type: "object",
-                //             properties: {
-                //                 model: { type: "string" },
-                //                 category: { type: "string" },
-                //                 color: { type: "string" },
-                //             },
-                //             required: [],
-                //         },
-                //     },
-                //     type: "function",
-                // },
             ];
 
             const completion = await this.openAi.chat.completions.create({
@@ -76,51 +67,65 @@ export class GptController {
                 messages: messageArr,
                 tools,
             });
+
             const resultMessage = completion.choices[0].message;
             if (resultMessage.tool_calls && resultMessage.tool_calls.length > 0) {
                 const toolCall = resultMessage.tool_calls[0];
                 const methodName = toolCall.function.name;
                 console.log(methodName);
 
-                let result: any[] = []
-                if (methodName == "getProductsByModelAndCategoryAndColor") {
-                    const arg: string = toolCall.function.arguments
-                    const obj = JSON.parse(arg)
-                    const model = obj.model ? obj.model : ""
-                    const category = obj.category ? obj.category : ""
-                    const color = obj.color ? obj.color : ""
+                let result: any[] = [];
+                if (methodName === "getProductsByModelAndCategoryAndColor") {
+                    const arg: string = toolCall.function.arguments;
+                    const obj = JSON.parse(arg);
+                    const model = obj.model || "";
+                    const category = obj.category || "";
+                    const color = obj.color || "";
 
-                    // console.log({model, category, color})
                     result = await this.productService.checkProduct(model, category, color);
                 }
-                // else if (methodName == "abc") {
-                //     const arg: string = toolCall.function.arguments 
-                //     const obj = JSON.parse(arg)
-                //     const param1 = obj.param1 ? obj.param1 : ""
-                //     const param2 = obj.param2 ? obj.param2 : ""
-                //     const param3 = obj.param3 ? obj.param3 : ""
-                //     console.log({param1, param2, param3})
-                //     result = await this.productService.xx(param1, param2, param3);
 
-                // }
-
-                // console.log("result: ", result);
-                if (!question || typeof question !== 'string' || question.trim().length === 0) {
+                if (!question || typeof question !== "string" || question.trim().length === 0) {
                     res.status(400).json({ message: "Message cannot be empty." });
                     return;
                 }
-                res.json({ result });
-                return
+
+                const randomResults = result.sort(() => 0.5 - Math.random()).slice(0, 3);
+                // /productdetails.html?product=${id}
+                let humanizedResponse = "";
+                if (randomResults.length > 0) {
+                    humanizedResponse = `I found the following products that match your criteria:\n\n`;
+                    randomResults.forEach((product, index) => {
+                        humanizedResponse += `${index + 1}. \n`;
+                        humanizedResponse += `   Product Name: ${product.product_name}\n`;
+                        humanizedResponse += `   Model: ${product.model_name}\n`;
+                        humanizedResponse += `   Color: ${product.color_name !== "null" ? product.color_name : "No specific color"}\n`;
+                        humanizedResponse += `   <a class="nav-link" href="./productdetails.html?product=${product.product_id}">Link</a>`;
+                    });
+                } else {
+                    humanizedResponse = "Sorry, I couldn't find any products matching your criteria. You may want to adjust your search conditions.";
+                }
+                
+                humanizedResponse = humanizedResponse.replace(/\n/g, "<br>");
+
+                await knex('chat_box').insert({
+                    member_id: userId,
+                    response_message: humanizedResponse,
+                    user_message: ""
+                });
+
+                res.json({ message: humanizedResponse });
+                return;
             }
 
             res.status(400).json({ result: "fail" });
-            return
+            return;
         } catch (error) {
             console.log(error);
             res.status(400).json({ error });
-            return
+            return;
         }
-    }
+    };
 
     checkProduct = async (req: Request, res: Response) => {
         const { model, category, color } = req.body

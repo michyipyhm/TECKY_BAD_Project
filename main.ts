@@ -10,7 +10,7 @@ import { productDetailsRoutes } from "./routers/productDetailsRoutes";
 import { shoppingCartRouter } from "./routers/shoppingCartRoute";
 import { orderRouter } from "./routers/orderDetailRoute";
 import { categoryRoutes } from "./routers/categoryRoutes";
-// import { stripeCheckout } from "./routers/StripeRoutes";
+import { stripeCheckout } from "./routers/StripeRoutes";
 // import { isLoggedIn } from "./utils/guards";
 
 
@@ -47,7 +47,7 @@ main.use(productsRoutes);
 main.use(productDetailsRoutes);
 main.use(orderRouter);
 main.use(shoppingCartRouter);
-// main.use(stripeCheckout);
+main.use(stripeCheckout);
 // main.use(isLoggedIn, shoppingCartRouter);
 
 

@@ -1,61 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&family=LXGW+WenKai+TC:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Main Page</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap"
-    rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&family=LXGW+WenKai+TC:wght@300;400;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="./css/index.css" />
-</head>
+  <body>
+    <div class="firstSection">
+      <nav class="navbar navbar-expand-lg bg-light" id="navbarhead">
+        <div class="container-fluid">
+          <a class="navbar-brand me-auto" href="/index.html">生作Phone</a>
 
-<body>
-  <div class="firstSection">
-    <nav class="navbar navbar-expand-lg bg-light" id="navbarhead">
-      <div class="container-fluid">
-        <a class="navbar-brand me-auto" href="/index.html">生作Phone</a>
-
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
-            <div class="offcanvas-title" id="offcanvasNavbarLabel">
-              生作Phone
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <div class="offcanvas-title" id="offcanvasNavbarLabel">
+                生作Phone
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
             </div>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a
+                    class="nav-link mx-lg-2 active"
+                    aria-current="page"
+                    id="nav-home"
+                    href="./index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./productsFilter.html">Products</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./shoppingcart.html"
+                    >Shopping Cart</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./orderHistory.html">Order</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/profile.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link mx-lg-2 active" aria-current="page" id="nav-home" href="./index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./productsFilter.html">Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./shoppingcart.html">Shopping Cart</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./orderHistory.html">Order</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/profile.html">Profile</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-            </ul>
+          <div class="userArea"></div>
+          <div id="loginbox">
+            <button id="loginBtn" type="button" class="btn btn-outline-light">
+              Loginin
+            </button>
           </div>
           <div class="overlay" id="loginOverlay">
             <div class="popup">
@@ -74,9 +107,10 @@
               </form>
             </div>
           </div>
+
           <div id="signupbox">
             <button id="signupBtn" type="button" class="btn btn-outline-light">
-              Sign up
+              Signup
             </button>
           </div>
           <div class="overlay" id="signUpOverlay">
@@ -98,7 +132,6 @@
               </form>
             </div>
           </div>
-          <div class="userArea"></div>
           <button
             class="navbar-toggler"
             type="button"
@@ -108,8 +141,8 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-        </div>
-        <div class="overlay" id="loginOverlay">
+
+          <!-- <div class="overlay" id="loginOverlay">
           <div class="popup">
             <span class="close-btn" id="loginCloseBtn">&times;</span>
             <h2>Login</h2>
@@ -141,159 +174,212 @@
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
           </div>
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        </div> -->
+          <!-- <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
           aria-controls="offcanvasNavbar">
           <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-    </nav>
-  </div>
-
-  <!-- <div class="secondSection">
-      <div class="logocontainer">
-        <div class="logoinnerbox">
-          <img src="../photos/coverimg.jpg" alt="logo" />
+        </button> -->
         </div>
-      </div>
-    </div> -->
-  <div class="secondSection">
-    <div id="carouselExample" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="../photos/coverimg.jpg" class="d-block w-100" alt="..." />
-        </div>
-
-      </div>
-
+      </nav>
     </div>
-  </div>
 
-
-  <div id="newsletter-constainer" class="py-5">
-    <div class="newsletter-inner-container">
-      <div class="newsletter-title">
-        <div class="newsletter-icon pt-3 pb-4">
-          <h2 class="newsletter-title-text ms-4">Newsletter Subscription</h2>
-        </div>
-
-        <div class="newsletter-text">
-          Subscribe today and get more updated information!
-        </div>
-
-        <div class="input-group mb-4 mt-4">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Enter your email here..."
-          />
-          <button class="btn btn-primary" type="submit">subscribe</button>
+    <div class="secondSection">
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../photos/coverimg.jpg" class="d-block w-100" alt="..." />
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="footer py-5">
-    <div class="container-lg">
-      <div class="row g-4">
-
-        <div class="col-md-6 col-lg-4">
-          <h5 class="fw-light mb-3">Quick links</h5>
-
-          <ul class="list-unstyled">
-            <li class="my-3">
-              <a href="#" class="text-decoration-none text-muted">
-                <i class="fa-solid fa-chevron-right me-1"></i>About us
-              </a>
-            </li>
-          </ul>
-          <ul class="list-unstyled">
-            <li class="my-3">
-              <a href="#" class="text-decoration-none text-muted">
-                <i class="fa-solid fa-chevron-right me-1"></i>Privacy Policy
-              </a>
-            </li>
-          </ul>
-          <ul class="list-unstyled">
-            <li class="my-3">
-              <a href="#" class="text-decoration-none text-muted">
-                <i class="fa-solid fa-chevron-right me-1"></i>Refund Policy
-              </a>
-            </li>
-          </ul>
-          <ul class="list-unstyled">
-            <li class="my-3">
-              <a href="#" class="text-decoration-none text-muted">
-                <i class="fa-solid fa-chevron-right me-1"></i>Shipping Policy
-              </a>
-            </li>
-          </ul>
-          <ul class="list-unstyled">
-            <li class="my-3">
-              <a href="#" class="text-decoration-none text-muted">
-                <i class="fa-solid fa-chevron-right me-1"></i>Shop Location
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <h5 class="fw-light mb-3">Contact Us</h5>
-          <div class="contact-us-box my-2">
-            <span class="me-3">
-              <i class="fas fa-map-marker-alt"></i>
-            </span>
-            <span class="fw-light">
-              Room 1103, 11/F, Exchange Tower 33 Wang Chiu Road, Kowloon Bay,
-              Kowloon, Hong Kong
-            </span>
-          </div>
-          <div class="contact-us-box my-2">
-            <span class="me-3">
-              <i class="fa-solid fa-phone"></i>
-            </span>
-            <span class="fw-light"> +852 9725 6400 </span>
-          </div>
-          <div class="contact-us-box my-2">
-            <span class="me-3">
-              <i class="fa-solid fa-envelope"></i>
-            </span>
-            <span class="fw-light"> hello@tecky.io </span>
+    <div class="aicontainer">
+      <div class="row" id="aicontainerrow">
+        <div class="col-md-7">
+          <div class="product-image-container">
+            <div id="result" class="product-image">Product Image</div>
           </div>
         </div>
+        <div class="col-md-5">
+          <h2>Type in your favourite keyword</h2>
+          <form id="promptForm" class="mb-4">
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="prompt"
+                name="prompt"
+                required
+              />
+            </div>
+            <div>
+              <select
+                class="form-select"
+                id="phoneModel"
+                name="phoneModel"
+                required
+              >
+                <option value="iphone15">iPhone 15</option>
+                <option value="iphone15plus">iPhone 15 Plus</option>
+                <option value="iphone15pro">iPhone 15 Pro</option>
+                <option value="iphone15promax">iPhone 15 Pro Max</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg w-100">
+              Submit
+            </button>
+          </form>
+          <button
+            type="button"
+            class="btn btn-success btn-lg w-100 mb-3"
+            id="buyNowBtn"
+          >
+            Buy now!
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-primary btn-lg w-100"
+            id="addToCartBtn"
+            disabled
+          >
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </div>
 
-        <div class="col-md-6 col-lg-4">
-          <h5 class="fw-light mb-3">Follow Us</h5>
-          <div class="follow-us-box my-2">
+    <div id="newsletter-constainer" class="py-5">
+      <div class="newsletter-inner-container">
+        <div class="newsletter-title">
+          <div class="newsletter-icon pt-3 pb-4">
+            <h2 class="newsletter-title-text ms-4">Newsletter Subscription</h2>
+          </div>
+
+          <div class="newsletter-text">
+            Subscribe today and get more updated information!
+          </div>
+
+          <div class="input-group mb-4 mt-4">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter your email here..."
+            />
+            <button class="btn btn-primary" type="submit">subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer py-5">
+      <div class="container-lg">
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <h5 class="fw-light mb-3">Quick links</h5>
+
             <ul class="list-unstyled">
-              <li>
-                <a
-                  href="#"
-                  class="text-decoration-none text-muted text-white"
-                >
-                  <i class="fa-brands fa-instagram fa-lg"></i>
+              <li class="my-3">
+                <a href="#" class="text-decoration-none text-muted">
+                  <i class="fa-solid fa-chevron-right me-1"></i>About us
+                </a>
+              </li>
+            </ul>
+            <ul class="list-unstyled">
+              <li class="my-3">
+                <a href="#" class="text-decoration-none text-muted">
+                  <i class="fa-solid fa-chevron-right me-1"></i>Privacy Policy
+                </a>
+              </li>
+            </ul>
+            <ul class="list-unstyled">
+              <li class="my-3">
+                <a href="#" class="text-decoration-none text-muted">
+                  <i class="fa-solid fa-chevron-right me-1"></i>Refund Policy
+                </a>
+              </li>
+            </ul>
+            <ul class="list-unstyled">
+              <li class="my-3">
+                <a href="#" class="text-decoration-none text-muted">
+                  <i class="fa-solid fa-chevron-right me-1"></i>Shipping Policy
+                </a>
+              </li>
+            </ul>
+            <ul class="list-unstyled">
+              <li class="my-3">
+                <a href="#" class="text-decoration-none text-muted">
+                  <i class="fa-solid fa-chevron-right me-1"></i>Shop Location
                 </a>
               </li>
             </ul>
           </div>
-          <div class="follow-us-box my-2">
-            <ul class="list-unstyled">
-              <li>
-                <a
-                  href="#"
-                  class="text-decoration-none text-muted text-white"
-                >
-                  <i class="fa-brands fa-facebook"></i>
-                </a>
-              </li>
-            </ul>
+
+          <div class="col-md-6 col-lg-4">
+            <h5 class="fw-light mb-3">Contact Us</h5>
+            <div class="contact-us-box my-2">
+              <span class="me-3">
+                <i class="fas fa-map-marker-alt"></i>
+              </span>
+              <span class="fw-light">
+                Room 1103, 11/F, Exchange Tower 33 Wang Chiu Road, Kowloon Bay,
+                Kowloon, Hong Kong
+              </span>
+            </div>
+            <div class="contact-us-box my-2">
+              <span class="me-3">
+                <i class="fa-solid fa-phone"></i>
+              </span>
+              <span class="fw-light"> +852 9725 6400 </span>
+            </div>
+            <div class="contact-us-box my-2">
+              <span class="me-3">
+                <i class="fa-solid fa-envelope"></i>
+              </span>
+              <span class="fw-light"> hello@tecky.io </span>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <h5 class="fw-light mb-3">Follow Us</h5>
+            <div class="follow-us-box my-2">
+              <ul class="list-unstyled">
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-muted text-white"
+                  >
+                    <i class="fa-brands fa-instagram fa-lg"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="follow-us-box my-2">
+              <ul class="list-unstyled">
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-muted text-white"
+                  >
+                    <i class="fa-brands fa-facebook"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-
-
       </div>
     </div>
-  </div>
-  </div>
+
+    <div class="productsection">
+      <section class="gallery min-vh-100" id="productcard">
+        <div class="container-lg">
+          <div
+            id="products-container"
+            class="products-container row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3"
+          ></div>
+        </div>
+      </section>
+    </div>
 
     <div id="chatBox">
       <div id="chatBoxHeader">
@@ -304,59 +390,8 @@
       <input type="text" id="chatInput" placeholder="Type your question..." />
       <button id="sendBtn">Send</button>
     </div>
-    <button id="chatToggleBtn">Chat</button> -->
+    <button id="chatToggleBtn">Chat</button>
 
-    <div class="product-image-container">
-      <div id="result" class="product-image">Product Image</div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <h2 class="mb-4">Type in your favourite keyword</h2>
-        <form id="promptForm" class="mb-4">
-          <div class="mb-3">
-            <input type="text" class="form-control" id="prompt" name="prompt" required>
-          </div>
-          <div class="mb-3">
-            <select class="form-select" id="phoneModel" name="phoneModel" required>
-              <option value="iphone15">iPhone 15</option>
-              <option value="iphone15plus">iPhone 15 Plus</option>
-              <option value="iphone15pro">iPhone 15 Pro</option>
-              <option value="iphone15promax">iPhone 15 Pro Max</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary btn-lg w-100">Submit</button>
-        </form>
-        <button type="button" class="btn btn-success btn-lg w-100 mb-3" id="buyNowBtn">Buy now!</button>
-        <button type="button" class="btn btn-outline-primary btn-lg w-100" id="addToCartBtn" disabled>Add to
-          cart</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="productsection">
-    <section class="gallery min-vh-100" id="productcard">
-      <div class="container-lg">
-        <div
-          id="products-container"
-          class="products-container row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3"
-        ></div>
-      </div>
-    </section>
-  </div>
-
-  <div id="chatBox">
-    <div id="chatBoxHeader">
-      <div>ChatBot</div>
-      <div><button id="createNewChatBtn">CLEAR</button></div>
-    </div>
-    <div id="chatBody"></div>
-    <input type="text" id="chatInput" placeholder="Type your question..." />
-    <button id="sendBtn">Send</button>
-  </div>
-  <button id="chatToggleBtn">Chat</button>
-
-  <script src="./js/index.js"></script>
-</body>
-
+    <script src="./js/index.js"></script>
+  </body>
 </html>

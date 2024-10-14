@@ -8,11 +8,11 @@ window.onload = async () => {
     const res = await fetch("/userinfo");
     const data = await res.json();
     const userInfo = data.userInfo;
-    const userArea = document.querySelector(".loginbox");
+    const userArea = document.querySelector(".userArea");
 
     if (res.ok && userInfo) {
       userArea.innerHTML = `
-                <div class="userInfo"><span class="userInfoFont">${userInfo.username}</span></div>
+                <div class="userInfo"><span class="userInfoFont">Hello! ${userInfo.username}</span></div>
                 <div class="settingBtn"><a href="/profile.html"><span class="userInfoFont">Profile</span></a></div>
                 <div class="logout"><button type="button" id="logoutBtn" class="userInfoFont">Logout</button></div>
             `;

@@ -12,9 +12,15 @@ window.onload = async () => {
 
     if (res.ok && userInfo) {
       userArea.innerHTML = `
-                <div class="userInfo"><span class="userInfoFont">Hello! ${userInfo.username}</span></div>
-                <div class="settingBtn"><a href="/profile.html"><span class="userInfoFont">Profile</span></a></div>
-                <div class="logout"><button type="button" id="logoutBtn" class="userInfoFont">Logout</button></div>
+                <div class="profilebox">
+               
+                <div id="profileBox" >
+                <a href="/profile.html" class="btn btn-outline-light">Profile</a>
+                </div>
+                <div id="logoutBox">
+                <button type="button" id="logoutBtn" class="btn btn-outline-light">Logout</button>
+                </div>
+                </div>
             `;
       const logoutEle = document.querySelector("#logoutBtn");
       if (logoutEle) {

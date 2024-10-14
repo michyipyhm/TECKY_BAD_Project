@@ -91,16 +91,16 @@ export class GptController {
                 }
 
                 const randomResults = result.sort(() => 0.5 - Math.random()).slice(0, 3);
-
+                // /productdetails.html?product=${id}
                 let humanizedResponse = "";
                 if (randomResults.length > 0) {
                     humanizedResponse = `I found the following products that match your criteria:\n\n`;
                     randomResults.forEach((product, index) => {
-                        humanizedResponse += `${index + 1}. Product Name: ${product.product_name}\n`;
+                        humanizedResponse += `${index + 1}. \n`;
+                        humanizedResponse += `   Product Name: ${product.product_name}\n`;
                         humanizedResponse += `   Model: ${product.model_name}\n`;
                         humanizedResponse += `   Color: ${product.color_name !== "null" ? product.color_name : "No specific color"}\n`;
-                        humanizedResponse += `   Subcategory: ${product.sub_category_name}\n`;
-                        humanizedResponse += `   Category: ${product.category_name}\n\n`;
+                        humanizedResponse += `   <a class="nav-link" href="./productdetails.html?product=${product.product_id}">Link</a>`;
                     });
                 } else {
                     humanizedResponse = "Sorry, I couldn't find any products matching your criteria. You may want to adjust your search conditions.";

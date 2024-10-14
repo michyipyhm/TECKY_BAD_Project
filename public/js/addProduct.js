@@ -1,30 +1,30 @@
-// function updateSecondType() {
-//     const firstType = document.getElementById('firstType').value
-//     const secondType = document.getElementById('secondType')
-//     secondType.innerHTML = ''
-//     let options = []
-//     if (firstType === '1') {
-//         options = [
-//             { value: '1', text: 'Own Brand' },
-//             { value: '2', text: 'Third-party brand' }
-//         ]
-//     } else if (firstType === '2') {
-//         options = [
-//             { value: '3', text: 'Camera Guard' },
-//             { value: '4', text: 'Lens Guard' }
-//         ]
-//     } else if (firstType === '3') {
-//         options = [
-//             { value: '5', text: 'AR' },
-//             { value: '6', text: 'Privacy' },
-//             { value: '7', text: 'Anti-Blue' },
-//             { value: '8', text: 'AntiFingerprint' }
-//         ]
-//     }
-//     options.forEach(opt => {
-//         secondType.innerHTML += `<option value="${opt.value}">${opt.text}</option>`
-//     })
-// }
+function updateSecondType() {
+    const firstType = document.getElementById('firstType').value
+    const secondType = document.getElementById('secondType')
+    secondType.innerHTML = ''
+    let options = []
+    if (firstType === '1') {
+        options = [
+            { value: '1', text: 'Own Brand' },
+            { value: '2', text: 'Third-party brand' }
+        ]
+    } else if (firstType === '2') {
+        options = [
+            { value: '3', text: 'Camera Guard' },
+            { value: '4', text: 'Lens Guard' }
+        ]
+    } else if (firstType === '3') {
+        options = [
+            { value: '5', text: 'AR' },
+            { value: '6', text: 'Privacy' },
+            { value: '7', text: 'Anti-Blue' },
+            { value: '8', text: 'AntiFingerprint' }
+        ]
+    }
+    options.forEach(opt => {
+        secondType.innerHTML += `<option value="${opt.value}">${opt.text}</option>`
+    })
+}
 
 window.onload = async () => {
 
@@ -149,44 +149,41 @@ window.onload = async () => {
     const products = data.products
     const color = data.color
     const model = data.model
-    console.log(products)
+    // console.log(color)
     const addProductDiv = document.getElementById('addProduct');
     const productInfoDiv = document.createElement('div');
     productInfoDiv.innerHTML = `
         <div class="productName">
-            <label for="productName" class="productName">
-                <span class="infoFont">Select a Product:</span><br>
-                <select id="productSelect" name="productSelect">
-                </select>
-            </label>
+            <span class="infoFont">Product name:</span><br>
+            <input type="text" id="productNameLabel" value="">
         </div>
         <div class="productType">
             <label for="firstType" class="firstType">
                 <span class="infoFont">Product type:</span><br>
-                <select id="firstType" name="firstType">
-                    <option value="1">Phone Case</option>
-                    <option value="2">Lens Protector</option>
-                    <option value="3">Screen Protector</option>
-                </select>
+                    <select id="firstType" name="firstType" onchange="updateSecondType()">
+                        <option value="1">Phone Case</option>
+                        <option value="2">Lens Protector</option>
+                        <option value="3">Screen Protector</option>
+                    </select>
             </label>
             <label for="secondType" class="secondType">
-                <select id="secondType" name="secondType">
-                    <option value="1">Own Brand</option>
-                    <option value="2">Third-party brand</option>
-                    <option value="3">Camera Guard</option>
-                    <option value="4">Lens Guard</option>
-                    <option value="5">AR</option>
-                    <option value="6">Privacy</option>
-                    <option value="7">Anti-Blue</option>
-                    <option value="8">AntiFingerprint</option>
-                </select>
+                    <select id="secondType" name="secondType">
+                        <option value="1">Own Brand</option>
+                        <option value="2">Third-party brand</option>
+                        <option value="3">Camera Guard</option>
+                        <option value="4">Lens Guard</option>
+                        <option value="5">AR</option>
+                        <option value="6">Privacy</option>
+                        <option value="7">Anti-Blue</option>
+                        <option value="8">AntiFingerprint</option>
+                    </select>
             </label>
         </div>
         <div class="productPrice">
             <span class="infoFont">Product price:</span><br>
             <input type="text" id="productPriceLabel" value="">
         </div>
-        <div class="productPrice">
+        <div class="productQuantity">
             <span class="infoFont">Product quantity:</span><br>
             <input type="text" id="productQuantityLabel" value="">
         </div>
@@ -205,48 +202,68 @@ window.onload = async () => {
             </label>
         </div>
     `;
-    
+
     addProductDiv.appendChild(productInfoDiv);
 
-    function productSelect() {
-        const productNameSelect = document.getElementById("productSelect")
-        products.forEach(product => {
-            const option = document.createElement("option")
-            option.value = product.id
-            option.textContent = product.product_name
-            productNameSelect.appendChild(option)
-        })
+    function colorType() {
+        const colorTypeSelect = document.getElementById("colorType");
+        colorTypeSelect.innerHTML = ""
+        color.forEach(color => {
+            const option = document.createElement("option");
+            option.value = color.id;
+            option.textContent = color.name;
+            colorTypeSelect.appendChild(option);
+        });
     }
 
+    function modelType() {
+        const productModelSelect = document.getElementById("productModel");
+        productModelSelect.innerHTML = "";  // 清空已有选项
+        model.forEach(model => {
+            const option = document.createElement("option");
+            option.value = model.id;
+            option.textContent = model.name;
+            productModelSelect.appendChild(option);
+        });
+    }
 
-    // function colorType() {
-    //     const colorTypeSelect = document.getElementById("colorType");
-    //     colorResults.forEach(color => {
-    //         const option = document.createElement("option");
-    //         option.value = color.id
-    //         option.textContent = color.name
-    //         if (color.name === product.color_name) {
-    //             option.selected = true
-    //         }
-    //         colorTypeSelect.appendChild(option)
-    //     })
-    // }
+    const secondType = document.getElementById('secondType')
+    const price = document.getElementById('productPriceLabel')
+    const productName = document.getElementById('productNameLabel')
+    const quantityLabel = document.getElementById('productQuantityLabel')
+    const colorTypeSelect = document.querySelector('#colorType')
+    const modelSelect = document.querySelector('#productModel')
+    const saveBtn = document.querySelector("#saveBtn")
+    saveBtn.addEventListener('click', async function (e) {
+        e.preventDefault()
+        console.log(secondType.value)
+        const body = {
+            sub_category_id: secondType.value,
+            price: price.value,
+            product_name: productName.value,
+            quantity: quantityLabel.value,
+            color_id: colorTypeSelect.value,
+            model_id: modelSelect.value
+        }
 
-    // function modelType() {
-    //     const productModelSelect = document.getElementById("productModel");
-    //     modelResults.forEach(model => {
-    //         const option = document.createElement("option");
-    //         option.value = model.id
-    //         option.textContent = model.name
-    //         if (model.name === product.model_name) {
-    //             option.selected = true
-    //         }
-    //         productModelSelect.appendChild(option)
-    //     })
-    // }
+        const res = await fetch('/addNewProduct', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body),
+        }
+        )
+        const data = await res.json()
+        if (res.ok) {
+            alert("Created")
+            window.location.reload();
+        } else {
+            alert(data.message)
+        }
+    })
 
-    // updateSecondType()
-    // colorType()
-    // modelType()
-    productSelect()
+    updateSecondType()
+    colorType()
+    modelType()
 }

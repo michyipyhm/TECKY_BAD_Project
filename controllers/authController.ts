@@ -157,9 +157,9 @@ export class AuthController {
     }
 
     addNewProduct = async (req: Request, res: Response) => {
-        const { products_id, quantity, color_id, model_id } = req.body
+        const { products_name, quantity, color_id, model_id, price, sub_category_id } = req.body
         try {
-            await this.authService.addNewProduct(products_id, quantity, color_id, model_id)
+            await this.authService.addNewProduct(products_name, quantity, color_id, model_id, price, sub_category_id)
             res.json({ message: "New Product created successfully" })
         } catch (error) {
             res.status(400).json({ message: "Fail to create new product." })

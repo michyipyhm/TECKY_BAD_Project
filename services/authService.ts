@@ -226,35 +226,45 @@ export class AuthService {
 
     addProductSelect = async () => {
         const products = await knex('products')
-        .select("*")
+            .select("*")
 
         const color = await knex('color')
-        .select("*")
+            .select("*")
 
         const model = await knex('model')
-        .select("*")
+            .select("*")
 
-        const result = {products, color, model}
+        const result = { products, color, model }
 
         return result
 
     }
 
-    addNewProduct = async (products_id: number, quantity: number, color_id: number, model_id: number) => {
+    addNewProduct = async (products_name: string, quantity: number, color_id: number, model_id: number, price: number, sub_category_id: number) => {
         try {
-            const newProduct = await knex('product_option')
+            const [newProduct] = await knex('products')
+                .insert({
+                    product_name: products_name,
+                    sub_category_id: sub_category_id,
+                    product_price: price, 
+                })
+                .returning('id');
+        
+            const newProductsId = newProduct.id
+        
+            const [newProduct_option] = await knex('product_option')
                 .insert({
                     model_id: model_id,
                     color_id: color_id,
-                    products_id: products_id,
+                    products_id: newProductsId,
                     product_quantity: quantity
                 })
-                .returning('id')
-
-            return newProduct
+                .returning('id');
+        
+            return newProduct_option;
         } catch (error) {
             console.error("Error creating product:", error);
-            throw new Error("Failed to copy product.");
+            throw new Error("Failed to create product.");
         }
     }
 }

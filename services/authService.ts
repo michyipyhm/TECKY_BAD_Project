@@ -113,7 +113,8 @@ export class AuthService {
                 "sub_category.id as sub_category_id",
                 "sub_category.category_name as sub_category_name",
                 "category.id as category_id",
-                "category.category_name as category_name"
+                "category.category_name as category_name",
+                "product_option.product_quantity"
             )
             .join("model", "model.id", "product_option.model_id")
             .join("color", "color.id", "product_option.color_id")
@@ -187,11 +188,83 @@ export class AuthService {
             .select('*')
             .where('product_id', queryProduct[0].product_id)
 
+        const price = await knex('products')
+            .select('product_price')
+            .where('products.id', queryProduct[0].product_id)
+
+        const quantity = await knex('product_option')
+            .select('product_quantity')
+            .where("product_option.id", product_option_id)
+
+        const color = await knex('color')
+            .select('*')
+
+        const model = await knex('model')
+            .select('*')
+
         const result = {
             product: queryProduct[0],
-            images: imagePath
+            images: imagePath,
+            price: price,
+            quantity: quantity,
+            color: color,
+            model: model,
         }
 
         return result
+    }
+
+    saveEditProduct = async (product_option_id: number, quantity: number, color_id: number, model_id: number) => {
+        await knex("product_option")
+            .update({
+                model_id: model_id,
+                color_id: color_id,
+                product_quantity: quantity
+            })
+            .where("id", product_option_id);
+    }
+
+    addProductSelect = async () => {
+        const products = await knex('products')
+            .select("*")
+
+        const color = await knex('color')
+            .select("*")
+
+        const model = await knex('model')
+            .select("*")
+
+        const result = { products, color, model }
+
+        return result
+
+    }
+
+    addNewProduct = async (products_name: string, quantity: number, color_id: number, model_id: number, price: number, sub_category_id: number) => {
+        try {
+            const [newProduct] = await knex('products')
+                .insert({
+                    product_name: products_name,
+                    sub_category_id: sub_category_id,
+                    product_price: price, 
+                })
+                .returning('id');
+        
+            const newProductsId = newProduct.id
+        
+            const [newProduct_option] = await knex('product_option')
+                .insert({
+                    model_id: model_id,
+                    color_id: color_id,
+                    products_id: newProductsId,
+                    product_quantity: quantity
+                })
+                .returning('id');
+        
+            return newProduct_option;
+        } catch (error) {
+            console.error("Error creating product:", error);
+            throw new Error("Failed to create product.");
+        }
     }
 }

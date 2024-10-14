@@ -1,3 +1,31 @@
+function updateSecondType() {
+    const firstType = document.getElementById('firstType').value
+    const secondType = document.getElementById('secondType')
+    secondType.innerHTML = ''
+    let options = []
+    if (firstType === '1') {
+        options = [
+            { value: '1', text: 'Own Brand' },
+            { value: '2', text: 'Third-party brand' }
+        ]
+    } else if (firstType === '2') {
+        options = [
+            { value: '3', text: 'Camera Guard' },
+            { value: '4', text: 'Lens Guard' }
+        ]
+    } else if (firstType === '3') {
+        options = [
+            { value: '5', text: 'AR' },
+            { value: '6', text: 'Privacy' },
+            { value: '7', text: 'Anti-Blue' },
+            { value: '8', text: 'AntiFingerprint' }
+        ]
+    }
+    options.forEach(opt => {
+        secondType.innerHTML += `<option value="${opt.value}">${opt.text}</option>`
+    })
+}
+
 window.onload = async () => {
 
     await getUserProfile()
@@ -116,93 +144,109 @@ window.onload = async () => {
         }
     }
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('product');
-    const res = await fetch(`/editProduct?product=${productId}`)
-    const result = await res.json()
-    const images = result.images
-    const product = result.product
-    const priceResult = result.price
-    const price = priceResult[0].product_price
-    const quantityResult = result.quantity
-    const quantity = quantityResult[0].product_quantity
-    const colorResults = result.color
-    const modelResults = result.model
-    // console.log(product.product_option_id)
-    const editProductDiv = document.getElementById('editProduct');
-    const productInfoDiv = document.createElement('div')
+    const res = await fetch("/addProductSelect");
+    const data = await res.json();
+    const products = data.products
+    const color = data.color
+    const model = data.model
+    // console.log(color)
+    const addProductDiv = document.getElementById('addProduct');
+    const productInfoDiv = document.createElement('div');
     productInfoDiv.innerHTML = `
-        <div class="productImage">
-            <div class="productPicture" style="max-width: 10%; overflow: hidden;">
-                <img src="${images[0].image_path}" style="width: 100%; height: auto;" />
-            </div>
-        </div>
         <div class="productName">
-            <span class="infoFont"><h3>Product name:</h3></span>
-            <span class="labelFont">${product.product_name}</span><br>
+            <span class="infoFont">Product name:</span><br>
+            <input type="text" id="productNameLabel" value="">
         </div>
         <div class="productType">
             <label for="firstType" class="firstType">
-                <span class="infoFont"><h3>Product type:</h3></span>
-                    <select id="firstType" name="firstType" disabled>
-                        <option value="1" ${product.category_id == 1 ? "selected" : ""}>Phone Case</option>
-                        <option value="2" ${product.category_id == 2 ? "selected" : ""}>Lens Protector</option>
-                        <option value="3" ${product.category_id == 3 ? "selected" : ""}>Screen Protector</option>
+                <span class="infoFont">Product type:</span><br>
+                    <select id="firstType" name="firstType" onchange="updateSecondType()">
+                        <option value="1">Phone Case</option>
+                        <option value="2">Lens Protector</option>
+                        <option value="3">Screen Protector</option>
                     </select>
             </label>
             <label for="secondType" class="secondType">
-                    <select id="secondType" name="secondType" disabled>
-                        <option value="1" ${product.sub_category_id == 1 ? "selected" : ""}>Own Brand</option>
-                        <option value="2" ${product.sub_category_id == 2 ? "selected" : ""}>Third-party brand</option>
-                        <option value="3" ${product.sub_category_id == 3 ? "selected" : ""}>Camera Guard</option>
-                        <option value="4" ${product.sub_category_id == 4 ? "selected" : ""}>Lens Guard</option>
-                        <option value="5" ${product.sub_category_id == 5 ? "selected" : ""}>AR</option>
-                        <option value="6" ${product.sub_category_id == 6 ? "selected" : ""}>Privacy</option>
-                        <option value="7" ${product.sub_category_id == 7 ? "selected" : ""}>Anti-Blue</option>
-                        <option value="8" ${product.sub_category_id == 8 ? "selected" : ""}>AntiFingerprint</option>
+                    <select id="secondType" name="secondType">
+                        <option value="1">Own Brand</option>
+                        <option value="2">Third-party brand</option>
+                        <option value="3">Camera Guard</option>
+                        <option value="4">Lens Guard</option>
+                        <option value="5">AR</option>
+                        <option value="6">Privacy</option>
+                        <option value="7">Anti-Blue</option>
+                        <option value="8">AntiFingerprint</option>
                     </select>
             </label>
         </div>
         <div class="productPrice">
-            <span class="infoFont"><h3>Product price:</h3></span>
-            <span class="labelFont">$${price}</span>
+            <span class="infoFont">Product price:</span><br>
+            <input type="text" id="productPriceLabel" value="">
         </div>
-        <div class="productPrice">
-            <span class="infoFont"><h3>Product quantity:</h3></span>
-            <input type="text" id="quantityLabel" value="${quantity}">
+        <div class="productQuantity">
+            <span class="infoFont">Product quantity:</span><br>
+            <input type="text" id="productQuantityLabel" value="">
         </div>
         <div class="productColor">
             <label for="productColor" class="productColor">
-                <span class="infoFont"><h3>Color :</h3></span>
-                    <select id="colorType" name="colorType">
-                    </select>
+                <span class="infoFont">Color :</span><br>
+                <select id="colorType" name="colorType">
+                </select>
             </label>
         </div>
         <div class="productModel">
             <label for="productModel" class="productModel">
-                <span class="infoFont"><h3>Model:</h3></span>
-                    <select id="productModel" name="productModel">
-                    </select>
+                <span class="infoFont">Model:</span><br>
+                <select id="productModel" name="productModel">
+                </select>
             </label>
         </div>
-    `
-    editProductDiv.appendChild(productInfoDiv)
+    `;
 
-    const quantityLabel = document.getElementById('quantityLabel')
+    addProductDiv.appendChild(productInfoDiv);
+
+    function colorType() {
+        const colorTypeSelect = document.getElementById("colorType");
+        colorTypeSelect.innerHTML = ""
+        color.forEach(color => {
+            const option = document.createElement("option");
+            option.value = color.id;
+            option.textContent = color.name;
+            colorTypeSelect.appendChild(option);
+        });
+    }
+
+    function modelType() {
+        const productModelSelect = document.getElementById("productModel");
+        productModelSelect.innerHTML = "";  // 清空已有选项
+        model.forEach(model => {
+            const option = document.createElement("option");
+            option.value = model.id;
+            option.textContent = model.name;
+            productModelSelect.appendChild(option);
+        });
+    }
+
+    const secondType = document.getElementById('secondType')
+    const price = document.getElementById('productPriceLabel')
+    const productName = document.getElementById('productNameLabel')
+    const quantityLabel = document.getElementById('productQuantityLabel')
     const colorTypeSelect = document.querySelector('#colorType')
     const modelSelect = document.querySelector('#productModel')
-        const saveBtn = document.querySelector("#saveBtn")
+    const saveBtn = document.querySelector("#saveBtn")
     saveBtn.addEventListener('click', async function (e) {
         e.preventDefault()
-
+        console.log(secondType.value)
         const body = {
-            product_option_id: product.product_option_id,
+            sub_category_id: secondType.value,
+            price: price.value,
+            product_name: productName.value,
             quantity: quantityLabel.value,
             color_id: colorTypeSelect.value,
             model_id: modelSelect.value
         }
-        console.log(body)
-        const res = await fetch('/saveEditProduct', {
+
+        const res = await fetch('/addNewProduct', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -212,40 +256,14 @@ window.onload = async () => {
         )
         const data = await res.json()
         if (res.ok) {
-            alert("Updated")
+            alert("Created")
             window.location.reload();
         } else {
             alert(data.message)
         }
     })
 
-    function colorType() {
-        const colorTypeSelect = document.getElementById("colorType");
-        colorResults.forEach(color => {
-            const option = document.createElement("option");
-            option.value = color.id
-            option.textContent = color.name
-            if (color.name === product.color_name) {
-                option.selected = true
-            }
-            colorTypeSelect.appendChild(option)
-        })
-    }
-
-    function modelType() {
-        const productModelSelect = document.getElementById("productModel");
-        modelResults.forEach(model => {
-            const option = document.createElement("option");
-            option.value = model.id
-            option.textContent = model.name
-            if (model.name === product.model_name) {
-                option.selected = true
-            }
-            productModelSelect.appendChild(option)
-        })
-    }
-
+    updateSecondType()
     colorType()
     modelType()
 }
-

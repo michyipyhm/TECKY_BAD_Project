@@ -553,13 +553,7 @@ export async function seed(knex: Knex): Promise<void> {
       member_id: 2,
       user_message: "Hello, I want to ask something.",
       response_message: "",
-    },
-    {
-      id: 2,
-      member_id: 2,
-      user_message: "",
-      response_message: "What can i help you?",
-    },
+    }
   ]);
 
   await knex("shopping_cart").insert([

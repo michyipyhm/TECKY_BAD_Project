@@ -11,7 +11,7 @@ const authController = new AuthController(authService)
 authRouter.post("/register", authController.registerNewMember)
 authRouter.post("/login", authController.loginUser)
 
-authRouter.get("/userinfo", isLoggedIn, authController.getUserInfo);
+authRouter.get("/userinfo", authController.getUserInfo);
 authRouter.post("/logout", isLoggedIn, authController.logoutUser);
 authRouter.post("/editProfile", isLoggedIn, authController.editUserInfo);
 authRouter.post("/changePassword", isLoggedIn, authController.changePassword);

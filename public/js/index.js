@@ -291,28 +291,6 @@ window.onload = async () => {
 };
 
 const getproductBySubCategory = async () => {
-  // const searching = [];
-
-  // const subCategoryType = { subCategoryType: subCategoryTypeSelect.value };
-
-  // if (subCategoryType.subCategoryType) {
-  //   searching.push(subCategoryType);
-  // }
-  // const displaySubCategories = (subCategories) => {
-
-  //   for (let i = 0; i <= 6; i++) {
-  //     const key = Object.keys(searching[i])[0];
-  //     const value = Object.values(searching[i])[0];
-  //     if (i == 0) {
-  //       query += "?";
-  //     } else {
-  //       query += "&";
-  //     }
-  //     query += `${key}=${value}`;
-  //   }
-  //   };
-
-
 
 
   const res = await fetch(`/index`, {
@@ -323,7 +301,7 @@ const getproductBySubCategory = async () => {
   if (res.ok) {
     document.querySelector(`#products-container`).innerHTML = "";
     let displayedCount = 0;
-    for (let i = 0; i < data.length && displayedCount < 7; i++) {
+    for (let i = 0; i < data.length && displayedCount < 6; i++) {
       let imagePath = data[i].image_path;
       let productId = data[i].product_id;
       let subCategoryName = data[i].sub_category_name;

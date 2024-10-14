@@ -83,6 +83,20 @@ body {
   color: #08192c;
 }
 
+#settingBtn{
+  background-color: transparent;
+  color: #6d757d;
+  border: #f1ece1  1px solid;
+  border-radius: 50px;
+  padding: 8px 20px;
+  margin: 0px 10px;
+  transition: 0.3s background-color;
+}
+#settingBtn:hover{
+  background-color: #f1ece1;
+  color: #08192c;
+}
+
 .navbar-toggler{
   border: none;
   font-size: 18px;
@@ -122,6 +136,9 @@ body {
   width: 70%;
 }
 
+#userInfo {
+  font-size: 10px;
+}
 /* ai container */
 
 .aicontainer {
@@ -131,6 +148,10 @@ body {
   background-color: #ffffff;
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#aicontainerrow{
+  width: 100%;
 }
 
 h1 {

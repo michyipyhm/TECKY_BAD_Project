@@ -3,7 +3,6 @@ window.onload = async () => {
   await replicateAi();
   chatBoxToggle();
   getproductBySubCategory();
-  chatBox();
 
   async function getUserProfile() {
     const res = await fetch("/userinfo");

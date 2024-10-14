@@ -10,8 +10,8 @@ import { productDetailsRoutes } from "./routers/productDetailsRoutes";
 import { shoppingCartRouter } from "./routers/shoppingCartRoute";
 import { orderRouter } from "./routers/orderDetailRoute";
 import { categoryRoutes } from "./routers/categoryRoutes";
-import { stripeCheckout } from "./routers/StripeRoutes";
-// import { isLoggedIn } from "./utils/guards";
+// import { stripeCheckout } from "./routers/StripeRoutes";
+import { isLoggedIn, isAdmin } from "./utils/guards"
 
 
 dotenv.config();
@@ -45,10 +45,11 @@ main.use(chatRouter);
 main.use(categoryRoutes);
 main.use(productsRoutes);
 main.use(productDetailsRoutes);
-main.use(orderRouter);
-main.use(shoppingCartRouter);
-main.use(stripeCheckout);
-// main.use(isLoggedIn, shoppingCartRouter);
+main.use(isLoggedIn, orderRouter);
+main.use(isLoggedIn, shoppingCartRouter);
+main.use(isAdmin, express.static("admin"));
+main.use(isLoggedIn, express.static("private"));
+// main.use(isLoggedIn, stripeCheckout);
 
 
 

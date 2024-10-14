@@ -1,4 +1,5 @@
 import { Knex } from "knex";
+import { hashPassword } from "../utils/hash";
 
 export async function seed(knex: Knex): Promise<void> {
   // Deletes ALL existing entries //Testing only!!! Do not do this in production
@@ -15,7 +16,6 @@ export async function seed(knex: Knex): Promise<void> {
   await knex("category").del();
   await knex("color").del();
   await knex("model").del();
-
 
   // Inserts seed entries
 
@@ -70,28 +70,37 @@ export async function seed(knex: Knex): Promise<void> {
     {
       id: 1,
       username: "admin",
-      password: "123123",
+      password: await hashPassword("123123"),
       phone: "97776888",
-      address: "tuen mun ",
-      email: "admin@gmail.com",
+      address: "Hong Kong",
+      email: "admin@admin.com",
       admin: true,
     },
     {
       id: 2,
       username: "kees",
-      password: "123123",
+      password: await hashPassword("123123"),
       phone: "98887666",
-      address: "tuen mun",
+      address: "Hong Kong",
       email: "kees@gmail.com",
       admin: false,
     },
     {
       id: 3,
       username: "victor",
-      password: "123123",
+      password: await hashPassword("123123"),
       phone: "96668777",
-      address: "tuen mun",
+      address: "Hong Kong",
       email: "victor@gmail.com",
+      admin: false,
+    },
+    {
+      id: 4,
+      username: "michael",
+      password: await hashPassword("123123"),
+      phone: "96668777",
+      address: "Hong Kong",
+      email: "michael@gmail.com",
       admin: false,
     },
   ]);
@@ -565,11 +574,11 @@ export async function seed(knex: Knex): Promise<void> {
   await knex.raw("ALTER SEQUENCE chat_box_id_seq RESTART WITH 2;")
   await knex.raw("ALTER SEQUENCE order_details_id_seq RESTART WITH 4;")
   await knex.raw("ALTER SEQUENCE transaction_id_seq RESTART WITH 4;")
-  await knex.raw("ALTER SEQUENCE order_id_seq RESTART WITH 4;")
+  await knex.raw("ALTER SEQUENCE orders_id_seq RESTART WITH 4;")
   await knex.raw("ALTER SEQUENCE product_image_id_seq RESTART WITH 45;")
   await knex.raw("ALTER SEQUENCE product_option_id_seq RESTART WITH 155;")
   await knex.raw("ALTER SEQUENCE products_id_seq RESTART WITH 27;")
-  await knex.raw("ALTER SEQUENCE members_id_seq RESTART WITH 4;")
+  await knex.raw("ALTER SEQUENCE members_id_seq RESTART WITH 5;")
   await knex.raw("ALTER SEQUENCE sub_category_id_seq RESTART WITH 9;")
   await knex.raw("ALTER SEQUENCE category_id_seq RESTART WITH 4;")
   await knex.raw("ALTER SEQUENCE color_id_seq RESTART WITH 10;")

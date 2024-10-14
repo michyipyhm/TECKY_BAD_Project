@@ -164,8 +164,9 @@ window.onload = async () => {
           console.log("Generated product data:", generatedProductData);
           addToCartBtn.disabled = false;
         } else {
-          resultDiv.innerHTML = `Error: ${data.message || "Unknown error occurred"
-            }`;
+          resultDiv.innerHTML = `Error: ${
+            data.message || "Unknown error occurred"
+          }`;
         }
       } catch (error) {
         console.error("Error:", error);
@@ -211,8 +212,8 @@ window.onload = async () => {
   function chatBoxToggle() {
     const chatWindow = document.getElementById("chatBox");
     const toggleBtn = document.getElementById("chatToggleBtn");
-    toggleBtn.addEventListener("click", () => {
 
+    toggleBtn.addEventListener("click", () => {
       if (
         chatWindow.style.display === "none" ||
         chatWindow.style.display === ""
@@ -246,27 +247,27 @@ window.onload = async () => {
   }
 
   document.getElementById("sendBtn").addEventListener("click", async function () {
-    const chatInputElem = document.getElementById("chatInput");
-    const chatInput = chatInputElem.value;
-    const body = { question: chatInput };
-    console.log(body)
-    const res = await fetch("/aiBot", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
-    if (res.ok) {
-      loadChatMessages();
-      chatInputElem.value = "";
-      const chatBody = document.getElementById("chatBody");
-      chatBody.scrollTop = chatBody.scrollHeight;
-    } else {
-      const data = await res.json();
-      alert(data.message);
-    }
-  })
+      const chatInputElem = document.getElementById("chatInput");
+      const chatInput = chatInputElem.value;
+      const body = { question: chatInput };
+
+      const res = await fetch("/aiBot", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+      if (res.ok) {
+        loadChatMessages();
+        chatInputElem.value = "";
+        const chatBody = document.getElementById("chatBody");
+        chatBody.scrollTop = chatBody.scrollHeight;
+      } else {
+        const data = await res.json();
+        alert(data.message);
+      }
+    })
 
   document
     .getElementById("createNewChatBtn")
@@ -302,10 +303,10 @@ const getproductBySubCategory = async () => {
       let productId = data[i].product_id;
       let subCategoryName = data[i].sub_category_name;
       if (subCategoryName === "Own Brand") {
-        console.log("328-imagePath", imagePath);
-        console.log("329-productId", productId);
+      console.log("328-imagePath", imagePath);
+      console.log("329-productId", productId);
 
-        document.querySelector(`#products-container`).innerHTML += `
+      document.querySelector(`#products-container`).innerHTML += `
     <div class="col">
       <div class="card" id="card1">
         <img src="${imagePath}" class="gallery-item" data-id="${productId}" alt="gallery" />
@@ -317,9 +318,9 @@ const getproductBySubCategory = async () => {
         </div>
       </div>
     </div>`;
-        displayedCount++;
-      }
+    displayedCount++;
     }
+  }
     document.querySelectorAll(".cards").forEach((cardDiv) => {
       const checkProductDetails = cardDiv.querySelectorAll(".btn");
       checkProductDetails.forEach((button) => {

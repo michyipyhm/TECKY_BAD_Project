@@ -1,5 +1,11 @@
 window.onload = async () => {
 
+    if (res.status === 401) {
+        alert("Please login first.");
+        window.location.href = "/index.html";
+        return;
+    }
+
     const usernameLabel = document.querySelector("#usernameLabel")
     const emailLabel = document.querySelector("#emailLabel")
     const phoneLabel = document.getElementById('phoneLabel')

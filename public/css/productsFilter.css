@@ -2,7 +2,7 @@
     overflow: scroll;
     height: 100vh;
 }
-body {
+/* body {
     background-color: rgb(136, 136, 136);
     height: 100vh;
     width: 100vw;
@@ -10,12 +10,12 @@ body {
     overflow: hidden;
     /* display: flex;
     flex-direction: column; */
- } 
+ /* }  */ 
 
 .firstSection {
     /* height: 20%; */
     width: 100%;
-    display: flex;
+    /* display: flex; */
 }
 
 .logoLocation {
@@ -100,13 +100,7 @@ body {
     background-color: #ffd8c2;
     color: #08192c;
   } 
-/*product card*/
-  #third-section {
-    width:auto;
-    height: auto;
-    padding-bottom: 10%;
-  }
-  
+
   img{
     max-width: 100%;
   }
@@ -169,5 +163,111 @@ body {
   
   }
 
+  /**/
+  /* navbar */
+
+#navbarhead {
+  border-radius: 35px;
+  margin: 5px;
+}
+
+.navbar-brand{
+  font-family: "LXGW WenKai TC", cursive;
+  font-size: 35px;
+  color: #08192c;
+  margin-left: 20px;
+}
+
+#offcanvasNavbarLabel {
+  font-family: "IBM Plex Sans KR", sans-serif;
+  font-size: 30px;
+}
+
+
+#loginbox .btn {
+  background-color: transparent;
+  color: #6d757d;
+  border: #f1ece1  1px solid;
+  border-radius: 50px;
+  padding: 8px 20px;
+  transition: 0.3s background-color;
+}
+
+#loginBtn:hover {
+  background-color: #f1ece1;
+  color: #08192c;
+}
+
+#signupbox .btn {
+  background-color: transparent;
+  color: #6d757d;
+  border: #f1ece1  1px solid;
+  border-radius: 50px;
+  padding: 8px 20px;
+  margin: 0px 10px;
+  transition: 0.3s background-color;
+}
+
+#signupbox .btn:hover {
+  background-color: #f1ece1;
+  color: #08192c;
+}
+
+#settingBtn{
+  background-color: transparent;
+  color: #6d757d;
+  border: #f1ece1  1px solid;
+  border-radius: 50px;
+  padding: 8px 20px;
+  margin: 0px 10px;
+  transition: 0.3s background-color;
+}
+#settingBtn:hover{
+  background-color: #f1ece1;
+  color: #08192c;
+}
+
+.navbar-toggler{
+  border: none;
+  font-size: 18px;
+}
+
+.navbar-toggler:focus, .btn-close:focus{
+  box-shadow: none;
+  outline: none;
+}
+
+.nav-link {
+  color: #666777;
+  font-weight: 500;
+  position: relative;
+  margin-left: 10px;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #08192c;
+ }
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 2px;
+  background-color: #f1ece1;
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+.nav-link:hover::before {
+  visibility: visible;
+  width: 70%;
+}
+
+#userInfo {
+  font-size: 10px;
+}
 
   

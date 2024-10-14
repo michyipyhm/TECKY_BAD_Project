@@ -291,8 +291,10 @@ window.onload = async () => {
         alert(data.message);
       }
     });
-};
 
+    
+
+};
 const getproductBySubCategory = async () => {
 
 

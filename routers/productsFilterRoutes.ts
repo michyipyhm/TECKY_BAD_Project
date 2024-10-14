@@ -81,6 +81,7 @@ async function getProducts(req: Request, res: Response) {
         product_type: row.product_type,
         category_name: row.category_name,
         product_quantity: row.product_quantity,
+        product_option_id: row.product_option_id,
       }))
     );
   } catch (error) {

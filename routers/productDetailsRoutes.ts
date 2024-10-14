@@ -4,6 +4,7 @@ import { knex } from "../main";
 export const productDetailsRoutes = express.Router();
 productDetailsRoutes.get("/product/details/:product_id", productdetails);
 
+
 async function productdetails(req: Request, res: Response) {
   const product_id = req.params.product_id;
 
@@ -42,7 +43,8 @@ async function productdetails(req: Request, res: Response) {
         color: row.color_name,
         color_id: row.color_id,
         product_type: row.product_type,
-        category_name: row.category_name
+        category_name: row.category_name,
+        product_option_id: row.product_option_id
       })),
     });
   } catch (error) {

@@ -5,13 +5,13 @@ const emblaContainer = document.getElementById("embla__container");
 const emblaThumbsContainer = document.getElementById("embla-thumbs__container");
 const productTitle = document.getElementById("productTitle");
 const productPrice = document.getElementById("productPrice");
-
+const addToCartBtn = document.getElementById("addToCartBtn");
 
 var selectedImage = "";
 document.addEventListener("DOMContentLoaded", async () => {
   const urlParams = new URLSearchParams(window.location.search);
   const product_id = urlParams.get("product");
-  // console.log("productId:", productId);
+  
 
   const res = await fetch(`/product/details/${product_id}`);
 
@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   
   const products = result.data;
   const product = products[0];
+  console.log("product", product);
   selectedImage = product.image_path;
 
   productTitle.innerHTML = product.product_name;
@@ -125,14 +126,22 @@ document.addEventListener("DOMContentLoaded", async () => {
   //         </div>
   //     </div>
   // `;
-  productDetails.appendChild(productDiv);
-  const name = product.product_name;
-  const addToCartBtns = document.querySelector(".btn.btn-light");
-  addToCartBtns.addEventListener("click", async (e) => {
+  
+  
+  addToCartBtn.addEventListener("click", async (e) => {
+    
+    const id = product.id
+    const model_name = modelDropdown.value
+    const color_name = colorDropdown.value
+    
+    console.log("id", id);  
+    console.log("model_name", model_name);
+    console.log("color_name", color_name);
     e.preventDefault();
     const body = {
-      name: name,  
+      
     };
+    console.log("body", body);
     const res = await fetch("/addToCart", {
       method: "POST",
       headers: {
@@ -141,6 +150,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       body: JSON.stringify(body),
     });
     const data = await res.json();
+    console.log("data", data);
     if (res.ok) {
       alert(data.message);
       window.location = "/shoppingCart.html"
@@ -222,3 +232,18 @@ const loadEmblaCarousel = async () => {
     .on('destroy', removeThumbBtnsClickHandlers)
     .on('destroy', removeToggleThumbBtnsActive)  
 }
+
+// const getAllProducts = async () => {
+//   const urlParams = new URLSearchParams(window.location.search);
+//   const product_id = urlParams.get("product");
+//   console.log("product_id", product_id);
+
+//   const res = await fetch(`/product/details/:product_id`, {
+//     method: "GET",
+//   });
+//   const result = await res.json();
+//   const products = result.data;
+  
+//   console.log("products", products);
+  
+// };

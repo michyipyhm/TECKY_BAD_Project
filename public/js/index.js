@@ -286,56 +286,56 @@ window.onload = async () => {
       }
     });
 
-    const getproductBySubCategory = async () => {
-
-
-      const res = await fetch(`/index`, {
-        method: "GET",
-      });
-      const data = await res.json();
-      console.log("321-data", data);
-      if (res.ok) {
-        document.querySelector(`#products-container`).innerHTML = "";
-        let displayedCount = 0;
-        for (let i = 0; i < data.length && displayedCount < 6; i++) {
-          let imagePath = data[i].image_path;
-          let productId = data[i].product_id;
-          let subCategoryName = data[i].sub_category_name;
-          if (subCategoryName === "Own Brand") {
-          console.log("328-imagePath", imagePath);
-          console.log("329-productId", productId);
     
-          document.querySelector(`#products-container`).innerHTML += `
-        <div class="col">
-          <div class="card" id="card1">
-            <img src="${imagePath}" class="gallery-item" data-id="${productId}" alt="gallery" />
-            <div class="card-body">
-                </div>
-              <div class="cards">
-              <a href="#" class="btn btn-light" data-id="${productId}">Details</a>
-              </div>
-            </div>
-          </div>
-        </div>`;
-        displayedCount++;
-        }
-      }
-        document.querySelectorAll(".cards").forEach((cardDiv) => {
-          const checkProductDetails = cardDiv.querySelectorAll(".btn");
-          checkProductDetails.forEach((button) => {
-            button.addEventListener("click", async (e) => {
-              e.preventDefault();
-              const id = button.dataset.id;
-    
-              window.location.href = `/productdetails.html?product=${id}`;
-            });
-          });
-        });
-      } else {
-        alert(data.message);
-      }
-    };
 
 };
+const getproductBySubCategory = async () => {
 
+
+  const res = await fetch(`/index`, {
+    method: "GET",
+  });
+  const data = await res.json();
+  console.log("321-data", data);
+  if (res.ok) {
+    document.querySelector(`#products-container`).innerHTML = "";
+    let displayedCount = 0;
+    for (let i = 0; i < data.length && displayedCount < 6; i++) {
+      let imagePath = data[i].image_path;
+      let productId = data[i].product_id;
+      let subCategoryName = data[i].sub_category_name;
+      if (subCategoryName === "Own Brand") {
+      console.log("328-imagePath", imagePath);
+      console.log("329-productId", productId);
+
+      document.querySelector(`#products-container`).innerHTML += `
+    <div class="col">
+      <div class="card" id="card1">
+        <img src="${imagePath}" class="gallery-item" data-id="${productId}" alt="gallery" />
+        <div class="card-body">
+            </div>
+          <div class="cards">
+          <a href="#" class="btn btn-light" data-id="${productId}">Details</a>
+          </div>
+        </div>
+      </div>
+    </div>`;
+    displayedCount++;
+    }
+  }
+    document.querySelectorAll(".cards").forEach((cardDiv) => {
+      const checkProductDetails = cardDiv.querySelectorAll(".btn");
+      checkProductDetails.forEach((button) => {
+        button.addEventListener("click", async (e) => {
+          e.preventDefault();
+          const id = button.dataset.id;
+
+          window.location.href = `/productdetails.html?product=${id}`;
+        });
+      });
+    });
+  } else {
+    alert(data.message);
+  }
+};
 

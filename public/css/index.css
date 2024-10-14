@@ -53,6 +53,38 @@ body {
   font-size: 30px;
 }
 
+.profilebox .userInfo{
+  font-size: 20px;
+}
+
+#profileBox .btn{
+  background-color: transparent;
+  color: #6d757d;
+  border: #f1ece1  1px solid;
+  border-radius: 50px;
+  padding: 8px 20px;
+  margin: 0px 10px;
+  transition: 0.3s background-color;
+}
+
+#profileBox .btn :hover{
+  background-color: #f1ece1;
+  color: #08192c;
+}
+
+#logoutBox .btn{
+  background-color: transparent;
+  color: #6d757d;
+  border: #f1ece1  1px solid;
+  border-radius: 50px;
+  padding: 8px 20px;
+  margin: 0px 10px;
+  transition: 0.3s background-color;
+}
+#logoutBox .btn:hover{
+  background-color: #f1ece1;
+  color: #08192c;
+}
 
 #loginbox .btn {
   background-color: transparent;
@@ -83,19 +115,7 @@ body {
   color: #08192c;
 }
 
-#settingBtn{
-  background-color: transparent;
-  color: #6d757d;
-  border: #f1ece1  1px solid;
-  border-radius: 50px;
-  padding: 8px 20px;
-  margin: 0px 10px;
-  transition: 0.3s background-color;
-}
-#settingBtn:hover{
-  background-color: #f1ece1;
-  color: #08192c;
-}
+
 
 .navbar-toggler{
   border: none;
@@ -136,9 +156,6 @@ body {
   width: 70%;
 }
 
-#userInfo {
-  font-size: 10px;
-}
 /* ai container */
 
 .aicontainer {
@@ -160,7 +177,7 @@ h1 {
   color: var(--text-color);
 }
 
-.form-control, .form-select {
+#promptForm .form-control, .form-select {
   background-color: var(--input-background);
   border: 1px solid var(--border-color);
   border-radius: 10px;
@@ -169,13 +186,13 @@ h1 {
   color: var(--text-color);
 }
 
-.form-control:focus, .form-select:focus {
+#promptForm .form-control:focus, .form-select:focus {
   border-color: var(--accent-color);
   box-shadow: 0 0 0 2px rgba(138, 77, 118, 0.2);
   outline: none;
 }
 
-.btn {
+#aiProductInfo .btn {
   background-color: var(--button-color);
   color: var(--button-text-color);
   border: none;
@@ -186,24 +203,24 @@ h1 {
   transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+#aiProductInfo .btn:hover {
   background-color: #500209;
 }
 
-.btn-group {
+#aiProductInfo .btn-group {
   display: flex;
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
 
-.btn-group .btn {
+#aiProductInfo .btn-group .btn {
   flex: 1;
   background-color: var(--input-background);
   color: var(--text-color);
   border: 1px solid var(--border-color);
 }
 
-.btn-group .btn.active {
+#aiProductInfo .btn-group .btn.active {
   background-color: var(--accent-color);
   color: var(--button-text-color);
 }
@@ -482,7 +499,7 @@ h1 {
 
   /* newsletter */
 #newsletter-constainer{
-  background-color: rgb(251, 236, 228);
+  background-color: rgb(255, 255, 255);
 }
 
 
@@ -500,7 +517,6 @@ h1 {
 .newsletter-title-text {
   position: relative;
   display: inline-block;
-
 }
 
 .newsletter-title .newsletter-text {
@@ -526,14 +542,14 @@ h1 {
 .newsletter-title .btn {
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
-  background-color: #ffd8c2;
+  background-color: var(--background-color);
   color: white;
-  border-color: #ffd8c2;
+  border-color: var(--background-color);
 }
 
 .newsletter-title .btn:hover {
-  background-color: rgba(254, 190, 152, 0.6);
-  border-color: rgba(254, 190, 152, 0.6);
+  background-color: #ffdf9b;
+  border-color: #ffdf9b;
   color: #6d757d;
 }
 

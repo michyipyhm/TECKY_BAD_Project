@@ -17,51 +17,126 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-lg bg-light">
+    <div class="firstSection">
+      <nav class="navbar navbar-expand-lg bg-light" id="navbarhead">
         <div class="container-fluid">
-            <a class="navbar-brand me-auto" href="/">Film Village</a>
+          <a class="navbar-brand me-auto" href="/index.html">生作Phone</a>
 
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <div class="offcanvas-title" id="offcanvasNavbarLabel">
-                        Film Village
-                    </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link mx-lg-2 active" aria-current="page" id="nav-home" href="./index.html"
-                              >Home</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="./filter.html">Products</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="./shoppingcart.html">Shopping Cart</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="./order.html">Order</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="/profile.html">Profile</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                          </li>
-                    </ul>
-                </div>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <div class="offcanvas-title" id="offcanvasNavbarLabel">
+                生作Phone
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
             </div>
-            <a href="./login.html" class="loginBtn text-decoration-none text-muted">Login</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a
+                    class="nav-link mx-lg-2 active"
+                    aria-current="page"
+                    id="nav-home"
+                    href="./index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./productsFilter.html">Products</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./shoppingcart.html"
+                    >Shopping Cart</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./orderHistory.html">Order</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/profile.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="userArea">
+          <div id="loginbox">
+            <button id="loginBtn" type="button" class="btn btn-outline-light">
+              Login
             </button>
+          </div>
+          <div class="overlay" id="loginOverlay">
+            <div class="popup">
+              <span class="close-btn" id="loginCloseBtn">&times;</span>
+              <h2>Login</h2>
+              <form id="loginForm">
+                <label for="email">Email:</label><br />
+                <input type="email" id="loginEmail" required /><br /><br />
+                <label for="password">Password:</label><br />
+                <input
+                  type="password"
+                  id="loginPassword"
+                  required
+                /><br /><br />
+                <button type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+
+          <div id="signupbox">
+            <button id="signupBtn" type="button" class="btn btn-outline-light">
+              Signup
+            </button>
+          </div>
+          <div class="overlay" id="signUpOverlay">
+            <div class="popup">
+              <span class="close-btn" id="signUpCloseBtn">&times;</span>
+              <h2>Register</h2>
+              <form id="registerForm">
+                <label for="username">Username:</label><br />
+                <input type="text" id="registerUsername" required /><br /><br />
+                <label for="password">Password:</label><br />
+                <input
+                  type="password"
+                  id="registerPassword"
+                  required
+                /><br /><br />
+                <label for="email">Email:</label><br />
+                <input type="email" id="registerEmail" required /><br /><br />
+                <button type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
         </div>
-    </nav>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        
+        </div>
+      </nav>
+    </div>
     
+    <div class="shoppingCart">
     <h1>Shopping Cart</h1>
+</div>
 
     <div id="shoppingCartForm">
         <div class="cartEmpty">Your Shopping cart is empty.</div>
@@ -73,7 +148,127 @@
         <button type="button" class="btn btn-outline-primary" id="order-button">Submit to order</button>
     </div>
 
+    <div id="newsletter-constainer" class="py-5">
+      <div class="newsletter-inner-container">
+        <div class="newsletter-title">
+          <div class="newsletter-icon pt-3 pb-4">
+            <h2 class="newsletter-title-text ms-4">Newsletter Subscription</h2>
+          </div>
 
+          <div class="newsletter-text">
+            Subscribe today and get more updated information!
+          </div>
+
+          <div class="input-group mb-4 mt-4">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter your email here..."
+            />
+            <button class="btn btn-primary" type="submit">subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer py-5">
+      <div class="container-lg">
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <h5 class="fw-light mb-3">Quick links</h5>
+
+            <ul class="list-unstyled">
+              <li class="my-3">
+                <a href="#" class="text-decoration-none text-muted">
+                  <i class="fa-solid fa-chevron-right me-1"></i>About us
+                </a>
+              </li>
+            </ul>
+            <ul class="list-unstyled">
+              <li class="my-3">
+                <a href="#" class="text-decoration-none text-muted">
+                  <i class="fa-solid fa-chevron-right me-1"></i>Privacy Policy
+                </a>
+              </li>
+            </ul>
+            <ul class="list-unstyled">
+              <li class="my-3">
+                <a href="#" class="text-decoration-none text-muted">
+                  <i class="fa-solid fa-chevron-right me-1"></i>Refund Policy
+                </a>
+              </li>
+            </ul>
+            <ul class="list-unstyled">
+              <li class="my-3">
+                <a href="#" class="text-decoration-none text-muted">
+                  <i class="fa-solid fa-chevron-right me-1"></i>Shipping Policy
+                </a>
+              </li>
+            </ul>
+            <ul class="list-unstyled">
+              <li class="my-3">
+                <a href="#" class="text-decoration-none text-muted">
+                  <i class="fa-solid fa-chevron-right me-1"></i>Shop Location
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <h5 class="fw-light mb-3">Contact Us</h5>
+            <div class="contact-us-box my-2">
+              <span class="me-3">
+                <i class="fas fa-map-marker-alt"></i>
+              </span>
+              <span class="fw-light">
+                Room 1103, 11/F, Exchange Tower 33 Wang Chiu Road, Kowloon Bay,
+                Kowloon, Hong Kong
+              </span>
+            </div>
+            <div class="contact-us-box my-2">
+              <span class="me-3">
+                <i class="fa-solid fa-phone"></i>
+              </span>
+              <span class="fw-light"> +852 9725 6400 </span>
+            </div>
+            <div class="contact-us-box my-2">
+              <span class="me-3">
+                <i class="fa-solid fa-envelope"></i>
+              </span>
+              <span class="fw-light"> hello@tecky.io </span>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <h5 class="fw-light mb-3">Follow Us</h5>
+            <div class="follow-us-box my-2">
+              <ul class="list-unstyled">
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-muted text-white"
+                  >
+                    <i class="fa-brands fa-instagram fa-lg"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="follow-us-box my-2">
+              <ul class="list-unstyled">
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-muted text-white"
+                  >
+                    <i class="fa-brands fa-facebook"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="./js/shoppingCart.js"></script>
   </body>
 </html>

@@ -226,7 +226,6 @@ window.onload = async () => {
             productModelSelect.appendChild(option);
         });
     }
-
     const secondType = document.getElementById('secondType')
     const price = document.getElementById('productPriceLabel')
     const productName = document.getElementById('productNameLabel')
@@ -236,7 +235,7 @@ window.onload = async () => {
     const saveBtn = document.querySelector("#saveBtn")
     saveBtn.addEventListener('click', async function (e) {
         e.preventDefault()
-        console.log(secondType.value)
+
         const body = {
             sub_category_id: secondType.value,
             price: price.value,
@@ -245,7 +244,7 @@ window.onload = async () => {
             color_id: colorTypeSelect.value,
             model_id: modelSelect.value
         }
-
+        console.log(body)
         const res = await fetch('/addNewProduct', {
             method: 'POST',
             headers: {

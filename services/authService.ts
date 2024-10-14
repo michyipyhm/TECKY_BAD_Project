@@ -240,11 +240,12 @@ export class AuthService {
 
     }
 
-    addNewProduct = async (products_name: string, quantity: number, color_id: number, model_id: number, price: number, sub_category_id: number) => {
+    addNewProduct = async (product_name: string, quantity: number, color_id: number, model_id: number, price: number, sub_category_id: number) => {
         try {
+            // console.log(product_name)
             const [newProduct] = await knex('products')
                 .insert({
-                    product_name: products_name,
+                    product_name: product_name,
                     sub_category_id: sub_category_id,
                     product_price: price, 
                 })

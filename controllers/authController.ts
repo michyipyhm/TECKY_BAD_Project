@@ -37,10 +37,6 @@ export class AuthController {
 
     getUserInfo = async (req: Request, res: Response) => {
         const userId = req.session.userId
-        if (!userId) {
-            res.status(401).json({ message: "Please login first." })
-            return;
-        }
         try {
             const userInfo = await this.authService.getUserInfo(Number(userId))
             res.json({ userInfo })
@@ -157,9 +153,9 @@ export class AuthController {
     }
 
     addNewProduct = async (req: Request, res: Response) => {
-        const { products_name, quantity, color_id, model_id, price, sub_category_id } = req.body
+        const { product_name, quantity, color_id, model_id, price, sub_category_id } = req.body
         try {
-            await this.authService.addNewProduct(products_name, quantity, color_id, model_id, price, sub_category_id)
+            await this.authService.addNewProduct(product_name, quantity, color_id, model_id, price, sub_category_id)
             res.json({ message: "New Product created successfully" })
         } catch (error) {
             res.status(400).json({ message: "Fail to create new product." })

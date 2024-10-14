@@ -499,7 +499,7 @@ h1 {
 
   /* newsletter */
 #newsletter-constainer{
-  background-color: rgb(251, 236, 228);
+  background-color: rgb(255, 255, 255);
 }
 
 
@@ -517,7 +517,6 @@ h1 {
 .newsletter-title-text {
   position: relative;
   display: inline-block;
-
 }
 
 .newsletter-title .newsletter-text {
@@ -543,14 +542,14 @@ h1 {
 .newsletter-title .btn {
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
-  background-color: #ffd8c2;
+  background-color: var(--background-color);
   color: white;
-  border-color: #ffd8c2;
+  border-color: var(--background-color);
 }
 
 .newsletter-title .btn:hover {
-  background-color: rgba(254, 190, 152, 0.6);
-  border-color: rgba(254, 190, 152, 0.6);
+  background-color: #ffdf9b;
+  border-color: #ffdf9b;
   color: #6d757d;
 }
 

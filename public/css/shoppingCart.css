@@ -298,12 +298,31 @@ body {
     color: red;
     float: right;
 }
-
 #shoppingCartForm {
-    display: flex;
+  height: auto;
+  margin-bottom: 80px;
+}
+
+
+
+#shoppingCartCard {
+    /* display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 80%;
+    align-items: center; */
+    height: 500px;
+    width: 500px;
+}
+
+img{
+  max-width: 350px;
+}
+
+
+
+.productPictureBox {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
   /* newsletter */

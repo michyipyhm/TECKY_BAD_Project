@@ -25,9 +25,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     productDiv.className = "product";
     productDiv.innerHTML = `
             <div class="card" id="shoppingCartCard">
-                <div class="productPicture"><img src="${
+<div class="productPictureBox">
+            <div class="productPicture"><img src="${
                   product.product_images[0]
-                }" width="300" height="300"/></div>
+                }"/></div>
+                </div>
                 <div class="productProperty">
                     <div class="productName">${product.product_name}
                     </div>

@@ -52,26 +52,30 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   //color_dropdown
   if (product.color !== "null") {
-    if (!displayedColor.has(product.color)) {
-      displayedColor.add(product.color);
-    // colorDropdown.innerHTML = ``;
+    
+    colorDropdown.innerHTML = ``;
     products.forEach((product) => {
+      if (!displayedColor.has(product.color)) { 
+        displayedColor.add(product.color);
       colorDropdown.innerHTML += `<option value="${product.color}">${product.color}</option>`;
-    });
-  }
+      }
+    })
+  
   } else {
     colorDropdownArea.style.display = "none";
   }
 
   //model_dropdown
-  if (!displayedModel.has(product.model)) {
-    displayedModel.add(product.model);
+  
   modelDropdown.innerHTML = ``;
   products.forEach((product) => {
+    if (!displayedModel.has(product.model)) { // 检查模型是否已经添加过
+      displayedModel.add(product.model); 
     modelDropdown.innerHTML += `<option value="${product.model}">${product.model}</option>`;
+    }
+  })
   
-  });
-  }
+
   
 
   const productDetails = document.getElementById("productDetails");

@@ -1,11 +1,4 @@
 window.onload = async () => {
-
-    if (res.status === 401) {
-        alert("Please login first.");
-        window.location.href = "/index.html";
-        return;
-    }
-
     const usernameLabel = document.querySelector("#usernameLabel")
     const emailLabel = document.querySelector("#emailLabel")
     const phoneLabel = document.getElementById('phoneLabel')
@@ -26,9 +19,9 @@ window.onload = async () => {
             addressLabel.value = userInfo.address
 
             userArea.innerHTML = `
-                <div class="userInfo"><span class="userInfoFont">Welcome! ${userInfo.username}!</span></div>
+                <div class="userInfo"><span class="userInfoFont">${userInfo.username}!</span></div>
                 <div class="settingBtn"><a href="/profile.html"><span class="userInfoFont">Profile</span></a></div>
-                <div class="logout"><button type="button" id="logoutBtn" class="userInfoFont">Logout</button></div>
+                <div class="logout"><button type="button" id="logoutBtn" class="userInfoFont btn btn-dark">Logout</button></div>
             `;
             const logoutEle = document.querySelector("#logoutBtn");
             if (logoutEle) {
@@ -140,15 +133,14 @@ window.onload = async () => {
             phone: phoneLabel.value,
             address: addressLabel.value
         }
-        console.log(formObject)
+        // console.log(formObject)
         const res = await fetch('/editProfile', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(formObject),
-        }
-        )
+        })
         const data = await res.json()
         if (res.ok) {
             alert("Updated")
@@ -196,6 +188,33 @@ window.onload = async () => {
             bindAuthButtons();
         }
     }
+
+    const savePasswordBtn = document.querySelector("#savePasswordBtn");
+    const oldPasswordLabel = document.querySelector("#oldPasswordLabel");
+    const newPasswordLabel = document.querySelector("#newPasswordLabel");
+    savePasswordBtn.addEventListener('click', async function (e) {
+        e.preventDefault()
+        const oldPassword = oldPasswordLabel.value
+        const newPassword = newPasswordLabel.value
+        const body = {
+            oldPassword: oldPassword,
+            newPassword: newPassword
+        }
+        const res = await fetch('/changePassword', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body),
+        })
+        const data = await res.json()
+        if (res.ok) {
+            alert("Updated")
+            window.location.href = "/profile.html";
+        } else {
+            alert(data.message)
+        }
+    })
 
 }
 

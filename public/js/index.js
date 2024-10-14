@@ -1,8 +1,8 @@
 window.onload = async () => {
   await getUserProfile();
   await replicateAi();
-  chatBoxToggle();
-  getproductBySubCategory();
+  await chatBoxToggle();
+  await getproductBySubCategory();
 
   async function getUserProfile() {
     const res = await fetch("/userinfo");

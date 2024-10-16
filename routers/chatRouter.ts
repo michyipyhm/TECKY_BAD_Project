@@ -16,7 +16,7 @@ dotenv.config();
 
 chatRouter.get("/readMessage", readMessage)
 chatRouter.post("/writeMessage", writeMessage)
-chatRouter.post("/responseMessage", responseMessage)
+// chatRouter.post("/responseMessage", responseMessage)
 chatRouter.post("/createNewChat", createNewChat)
 
 async function readMessage(req: Request, res: Response) {
@@ -54,21 +54,21 @@ async function writeMessage(req: Request, res: Response) {
     }
 }
 
-async function responseMessage(req: Request, res: Response) {
-    const data = req.body;
-    const userId = data.userId
-    const message = data.message
-    if (!message || typeof message !== 'string' || message.trim().length === 0) {
-        res.status(400).json({ message: "Message cannot be empty." });
-        return;
-    }
-    try {
-        await knex.insert([{ member_id: userId, user_message: "", response_message: message }]).into("chat_box")
-        res.json({ message: "Message sent" })
-    } catch {
-        res.status(500).json({ message: "Failed to send message." });
-    }
-}
+// async function responseMessage(req: Request, res: Response) {
+//     const data = req.body;
+//     const userId = data.userId
+//     const message = data.message
+//     if (!message || typeof message !== 'string' || message.trim().length === 0) {
+//         res.status(400).json({ message: "Message cannot be empty." });
+//         return;
+//     }
+//     try {
+//         await knex.insert([{ member_id: userId, user_message: "", response_message: message }]).into("chat_box")
+//         res.json({ message: "Message sent" })
+//     } catch {
+//         res.status(500).json({ message: "Failed to send message." });
+//     }
+// }
 
 async function createNewChat(req: Request, res: Response) {
     const userId = req.session.userId;

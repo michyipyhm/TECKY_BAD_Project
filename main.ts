@@ -56,5 +56,5 @@ main.use(isAdmin, express.static("admin"));
 const PORT = 8080;
 
 main.listen(PORT, () => {
-  console.log(`Listening at ${PORT}`);
+  console.log(`Listening at http://localhost:${PORT}`);
 });

@@ -89,10 +89,8 @@ async function getOrderHistory(req: Request, res: Response) {
   try {
     
     const userId = req.session.userId;
-    // if (!userId) {
-    //   res.status(401).json();
-    //   return;
-    // }
+
+
 
     const currectUserIdResult = await knex("orders")
       .select("*")

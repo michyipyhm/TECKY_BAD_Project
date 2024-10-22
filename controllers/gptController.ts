@@ -91,30 +91,32 @@ export class GptController {
                 }
 
                 const randomResults = result.sort(() => 0.5 - Math.random()).slice(0, 3);
-                // /productdetails.html?product=${id}
-                let humanizedResponse = "";
+                console.log(randomResults)
+                
+                let chatResponse = "";
                 if (randomResults.length > 0) {
-                    humanizedResponse = `I found the following products that match your criteria:\n\n`;
+                    chatResponse = `I found the following products that match your criteria:\n\n`;
                     randomResults.forEach((product, index) => {
-                        humanizedResponse += `${index + 1}. \n`;
-                        humanizedResponse += `   Product Name: ${product.product_name}\n`;
-                        humanizedResponse += `   Model: ${product.model_name}\n`;
-                        humanizedResponse += `   Color: ${product.color_name !== "null" ? product.color_name : "No specific color"}\n`;
-                        humanizedResponse += `   <a class="nav-link" href="./productdetails.html?product=${product.product_id}">Link</a>`;
+                        chatResponse += `${index + 1}. \n`;
+                        chatResponse += `   ${product.product_name}\n`;
+                        chatResponse += `   <a href="./productDetails.html?product=${product.product_id}"><img src="${product.images[0]}" alt="Example Image" width="150" height="250"></a>\n`;
+                        // chatResponse += `   Model: ${product.model_name}\n`;
+                        // chatResponse += `   Color: ${product.color_name !== "null" ? product.color_name : "No specific color"}\n`;
+                        // chatResponse += `   <a class="nav-link" href="./productDetails.html?product=${product.product_id}">Link</a>`;
                     });
                 } else {
-                    humanizedResponse = "Sorry, I couldn't find any products matching your criteria. You may want to adjust your search conditions.";
+                    chatResponse = "Sorry, I couldn't find any products matching your criteria. You may want to adjust your search conditions.";
                 }
                 
-                humanizedResponse = humanizedResponse.replace(/\n/g, "<br>");
+                chatResponse = chatResponse.replace(/\n/g, "<br>");
 
                 await knex('chat_box').insert({
                     member_id: userId,
-                    response_message: humanizedResponse,
+                    response_message: chatResponse,
                     user_message: ""
                 });
 
-                res.json({ message: humanizedResponse });
+                res.json({ message: chatResponse });
                 return;
             }
 

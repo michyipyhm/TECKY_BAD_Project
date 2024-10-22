@@ -45,7 +45,7 @@ main.use(chatRouter);
 main.use(categoryRoutes);
 main.use(productsRoutes);
 main.use(productDetailsRoutes);
-main.use(stripeCheckout);
+// main.use(stripeCheckout);
 main.use(isLoggedIn, orderRouter);
 main.use(isLoggedIn, shoppingCartRouter);
 main.use(isLoggedIn, express.static("private"));

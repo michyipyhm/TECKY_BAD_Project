@@ -35,22 +35,40 @@ export class GptService {
             // console.log({reqColorIds})
 
             const reqProducts = knex('product_option')
-                .select("product_option.id as product_option_id",
-                    "product_option.model_id", "model.name as model_name",
-                    "product_option.color_id", "color.name as color_name",
-
-                    "products.id as product_id", " products.product_name as product_name",
-                    "sub_category.id as sub_category_id", "sub_category.category_name as sub_category_name",
-                    "category.id as category_id", "category.category_name as category_name"
+                .select(
+                    "product_option.id as product_option_id",
+                    "product_option.model_id",
+                    "model.name as model_name",
+                    "product_option.color_id",
+                    "color.name as color_name",
+                    "products.id as product_id",
+                    "products.product_name as product_name",
+                    "sub_category.id as sub_category_id",
+                    "sub_category.category_name as sub_category_name",
+                    "category.id as category_id",
+                    "category.category_name as category_name",
+                    knex.raw("array_agg(product_image.image_path) as images")
                 )
                 .join("model", "model.id", "product_option.model_id")
                 .join("color", "color.id", "product_option.color_id")
-
                 .join("products", "products.id", "product_option.products_id")
                 .join("product_image", "products.id", "product_image.product_id")
                 .join("sub_category", "sub_category.id", "products.sub_category_id")
                 .join("category", "category.id", "sub_category.category_id")
+                .groupBy(
+                    "product_option.id",
+                    "model.name",
+                    "color.name",
+                    "products.id",
+                    "products.product_name",
+                    "sub_category.id",
+                    "sub_category.category_name",
+                    "category.id",
+                    "category.category_name"
+                );
             console.log({ categoryIds, reqColorIds, reqModelIds })
+
+
 
             // if (categoryIds.length > 0) {
             reqProducts.whereIn("category.id", categoryIds)

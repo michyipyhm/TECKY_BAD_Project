@@ -252,7 +252,7 @@ window.onload = async () => {
             e.preventDefault();
             const id = button.dataset.id;
 
-            window.location.href = `/productdetails.html?product=${id}`;
+            window.location.href = `/productDetails.html?product=${id}`;
           });
         });
       });

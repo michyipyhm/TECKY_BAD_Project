@@ -14,13 +14,13 @@ export const pgClient = new Client({
 pgClient.connect();
 
 
-let users = [{ username: "michael", password: "12345678", nickname: "mick", email: "michael@example.com" }, { username: "victor", password: "12345678", nickname: "vic", email: "victor@example.com" },
+let users = [{ username: "michael", password: "12345678", email: "michael@example.com" }, { username: "victor", password: "12345678", email: "victor@example.com" },
 { username: "kees", password: "12345678", nickname: "k", email: "kees@example.com" }
 ]
 async function insertUser() {
 
     for (let user of users) {
-        await pgClient.query(`INSERT INTO member (username,password,nickname,email) VALUES ('${user.username}','${await hashPassword(user.password)}','${user.nickname}','${user.email}')`)
+        await pgClient.query(`INSERT INTO member (username,password,email) VALUES ('${user.username}','${await hashPassword(user.password)}','${user.email}')`)
     }
 
     console.log("insert member done")

@@ -101,6 +101,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     console.log("click checkout orderIds", orderIds);
     console.log("total", grandTotal);
+
     const response = await fetch("/create-checkout-session", {
       method: "POST",
       headers: {

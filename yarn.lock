@@ -102,9 +102,9 @@
   integrity sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==
 
 "@types/axios@^0.14.0":
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/@types/axios/-/axios-0.14.0.tgz#ec2300fbe7d7dddd7eb9d3abf87999964cafce46"
-  integrity sha512-KqQnQbdYE54D7oa/UmYVMZKq7CO4l8DEENzOKc4aBRwxCXSlJXGz83flFx5L7AWrOQnmuN3kVsRdt+GZPPjiVQ==
+  version "0.14.4"
+  resolved "https://registry.npmjs.org/@types/axios/-/axios-0.14.4.tgz"
+  integrity sha512-9JgOaunvQdsQ/qW2OPmE5+hCeUB52lQSolecrFrthct55QekhmXEwT203s20RL+UHtCQc15y3VXpby9E7Kkh/g==
   dependencies:
     axios "*"
 
@@ -164,7 +164,7 @@
 
 "@types/fs-extra@^11.0.4":
   version "11.0.4"
-  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-11.0.4.tgz#e16a863bb8843fba8c5004362b5a73e17becca45"
+  resolved "https://registry.npmjs.org/@types/fs-extra/-/fs-extra-11.0.4.tgz"
   integrity sha512-yTbItCNreRooED33qjunPthRcSjERP1r4MqCZc7wv0u2sUkzTFp45tgUfS5+r7FrZPdmCCNflLhVSP/o+SemsQ==
   dependencies:
     "@types/jsonfile" "*"
@@ -387,7 +387,7 @@ asynckit@^0.4.0:
 
 axios@*, axios@^1.7.7:
   version "1.7.7"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.7.7.tgz#2f554296f9892a72ac8d8e4c5b79c14a91d0a47f"
+  resolved "https://registry.npmjs.org/axios/-/axios-1.7.7.tgz"
   integrity sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==
   dependencies:
     follow-redirects "^1.15.6"
@@ -869,12 +869,12 @@ formdata-node@^4.3.2:
     web-streams-polyfill "4.0.0-beta.3"
 
 formidable@v3:
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/formidable/-/formidable-3.5.1.tgz#9360a23a656f261207868b1484624c4c8d06ee1a"
-  integrity sha512-WJWKelbRHN41m5dumb0/k8TeAx7Id/y3a+Z7QfhxP/htI9Js5zYaEDtG8uMgG0vM0lOlqnmjE99/kfpOYi/0Og==
+  version "3.5.2"
+  resolved "https://registry.npmjs.org/formidable/-/formidable-3.5.2.tgz"
+  integrity sha512-Jqc1btCy3QzRbJaICGwKcBfGWuLADRerLzDqi2NwSt/UkXLsHJw2TVResiaoBufHVHy9aSgClOHCeJsSsFLTbg==
   dependencies:
     dezalgo "^1.0.4"
-    hexoid "^1.0.0"
+    hexoid "^2.0.0"
     once "^1.4.0"
 
 forwarded@0.2.0:
@@ -889,7 +889,7 @@ fresh@0.5.2:
 
 fs-extra@^11.2.0:
   version "11.2.0"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-11.2.0.tgz#e70e17dfad64232287d01929399e0ea7c86b0e5b"
+  resolved "https://registry.npmjs.org/fs-extra/-/fs-extra-11.2.0.tgz"
   integrity sha512-PmDi3uwK5nFuXh7XDTlVnS17xJS7vW36is2+w3xcv8SVxiB4NyATf4ctkVY5bkSjX0Y4nbvZCq1/EjtEyr9ktw==
   dependencies:
     graceful-fs "^4.2.0"
@@ -997,10 +997,10 @@ hasown@^2.0.0, hasown@^2.0.2:
   dependencies:
     function-bind "^1.1.2"
 
-hexoid@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/hexoid/-/hexoid-1.0.0.tgz"
-  integrity sha512-QFLV0taWQOZtvIRIAdBChesmogZrtuXvVWsFHZTk2SU+anspqZ2vMnoLg7IE1+Uk16N19APic1BuF8bC8c2m5g==
+hexoid@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/hexoid/-/hexoid-2.0.0.tgz"
+  integrity sha512-qlspKUK7IlSQv2o+5I7yhUd7TxlOG2Vr5LTa3ve2XSNVKAL/n/u/7KLvKmFNimomDIKvZFXWHv0T12mv7rT8Aw==
 
 http-errors@2.0.0:
   version "2.0.0"
@@ -1753,7 +1753,7 @@ strip-json-comments@^2.0.0:
 
 stripe@^17.2.0:
   version "17.2.0"
-  resolved "https://registry.yarnpkg.com/stripe/-/stripe-17.2.0.tgz#1b70fb60b01e64a2bf64cccb42215a1abcca9d39"
+  resolved "https://registry.npmjs.org/stripe/-/stripe-17.2.0.tgz"
   integrity sha512-KuDplY9WrNKi07+uEFeguis/Mh+HC+hfEMy8P5snhQzCXUv01o+4KcIJ9auFxpv4Odp2R2krs9rZ9PhQl8+Sdw==
   dependencies:
     "@types/node" ">=8.1.0"

@@ -7,13 +7,14 @@ CREATE DATABASE bad_project;
 CREATE TABLE member(
     "id" SERIAL PRIMARY KEY,
     "username" VARCHAR(255) UNIQUE NOT NULL,
+    "nickname" VARCHAR(255),
     "password" VARCHAR(255) NOT NULL,
     "phone" VARCHAR(15) UNIQUE,
     "address" VARCHAR(255) ,
     "email" VARCHAR(255) UNIQUE NOT NULL,
-    "admin" BOOLEAN
+    "admin" BOOLEAN,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE orders(
@@ -35,7 +36,7 @@ CREATE TABLE transaction(
     "payment_type" VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (order_id) REFERENCES order(id)
+    FOREIGN KEY (order_id) REFERENCES orders(id)
 );
 
 CREATE TABLE category(
@@ -80,7 +81,7 @@ CREATE TABLE shopping_cart(
     "product_id" INTEGER NOT NULL,
     "member_id" INTEGER NOT NULL,
     "quantity" INTEGER NOT NULL,
-    FOREIGN KEY (product_id) REFERENCES product(id)
+    FOREIGN KEY (product_id) REFERENCES product(id),
     FOREIGN KEY (member_id) REFERENCES member(id)
 );
 

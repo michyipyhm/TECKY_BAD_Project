@@ -1,6 +1,6 @@
 DB_NAME=bad_project
-DB_USERNAME=bad_project
-DB_PASSWORD=itworkswhy?
+DB_USERNAME=
+DB_PASSWORD=
 
 ##to login to the database in server, use the following command:
 

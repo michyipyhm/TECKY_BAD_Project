@@ -1,4 +1,4 @@
-\c BAD012_project
+\c bad_project
 
 
 INSERT INTO category (category_name, category_type)
@@ -74,15 +74,7 @@ VALUES
 -- ('/photos/products/cameraIphone4.jpg'),
 -- ('/photos/products/cameraIphone5.jpg'),
 
-(8,'/photos/products/case13To15_1.jpg'),
--- ('/photos/products/case13To15_2.jpg'),
--- ('/photos/products/case13To16_1.jpg'),
--- ('/photos/products/case13To16_2.jpg'),
--- ('/photos/products/case13To16_3.jpg'),
--- ('/photos/products/case14To16_1.jpg'),
--- ('/photos/products/case15_1.jpg'),
--- ('/photos/products/case15_2.jpg'),
--- ('/photos/products/case15_3.jpg');
+(8,'/photos/products/case13To15_1.jpg');
 
 
 

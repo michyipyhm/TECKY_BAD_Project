@@ -13,7 +13,7 @@ export const isLoggedIn = (
         res.send(`
             <script>
                 alert("Please login first.");
-                window.location.href = "/index.html";  // 重定向到登录页面
+                window.location.href = "/index.html";
             </script>
         `);
     }

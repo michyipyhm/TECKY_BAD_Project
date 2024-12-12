@@ -414,6 +414,10 @@ h1 {
     justify-content:space-between;
     z-index: 1006;
   }
+
+  .chatHeaderFont{
+    align-items: center;
+  }
   
   /* Chatting區域 */
   #chatBody {
